@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907041254) do
+ActiveRecord::Schema.define(version: 20150907043137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(version: 20150907041254) do
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", unique: true, using: :btree
+
+  create_table "contestant_tag_contestants", force: :cascade do |t|
+    t.integer  "contestant_user_id", null: false
+    t.integer  "contestant_tag_id",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "contestant_tag_contestants", ["contestant_tag_id"], name: "index_contestant_tag_contestants_on_contestant_tag_id", unique: true, using: :btree
+  add_index "contestant_tag_contestants", ["contestant_user_id"], name: "index_contestant_tag_contestants_on_contestant_user_id", unique: true, using: :btree
+
+  create_table "contestant_tags", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -65,5 +81,7 @@ ActiveRecord::Schema.define(version: 20150907041254) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
 
   add_foreign_key "contestant_profiles", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "contestant_tag_contestants", "contestant_tags", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "contestant_tag_contestants", "users", column: "contestant_user_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_profiles", "users", on_update: :cascade, on_delete: :cascade
 end
