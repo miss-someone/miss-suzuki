@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907035206) do
+ActiveRecord::Schema.define(version: 20150907041254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contestant_profiles", force: :cascade do |t|
+    t.integer  "user_id",                               null: false
+    t.integer  "group_id",                              null: false
+    t.string   "name",                                  null: false
+    t.string   "hurigana",                              null: false
+    t.string   "image_url",                             null: false
+    t.string   "age",                                   null: false
+    t.string   "height",                                null: false
+    t.string   "come_from",                             null: false
+    t.string   "link_url",                              null: false
+    t.text     "comment",                               null: false
+    t.integer  "votes",                     default: 0
+    t.text     "thanks_comment",                        null: false
+    t.string   "phone"
+    t.string   "station"
+    t.boolean  "is_interest_in_idol_group"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", unique: true, using: :btree
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -42,5 +64,6 @@ ActiveRecord::Schema.define(version: 20150907035206) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
 
+  add_foreign_key "contestant_profiles", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_profiles", "users", on_update: :cascade, on_delete: :cascade
 end
