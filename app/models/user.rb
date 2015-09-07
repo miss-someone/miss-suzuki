@@ -27,5 +27,6 @@ class User < ActiveRecord::Base
     # 一般ユーザ一覧を返す
     def normal
       User.where(user_type: Settings.user_type[:normal]).includes(:user_profile)
+    end
   end
 end
