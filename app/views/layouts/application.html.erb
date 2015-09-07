@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MissSuzuki</title>
+  <title>MISS-SUZUKI | 鈴木さん限定のミスコン</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <link href="/stylesheets/style.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/entries.scss" media="all" rel="stylesheet" type="text/css" />
   <%= csrf_meta_tags %>
+  <meta name="keywords" content="ミスコン,鈴木さん,Miss-Suzuki,青山学院大学,佐藤さん">
+  <meta name="description" content="史上初!「鈴木さん」限定のミスコン MISS-SUZUKI 優勝者には「金の表札」とバイクをプレゼント！" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+
+  <%= analytics_init if Rails.env.production? %>
 </head>
 <body>
+<div id="header">
+    <div id="nav">
+      <ul id="menu">
+        <li id="logo"><a href="/"><%= image_tag 'logo/suzuki_logo_mini.png', :width =>'160' %></a></li>
+        <li class="tab"><a href="/">HOME</a></li>
+        <li class="tab"><a href="/news">NEWS</a></li>
+        <li class="tab" ><a href="/rules">RULES</a></li>
+        <li class="tab"><a href="/entries/new">ENTRY</a></li>
+        <li class="tab"><a href="/about">ABOUT US</a></li>
+        <li id="humburger"><%= image_tag 'humburger.png' %></li>
+      </ul>
+    </div>
+    <div id="header_right">
+      <ul>
+        <li class="header_btn tab"><a href="/signup">新規登録</a></li>
+        <li class="header_btn tab"><a href="/login">ログイン</a></li>
+        <li class="tab"><a href="https://www.facebook.com/MsSuzukiOfficial"><%= image_tag 'icon/icon_fb.png', :width =>'25' %></a></li>
+        <li class="tab"><a href="#"><%= image_tag 'icon/icon_twitter.png', :width =>'25' %></a></li>
+      </ul>
+    </div>
+
+</div>
+
+
 
 <%= yield %>
+
+<footer>
+  <p>Copyright &copy;2015-2016 Miss.Someone All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
