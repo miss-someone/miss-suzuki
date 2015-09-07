@@ -63,7 +63,8 @@ Rails.application.config.sorcery.configure do |config|
   # config.register_last_activity_time =
 
   # -- external --
-  # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
+  # What providers are supported by this app,
+  # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
   # Default: `[]`
   #
   # config.external_providers =

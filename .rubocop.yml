@@ -1,3 +1,4 @@
+
 # 自動生成のものを除外
 AllCops:
   Exclude:
@@ -36,3 +37,5 @@ MethodLength:
 AbcSize:
   Exclude:
     - db/migrate/*.rb
+
+inherit_from: .rubocop_todo.yml
