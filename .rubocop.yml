@@ -13,14 +13,26 @@ AsciiComments:
 # * model の association
 # * controller の callback
 # 辺りの桁揃えで引っかかるので全体的にチェックしない
-Style/SingleSpaceBeforeFirstArg:
+SingleSpaceBeforeFirstArg:
   Enabled: false
 
 # 文字列にダブルクォートを使うのは許可
 StringLiterals:
   Enabled: false
 
+ExtraSpacing:
+  Exclude:
+    - db/migrate/*.rb
+
 LineLength:
   Max: 120
+  Exclude:
+    - db/migrate/*.rb
+
+MethodLength:
+  Exclude:
+    - db/migrate/*.rb
+
+AbcSize:
   Exclude:
     - db/migrate/*.rb
