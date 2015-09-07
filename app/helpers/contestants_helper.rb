@@ -1,7 +1,7 @@
 module ContestantsHelper
   def link(contestant_profile)
     #TODO: リンク判別のメソッド書く
-    if contestant_profile.link_url.blank?
+    if contestant_profile.link_url?
       ""
     else
       create_a_tag_link(contestant_profile.link_url, "Facebook")
