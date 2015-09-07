@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :contestant_tags
 
   def profile
-    if user_type == Settings.account_type[:contestant]
+    if user_type == Settings.user_type[:contestant]
       contestant_profile
     else
       user_profile
