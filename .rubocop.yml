@@ -1,0 +1,26 @@
+# 自動生成のものを除外
+AllCops:
+  Exclude:
+    - !ruby/regexp /\/db\/schema\.rb$/
+    - !ruby/regexp /\/vendor\/.*/
+
+# OFF: Use only ascii symbols in comments.
+AsciiComments:
+  Enabled: false
+
+# * migrate
+# * jbuilder
+# * model の association
+# * controller の callback
+# 辺りの桁揃えで引っかかるので全体的にチェックしない
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+# 文字列にダブルクォートを使うのは許可
+StringLiterals:
+  Enabled: false
+
+LineLength:
+  Max: 120
+  Exclude:
+    - db/migrate/*.rb
