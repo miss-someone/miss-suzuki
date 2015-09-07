@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   has_many :contestant_tag_contestants
   # 出場者に関連付けられているタグ一覧
   has_many :contestant_tags
+
+  def profile
+    if user_type == Settings.account_type[:contestant]
+      contestant_profile
+    else
+      user_profile
+    end
+  end
 end

@@ -26,6 +26,8 @@ gem 'pg'
 gem 'slim-rails'
 # 認証処理周りを担ってくれる(deviseより単純)
 gem 'sorcery', '~>0.9.1'
+# 定数管理
+gem 'config'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
