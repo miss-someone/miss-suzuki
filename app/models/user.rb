@@ -14,6 +14,12 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :user_profile, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :contestant_profile, allow_destroy: true, reject_if: :all_blank
 
+  # バリデーション
+  validates :email, presence: true, uniqueness: true
+  validates :user_type,
+    presence: true,
+    inclusion: [Settings.user_type[:normal], Settings.user_type[:contestant]]
+
   # ユーザタイプに応じてプロフィールを返す
   def profile
     if user_type == Settings.user_type[:contestant]
