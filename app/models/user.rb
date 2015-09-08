@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   # 出場者に関連付けられているタグ一覧
   has_many :contestant_tags
 
+  # ユーザ作成時に，関連テーブルも同時に生成する
+  accepts_nested_attributes_for :user_profile, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :contestant_profile, allow_destroy: true, reject_if: :all_blank
+
   # ユーザタイプに応じてプロフィールを返す
   def profile
     if user_type == Settings.user_type[:contestant]

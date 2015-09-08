@@ -1,0 +1,66 @@
+<%= form_for @contestant, url: { action: :create } do |f| %>
+  <div class="form_filed" >
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="form_filed" >
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.fields_for :contestant_profile do |f| %>
+    <div class="form_field" >
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :hurigana %>
+      <%= f.text_field :hurigana %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :age %>
+      <%= f.text_field :age %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :height %>
+      <%= f.text_field :height %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :come_from %>
+      <%= f.text_field :come_from %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :link_url %>
+      <%= f.text_field :link_url %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :comment %>
+      <%= f.text_area :comment %>
+    </div>
+    <!-- 
+    TODO: 画像アップロード
+    -->
+    <div class="form_field" >
+      <%= f.label :thanks_comment %>
+      <%= f.text_area :thanks_comment %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :phone %>
+      <%= f.telephone_field :phone %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :station %>
+      <%= f.text_field :station %>
+    </div>
+    <div class="form_field" >
+      <%= f.label :is_interest_in_idol_group %>
+      <%= f.check_box :is_interest_in_idol_group %>
+    </div>
+  <% end %>
+  <div class="form_submit">
+    <%= f.submit "登録する" %>
+  </div>
+<% end %>
