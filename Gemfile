@@ -60,6 +60,8 @@ group :development do
   gem 'pry-rails'
   # pryでデバックコマンドが使える
   gem 'pry-byebug'
+  # コーディング規約チェック
+  gem 'rubocop', require: false
 end
 
 group :test do
