@@ -7,10 +7,36 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
 //
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+<script>
+ 
+$(function(){
+    $(".menu").click(function(){
+        $(".menu1").toggleClass("menuclick1")
+    });
+    $(".menu").click(function(){
+        $(".menu2").toggleClass("menuclick2")
+    });
+    $(".menu").click(function(){
+        $(".menu3").toggleClass("menuclick3")
+    }); 
+});
+ 
+$(function(){
+            $('.menu').click(function(){
+             if ($('ul').css('display') == 'none') {
+            $('ul').slideDown('slow');
+            } else {
+             $('ul').slideUp('slow');
+             }
+            });
+        });
+ 
+</script>

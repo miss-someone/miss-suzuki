@@ -1,0 +1,24 @@
+<div id="entries">
+  <div id="mainimage">
+    <%= image_tag 'group1_mainimage.jpg' %>
+  </div>
+
+  <div class="content_top">
+    <% if flash[:alert] %>
+      <p><%= flash[:alert] %></p>
+    <% end %>
+  </div>
+
+  <div class="content_middle">
+    <div class="column column1">
+      <%= render :partial => 'contestant', :collection => @contestant[0] %>
+    </div>
+    <div class="column column2">
+      <%= render :partial => 'contestant', :collection => @contestant[1] %>
+    </div>
+    <div class="column">
+      <%= render :partial => 'contestant', :collection => @contestant[2] %>
+    </div>
+    <p class="to_top"><a href=<% '/' %>><%= image_tag 'to_top.png' %></a></p>
+  </div>
+</div>
