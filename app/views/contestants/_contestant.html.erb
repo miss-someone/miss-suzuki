@@ -1,0 +1,28 @@
+<div class="entry">
+  <p class="image"><img src="<%= contestant.profile.image_url %>" width="278" alt="" /></p>
+  <div class="textarea">
+    <div class="evaluation">
+      <p class="button">
+      <%= link_to vote_path(id: contestant.id), method: :posts do %>
+        <%= image_tag 'kawaii_btn.png' %>
+      <% end %>
+      </p>
+      <span class="point"><%= contestant.profile.votes %></span>
+    </div>
+    <h2><%= contestant.profile.name %></h2>
+    <p>年齢: <%= contestant.profile.age %></p>
+    <p>出身: <%= contestant.profile.come_from %></p>
+    <p>身長: <%= contestant.profile.height %>cm</p>
+    <% if contestant.profile.created_at.present? %>
+      <div class="new_icon"><%= image_tag 'new_icon.png' %></div>
+    <% end %>
+    <p>一言アピール!<br> </p>
+    <div class="appeal">
+      <%= contestant.profile.comment %>
+    </div>
+    <div class="links_box">
+      <%= link(contestant.profile) %>
+    </div>
+  </div>
+</div>
+

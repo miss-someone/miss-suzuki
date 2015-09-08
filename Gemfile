@@ -22,8 +22,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
 # DBでPostgreSQLを使う
 gem 'pg'
-# テンプレートエンジン
-gem 'slim-rails'
 # 認証処理周りを担ってくれる(deviseより単純)
 gem 'sorcery', '~>0.9.1'
 # 定数管理
