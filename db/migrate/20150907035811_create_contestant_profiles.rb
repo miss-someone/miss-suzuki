@@ -1,7 +1,7 @@
 class CreateContestantProfiles < ActiveRecord::Migration
   def change
     create_table :contestant_profiles do |t|
-      t.integer   :user_id,     null: false
+      t.integer   :user_id
       t.integer   :group_id,    null: false
       t.string    :name,        null: false
       t.string    :hurigana,    null: false

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150907043137) do
   enable_extension "plpgsql"
 
   create_table "contestant_profiles", force: :cascade do |t|
-    t.integer  "user_id",                               null: false
+    t.integer  "user_id"
     t.integer  "group_id",                              null: false
     t.string   "name",                                  null: false
     t.string   "hurigana",                              null: false

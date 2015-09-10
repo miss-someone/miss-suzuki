@@ -20,14 +20,6 @@ RSpec.describe User, type: :model do
   end
 
   describe "validation" do
-    describe "about user_id" do
-      context "when it is nil" do
-        before { contestant_profile.user_id = nil }
-        it "shouldn't pass" do
-          expect(contestant_profile).not_to be_valid(:user_id)
-        end
-      end
-    end
     describe "about group_id" do
       context "when it is not nil and valid" do
         it "should pass" do
