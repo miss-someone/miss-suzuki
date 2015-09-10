@@ -34,8 +34,8 @@
           <tr><%= f.telephone_field :phone, class: "half" %></tr><br>
           <tr><%= f.label :station %>(交通費の精算時に参考にいたします)</tr><br>
           <tr><%= f.text_field :station, class: "half" %></tr><br>
-          <tr>[未実装]このミスコンをどのように知りましたか？</tr><br>
-          <tr><input type="text" class="half"></tr><br>
+          <tr><%= f.label :how_know %></tr><br>
+          <tr><%= f.text_area :how_know , class: "full" %></tr><br>
           <tr>[未実装]当てはまるものすべてにチェックをお願いします</tr><br>
           <tr class="box"><input type="checkbox" name="age" value="0-9歳">0-9歳
               <input type="checkbox" name="age" value="10代">10代
@@ -47,11 +47,16 @@
               <input type="checkbox" name="age" value="大学生">大学生
           </tr><br>
 
-          <tr>[未実装]サイトに掲載後、公式twitterアカウントでの紹介を希望しましすか？</tr><br>
-          <tr class="box"><input type="radio" name="tw_introduction" value="はい"> はい
-              <input type="radio" name="tw_introduction" value="いいえ">いいえ</tr><br>
-          <tr>「鈴木さんだらけのアイドルグループ」に興味はありますか？</tr><br>
-          <tr class="box"><%= f.check_box :is_interest_in_idol_group %></tr><br>
+          <tr><%= f.label :is_share_with_twitter_ok %></tr><br>
+          <tr class="box">
+            <%= f.radio_button :is_share_with_twitter_ok, true %>はい
+            <%= f.radio_button :is_share_with_twitter_ok, false %>いいえ
+          </tr><br>
+          <tr><%= f.label :is_interest_in_idol_group %></tr><br>
+          <tr class="box">
+            <%= f.radio_button :is_interest_in_idol_group, true %>はい
+            <%= f.radio_button :is_interest_in_idol_group, false %>いいえ
+          </tr><br>
         <% end %>
       </table>
       <p>[未実装]利用規約に同意する<tr><input type="checkbox" name="agreement" value="同意する"></p>

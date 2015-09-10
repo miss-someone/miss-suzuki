@@ -16,4 +16,6 @@ ja:
         thanks_comment: 投票お礼メッセージ
         phone: 電話番号
         station: 最寄駅
-        is_interest_in_idol_group: 「鈴木さんだらけのアイドルグループ」に興味はありますか？
+        is_interest_in_idol_group: "「鈴木さんだらけのアイドルグループ」に興味はありますか？"
+        how_know: このミスコンをどのように知りましたか?
+        is_share_with_twitter_ok: "サイト掲載後、公式Twitterアカウントでの紹介を希望しますか?"

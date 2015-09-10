@@ -83,12 +83,6 @@ RSpec.describe User, type: :model do
         let(:target_attr) { "come_from" }
       end
     end
-    describe "about link_url" do
-      it_behaves_like "presence validation(string)" do
-        let(:profile) { contestant_profile }
-        let(:target_attr) { "link_url" }
-      end
-    end
     describe "about comment" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
@@ -99,12 +93,6 @@ RSpec.describe User, type: :model do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "thanks_comment" }
-      end
-    end
-    describe "about link_url" do
-      it_behaves_like "presence validation(string)" do
-        let(:profile) { contestant_profile }
-        let(:target_attr) { "link_url" }
       end
     end
   end

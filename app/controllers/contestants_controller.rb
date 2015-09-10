@@ -26,6 +26,7 @@ class ContestantsController < ApplicationController
     params.require(:contestant).permit(:name, :hurigana, :age, :come_from,
                                        :comment, :link_url, :thanks_comment,
                                        :image_url, :email, :password, :phone,
-                                       :station, :is_interest_in_idol_group)
+                                       :station, :is_interest_in_idol_group,
+                                      :how_know, :is_share_with_twitter_ok)
   end
 end

@@ -10,8 +10,8 @@ class ContestantProfile < ActiveRecord::Base
   validates :age, presence: true
   validates :height, presence: true
   validates :come_from, presence: true
-  validates :link_url, presence: true
   validates :comment, presence: true
   validates :thanks_comment, presence: true
-  validates :link_url, presence: true
+  validates :is_interest_in_idol_group, presence: true
+  validates :is_share_with_twitter_ok, presence: true
 end
