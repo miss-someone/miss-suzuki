@@ -22,10 +22,8 @@
           <tr><input type="file" name="image_url" size="30"></tr>
         <% end %>
       </table>
-    </form>
 
-    <p class="message">ここから先の情報は公開されません</p>
-    <form>
+      <p class="message">ここから先の情報は公開されません</p>
       <table class="table">
         <tr><%= f.label :email %></tr><br>
         <tr><%= f.email_field :email, class: "half" %></tr><br>
@@ -56,11 +54,8 @@
           <tr class="box"><%= f.check_box :is_interest_in_idol_group %></tr><br>
         <% end %>
       </table>
-    </form>
-
       <p>[未実装]利用規約に同意する<tr><input type="checkbox" name="agreement" value="同意する"></p>
-
-      <p><a href="/completed"><input class="submit_btn" type="submit" value="送信する"></a></p>
+      <p><%= f.submit "送信する", class: "submit_btn" %></p>
     <% end %>
   </div>
 </div>
