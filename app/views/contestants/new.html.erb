@@ -1,66 +1,69 @@
-<%= form_for @contestant, url: { action: :create } do |f| %>
-  <div class="form_filed" >
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+<div id ="create">
+<h1>エントリーフォーム</h1>
+  <div id="entry_form">
+    <%= form_for @contestant, url: { action: :create } do |f| %>
+      <table class="table">
+        <%= f.fields_for :contestant_profile do |f| %>
+          <tr><%= f.label :name %></tr><br>
+          <tr><%= f.text_field :name, class: "half" %></tr><br>
+          <tr><%= f.label :hurigana %></tr><br>
+          <tr><%= f.text_field :hurigana, class: "half" %></tr><br>
+          <tr><%= f.label :age %><span>(必須ではありません。空欄の場合は「ないしょ」と表示されます)</span></tr><br>
+          <tr><%= f.text_field :age, class: "half" %></tr><br>
+          <tr><%= f.label :come_from %></tr><br>
+          <tr><%= f.text_field :come_from %></tr><br>
+          <tr><%= f.label :comment %></tr><br>
+          <tr><%= f.text_area :comment, class: "full" %> </tr><br>
+          <tr>twitter、ブログなどの紹介したいURL(一つまで)</tr><br>
+          <tr><%= f.text_field :link_url, class: "full" %></tr><br>
+          <tr>投票してくれた方へのお礼メッセージをお願いします！</tr><br>
+          <tr><%= f.text_area :thanks_comment, class: "full" %></tr><br>
+          <tr>[未実装]エントリーする画像を貼り付けてください</tr><br>
+          <tr><input type="file" name="image_url" size="30"></tr>
+        <% end %>
+      </table>
+    </form>
+
+    <p class="message">ここから先の情報は公開されません</p>
+    <form>
+      <table class="table">
+        <tr><%= f.label :email %></tr><br>
+        <tr><%= f.email_field :email, class: "half" %></tr><br>
+        <tr><%= f.label :password %></tr><br>
+        <tr><%= f.password_field :password, class: "half" %></tr><br>
+        <%= f.fields_for :contestant_profile do |f| %>
+          <tr><%= f.label :phone %></tr><br>
+          <tr><%= f.telephone_field :phone, class: "half" %></tr><br>
+          <tr><%= f.label :station %>(交通費の精算時に参考にいたします)</tr><br>
+          <tr><%= f.text_field :station, class: "half" %></tr><br>
+          <tr>[未実装]このミスコンをどのように知りましたか？</tr><br>
+          <tr><input type="text" class="half"></tr><br>
+          <tr>[未実装]当てはまるものすべてにチェックをお願いします</tr><br>
+          <tr class="box"><input type="checkbox" name="age" value="0-9歳">0-9歳
+              <input type="checkbox" name="age" value="10代">10代
+              <input type="checkbox" name="age" value="20代">20代
+              <input type="checkbox" name="age" value="30代">30代
+              <input type="checkbox" name="age" value="40歳以上">40歳以上
+              <input type="checkbox" name="age" value="中学生">中学生
+              <input type="checkbox" name="age" value="高校生">高校生
+              <input type="checkbox" name="age" value="大学生">大学生
+          </tr><br>
+
+          <tr>[未実装]サイトに掲載後、公式twitterアカウントでの紹介を希望しましすか？</tr><br>
+          <tr class="box"><input type="radio" name="tw_introduction" value="はい"> はい
+              <input type="radio" name="tw_introduction" value="いいえ">いいえ</tr><br>
+          <tr>「鈴木さんだらけのアイドルグループ」に興味はありますか？</tr><br>
+          <tr class="box"><%= f.check_box :is_interest_in_idol_group %></tr><br>
+        <% end %>
+      </table>
+    </form>
+
+      <p>[未実装]利用規約に同意する<tr><input type="checkbox" name="agreement" value="同意する"></p>
+
+      <p><a href="/completed"><input class="submit_btn" type="submit" value="送信する"></a></p>
+    <% end %>
   </div>
-  <div class="form_filed" >
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <%= f.fields_for :contestant_profile do |f| %>
-    <div class="form_field" >
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :hurigana %>
-      <%= f.text_field :hurigana %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :age %>
-      <%= f.text_field :age %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :height %>
-      <%= f.text_field :height %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :come_from %>
-      <%= f.text_field :come_from %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :link_url %>
-      <%= f.text_field :link_url %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :comment %>
-      <%= f.text_area :comment %>
-    </div>
-    <!-- 
-    TODO: 画像アップロード
-    -->
-    <div class="form_field" >
-      <%= f.label :thanks_comment %>
-      <%= f.text_area :thanks_comment %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :phone %>
-      <%= f.telephone_field :phone %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :station %>
-      <%= f.text_field :station %>
-    </div>
-    <div class="form_field" >
-      <%= f.label :is_interest_in_idol_group %>
-      <%= f.check_box :is_interest_in_idol_group %>
-    </div>
-  <% end %>
-  <div class="form_submit">
-    <%= f.submit "登録する" %>
-  </div>
-<% end %>
+</div>
+<div id="banner_big">
+  <%= image_tag 'banner/cosmeken.jpg' %>
+</div>
