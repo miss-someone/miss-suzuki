@@ -12,6 +12,8 @@
           <tr><%= f.text_field :age, class: "half" %></tr><br>
           <tr><%= f.label :come_from %></tr><br>
           <tr><%= f.text_field :come_from %></tr><br>
+          <tr><%= f.label :height %></tr><br>
+          <tr><%= f.text_field :height, class: "half" %></tr><br>
           <tr><%= f.label :comment %></tr><br>
           <tr><%= f.text_area :comment, class: "full" %> </tr><br>
           <tr>twitter、ブログなどの紹介したいURL(一つまで)</tr><br>
@@ -19,7 +21,7 @@
           <tr>投票してくれた方へのお礼メッセージをお願いします！</tr><br>
           <tr><%= f.text_area :thanks_comment, class: "full" %></tr><br>
           <tr>[未実装]エントリーする画像を貼り付けてください</tr><br>
-          <tr><input type="file" name="image_url" size="30"></tr>
+          <tr><%= f.text_area :image_url, class: "half" %></tr>
         <% end %>
       </table>
 
@@ -36,17 +38,12 @@
           <tr><%= f.text_field :station, class: "half" %></tr><br>
           <tr><%= f.label :how_know %></tr><br>
           <tr><%= f.text_area :how_know , class: "full" %></tr><br>
-          <tr>[未実装]当てはまるものすべてにチェックをお願いします</tr><br>
-          <tr class="box"><input type="checkbox" name="age" value="0-9歳">0-9歳
-              <input type="checkbox" name="age" value="10代">10代
-              <input type="checkbox" name="age" value="20代">20代
-              <input type="checkbox" name="age" value="30代">30代
-              <input type="checkbox" name="age" value="40歳以上">40歳以上
-              <input type="checkbox" name="age" value="中学生">中学生
-              <input type="checkbox" name="age" value="高校生">高校生
-              <input type="checkbox" name="age" value="大学生">大学生
-          </tr><br>
-
+        <% end %>
+        <tr>当てはまるものすべてにチェックをお願いします</tr><br>
+        <tr class="box">
+          <%= f.collection_check_boxes(:contestant_tag_ids, ContestantTag.all, :id, :name) %>
+        </tr><br>
+        <%= f.fields_for :contestant_profile do |f| %>
           <tr><%= f.label :is_share_with_twitter_ok %></tr><br>
           <tr class="box">
             <%= f.radio_button :is_share_with_twitter_ok, true %>はい

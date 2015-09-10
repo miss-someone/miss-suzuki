@@ -26,6 +26,8 @@ gem 'pg'
 gem 'sorcery', '~>0.9.1'
 # 定数管理
 gem 'config'
+# 多言語対応用のgem(今回は多言語対応しないが，デフォルト言語を日本語にするため利用
+gem 'rails-i18n'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

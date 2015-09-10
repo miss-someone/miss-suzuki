@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   # ユーザ作成時に，関連テーブルも同時に生成する
   accepts_nested_attributes_for :user_profile, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :contestant_profile, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :contestant_tags, allow_destroy: true
 
   # バリデーション
   validates :email, presence: true, uniqueness: true
