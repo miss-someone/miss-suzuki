@@ -1,6 +1,6 @@
 module ContestantsHelper
   def link(contestant_profile)
-    #TODO: リンク判別のメソッド書く
+    # TODO: リンク判別のメソッド書く
     if contestant_profile.link_url?
       ""
     else
@@ -9,7 +9,8 @@ module ContestantsHelper
   end
 
   private
-    def create_a_tag_link(url, name)
-      link_to "#{name}はこちら!", url
-    end
+
+  def create_a_tag_link(url, name)
+    link_to "#{name}はこちら!", url
+  end
 end

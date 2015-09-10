@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
     end
     context "when email is not nil and valid" do
       it "should pass" do
-        expect(user1).to be_valid()
+        expect(user1).to be_valid
       end
     end
     context "when email already exists" do
@@ -55,7 +55,7 @@ RSpec.describe User, type: :model do
     context "when user_type in in range" do
       before { user1.user_type = 1 }
       it "should pass" do
-        expect(user1).to be_valid()
+        expect(user1).to be_valid
       end
     end
   end

@@ -47,55 +47,55 @@ RSpec.describe User, type: :model do
         end
       end
     end
-    describe "about name" do 
+    describe "about name" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "name" }
       end
     end
-    describe "about hurigana" do 
+    describe "about hurigana" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "hurigana" }
       end
     end
-    describe "about image_url" do 
+    describe "about image_url" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "image_url" }
       end
     end
-    describe "about age" do 
+    describe "about age" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "age" }
       end
     end
-    describe "about height" do 
+    describe "about height" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "height" }
       end
     end
-    describe "about come_from" do 
+    describe "about come_from" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "come_from" }
       end
     end
-    describe "about link_url" do 
+    describe "about link_url" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "link_url" }
       end
     end
-    describe "about comment" do 
+    describe "about comment" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "comment" }
       end
     end
-    describe "about thanks_comment" do 
+    describe "about thanks_comment" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
         let(:target_attr) { "thanks_comment" }

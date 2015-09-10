@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   # バリデーション
   validates :email, presence: true, uniqueness: true
   validates :user_type,
-    presence: true,
-    inclusion: [Settings.user_type[:normal], Settings.user_type[:contestant]]
+            presence: true,
+            inclusion: [Settings.user_type[:normal], Settings.user_type[:contestant]]
 
   # ユーザタイプに応じてプロフィールを返す
   def profile
@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
     def contestants
       User.where(user_type: Settings.user_type[:contestant]).includes(:contestant_profile)
     end
+
     # 一般ユーザ一覧を返す
     def normal
       User.where(user_type: Settings.user_type[:normal]).includes(:user_profile)
