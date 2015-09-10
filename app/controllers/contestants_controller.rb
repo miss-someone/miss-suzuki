@@ -11,7 +11,7 @@ class ContestantsController < ApplicationController
   end
 
   def create
-    contestant = User.new(contestant_params)
+    contestant = Contestant.new(contestant_params)
     contestant.user_type = Settings.user_type[:contestant]
     if contestant.save
       render root_path

@@ -222,7 +222,7 @@ Rails.application.config.sorcery.configure do |config|
     # make this configuration inheritable for subclasses. Useful for ActiveRecord's STI.
     # Default: `false`
     #
-    # user.subclasses_inherit_config =
+    user.subclasses_inherit_config = true
 
     # -- remember_me --
     # How long in seconds the session length will be
