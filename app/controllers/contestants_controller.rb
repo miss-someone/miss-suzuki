@@ -14,7 +14,6 @@ class ContestantsController < ApplicationController
     params = contestant_params
     params[:contestant_profile_attributes][:group_id] = 1
     @contestant = Contestant.new(params)
-    @contestant.contestant_profile.user_id = @contestant.id
     if @contestant.save!
       redirect_to root_path
     else
@@ -26,7 +25,7 @@ class ContestantsController < ApplicationController
 
   def contestant_params
     params.require(:contestant).permit(:email, :password,
-                                       { contestant_tag_hoge_s: [] },
+                                       { contestant_tag_ids: [] },
                                        contestant_profile_attributes:
                                         [:name, :hurigana, :age, :come_from, :comment,
                                          :link_url, :thanks_comment, :height,
