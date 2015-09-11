@@ -32,6 +32,8 @@ gem 'rails-i18n'
 gem 'carrierwave'
 # 画像アップロード時にクロップするgem
 gem 'carrierwave-crop'
+# Cloudinaryとの連携用
+gem 'cloudinary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

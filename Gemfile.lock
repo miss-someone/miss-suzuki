@@ -40,6 +40,7 @@ GEM
     ast (2.1.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -71,6 +72,9 @@ GEM
       rails (>= 3.2)
     choice (0.2.0)
     chunky_png (1.3.4)
+    cloudinary (1.1.0)
+      aws_cf_signer
+      rest-client
     code_analyzer (0.4.5)
       sexp_processor
     coderay (1.1.0)
@@ -106,6 +110,8 @@ GEM
     debug_inspector (0.0.2)
     deep_merge (1.0.1)
     diff-lcs (1.2.5)
+    domain_name (0.5.24)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -119,6 +125,8 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hike (1.2.3)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -140,6 +148,7 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    netrc (0.10.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
@@ -212,6 +221,10 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     require_all (1.3.2)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -276,6 +289,9 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.1)
     uniform_notifier (1.9.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
@@ -296,6 +312,7 @@ DEPENDENCIES
   capybara
   carrierwave
   carrierwave-crop
+  cloudinary
   coffee-rails (~> 4.1.0)
   compass-rails
   config
