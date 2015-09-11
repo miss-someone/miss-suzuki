@@ -437,19 +437,19 @@
 	  font-weight: bold;
 	}
 	/*====================ENTRY==========================*/
-	#entry .sample{
+	.entry .sample{
 	  position: relative;
 	  width: 300px;
 	  margin:0 auto;
 	}
 
-	#entry .vote_system{
+	.entry .vote_system{
 	  z-index: 3;
 	  position: absolute;
 	  top:220px;
 	  left:10px;
 	}
-	#entry .vote_system .counter{
+	.entry .vote_system .counter{
 	  background-color: #fff;
 	  width: 50px;
 	  height:30px;
@@ -460,20 +460,20 @@
 	  font-weight: bold;
 	  margin-top: -5px;
 	}
-	#entry .mypage_btn{
+	.entry .mypage_btn{
 	  position: absolute;
 	  top:262px;
 	  right:10px;
 	  z-index: 4;
 	}
-	#entry .picture img{
+	.entry .picture img{
 	  width: 300px;
 	  border-radius: 5px 5px 0 0;
 	  position: relative;
 	  z-index: 2;
 	  margin-bottom: -20px;
 	}
-	#entry .profile{
+	.entry .profile{
 	  width: 278px;
 	  border-left:1px solid #d7d7d7;
 	  border-bottom:1px solid #d7d7d7;
@@ -483,24 +483,25 @@
 	  position: relative;
 	  z-index: 1;
 	}
-	#entry .profile p{
+	.entry .profile p{
 	  color:#666;
 	  font-size: 12px;
 	  font-weight: bold;
 	  line-height: 0.9;
 	}
-	#entry .profile .furigana{
+	.entry .profile .furigana{
 	  margin:0;
 	  color:#e04974;
 	  font-size: 12px;
 	}
-	#entry .profile h2{
+	.entry .profile h2{
 	  margin:0;
 	  color:#e04974;
 	  font-size: 24px;
 	}
 
-	}#entry .profile textarea{
+	}
+  .entry .profile textarea{
 	  color:#666;
 	  font-size: 12px;
 	  font-weight: bold;
@@ -509,34 +510,34 @@
 	  height: 40px;
 	  resize: none;
 	}
-	#entry .profile .url img{
+	.entry .profile .url img{
 	  position: absolute;
 	  right:10px;
 	  bottom:70px;
 	  width: 120px;
 	}
-	#entry .text{
+	.entry .text{
 	  text-align: center;
 	  font-size: 14px;
 	  font-weight: bold;
 	}
-	#entry .text1{
+	.entry .text1{
 	  color:#e04974;
 	  margin-top: 50px;
 	}
-	#entry .text2{
+	.entry .text2{
 	  color:#666;
 	  margin-top: 30px;
 	  margin-bottom:-30px;
 	}
-	#entry .text2 a{
+	.entry .text2 a{
 	  color: #62a7e7;
 	  text-decoration: none;
 	}
-	#entry #entry_btn a{
+	.entry .entry_btn a{
 	  text-decoration: none;
 	}
-	#entry #banner{
+	.entry #banner{
 	  text-align: center;
 	}
 	/*====================CREATE==========================*/
