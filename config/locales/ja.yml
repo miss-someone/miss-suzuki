@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        agreement: 利用規約
+      contestant_profile:
+        name: お名前
+        hurigana: ふりがな
+        image_url: エントリー画像
+        age: 年齢
+        height: 身長
+        come_from: 出身(都道府県)
+        link_url: 紹介リンク
+        comment: 一言アピール!
+        thanks_comment: 投票お礼メッセージ
+        phone: 電話番号
+        station: 最寄駅
+        is_interest_in_idol_group: "「鈴木さんだらけのアイドルグループ」に興味はありますか？"
+        how_know: このミスコンをどのように知りましたか?
+        is_share_with_twitter_ok: "サイト掲載後、公式Twitterアカウントでの紹介を希望しますか?"
+

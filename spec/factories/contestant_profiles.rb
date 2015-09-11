@@ -13,5 +13,7 @@ FactoryGirl.define do
     thanks_comment "ありがとう!"
     phone       "111-1111-1111"
     station     "渋谷駅"
+    is_share_with_twitter_ok true
+    is_interest_in_idol_group true
   end
 end

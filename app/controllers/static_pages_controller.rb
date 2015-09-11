@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-
   # トップページ
   def index
   end
@@ -7,6 +6,4 @@ class StaticPagesController < ApplicationController
   # News
   def news
   end
-
-
 end
