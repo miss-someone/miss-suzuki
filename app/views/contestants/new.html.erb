@@ -59,7 +59,7 @@
           </tr><br>
         <% end %>
       </table>
-      <p>[未実装]利用規約に同意する<tr><input type="checkbox" name="agreement" value="同意する"></p>
+      <p>利用規約に同意する<tr><%= check_box_tag 'contestant[agreement]', true, false, {} %></p>
       <p><%= f.submit "送信する", class: "submit_btn" %></p>
     <% end %>
   </div>

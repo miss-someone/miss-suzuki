@@ -11,9 +11,18 @@ class ContestantsController < ApplicationController
   end
 
   def create
+    # TODO: うまい方法を考えてリファクタ
+    is_agree = contestant_params[:agreement]
     params = contestant_params
-    params[:contestant_profile_attributes][:group_id] = 1
+    params.delete(:agreement) # Contestantの作成には必要ないので削除
+    params[:contestant_profile_attributes][:group_id] = Settings.current_group_id
+
     @contestant = Contestant.new(params)
+    if is_agree.blank? || !is_agree
+      @contestant.errors.add(:agreement, "に同意してください")
+      render 'new'
+      return
+    end
     if @contestant.save
       render 'completed'
     else
@@ -24,7 +33,7 @@ class ContestantsController < ApplicationController
   private
 
   def contestant_params
-    params.require(:contestant).permit(:email, :password,
+    params.require(:contestant).permit(:email, :password, :agreement,
                                        { contestant_tag_ids: [] },
                                        contestant_profile_attributes:
                                         [:name, :hurigana, :age, :come_from, :comment,
