@@ -39,3 +39,10 @@ AbcSize:
     - db/migrate/*.rb
 
 inherit_from: .rubocop_todo.yml
+
+MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 20
+
+AbcSize:
+  Enabled: false
