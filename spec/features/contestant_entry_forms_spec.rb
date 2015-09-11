@@ -33,6 +33,7 @@ RSpec.feature "ContestantEntryForms", type: :feature do
         choose "contestant_contestant_profile_attributes_is_share_with_twitter_ok_true"
         choose "contestant_contestant_profile_attributes_is_interest_in_idol_group_true"
         fill_in "contestant[contestant_profile_attributes][station]", with: profile.station
+        check "contestant[agreement]"
       end
       it "should create user" do
         expect { click_button submit }.to change(User, :count)
