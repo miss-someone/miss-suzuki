@@ -15,7 +15,7 @@ class ContestantsController < ApplicationController
     params[:contestant_profile_attributes][:group_id] = 1
     @contestant = Contestant.new(params)
     if @contestant.save
-      redirect_to root_path
+      render 'completed'
     else
       render 'new'
     end
