@@ -14,10 +14,10 @@ class ContestantsController < ApplicationController
     params = contestant_params
     params[:contestant_profile_attributes][:group_id] = 1
     @contestant = Contestant.new(params)
-    if @contestant.save!
+    if @contestant.save
       redirect_to root_path
     else
-      redirect_to about_path
+      render 'new'
     end
   end
 

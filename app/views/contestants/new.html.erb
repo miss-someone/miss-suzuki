@@ -1,6 +1,9 @@
 <div id ="create">
 <h1>エントリーフォーム</h1>
   <div id="entry_form">
+    <% if @contestant.errors.any? %>
+      <%= render 'contestants/error_msg', messages: @contestant.errors.full_messages %>
+    <% end %>
     <%= form_for @contestant, url: { action: :create } do |f| %>
       <table class="table">
         <%= f.fields_for :contestant_profile do |f| %>
