@@ -21,6 +21,5 @@ class CreateContestantProfiles < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-
   end
 end
