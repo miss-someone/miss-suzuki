@@ -17,6 +17,9 @@ RSpec.describe User, type: :model do
   let(:contestant_profile) { build(:contestant_profile) }
   before do
     contestant_profile.user_id = contestant.id
+    # Cloudinaryのモジュールを使っているため，image_url=が
+    # 書き換えられており，buildメソッドでは追加されないためここで追加
+    contestant_profile[:image_url] = "hogehoge.jpg"
   end
 
   describe "validation" do
