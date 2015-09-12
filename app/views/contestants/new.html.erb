@@ -25,9 +25,10 @@
           <tr><%= f.text_area :thanks_comment, class: "full" %></tr><br>
           <tr>[未実装]エントリーする画像を貼り付けてください</tr><br>
           <tr><%= f.file_field :profile_image, class: "half", id: "image_input" %></tr>
-          <div id='entry_img_preview'>
+          <div id='entry_img_preview' style="width:300px">
             <%= image_tag 'noimage.png', { width: 300, height: 300, id: 'image_preview' } %>
           </div>
+          <tr><input type='hidden' id='crop_param' name='crop_param' value='hoge'></tr>
         <% end %>
       </table>
 

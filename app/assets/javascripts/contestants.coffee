@@ -9,16 +9,14 @@ $ ->
     guides: false
     highlight: false
     dragCrop: true
+    zoomable: false
     cropBoxMovable: true
     cropBoxResizable: true
-    # crop: (e) ->
-    #   console.log e.x;
-    #   console.log e.y;
-    #   console.log e.width;
-    #   console.log e.height;
-    #   console.log e.rotate;
-    #   console.log e.scaleX;
-    #   console.log e.scaleY;
+    crop: (e) ->
+      crop_param_input = $('#crop_param')
+      crop_val = e.height + ',' + e.width + ',' + e.x + ',' + e.y
+      crop_param_input.val(crop_val)
+      console.log crop_val
   )
 
 $ ->
