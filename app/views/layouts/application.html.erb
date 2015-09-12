@@ -32,7 +32,7 @@
       <ul>
         <li class="header_btn tab"><a href="/signup">新規登録</a></li>
         <li class="header_btn tab"><a href="/login">ログイン</a></li>
-        <li class="tab sns"><a href="https://www.facebook.com/MsSuzukiOfficial"><%= image_tag 'icon/icon_fb.png', :width =>'25' %></a></li>
+        <li class="tab sns"><a href="https://www.facebook.com/MsSuzukiOfficial" target="_blank"><%= image_tag 'icon/icon_fb.png', :width =>'25' %></a></li>
         <li class="tab sns"><a href="#"><%= image_tag 'icon/icon_twitter.png', :width =>'25' %></a></li>
       </ul>
     </div>
@@ -51,7 +51,18 @@
 <%= yield %>
 
 <footer>
-  <p>Copyright &copy;2015-2016 Miss.Someone All Rights Reserved.</p>
+<div id="footer">
+  <div class="footer_left">
+    <p>Copyright &copy;2015-2016 Miss.Someone All Rights Reserved.</p>
+  </div>
+  <div class="footer_right">
+    <ul id="footer_menu">
+      <li><a target="blank_" href="http://pixel-aoyama.com">運営団体</a></li>
+      <li><a href="/terms">利用規約</a></li>
+      <li><a href="/policy">プライバシーポリシー</a></li>
+    </ul>
+  </div>
+</div>
 </footer>
 
 </body>
