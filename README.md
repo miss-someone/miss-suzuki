@@ -2,3 +2,9 @@
 
 #概要
 ミス鈴木の開発リポジトリ
+
+# 準備
+
+## Bower
++ `npm install bower -g`
++ `bundle exec rake bower:install`
