@@ -16,7 +16,7 @@ module ArrayUtils
     # 3分割する際の, each_sliceの引数を計算する
     def calc_split3_size(a)
       size =  case a.size % 3
-              when 1, 3 then a.size / 3
+              when 0, 1 then a.size / 3
               when 2 then a.size / 3 + 1 # (3 + 1)
               end
       if size != 0

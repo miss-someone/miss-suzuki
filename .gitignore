@@ -26,3 +26,5 @@ config/environments/*.local.yml
 /node_modules
 # Bower packages
 bower_components
+# upload images
+/public/uploads
