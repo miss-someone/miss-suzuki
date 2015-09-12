@@ -1525,7 +1525,7 @@ body {
 #create #entry_form .box{
   margin-bottom: 10px;
 }
-#create form .form1{
+#create .form1{
   background-color: #fff;
   border:1px solid #d7d7d7;
   border-radius: 5px;
