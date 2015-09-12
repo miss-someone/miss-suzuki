@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150907043137) do
     t.integer  "group_id",                              null: false
     t.string   "name",                                  null: false
     t.string   "hurigana",                              null: false
-    t.string   "image_url",                             null: false
+    t.string   "profile_image",                         null: false
     t.string   "age",                                   null: false
     t.string   "height",                                null: false
     t.string   "come_from",                             null: false

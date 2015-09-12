@@ -26,7 +26,7 @@ RSpec.feature "ContestantEntryForms", type: :feature do
         fill_in "contestant[contestant_profile_attributes][comment]", with: profile.comment
         fill_in "contestant[contestant_profile_attributes][link_url]", with: profile.link_url
         fill_in "contestant[contestant_profile_attributes][thanks_comment]", with: profile.thanks_comment
-        attach_file "contestant[contestant_profile_attributes][image_url]", (Rails.root + "spec/data/test.jpg").to_s
+        attach_file "contestant[contestant_profile_attributes][profile_image]", (Rails.root + "spec/data/test.jpg").to_s
         fill_in "contestant[contestant_profile_attributes][phone]", with: profile.phone
         fill_in "contestant[contestant_profile_attributes][station]", with: profile.station
         fill_in "contestant[contestant_profile_attributes][how_know]", with: profile.how_know
