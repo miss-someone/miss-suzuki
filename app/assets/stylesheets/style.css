@@ -173,7 +173,7 @@ p a{
   text-align: center;
 }
 #home p{
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   color:191919;
 }
@@ -428,7 +428,7 @@ p a{
   font-size: 10px;
   font-weight: bold;
 }
-#entry .sample{
+#entry .contestant{
   position: relative;
   width: 300px;
   margin:0 auto;
@@ -525,6 +525,73 @@ p a{
 #entry #banner_big{
   text-align: center;
   margin-top: -30px;
+}
+/*====================CREATE==========================*/
+#create{
+  clear: both;
+  width:100%;
+  border-top: 3px solid #e04974;
+}
+#create h1{
+  color: #e04974;
+  text-align: center;
+  font-size: 18px;
+}
+#create #entry_form{
+  width:95%;
+  margin:0 auto;
+}
+#create #entry_form input{
+  line-height: 2;
+  margin-bottom: 10px;
+}
+#create #entry_form .box{
+  margin-bottom: 10px;
+}
+#create .form1{
+  background-color: #fff;
+  border:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:20px;
+  font-size: 12px;
+  margin: 0 auto;
+}
+#create .form2{
+  background-color: #fff;
+  border:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:20px;
+  font-size: 12px;
+  margin: 0 auto;
+}
+
+#create #entry_form .half{
+  width: 70%;
+}
+#create #entry_form .full{
+  width: 100%;
+}
+#create #entry_form .message{
+  margin-top: 20px;
+  text-align: center;
+}
+#create #entry_form p{
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+#create #entry_form span{
+  font-size: 10px;
+}
+#create #entry_form input.submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
 }
 
 /*====================THANK YOU==========================*/
@@ -667,8 +734,194 @@ p a{
   width:150px;
   float: left;
 }
+/*====================contestant==========================*/
+.contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
 }
 
+.contestant .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:220px;
+  left:10px;
+}
+.contestant .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+.contestant .mypage_btn{
+  position: absolute;
+  top:262px;
+  right:10px;
+  z-index: 4;
+}
+.contestant .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+.contestant .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+}
+.contestant .profile p{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 0.9;
+}
+.contestant .profile .furigana{
+  margin:0;
+  color:#e04974;
+  font-size: 12px;
+}
+.contestant .profile h2{
+  margin:0;
+  color:#e04974;
+  font-size: 24px;
+}
+.contestant .profile textarea{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  width: 270px;
+  margin: 0 auto;
+  height: 40px;
+  resize: none;
+}
+.contestant .profile .url img{
+  position: absolute;
+  right:10px;
+  bottom:70px;
+  width: 120px;
+}
+/*==================== MYPAGE ==========================*/
+#mypage{
+  width:100%;
+  clear: both;
+  border-top:3px solid #e04974;
+}
+#mypage .mypage_contestant{
+  width:300px;
+  margin:0 auto;
+  margin-top: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#mypage .picture img{
+  width:300px;
+  height:300px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+}
+#mypage .profile{
+  border-radius: 5px;
+  border-left:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  padding-left:10px;
+  padding-top: 20px;
+  margin-top: -50px;
+  position: relative;
+  z-index: 5;
+}
+#mypage .profile_content{
+  width:300px;
+}
+#mypage .profile p{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 0.9;
+}
+#mypage .profile .furigana{
+  margin:0;
+  color:#e04974;
+  font-size: 12px;
+  margin-top: 30px;
+}
+#mypage .profile h2{
+  margin:0;
+  color:#e04974;
+  font-size: 24px;
+}
+#mypage .profile textarea{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  width: 95%;
+  margin: 0 auto;
+  height: 40px;
+  resize: none;
+}
+#mypage .profile .url img{
+  width: 100px;
+}
+#mypage #banner_in_profile img{
+  max-width: 280px;
+}
+#mypage .interview_area{
+  width: 95%;
+  margin: 0 auto;
+}
+#mypage .interview_area h2{
+  font-size: 14px;
+  color: #e04974;
+}
+#mypage table#interview{
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  width:100%;
+  background-color: #fff;
+  padding:20px;
+  text-align: left;
+}
+#mypage table#interview tr{
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+#mypage table#interview th{
+  font-size: 12px;
+  color:#e04974;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+#mypage table#interview td{
+  font-size: 10px;
+  color:#666;
+  font-weight: bold;
+  width:100%;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+#mypage .interview_area p{
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  color:#e04974;
+}
+}
 
 
 
@@ -786,6 +1039,38 @@ body {
 #header_right .header_btn a{
   text-decoration: none;
   color:#fff;
+}
+/*====================FOOTER==========================*/
+#footer{
+  margin-top: 30px;
+  width:100%;
+  overflow: hidden;
+  clear: both;
+  border-top:1px solid #d7d7d7;
+  font-size: 10px;
+  font-weight: bold;
+}
+#footer .footer_left{
+  float: left;
+  color:#666;
+  margin-left:80px;
+}
+#footer .footer_right{
+  float: right;
+}
+#footer .footer_right ul{
+  overflow: hidden;
+  margin-right: 80px;
+}
+#footer .footer_right ul li{
+  float: left;
+  list-style: none;
+  margin-right: 20px;
+}
+#footer .footer_right ul li a{
+  text-decoration: none;
+  color:#666;
+  display: block;
 }
 /*====================HOME==========================*/
 #home a{
@@ -1240,7 +1525,15 @@ body {
 #create #entry_form .box{
   margin-bottom: 10px;
 }
-#create form{
+#create .form1{
+  background-color: #fff;
+  border:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:20px;
+  width:600px;
+  font-size: 14px;
+}
+#create .form2{
   background-color: #fff;
   border:1px solid #d7d7d7;
   border-radius: 5px;
@@ -1260,6 +1553,7 @@ body {
 }
 #create #entry_form p{
   text-align: center;
+  font-size: 14px;
 }
 #create #entry_form span{
   font-size: 12px;
@@ -1272,6 +1566,7 @@ body {
   text-align: center;
   font-size: 18px;
   color:#fff;
+  border:0;
 }
 /*====================COMPLETED==========================*/
 #completed{
@@ -1437,5 +1732,239 @@ body {
 #about #content .sponsors .row1 .logo2 img{
   width:300px;
   float: left;
+}
+/*==================== POLICY&TERMS ==========================*/
+#policy{
+  width: 100%;
+  clear: both;
+  border-top: 5px solid #e04974;
+}
+#policy h1{
+  font-size: 18px;
+  text-align: center;
+  margin-top: 50px;
+}
+#policy #content{
+  max-width:900px;
+  margin:0 auto;
+  background-color: #fff;
+  color:#666;
+  padding:20px;
+  border-radius: 5px;
+  border:solid #d7d7d7 1px;
+  font-size:12px;
+  margin-bottom: 50px;
+}
+#terms{
+  width: 100%;
+  clear: both;
+  border-top: 5px solid #e04974;
+}
+#terms h1{
+  font-size: 18px;
+  text-align: center;
+  margin-top:50px;
+}
+#terms #content{
+  max-width:900px;
+  margin:0 auto;
+  background-color: #fff;
+  color:#666;
+  padding:20px;
+  border-radius: 5px;
+  border:solid #d7d7d7 1px;
+  font-size: 12px;
+  margin-bottom: 50px;
+}
+/*====================contestant==========================*/
+.contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+}
+
+.contestant .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:220px;
+  left:10px;
+}
+.contestant .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+.contestant .mypage_btn{
+  position: absolute;
+  top:262px;
+  right:10px;
+  z-index: 4;
+}
+.contestant .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+.contestant .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+}
+.contestant .profile p{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 0.9;
+}
+.contestant .profile .furigana{
+  margin:0;
+  color:#e04974;
+  font-size: 12px;
+}
+.contestant .profile h2{
+  margin:0;
+  color:#e04974;
+  font-size: 24px;
+}
+.contestant .profile textarea{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  width: 270px;
+  margin: 0 auto;
+  height: 40px;
+  resize: none;
+}
+.contestant .profile .url img{
+  position: absolute;
+  right:10px;
+  bottom:70px;
+  width: 120px;
+}
+/*==================== MYPAGE ==========================*/
+#mypage{
+  width:100%;
+  clear: both;
+  border-top:5px solid #e04974;
+}
+#mypage .mypage_contestant{
+  max-width:900px;
+  margin:0 auto;
+  margin-top: 50px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+#mypage .picture img{
+  width:500px;
+  height: 500px;
+  border-radius: 5px;
+  float:left;
+  position: relative;
+  z-index: 10;
+}
+#mypage .profile{
+  width:379px;
+  height:498px;
+  border-radius: 5px;
+  border-top:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  float:left;
+  margin-left: 10px;
+  padding-left: 30px;
+  margin-left: -10px;
+  position: relative;
+  z-index: 5;
+}
+#mypage .profile_content{
+  width:350px;
+}
+#mypage .profile p{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 0.9;
+}
+#mypage .profile .furigana{
+  margin:0;
+  color:#e04974;
+  font-size: 12px;
+  margin-top: 30px;
+}
+#mypage .profile h2{
+  margin:0;
+  color:#e04974;
+  font-size: 24px;
+}
+#mypage .profile textarea{
+  color:#666;
+  font-size: 12px;
+  font-weight: bold;
+  width: 350px;
+  margin: 0 auto;
+  height: 40px;
+  resize: none;
+}
+#mypage .profile .url img{
+  width: 100px;
+}
+#mypage #banner_in_profile img{
+  max-width: 350px;
+}
+#mypage .interview_area{
+  width: 900px;
+  margin: 0 auto;
+}
+#mypage .interview_area h2{
+  font-size: 20px;
+  color: #e04974;
+}
+#mypage table#interview{
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  width:900px;
+  background-color: #fff;
+  padding:20px;
+  text-align: left;
+}
+#mypage table#interview tr{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#mypage table#interview th{
+  font-size: 14px;
+  color:#e04974;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+#mypage table#interview td{
+  font-size: 12px;
+  color:#666;
+  font-weight: bold;
+  width:100%;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+#mypage .interview_area p{
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  color:#e04974;
 }
 }

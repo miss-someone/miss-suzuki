@@ -4,35 +4,38 @@
   </div>
 
 <!--   <div class="to_entries"><p><a href='/entries'>美女はこちら！</a></p></div> -->
-  <div class="text text1">
-    <p>エントリーされた方はこちらのフォーマットで掲載されます</p>
-  </div>
-  <div class="sample">
-    <div class="vote_system">
-      <a href="thankyou"><%= image_tag 'kawaii.png', :width => '80' %></a>
-      <p class="counter">811</p>
+    <div class="text text1">
+      <p>エントリーされた方はこちらのフォーマットで掲載されます</p>
     </div>
-    <div class="mypage_btn">
-      <a href="#"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+<!-- CONTESTANT -->
+    <div class="contestant">
+      <div class="vote_system">
+        <a href="thankyou"><%= image_tag 'kawaii.png', :width => '80' %></a>
+        <p class="counter">811</p>
+      </div>
+      <div class="mypage_btn">
+        <a href="mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+      </div>
+      <div class="picture">
+        <%= image_tag 'suzuki_yuna.jpg' %>
+      </div>
+      <div class="profile">
+        <p class="url"><a href="#"><%= image_tag 'btn/btn_tw.png', :width => '80' %></a></p>
+        <h3 class="furigana">すずきゆうな</h3>
+        <h2 class="name">鈴木友菜</h2>
+        <p class="age">年齢：23</p>
+        <p class="hometown">出身：東京都</p>
+        <p class="height">身長：165cm</p>
+        <p class="appeal">一言アピール！</p>
+        <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
+      </div>
     </div>
-    <div class="picture">
-      <%= image_tag 'suzuki_yuna.jpg' %>
-    </div>
-    <div class="profile">
-      <p class="url"><a href="#"><%= image_tag 'btn/btn_tw.png', :width => '80' %></a></p>
-      <h3 class="furigana">すずきゆうな</h3>
-      <h2 class="name">鈴木友菜</h2>
-      <p class="age">年齢：23</p>
-      <p class="hometown">出身：東京都</p>
-      <p class="height">身長：165cm</p>
-      <p class="appeal">一言アピール！</p>
-      <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
-    </div>
-  </div>
+<!-- /CONTESTANT -->
+
   <div class="text text2">
-    <p>こちらの<a href="#">利用規約</a>をご確認のうえエントリーをお願いします。</p>
+    <p>こちらの<a href="/terms">利用規約</a>をご確認のうえエントリーをお願いします。</p>
   </div>
-  <div id="entry_btn"><a href="#">ENTRY</a></div>
+  <div id="entry_btn"><a href="new">ENTRY</a></div>
 
   <div id="banner_big">
     <%= image_tag 'banner/surf.png' %>
