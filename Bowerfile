@@ -4,3 +4,4 @@
 # asset 'bootstrap'
 
 asset 'cropper'
+asset 'jquery-validation'
