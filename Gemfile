@@ -28,6 +28,12 @@ gem 'sorcery', '~>0.9.1'
 gem 'config'
 # 多言語対応用のgem(今回は多言語対応しないが，デフォルト言語を日本語にするため利用
 gem 'rails-i18n'
+# 画像アップロード用のgem
+gem 'carrierwave'
+# 画像アップロード時にクロップするgem
+gem 'carrierwave-crop'
+# Cloudinaryとの連携用
+gem 'cloudinary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

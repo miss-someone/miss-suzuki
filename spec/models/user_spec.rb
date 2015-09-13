@@ -9,6 +9,9 @@ RSpec.describe User, type: :model do
     user_profile.user_id = user.id
     contestant_profile.user_id = contestant.id
     user_profile.save
+    # Cloudinaryのモジュールを使っているため，image_url=が
+    # 書き換えられており，buildメソッドでは追加されないためここで追加
+    contestant_profile[:profile_image] = "hogehoge.jpg"
     contestant_profile.save
   end
 

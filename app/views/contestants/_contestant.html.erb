@@ -1,28 +1,30 @@
 <div class="entry">
-  <p class="image"><img src="<%= contestant.profile.image_url %>" width="278" alt="" /></p>
-  <div class="textarea">
-    <div class="evaluation">
-      <p class="button">
-      <%= link_to vote_path(id: contestant.id), method: :posts do %>
-        <%= image_tag 'kawaii_btn.png' %>
-      <% end %>
-      </p>
-      <span class="point"><%= contestant.profile.votes %></span>
-    </div>
-    <h2><%= contestant.profile.name %></h2>
-    <p>年齢: <%= contestant.profile.age %></p>
-    <p>出身: <%= contestant.profile.come_from %></p>
-    <p>身長: <%= contestant.profile.height %>cm</p>
-    <% if contestant.profile.created_at.present? %>
-      <div class="new_icon"><%= image_tag 'new_icon.png' %></div>
-    <% end %>
-    <p>一言アピール!<br> </p>
-    <div class="appeal">
-      <%= contestant.profile.comment %>
-    </div>
-    <div class="links_box">
-      <%= link(contestant.profile) %>
-    </div>
-  </div>
-</div>
-
+   <div class="vote_system">
+     <a href="/thankyou"><%= image_tag 'kawaii.png', :width => '80' %></a>
+     <p class="counter"><%= contestant.profile.votes %></p>
+   </div>
+   <%
+=begin
+   %>
+   <div class="mypage_btn">
+          <a href="#"><%= if mypage_url_prestnt ? %>
+         <%= image_tag 'btn/btn_mypage.png', :width => '80' %>
+           <% end %></a>
+   </div>
+   <%
+=end
+    %>
+   <div class="picture">
+     <%= image_tag contestant.profile.profile_image_url(:thumb) %>
+   </div>
+   <div class="profile">
+     <p class="url"><%= link_to image_tag 'button', { width: 80 } %></p>
+     <h3 class="furigana"><%= contestant.profile.hurigana %></h3>
+     <h2 class="name"><%= contestant.profile.name %></h2>
+     <p class="age">年齢：<%= contestant.profile.age %></p>
+     <p class="hometown">出身：<%= contestant.profile.come_from %></p>
+     <p class="height">身長：<%= contestant.profile.height %></p>
+     <p class="appeal">一言アピール！</p>
+     <textarea name="comment"><%= contestant.profile.comment %></textarea>
+   </div>
+ </div>

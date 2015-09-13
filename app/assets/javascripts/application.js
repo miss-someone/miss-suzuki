@@ -13,10 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require cropper
 //= require_tree .
 
-<script>
- 
 $(function(){
     $(".menu").click(function(){
         $(".menu1").toggleClass("menuclick1")
@@ -38,5 +37,3 @@ $(function(){
              }
             });
         });
- 
-</script>

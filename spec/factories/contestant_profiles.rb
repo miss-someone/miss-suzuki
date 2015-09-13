@@ -4,7 +4,7 @@ FactoryGirl.define do
     group_id    1
     name        "鈴木愛理"
     hurigana    "すずきあいり"
-    image_url   "http://hogehoge"
+    profile_image "http://hogehoge"
     age         "20歳"
     height      "160cm"
     come_from   "新潟県"
