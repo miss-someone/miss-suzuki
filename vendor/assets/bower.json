@@ -1,6 +1,7 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "cropper": "latest"
+    "cropper": "latest",
+    "jquery-validation": "latest"
   }
 }

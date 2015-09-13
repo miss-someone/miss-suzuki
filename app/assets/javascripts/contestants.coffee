@@ -45,3 +45,30 @@ $ ->
       else
         path = URL.createObjectURL(file)
         replace_img(path)
+
+# フォームのバリデーション
+$ ->
+  $.extend $.validator.messages, {
+    required: "*必須項目です"
+    email: "*正しいメールアドレスの形式で入力してください"
+    rangelength: jQuery.validator.format("*{0}文字以上{1}文字以下で入力してください")
+  }
+  rules = {
+    "contestant[contestant_profile_attributes][name]": {required: true},
+    "contestant[contestant_profile_attributes][hurigana]": {required: true},
+    "contestant[contestant_profile_attributes][age]": {required: true},
+    "contestant[contestant_profile_attributes][come_from]": {required: true},
+    "contestant[contestant_profile_attributes][height]": {required: true},
+    "contestant[contestant_profile_attributes][comment]": {required: true},
+    "contestant[contestant_profile_attributes][thanks_comment]": {required: true},
+    "contestant[contestant_profile_attributes][profile_image]": {required: true},
+    "contestant[email]": {required: true, email: true},
+    "contestant[password]": {required: true, rangelength: [8, 30]},
+    "contestant[contestant_profile_attributes][is_share_with_twitter_ok]": {required: true},
+    "contestant[contestant_profile_attributes][is_interest_in_idol_group]": {required: true},
+    "contestant[agreement]": {required: true}
+  }
+  messages = {
+    "contestant[agreement]": {required: "*利用規約への同意が必要です"}
+  }
+  $('#new_contestant').validate {rules: rules, messages: messages}
