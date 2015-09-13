@@ -20,7 +20,8 @@ class User < ActiveRecord::Base
   validates :user_type,
             presence: true,
             inclusion: [Settings.user_type[:normal], Settings.user_type[:contestant]]
-  validates :password, presence: true, length: { minimum: 8, maximum: 30 }
+  validates :password, presence: true, length: { minimum: 8, maximum: 30 },
+            format: { with: /\A[!-~]{8,30}+\z/i }
 
   # ユーザタイプに応じてプロフィールを返す
   def profile
