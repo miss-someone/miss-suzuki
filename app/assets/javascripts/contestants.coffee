@@ -1,6 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# 応募フォームでのcropパラメタをinput hiddenに埋め込む
+update_crop_params = (x, y, h, w) ->
+  $('#crop_param_x').val x
+  $('#crop_param_y').val y
+  $('#crop_param_height').val h
+  $('#crop_param_width').val w
+
+# プレビュー画像の差し替え
+replace_img = (img_path) ->
+  $('#entry_img_preview > img').cropper("replace", img_path)
+
+# 画像cropのライブラリであるcropperの初期化
 $ ->
   $('#entry_img_preview > img').cropper(
     aspectRatio: 1
@@ -12,30 +21,27 @@ $ ->
     zoomable: false
     cropBoxMovable: true
     cropBoxResizable: true
+    built: ->
+      params = $("#entry_img_preview > img").cropper("getData")
+      update_crop_params params.x, params.y, params.height, params.width
     crop: (e) ->
-      crop_param_input = $('#crop_param')
-      crop_val = e.height + ',' + e.width + ',' + e.x + ',' + e.y
-      crop_param_input.val(crop_val)
-      console.log crop_val
+      update_crop_params e.x, e.y, e.height, e.width
   )
 
+# エントリー画像が変化した時に，プレビュー画像を差し替える
 $ ->
   fileInput = $('#image_input')
-  filePreviewCanvas = $('.cropper-canvas > img')
-  filePreviewBox = $('.cropper-view-box > img')
-  prevElem = filePreviewCanvas
-  originalPath = prevElem.attr('src')
+  originalPath = $('#entry_img_preview > img').attr('src')
   fileInput.change ->
     file = $(@).prop('files')[0]
     fileReader = new FileReader()
-
     if !@.files.length
-      prevElem.attr('src', originalPath)
+      replace_img(originalPath)
       return
     else
       if !file.type.match('image.*')
-        prevElem.attr('src', originalPath)
+        replace_img(originalPath)
         return
       else
         path = URL.createObjectURL(file)
-        $('#entry_img_preview > img').cropper("replace", path)
+        replace_img(path)

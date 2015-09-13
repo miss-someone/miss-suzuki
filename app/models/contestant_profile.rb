@@ -1,7 +1,7 @@
 class ContestantProfile < ActiveRecord::Base
   belongs_to :user
 
-  mount_uploader :image_url, ContestantProfileImageUploader
+  mount_uploader :profile_image, ContestantProfileImageUploader
 
   # バリデーション
   validates :group_id, presence: true, inclusion: { in: 1..3 }

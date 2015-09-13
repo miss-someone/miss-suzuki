@@ -28,7 +28,10 @@
           <div id='entry_img_preview' style="width:300px">
             <%= image_tag 'noimage.png', { width: 300, height: 300, id: 'image_preview' } %>
           </div>
-          <tr><input type='hidden' id='crop_param' name='crop_param' value='hoge'></tr>
+          <tr><%= f.hidden_field :profile_image_crop_param_x, id: 'crop_param_x' %></tr>
+          <tr><%= f.hidden_field :profile_image_crop_param_y, id: 'crop_param_y' %></tr>
+          <tr><%= f.hidden_field :profile_image_crop_param_width, id: 'crop_param_width' %></tr>
+          <tr><%= f.hidden_field :profile_image_crop_param_height, id: 'crop_param_height' %></tr>
         <% end %>
       </table>
 
