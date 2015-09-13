@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 class ContestantProfileImageUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -55,12 +54,11 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
   # end
 
   def thumb_crop
-    return {x: model.profile_image_crop_param_x,
-            y: model.profile_image_crop_param_y,
-            width: model.profile_image_crop_param_width,
-            height: model.profile_image_crop_param_height,
-            crop: :crop
+    { x: model.profile_image_crop_param_x,
+      y: model.profile_image_crop_param_y,
+      width: model.profile_image_crop_param_width,
+      height: model.profile_image_crop_param_height,
+      crop: :crop
     }
   end
-
 end
