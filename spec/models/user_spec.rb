@@ -79,7 +79,7 @@ RSpec.describe User, type: :model do
         end
       end
       context "when passowrd is too long" do
-        before { user1.password = "h"*31 }
+        before { user1.password = "h" * 31 }
         it "shouldn't pass" do
           expect(user1).not_to be_valid(:password)
         end

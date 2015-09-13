@@ -18,12 +18,12 @@ class User < ActiveRecord::Base
   # バリデーション
   # @マークを含むこと，後半には半角英数.-のみ含むことの軽いバリデーション
   validates :email, presence: true, uniqueness: true,
-            format: { with: /\A[!-?A-z]+@[\w.-]+[\w]\z/i }
+                    format: { with: /\A[!-?A-z]+@[\w.-]+[\w]\z/i }
   validates :user_type,
             presence: true,
             inclusion: [Settings.user_type[:normal], Settings.user_type[:contestant]]
   validates :password, presence: true, length: { minimum: 8, maximum: 30 },
-            format: { with: /\A[!-~]{8,30}+\z/i } # asciiの半角英数記号は全部通す
+                       format: { with: /\A[!-~]{8,30}+\z/i } # asciiの半角英数記号は全部通す
 
   # ユーザタイプに応じてプロフィールを返す
   def profile
