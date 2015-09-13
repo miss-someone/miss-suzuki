@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   validates :user_type,
             presence: true,
             inclusion: [Settings.user_type[:normal], Settings.user_type[:contestant]]
+  validates :password, presence: true, length: { minimum: 8, maximum: 30 }
 
   # ユーザタイプに応じてプロフィールを返す
   def profile

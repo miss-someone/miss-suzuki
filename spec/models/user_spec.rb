@@ -55,10 +55,28 @@ RSpec.describe User, type: :model do
         expect(user1).not_to be_valid(:user_type)
       end
     end
-    context "when user_type in in range" do
+    context "when user_type is in range" do
       before { user1.user_type = 1 }
       it "should pass" do
         expect(user1).to be_valid
+      end
+    end
+    context "when password is blank" do
+      before { user1.password = "" }
+      it "shouldn't pass" do
+        expect(user1).not_to be_valid(:password)
+      end
+    end
+    context "when passowrd is too short" do
+      before { user1.password = "hoge" }
+      it "shouldn't pass" do
+        expect(user1).not_to be_valid(:password)
+      end
+    end
+    context "when passowrd is too long" do
+      before { user1.password = "h"*31 }
+      it "shouldn't pass" do
+        expect(user1).not_to be_valid(:password)
       end
     end
   end
