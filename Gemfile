@@ -69,6 +69,13 @@ group :development do
   gem 'pry-byebug'
   # コーディング規約チェック
   gem 'rubocop', require: false
+
+  # 自動デプロイ用
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
 end
 
 group :test do
