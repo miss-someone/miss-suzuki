@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: miss-suzuki_production
+  database: miss-suzuki
   username: miss-suzuki
-  password: <%= ENV['MISS-SUZUKI_DATABASE_PASSWORD'] %>
+  password: 'p6RctTggL}po&joa2TbwV/Y]DyqLsw' # 新インフラ時に環境変数に切り替え
+  host: 192.168.12.1
