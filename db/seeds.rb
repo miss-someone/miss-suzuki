@@ -10,5 +10,5 @@
 tags = ["0-9歳", "10代", "20代", "30代", "40代", "50歳以上", "大学生",
         "高校生", "中学生"]
 tags.each do |tag|
-  ContestantTag.create(name: tag)
+  ContestantTag.create(name: tag) if ContestantTag.find_by_name(tag).nil?
 end
