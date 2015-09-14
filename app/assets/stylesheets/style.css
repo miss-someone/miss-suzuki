@@ -743,6 +743,7 @@ p a{
   position: relative;
   width: 300px;
   margin:0 auto;
+  margin-bottom: 30px;
 }
 
 .contestant .vote_system{
@@ -925,6 +926,12 @@ p a{
   font-weight: bold;
   color:#e04974;
 }
+/*==================== VALIDATION ==========================*/
+.error{
+  font-size: 12px;
+  color:#e04974;
+}
+
 }
 
 
@@ -1789,6 +1796,7 @@ body {
   position: relative;
   width: 300px;
   margin:0 auto;
+  margin-bottom: 30px;
 }
 
 .contestant .vote_system{
@@ -1973,6 +1981,31 @@ body {
   text-align: right;
   font-size: 12px;
   font-weight: bold;
+  color:#e04974;
+}
+/*==================== 投票ページ ==========================*/
+.content_middle{
+  width:1000px;
+  margin:0 auto;
+  overflow: hidden;
+}
+.content_middle .column1{
+  width:300px;
+  margin-right:50px;
+  float:left;
+}
+.content_middle .column2{
+  width:300px;
+  margin-right:50px;
+  float: left;
+}
+.content_middle .column3{
+  width:300px;
+  float: left;
+}
+/*==================== VALIDATION ==========================*/
+.error{
+  font-size: 12px;
   color:#e04974;
 }
 }
