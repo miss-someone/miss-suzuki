@@ -41,7 +41,7 @@
         <table class="table">
           <tr><%= f.label :email %></tr><br>
           <tr><%= f.email_field :email, class: "half" %></tr><br>
-          <tr><%= f.label :password %></tr><br>
+          <tr><%= f.label :password %>(8文字以上、パスワードはマイページ作成の際に必要です。)</tr><br>
           <tr><%= f.password_field :password, class: "half" %></tr><br>
           <%= f.fields_for :contestant_profile do |f| %>
             <tr><%= f.label :phone %></tr><br>
