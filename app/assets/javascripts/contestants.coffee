@@ -51,6 +51,7 @@ $ ->
   $.extend $.validator.messages, {
     required: "*必須項目です"
     email: "*正しいメールアドレスの形式で入力してください"
+    url: "*'http://'もしくは'https://'から始まる形式で入力してください"
     rangelength: jQuery.validator.format("*{0}文字以上{1}文字以下で入力してください")
   }
   rules = {
@@ -60,6 +61,7 @@ $ ->
     "contestant[contestant_profile_attributes][come_from]": {required: true},
     "contestant[contestant_profile_attributes][height]": {required: true},
     "contestant[contestant_profile_attributes][comment]": {required: true},
+    "contestant[contestant_profile_attributes][link_url]": {url: true},
     "contestant[contestant_profile_attributes][thanks_comment]": {required: true},
     "contestant[contestant_profile_attributes][profile_image]": {required: true},
     "contestant[email]": {required: true, email: true},
