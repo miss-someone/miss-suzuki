@@ -1,19 +1,19 @@
 ---
 development:
-  cloud_name: ms-someone
-  api_key: '669875357541857'
-  api_secret: Qy6XrGA1I6-yLKWKl88zwLdY9ko
+  cloud_name: ms-someone-dev
+  api_key: '296661433353382'
+  api_secret: dzhLxCbKKUFA7f5u_au-A4ybHLE
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: ms-someone
-  api_key: '669875357541857'
-  api_secret: Qy6XrGA1I6-yLKWKl88zwLdY9ko
+  cloud_name: miss-someone
+  api_key: '579619788246129'
+  api_secret: e2yhSFxKHcExkOrLcI5ccO_M2Iw
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: ms-someone
-  api_key: '669875357541857'
-  api_secret: Qy6XrGA1I6-yLKWKl88zwLdY9ko
+  cloud_name: ms-someone-dev
+  api_key: '296661433353382'
+  api_secret: dzhLxCbKKUFA7f5u_au-A4ybHLE
   enhance_image_tag: true
   static_image_support: false
