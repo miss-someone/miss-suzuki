@@ -12,12 +12,14 @@ Rails.application.routes.draw do
   get   'policy'   => 'static_pages#policy'
 
   scope :contestants do
-    get   'group/:id'   => 'contestants#index'
     get   'entry'       => 'contestants#entry'
     get   'new'         => 'contestants#new'
     get   'thankyou'    => 'contestants#thankyou'
     get   'mypage'      => 'contestants#mypage'
     post  'create'      => 'contestants#create'
-    post  '/:id/vote'   => 'contestants#vote', as: :vote
+    if Rails.env.development?
+      get   'group/:id'   => 'contestants#index'
+      post  '/:id/vote'   => 'contestants#vote', as: :vote
+    end
   end
 end
