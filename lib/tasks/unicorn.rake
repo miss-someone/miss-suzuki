@@ -1,10 +1,10 @@
 namespace :unicorn do
   desc "Start unicorn"
-  task(:start) {
+  task(:start) do
     config = Rails.root + "config/unicorn.rb"
     env = ENV['RAILS_ENV'] || "development"
     sh "bundle exec unicorn_rails -D -c #{config} -E #{env}"
-  }
+  end
 
   desc "Stop unicorn"
   task(:stop) { unicorn_signal :QUIT }
@@ -26,15 +26,13 @@ namespace :unicorn do
   ##
   # Helpers
 
-  def unicorn_signal signal
+  def unicorn_signal(signal)
     Process.kill signal, unicorn_pid
   end
 
   def unicorn_pid
-    begin
-      File.read(Rails.root + "tmp/pids/unicorn.pid").to_i
-    rescue Errno::ENOENT
-      raise "Unicorn dosen't seem to be running"
-    end
+    File.read(Rails.root + "tmp/pids/unicorn.pid").to_i
+  rescue Errno::ENOENT
+    raise "Unicorn dosen't seem to be running"
   end
 end
