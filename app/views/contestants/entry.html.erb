@@ -17,15 +17,15 @@
         <a href="mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
       </div>
       <div class="picture">
-        <%= image_tag 'suzuki_yuna.jpg' %>
+        <%= image_tag 'suzuki_reiko.jpg' %>
       </div>
       <div class="profile">
         <p class="url"><a href="#"><%= image_tag 'btn/btn_tw.png', :width => '80' %></a></p>
-        <h3 class="furigana">すずきゆうな</h3>
-        <h2 class="name">鈴木友菜</h2>
-        <p class="age">年齢：23</p>
+        <h3 class="furigana">すずきれいこ</h3>
+        <h2 class="name">鈴木例子</h2>
+        <p class="age">年齢：22</p>
         <p class="hometown">出身：東京都</p>
-        <p class="height">身長：165cm</p>
+        <p class="height">身長：161cm</p>
         <p class="appeal">一言アピール！</p>
         <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
       </div>
@@ -37,9 +37,23 @@
   </div>
   <div id="entry_btn"><a href="new">ENTRY</a></div>
 
-  <div id="banner_big">
-    <%= image_tag 'banner/surf.png' %>
+  <div id="banner_big"></div>
+    <script type="text/javascript">
+    var lists=[
+    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel3.jpg' %></a>',
+    '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+    '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+    ];
+
+    var rNo = Math.floor(Math.random() * lists.length);
+    $(document).ready(function() {
+    document.getElementById('banner_big').innerHTML = lists[rNo];
+    });
+    </script>
   </div>
+
 
 
 </div>
