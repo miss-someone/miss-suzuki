@@ -10,7 +10,6 @@ class ContestantsController < ApplicationController
     @contestant.profile = ContestantProfile.new
   end
 
-
   def create
     # TODO: うまい方法を考えてリファクタ
     is_agree = contestant_params[:agreement]
