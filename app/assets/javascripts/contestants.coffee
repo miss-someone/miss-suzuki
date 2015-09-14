@@ -56,7 +56,6 @@ $ ->
   rules = {
     "contestant[contestant_profile_attributes][name]": {required: true},
     "contestant[contestant_profile_attributes][hurigana]": {required: true},
-    "contestant[contestant_profile_attributes][age]": {required: true},
     "contestant[contestant_profile_attributes][come_from]": {required: true},
     "contestant[contestant_profile_attributes][height]": {required: true},
     "contestant[contestant_profile_attributes][comment]": {required: true},

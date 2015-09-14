@@ -6,7 +6,7 @@ class CreateContestantProfiles < ActiveRecord::Migration
       t.string    :name,        null: false
       t.string    :hurigana,    null: false
       t.string    :profile_image,   null: false
-      t.string    :age,         null: false
+      t.string    :age
       t.string    :height,      null: false
       t.string    :come_from,   null: false
       t.string    :link_url

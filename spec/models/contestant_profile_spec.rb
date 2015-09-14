@@ -60,12 +60,6 @@ RSpec.describe User, type: :model do
         let(:target_attr) { "profile_image" }
       end
     end
-    describe "about age" do
-      it_behaves_like "presence validation(string)" do
-        let(:profile) { contestant_profile }
-        let(:target_attr) { "age" }
-      end
-    end
     describe "about height" do
       it_behaves_like "presence validation(string)" do
         let(:profile) { contestant_profile }
