@@ -113,6 +113,7 @@ p a{
   font-size: 14px;
   color:#fff;
   display: block;
+  text-decoration: none;
 }
 #to_top img{
   position: fixed;
@@ -738,6 +739,31 @@ p a{
   width:150px;
   float: left;
 }
+/*====================CREATE==========================*/
+#completed{
+  width:100%;
+  clear: both;
+  border-top:3px solid #e04974;
+}
+#completed .message{
+  width:80%;
+  border-radius: 5px;
+  background-color: #fff;
+  padding:10px;
+  margin:0 auto;
+  border:1px solid #d7d7d7;
+  margin-top: 20px;
+}
+#completed h1{
+  font-size: 14px;
+  text-align: center;
+  color:#e04974;
+}
+#completed p{
+  font-size: 10px;
+  color:#666;
+  line-height:1.5;
+}
 /*====================contestant==========================*/
 .contestant{
   position: relative;
@@ -926,6 +952,10 @@ p a{
   font-weight: bold;
   color:#e04974;
 }
+/*====================  投票ページ ==========================*/
+.content_middle{
+  padding-top: 30px;
+}
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
@@ -1087,8 +1117,9 @@ body {
   color:#62a7e7;
   text-decoration: none;
 }
-#home #entry_btn a{
+#entry_btn a{
   color:#fff;
+  text-decoration: none;
 }
 #home #mainimage img{
   width:100%;
@@ -1984,7 +2015,8 @@ body {
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
-  max-width: 100px;
+  padding-top: 30px;
+  max-width: 1000px;
   margin:0 auto;
   overflow: hidden;
 }
