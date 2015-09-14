@@ -29,6 +29,7 @@ LineLength:
   Max: 120
   Exclude:
     - db/migrate/*.rb
+    - config/deploy.rb # 一時的に除外．後々治す
 
 MethodLength:
   Exclude:

@@ -7,8 +7,8 @@
 set :branch, 'master'
 set :rails_env, "production"
 
-role :app, %w{oga@192.168.12.11 oga@192.168.12.12}
-role :db,  %w{oga@192.168.12.11}
+role :app, %w(oga@192.168.12.11 oga@192.168.12.12)
+role :db, %w(oga@192.168.12.11)
 
 # Extended Server Syntax
 # ======================
@@ -16,7 +16,7 @@ role :db,  %w{oga@192.168.12.11}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-#server 'example.com', user: 'deploy', roles: %w{app}
+# server 'example.com', user: 'deploy', roles: %w{app}
 
 # Custom SSH Options
 # ==================
@@ -25,8 +25,7 @@ role :db,  %w{oga@192.168.12.11}
 #
 # Global options
 # --------------
-set :ssh_options, {
- keys: %w(/home/oga/.ssh/id_rsa),
- forward_agent: true,
- auth_methods: %w(publickey)
-}
+set :ssh_options,
+    keys: %w(/home/oga/.ssh/id_rsa),
+    forward_agent: true,
+    auth_methods: %w(publickey)
