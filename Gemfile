@@ -8,8 +8,6 @@ gem 'rails', '4.2.4'
 gem 'coffee-rails', '~> 4.1.0'
 # jQuery使う
 gem 'jquery-rails'
-# ページ遷移をajax的にしてくれるやつだった気がする
-gem 'turbolinks'
 # Jsパッケージの管理
 gem 'bower-rails', '~> 0.10.0'
 # Sassを使えるようにする
