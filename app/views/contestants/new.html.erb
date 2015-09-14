@@ -64,7 +64,7 @@
             <% end %>
           </table>
         </div>
-          <p>利用規約に同意する<tr><%= check_box_tag 'contestant[agreement]', true, false, {} %></p>
+          <p><a href="/entrypolicy">エントリーポリシーに同意する<tr><%= check_box_tag 'contestant[agreement]', true, false, {} %></p>
           <p><%= f.submit "送信する", class: "submit_btn" %></p>
       <% end %>
   </div><!-- /#entry_form -->

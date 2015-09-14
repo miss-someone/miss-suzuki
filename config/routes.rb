@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get   'how_to_vote' => 'static_pages#how_to_vote'
   get   'flow_chart'  => 'static_pages#flow_chart'
   get   'next'        => 'static_pages#next'
+  get   'entrypolicy'    => 'static_pages#entrypolicy'
   get   'terms'    => 'static_pages#terms'
   get   'policy'   => 'static_pages#policy'
 
