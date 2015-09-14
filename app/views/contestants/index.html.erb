@@ -16,9 +16,9 @@
     <div class="column column2">
       <%= render :partial => 'contestant', :collection => @contestant[1] %>
     </div>
-    <div class="column">
+    <div class="column column3">
       <%= render :partial => 'contestant', :collection => @contestant[2] %>
     </div>
-    <p class="to_top"><a href=<% '/' %>><%= image_tag 'to_top.png' %></a></p>
+    <p id="to_top"><a href=<% '/' %>><%= image_tag 'to_top.png', :width=> '50px'   %></a></p>
   </div>
 </div>
