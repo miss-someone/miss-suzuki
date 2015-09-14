@@ -60,18 +60,19 @@
             <tr class="box">
               <%= f.radio_button :is_share_with_twitter_ok, true %>はい
               <%= f.radio_button :is_share_with_twitter_ok, false %>いいえ
-            </tr><br>
-            <tr><%= f.label :is_interest_in_idol_group %></tr><br>
-            <tr class="box">
-              <%= f.radio_button :is_interest_in_idol_group, true %>はい
-              <%= f.radio_button :is_interest_in_idol_group, false %>いいえ
-            </tr><br>
-          <% end %>
-        </table>
-      </div>
-        <p>利用規約に同意する<tr><%= check_box_tag 'contestant[agreement]', true, false, {} %></p>
-        <p><%= f.submit "送信する", class: "submit_btn" %></p>
-    <% end %>
+              </tr><br>
+              <tr><%= f.label :is_interest_in_idol_group %></tr><br>
+              <tr class="box">
+                <%= f.radio_button :is_interest_in_idol_group, true %>はい
+                <%= f.radio_button :is_interest_in_idol_group, false %>いいえ
+              </tr><br>
+            <% end %>
+          </table>
+        </div>
+        <p><a href="/entrypolicy">エントリーポリシー</a>に同意する<%= check_box_tag 'contestant[agreement]', true, false, {} %></p>
+          <p><%= f.submit "送信する", class: "submit_btn" %></p>
+      <% end %>
+
   </div><!-- /#entry_form -->
 </div><!-- /#create -->
 <div id="banner_big">

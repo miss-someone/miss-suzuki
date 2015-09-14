@@ -593,6 +593,10 @@ p a{
   color:#fff;
   border:0px;
 }
+#create a{
+  color:#62a7e7;
+  text-decoration: none;
+}
 
 /*====================THANK YOU==========================*/
 #thankyou {
@@ -1567,6 +1571,10 @@ body {
   font-size: 18px;
   color:#fff;
   border:0;
+}
+#create a{
+  color:#62a7e7;
+  text-decoration: none;
 }
 /*====================COMPLETED==========================*/
 #completed{
