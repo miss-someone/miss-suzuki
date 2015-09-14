@@ -1,55 +1,67 @@
 <div id ="create">
 <h1>エントリーフォーム</h1>
   <div id="entry_form">
-      <% if @contestant.errors.any? %>
-        <%= render 'contestants/error_msg', messages: @contestant.errors.full_messages %>
-      <% end %>
-      <%= form_for @contestant, url: { action: :create } do |f| %>
-        <div class="form1">
-          <table class="table">
-            <%= f.fields_for :contestant_profile do |f| %>
-              <tr><%= f.label :name %></tr><br>
-              <tr><%= f.text_field :name, class: "half" %></tr><br>
-              <tr><%= f.label :hurigana %></tr><br>
-              <tr><%= f.text_field :hurigana, class: "half" %></tr><br>
-              <tr><%= f.label :age %><span>(必須ではありません。空欄の場合は「ないしょ」と表示されます)</span></tr><br>
-              <tr><%= f.text_field :age, class: "half" %></tr><br>
-              <tr><%= f.label :come_from %></tr><br>
-              <tr><%= f.text_field :come_from %></tr><br>
-              <tr><%= f.label :height %></tr><br>
-              <tr><%= f.text_field :height, class: "half" %></tr><br>
-              <tr><%= f.label :comment %></tr><br>
-              <tr><%= f.text_area :comment, class: "full" %> </tr><br>
-              <tr>twitter、ブログなどの紹介したいURL(一つまで)</tr><br>
-              <tr><%= f.text_field :link_url, class: "full" %></tr><br>
-              <tr>投票してくれた方へのお礼メッセージをお願いします！</tr><br>
-              <tr><%= f.text_area :thanks_comment, class: "full" %></tr><br>
-              <tr>[未実装]エントリーする画像を貼り付けてください</tr><br>
-              <tr><%= f.text_area :image_url, class: "half" %></tr>
-            <% end %>
-          </table>
-        </div>
-
-    <p class="message">ここから先の情報は公開されません</p>
-
-        <div class="form2">
-          <table class="table">
-            <tr><%= f.label :email %></tr><br>
-            <tr><%= f.email_field :email, class: "half" %></tr><br>
-            <tr><%= f.label :password %></tr><br>
-            <tr><%= f.password_field :password, class: "half" %></tr><br>
-            <%= f.fields_for :contestant_profile do |f| %>
-              <tr><%= f.label :phone %></tr><br>
-              <tr><%= f.telephone_field :phone, class: "half" %></tr><br>
-              <tr><%= f.label :station %>(交通費の精算時に参考にいたします)</tr><br>
-              <tr><%= f.text_field :station, class: "half" %></tr><br>
-              <tr><%= f.label :how_know %></tr><br>
-              <tr><%= f.text_area :how_know , class: "full" %></tr><br>
-            <% end %>
-            <tr>当てはまるものすべてにチェックをお願いします</tr><br>
+    <% if @contestant.errors.any? %>
+      <%= render 'contestants/error_msg', messages: @contestant.errors.full_messages %>
+    <% end %>
+    <%= form_for @contestant, url: { action: :create } do |f| %>
+      <div class="form1">
+        <table class="table">
+          <%= f.fields_for :contestant_profile do |f| %>
+            <tr><%= f.label :name %></tr><br>
+            <tr><%= f.text_field :name, class: "half" %></tr><br>
+            <tr><%= f.label :hurigana %></tr><br>
+            <tr><%= f.text_field :hurigana, class: "half" %></tr><br>
+            <tr><%= f.label :age %><span>(必須ではありません。空欄の場合は「ないしょ」と表示されます)</span></tr><br>
+            <tr><%= f.text_field :age, class: "half" %></tr><br>
+            <tr><%= f.label :come_from %></tr><br>
+            <tr><%= f.text_field :come_from %></tr><br>
+            <tr><%= f.label :height %></tr><br>
+            <tr><%= f.text_field :height, class: "half" %></tr><br>
+            <tr><%= f.label :comment %></tr><br>
+            <tr><%= f.text_area :comment, class: "full" %> </tr><br>
+            <tr>twitter、ブログなどの紹介したいURL(一つまで)</tr><br>
+            <tr><%= f.text_field :link_url, class: "full" %></tr><br>
+            <tr>投票してくれた方へのお礼メッセージをお願いします！</tr><br>
+            <tr><%= f.text_area :thanks_comment, class: "full" %></tr><br>
+            <tr>エントリーする画像を選択してください</tr><br>
+            <tr><%= f.file_field :profile_image, class: "half", id: "image_input" %></tr>
+            <div id='entry_img_preview' style="width:300px">
+              <%= image_tag 'noimage.png', { width: 300, height: 300, id: 'image_preview' } %>
+            </div>
+            <tr><%= f.hidden_field :profile_image_crop_param_x, id: 'crop_param_x' %></tr>
+            <tr><%= f.hidden_field :profile_image_crop_param_y, id: 'crop_param_y' %></tr>
+            <tr><%= f.hidden_field :profile_image_crop_param_width, id: 'crop_param_width' %></tr>
+            <tr><%= f.hidden_field :profile_image_crop_param_height, id: 'crop_param_height' %></tr>
+          <% end %>
+        </table>
+      </div>
+      <p class="message">ここから先の情報は公開されません</p>
+      <div class="form2">
+        <table class="table">
+          <tr><%= f.label :email %></tr><br>
+          <tr><%= f.email_field :email, class: "half" %></tr><br>
+          <tr><%= f.label :password %></tr><br>
+          <tr><%= f.password_field :password, class: "half" %></tr><br>
+          <%= f.fields_for :contestant_profile do |f| %>
+            <tr><%= f.label :phone %></tr><br>
+            <tr><%= f.telephone_field :phone, class: "half" %></tr><br>
+            <tr><%= f.label :station %>(交通費の精算時に参考にいたします)</tr><br>
+            <tr><%= f.text_field :station, class: "half" %></tr><br>
+            <tr><%= f.label :how_know %></tr><br>
+            <tr><%= f.text_area :how_know , class: "full" %></tr><br>
+          <% end %>
+          <tr>当てはまるものすべてにチェックをお願いします</tr><br>
+          <tr class="box">
+            <%= f.collection_check_boxes(:contestant_tag_ids, ContestantTag.all, :id, :name) %>
+          </tr><br>
+          <%= f.fields_for :contestant_profile do |f| %>
+            <tr><%= f.label :is_share_with_twitter_ok %></tr><br>
             <tr class="box">
-              <%= f.collection_check_boxes(:contestant_tag_ids, ContestantTag.all, :id, :name) %>
+              <%= f.radio_button :is_share_with_twitter_ok, true %>はい
+              <%= f.radio_button :is_share_with_twitter_ok, false %>いいえ
             </tr><br>
+
             <%= f.fields_for :contestant_profile do |f| %>
               <tr><%= f.label :is_share_with_twitter_ok %></tr><br>
               <tr class="box">
@@ -67,6 +79,7 @@
           <p><a href="/entrypolicy">エントリーポリシーに同意する<tr><%= check_box_tag 'contestant[agreement]', true, false, {} %></p>
           <p><%= f.submit "送信する", class: "submit_btn" %></p>
       <% end %>
+
   </div><!-- /#entry_form -->
 </div><!-- /#create -->
 <div id="banner_big">

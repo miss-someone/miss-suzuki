@@ -1,11 +1,13 @@
 class ContestantProfile < ActiveRecord::Base
   belongs_to :user
 
+  mount_uploader :profile_image, ContestantProfileImageUploader
+
   # バリデーション
   validates :group_id, presence: true, inclusion: { in: 1..3 }
   validates :name, presence: true, length: { maximum: 100 }
   validates :hurigana, presence: true, length: { maximum: 100 }
-  validates :image_url, presence: true, format: URI.regexp(%w(http https))
+  validates :profile_image, presence: true
   validates :link_url, allow_blank: true, format: URI.regexp(%w(http https))
   validates :age, presence: true, length: { maximum: 50 }
   validates :height, presence: true, length: { maximum: 50 }
