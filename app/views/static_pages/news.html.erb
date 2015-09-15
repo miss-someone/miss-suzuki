@@ -14,7 +14,7 @@
       </tr>
       <tr class="odd">
         <th>9/10</th>
-        <td><a href="http://www1.suzuki.co.jp/motor/" target="_blank">株式会社スズキ二輪</a>様から協賛をいただきました！</td>
+        <td><a href="http://www1.suzuki.co.jp/motor/" target="_blank">スズキ株式会社</a>様から協賛をいただきました！</td>
       </tr>
       <tr class="even">
         <th>9/10</th>
@@ -27,21 +27,21 @@
     </table>
   </div>
 
-  <div id="banner_big"></div>
+  <div id="banner_big">
 
-  <script type="text/javascript">
-  var lists=[
-  '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
-  '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
-  '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel3.jpg' %></a>',
-  '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
-  '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
-  ];
+    <script type="text/javascript">
+    var lists=[
+    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+    '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+    '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+    ];
 
-  var rNo = Math.floor(Math.random() * lists.length);
-  $(document).ready(function() {
-  document.getElementById('banner_big').innerHTML = lists[rNo];
-  });
-  </script>
+    var rNo = Math.floor(Math.random() * lists.length);
+    $(document).ready(function() {
+    document.getElementById('banner_big').innerHTML = lists[rNo];
+    });
+    </script>
+  </div>
 
 </div>
