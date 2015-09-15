@@ -74,12 +74,14 @@ p a{
   font-size: 8px;
   font-weight: bold;
   width: 16%;
+  height:30px;
   text-align:center;
   float: left;
 }
 #header #smartphone_menu li a{
   text-decoration: none;
   color: #191919;
+  font-size: 12px;
 }
 #header #smartphone_menu li a:hover{
   color:#e04974;
@@ -542,7 +544,7 @@ p a{
 #entry .text2{
   color:#666;
   margin-top: 30px;
-  margin-bottom:-30px;
+  margin-bottom:-10px;
 }
 #entry .text2 a{
   color: #62a7e7;
