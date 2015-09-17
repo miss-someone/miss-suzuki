@@ -22,4 +22,10 @@ Rails.application.routes.draw do
       post  '/:id/vote'   => 'contestants#vote', as: :vote
     end
   end
+
+  # 管理画面用
+  if ENV['IS_ADMIN_WEB'] == 'true'
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    ActiveAdmin.routes(self)
+  end
 end
