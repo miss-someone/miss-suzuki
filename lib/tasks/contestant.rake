@@ -1,6 +1,6 @@
 namespace :contestant do
   desc "Check new Contestant and notify"
-  task :check_new => :environment do
+  task check_new: :environment do
     count_file_path = Rails.root + "tmp/prev_contestant_count"
     prev_count = 0
     begin
@@ -11,7 +11,7 @@ namespace :contestant do
       puts "IOError: " + e.message
     end
     current_count = ContestantProfile.count
-    if  current_count > prev_count
+    if current_count > prev_count
       count = current_count - prev_count
       new_contestants = ContestantProfile.limit(count).order("created_at DESC").all
       notify_to_slack(new_contestant_notify_body(new_contestants))
@@ -25,7 +25,7 @@ namespace :contestant do
     https = Net::HTTP.new(uri.host, uri.port)
     https.use_ssl = true
     req = Net::HTTP::Post.new(uri.request_uri)
-    
+
     req["Content-Type"] = "application/json"
     req.body = body_json
     https.request(req)
@@ -35,28 +35,10 @@ namespace :contestant do
     attachments = []
     contestants.each do |contestant|
       attachment = {
-        fallback: "新しい応募がありました．",
+        fallback: "新しい応募者が現れた!",
         pretext: "新しい応募者が現れた！",
         color: "#F6546A",
-        fields: [
-          {
-            title: "名前",
-            value: contestant.name,
-            short: false
-          },{
-            title: "年齢",
-            value: contestant.age,
-            short: false
-          },{
-            title: "コメント",
-            value: contestant.comment,
-            short: false
-          },{
-            title: "どうやって知りましたか？",
-            value: contestant.how_know,
-            short: false
-          }
-        ],
+        fields: get_fields(contestant),
         thumb_url: contestant.profile_image_url(:thumb)
       }
       attachments.push(attachment)
@@ -66,5 +48,24 @@ namespace :contestant do
     }
     body.to_json
   end
-end
 
+  def get_fields(contestant)
+    [{
+      title: "名前",
+      value: contestant.name,
+      short: false
+    }, {
+      title: "年齢",
+      value: contestant.age,
+      short: false
+    }, {
+      title: "コメント",
+      value: contestant.comment,
+      short: false
+    }, {
+      title: "どうやって知りましたか？",
+      value: contestant.how_know,
+      short: false
+    }]
+  end
+end

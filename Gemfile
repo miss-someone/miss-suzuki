@@ -41,7 +41,7 @@ gem 'activeadmin', github: 'activeadmin'
 # 管理画面におけるユーザ管理
 gem 'devise'
 # cron
-gem 'whenever', :require => false
+gem 'whenever', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
