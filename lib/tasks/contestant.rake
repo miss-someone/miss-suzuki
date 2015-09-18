@@ -39,7 +39,7 @@ namespace :contestant do
         pretext: "新しい応募者が現れた！",
         color: "#F6546A",
         fields: get_fields(contestant),
-        thumb_url: contestant.profile_image_url(:thumb)
+        thumb_url: contestant.profile_image.thumb
       }
       attachments.push(attachment)
     end
