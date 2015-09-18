@@ -4,7 +4,16 @@
 ミス鈴木の開発リポジトリ
 
 # 準備
-
 ## Bower
 + `npm install bower -g`
 + `bundle exec rake bower:install`
+
+# 管理画面
+管理画面へのアクセスには環境変数を設定する必要があります．
+
+## 管理画面へアクセスできる形でlocalサーバーを起動する方法
+次のように環境変数を設定して起動する
+
+```
+IS_ADMIN_WEB=true rails s
+```

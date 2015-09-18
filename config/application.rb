@@ -34,5 +34,13 @@ module MissSuzuki
 
     # bower用
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+
+    # Adminサーバにて，urlにサブディレクトリを指定しているため，
+    # AdminWebの時だけ，urlオプションを指定する．このようにしないとAdminWebでの
+    # グローバルナビゲーションがおかしくなってしまう．
+    # Issue: https://github.com/activeadmin/activeadmin/issues/101#issuecomment-22273869
+    if ENV['IS_ADMIN_WEB'] == 'true' && Rails.env.production?
+      Rails.application.routes.default_url_options[:script_name] = "/miss-suzuki"
+    end
   end
 end

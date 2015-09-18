@@ -36,6 +36,10 @@ gem 'cloudinary'
 gem 'unicorn'
 # アナリティクス
 gem 'google-analytics-rails'
+# 管理画面
+gem 'activeadmin', github: 'activeadmin'
+# 管理画面におけるユーザ管理
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
