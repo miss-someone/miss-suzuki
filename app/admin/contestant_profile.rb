@@ -43,7 +43,7 @@ ActiveAdmin.register ContestantProfile do
         contestant_profile.user.email
       end
       row :profile_image do
-        image_tag contestant_profile.profile_image_url(:thumb), width: 300
+        image_tag contestant_profile.profile_image.thumb, width: 300
       end
       row :age
       row :height
