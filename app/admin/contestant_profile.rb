@@ -1,18 +1,18 @@
 ActiveAdmin.register ContestantProfile do
   actions :index, :show
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  # See permitted parameters documentation:
+  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
+  #
+  # permit_params :list, :of, :attributes, :on, :model
+  #
+  # or
+  #
+  # permit_params do
+  #   permitted = [:permitted, :attributes]
+  #   permitted << :other if resource.something?
+  #   permitted
+  # end
 
   index do
     selectable_column
@@ -37,13 +37,13 @@ ActiveAdmin.register ContestantProfile do
     attributes_table do
       row :id
       row :group_id
-      row :name 
+      row :name
       row :hurigana
       row "メールアドレス" do
         contestant_profile.user.email
       end
       row :profile_image do
-        image_tag contestant_profile.profile_image_url(:thumb), { width: 300 }
+        image_tag contestant_profile.profile_image_url(:thumb), width: 300
       end
       row :age
       row :height
@@ -53,7 +53,7 @@ ActiveAdmin.register ContestantProfile do
       row 'タグ' do
         tags = ""
         contestant_profile.user.contestant_tags.each do |tag|
-          tags+=tag.name+","
+          tags += tag.name + ","
         end
         tags
       end
@@ -65,15 +65,15 @@ ActiveAdmin.register ContestantProfile do
       row :how_know
       row :station
       row :is_share_with_twitter_ok do
-        if contestant_profile.is_share_with_twitter_ok then 'はい' else 'いいえ' end
+        contestant_profile.is_share_with_twitter_ok ? 'はい' : 'いいえ'
       end
       row :is_interest_in_idol_group do
-        if contestant_profile.is_interest_in_idol_group then 'はい' else 'いいえ' end
+        contestant_profile.is_interest_in_idol_group ? 'はい' : 'いいえ'
       end
     end
     active_admin_comments
   end
-  
+
   controller do
     def scoped_collection
       super.includes :user
