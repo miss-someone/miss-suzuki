@@ -40,7 +40,7 @@ module MissSuzuki
     # グローバルナビゲーションがおかしくなってしまう．
     # Issue: https://github.com/activeadmin/activeadmin/issues/101#issuecomment-22273869
     if ENV['IS_ADMIN_WEB'] == 'true' && Rails.env.production?
-      Rails.application.routes.default_url_options[:script_name] = "miss-suzuki"
+      Rails.application.routes.default_url_options[:script_name] = "/miss-suzuki"
     end
   end
 end
