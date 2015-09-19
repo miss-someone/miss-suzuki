@@ -36,7 +36,7 @@ namespace :contestant do
     contestants.each do |contestant|
       attachment = {
         fallback: "新しい応募者が現れた!",
-        pretext: "新しい応募者が現れた！",
+        pretext: "新しい応募者が現れた！: <http://27.133.130.98/miss-suzuki/admin/contestant_profiles/#{contestant.id}|link>",
         color: "#F6546A",
         fields: get_fields(contestant),
         thumb_url: contestant.profile_image.thumb
