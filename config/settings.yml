@@ -2,3 +2,10 @@ user_type:
   normal: 1
   contestant: 2
 current_group_id: 1
+link_type:
+  facebook: 1
+  twitter: 2
+  instagram: 3
+  blog: 4
+  movie: 5
+  web: 6

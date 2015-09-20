@@ -18,7 +18,7 @@
      <%= image_tag contestant.profile.profile_image.thumb %>
    </div>
    <div class="profile">
-     <p class="url"><%= link_to image_tag 'button', { width: 80 } %></p>
+     <p class="url"><%= link_btn(contestant.profile) %></p>
      <h3 class="furigana"><%= contestant.profile.hurigana %></h3>
      <h2 class="name"><%= contestant.profile.name %></h2>
      <p class="age">年齢：<%= contestant.profile.age %></p>
