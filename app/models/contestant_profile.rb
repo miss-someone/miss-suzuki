@@ -24,7 +24,7 @@ class ContestantProfile < ActiveRecord::Base
       # 年齢が未入力の場合はないしょで埋める
       self.age = 'ないしょ'
     end
-    self.link_type = detect_link_type if link_type.blank?
+    self.link_type = detect_link_type if !link_url.blank? && link_type.blank?
 
     self
   end
