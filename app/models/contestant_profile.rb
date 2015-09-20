@@ -24,6 +24,29 @@ class ContestantProfile < ActiveRecord::Base
       # 年齢が未入力の場合はないしょで埋める
       self.age = 'ないしょ'
     end
+    self.link_type = detect_link_type if link_type.blank?
+
     self
+  end
+
+  private
+
+  def detect_link_type
+    require 'uri'
+    domain = URI.parse(link_url).host.sub(/^www\./, '')
+    case domain
+    when 'facebook.com' then
+      Settings.link_type[:facebook]
+    when 'twitter.com' then
+      Settings.link_type[:twitter]
+    when 'instagram.com' then
+      Settings.link_type[:instagram]
+    when 'ameblo.jp' then
+      Settings.link_type[:blog]
+    when 'youtube.com' then
+      Settings.link_type[:movie]
+    else
+      Settings.link_type[:web]
+    end
   end
 end
