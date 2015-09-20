@@ -31,6 +31,8 @@ class ContestantProfile < ActiveRecord::Base
 
   private
 
+  # link_urlのドメインからリンク種別を自動判別する
+  # どれにも一致しない場合はwebに
   def detect_link_type
     require 'uri'
     domain = URI.parse(link_url).host.sub(/^www\./, '')
