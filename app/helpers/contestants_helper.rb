@@ -1,11 +1,12 @@
 module ContestantsHelper
   # 紹介リンクへのボタンを作成
   def link_btn(contestant_profile)
-    return if contestant_profile.link_url.blank?
+    return if contestant_profile.link_url?
     link_to image_tag(btn_name(contestant_profile.link_type)), contestant_profile.link_url, width: 80
   end
 
   private
+
   # リンク種別から表示するボタン画像のファイル名を取得する
   def btn_name(link_type)
     case link_type
