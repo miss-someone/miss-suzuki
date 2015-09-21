@@ -1,0 +1,4 @@
+# ActiveAdminのjsは管理画面の環境変数設定時のみ読み込む
+<% if ENV['IS_ADMIN_WEB'] == 'true'
+require_asset 'active_admin/base'
+end %>
