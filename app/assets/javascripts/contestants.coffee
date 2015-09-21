@@ -74,6 +74,13 @@ $ ->
   }
   $('#new_contestant').validate {rules: rules, messages: messages}
 
-
+# マイページのスライドショー用
 $ ->
-  $('.bxslider').bxSlider();
+  $('.bxslider').bxSlider({
+      mode: 'fade',
+      speed: 1500,
+      auto: true,
+      pause: 3000,
+      controls: false,
+      pager: true
+    })
