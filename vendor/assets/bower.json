@@ -2,6 +2,7 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "cropper": "latest",
-    "jquery-validation": "latest"
+    "jquery-validation": "latest",
+    "bxslider-4": "latest"
   }
 }

@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require cropper
 //= require jquery-validation
+//= require bxslider-4
 //= require_tree .
