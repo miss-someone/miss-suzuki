@@ -61,4 +61,15 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
       crop: :crop
     }
   end
+
+  # 画像をクロップするいい方法が見つからなかったため，urlをハードコードしてクロップ
+  def thumb(width = 500, height = 500)
+    "http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
+    + "#{file.resource_type}/#{file.storage_type}/"\
+    + "c_crop,h_#{model.profile_image_crop_param_height},"\
+    + "w_#{model.profile_image_crop_param_width},"\
+    + "x_#{model.profile_image_crop_param_x},"\
+    + "y_#{model.profile_image_crop_param_y}/"\
+    + "c_fill,w_#{width},h_#{height}/v#{file.version}/#{file.filename}"
+  end
 end
