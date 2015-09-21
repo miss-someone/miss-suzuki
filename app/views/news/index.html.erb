@@ -1,0 +1,33 @@
+<div id="news">
+  <div id="mainimage">
+    <%= image_tag 'mainimages/news_mainimage.jpg' %>
+  </div>
+  <div id="content">
+    <table>
+      <% for i in 1..@news.size %>
+        <tr class="<%= news_column_class(i) %>">
+         <th><%= @news[i-1].date.strftime("%-m/%-d") %> </th>
+         <td><%= @news[i-1].content.html_safe%></td>
+        </tr>
+      <% end %>  
+    </table>
+  </div>
+
+  <div id="banner_big">
+
+    <script type="text/javascript">
+    var lists=[
+    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+    '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+    '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+    ];
+
+    var rNo = Math.floor(Math.random() * lists.length);
+    $(document).ready(function() {
+    document.getElementById('banner_big').innerHTML = lists[rNo];
+    });
+    </script>
+  </div>
+
+</div>

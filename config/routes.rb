@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     root 'static_pages#index'
 
     get   'about'   => 'static_pages#about'
-    get   'news'    => 'static_pages#news'
     get   'rules'   => 'static_pages#rules'
     get   'how_to_vote' => 'static_pages#how_to_vote'
     get   'flow_chart'  => 'static_pages#flow_chart'
@@ -17,6 +16,8 @@ Rails.application.routes.draw do
     get   'entrypolicy'    => 'static_pages#entrypolicy'
     get   'terms'    => 'static_pages#terms'
     get   'policy'   => 'static_pages#policy'
+
+    get   'news'     => 'news#index' 
 
     scope :contestants do
       get   'entry'       => 'contestants#entry'

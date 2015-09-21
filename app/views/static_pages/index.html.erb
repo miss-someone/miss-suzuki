@@ -9,8 +9,9 @@
 
   <div class="news">
     <h2>NEWS</h2>
-    <h3>9/15  MISS-SUZUKI オフィシャルサイトがオープン！</h3>
-    <h3>9/10   <a href="http://www1.suzuki.co.jp/motor/" target="blank_">スズキ株式会社</a>様から協賛をいただきました！</h3>
+      <% for i in 1..@news.size %>
+        <h3><%= @news[i-1].date.strftime("%-m/%-d") %> <%= @news[i-1].content.html_safe%></h3>
+      <% end %>  
     <p class="detail"><a href="/news">もっと見る</a></p>
   </div>
   <div class="buttons">
