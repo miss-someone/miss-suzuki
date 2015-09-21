@@ -10,6 +10,21 @@
   <meta name="description" content="史上初!「鈴木さん」限定のミスコン MISS-SUZUKI 優勝者には「金の表札」とバイクをプレゼント！" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
+  <script src="/jquery.bxslider.js"></script>
+  <script type="text/javascript">
+  // bxSlider
+  $(document).ready(function(){
+    $('.bxslider').bxSlider({
+      mode: 'fade',
+      speed: 1500,
+      auto: true,
+      pause: 3000,
+      controls: false,
+      pager: true
+    });
+  });
+  </script>
+
 
   <%= analytics_init if Rails.env.production? %>
 </head>

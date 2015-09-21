@@ -73,3 +73,7 @@ $ ->
     "contestant[agreement]": {required: "*利用規約への同意が必要です"}
   }
   $('#new_contestant').validate {rules: rules, messages: messages}
+
+
+$ ->
+  $('.bxslider').bxSlider();

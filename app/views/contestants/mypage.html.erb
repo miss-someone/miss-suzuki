@@ -2,8 +2,13 @@
   <div id="content">
       <div class="mypage_contestant">
         <div class="picture">
-          <%= image_tag 'suzuki_reiko.jpg' %>
+          <ul class="bxslider">
+            <li><%= image_tag 'suzuki_reiko.jpg' %></li>
+            <li><%= image_tag 'suzuki_reiko2.jpg' %></li>
+            <li><%= image_tag 'suzuki_reiko3.jpg' %></li>
+          </ul>
         </div>
+
         <div class="profile">
           <div class="profile_cotent">
             <h3 class="furigana">すずきれいこ</h3>
@@ -15,6 +20,7 @@
             <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
             <div class="sns_links">
               <p class="url"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/btn_tw.png', :width => '80' %></a></p>
+              <p class="url"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/btn_fb.png', :width => '80' %></a></p>
             </div>
             <div id="banner_in_profile">
               <script type="text/javascript">
