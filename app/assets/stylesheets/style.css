@@ -1750,20 +1750,21 @@ body {
   border-top:5px solid #e04974;
 }
 #thankyou #content{
-  overflow: hidden;
-  width:700px;
+  /*overflow: hidden;*/
+  /*width:700px;*/
+  width:300px;
   margin:0 auto;
   margin-top: 30px;
 }
 #thankyou #content .left{
   width:300px;
-  float:left;
-  margin-right: 100px;
+/*  float:left;*/
+/*  margin-right: 100px;*/
 }
-#thankyou #content .right{
+/*#thankyou #content .right{
   width:300px;
   float:left;
-}
+}*/
 #thankyou #content  .message{
   position: relative;
   margin-bottom: -20px;
@@ -2165,6 +2166,10 @@ body {
 }
 /*====================  VALIDATION ==========================*/
 .error{
+  font-size: 12px;
+  color:#e04974;
+}
+.error_msg{
   font-size: 12px;
   color:#e04974;
 }

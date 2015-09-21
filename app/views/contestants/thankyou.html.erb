@@ -9,21 +9,21 @@
        <%= image_tag 'suzuki_reiko.jpg', :width=>'300px;' %>
       </div>
       <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
-      <div id="banner_big"></div>
-    <script type="text/javascript">
-    var lists=[
-    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
-    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
-    '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
-    '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
-    ];
+    <div id="banner_big">
+      <script type="text/javascript" style="margin-top:30px;">
+      var lists=[
+      '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+      '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+      '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+      '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+      ];
 
-    var rNo = Math.floor(Math.random() * lists.length);
-    $(document).ready(function() {
-    document.getElementById('banner_big').innerHTML = lists[rNo];
-    });
-    </script>
-  </div>
+      var rNo = Math.floor(Math.random() * lists.length);
+      $(document).ready(function() {
+      document.getElementById('banner_big').innerHTML = lists[rNo];
+      });
+      </script>
+    </div>
 <!--       <div class="banner">
         <%= image_tag 'banner/karaage.jpg', :width=>'300px' %>
       </div> -->
