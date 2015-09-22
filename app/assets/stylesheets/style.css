@@ -959,9 +959,9 @@ p a{
 #mypage .picture img{
   width:300px;
   height:300px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   position: relative;
-  z-index: 10;
+  z-index: 20;
 }
 #mypage .profile{
   border-radius: 5px;
@@ -972,7 +972,7 @@ p a{
   padding-top: 20px;
   margin-top: -80px;
   position: relative;
-  z-index: 5;
+  z-index: -1;
 }
 #mypage .profile_content{
   width:300px;
@@ -1061,6 +1061,35 @@ p a{
 }
 #mypage .link_row .btn3{
   margin-right: 0;
+}
+#mypage .row2{
+  margin-top: -15px;
+}
+#mypage .instruction{
+  max-width:280px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  padding:10px;
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+#mypage .instruction h3{
+  color:#e04974;
+  margin:0;
+  text-align: center;
+  font-size: 14px;
+}
+#mypage .instruction p{
+  font-weight:bold;
+  color:#666;
+  font-size: 12px;
+  line-height: 2.5;
+  margin:0  ;
+}
+#mypage .instruction .even{
+  background-color: #f9f9f9;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
@@ -2166,6 +2195,33 @@ body {
 }
 #mypage .link_row .btn3{
   margin-right: 0;
+}
+#mypage .row2{
+  margin-top: -15px;
+}
+#mypage .instruction{
+  width:420px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  padding:10px 20px 10px 20px;
+  margin-top: 20px;
+}
+#mypage .instruction h3{
+  color:#e04974;
+  margin:0;
+  text-align: center;
+}
+#mypage .instruction p{
+  font-weight:bold;
+  color:#666;
+  font-size: 14px;
+  line-height: 2.5;
+  margin:0  ;
+}
+#mypage .instruction .even{
+  background-color: #f9f9f9;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{

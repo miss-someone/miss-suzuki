@@ -81,6 +81,6 @@ $ ->
       speed: 1500,
       auto: true,
       pause: 3000,
-      controls: false,
+      controls:true,
       pager: true
     })
