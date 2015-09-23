@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     get   'terms'    => 'static_pages#terms'
     get   'policy'   => 'static_pages#policy'
 
-    get   'news'     => 'news#index' 
+    get   'news'     => 'news#index'
 
     scope :contestants do
       get   'entry'       => 'contestants#entry'

@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   # トップページ
   def index
-   @news = News.where("is_important = 'true'").order("date DESC")
+    @news = News.where("is_important = 'true'").order("date DESC")
   end
 
   # News
