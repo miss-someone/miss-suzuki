@@ -1,4 +1,4 @@
-<div id="contestant">
+<div id="contestant">       
   <div id="mainimage">
     <%= image_tag 'mainimages/group1_mainimage.jpg' %>
   </div>
@@ -7,7 +7,7 @@
     <% if flash[:alert] %>
       <p><%= flash[:alert] %></p>
     <% end %>
-  </div>
+    <!-- </div> -->
   <div class="content_middle">
     <div class="column column1">
       <%= render :partial => 'contestant', :collection => @contestant[0] %>
