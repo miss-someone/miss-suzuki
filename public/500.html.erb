@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>500error</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
+<!--   <style>
   body {
     background-color: #EFEFEF;
     color: #2E2F30;
@@ -51,16 +51,22 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
-  </style>
+  </style> -->*/
 </head>
 
 <body>
+<div id="error_page">
+  <div id="mainimage">
+      <%= image_tag '500error.jpg' %>
+  </div>
+  <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:20px;"><%= link_to "トップページに戻る",'/'  %></div>
+</div>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
+<!--   <div class="dialog">
     <div>
       <h1>We're sorry, but something went wrong.</h1>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
-  </div>
+  </div> -->
 </body>
 </html>
