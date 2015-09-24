@@ -78,8 +78,8 @@ $ ->
 $ ->
   $('.bxslider').bxSlider({
       mode: 'fade',
-      speed: 1500,
-      auto: true,
+      speed: 500,
+      auto: false,
       pause: 3000,
       controls:true,
       pager: true
