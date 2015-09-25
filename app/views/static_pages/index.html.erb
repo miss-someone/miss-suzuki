@@ -9,9 +9,9 @@
 
   <div class="news">
     <h2>NEWS</h2>
-      <% for i in 1..@news.size %>
-        <h3><%= @news[i-1].date.strftime("%-m/%-d") %> <%= @news[i-1].content.html_safe%></h3>
-      <% end %>  
+    <% for i in 1..@news.size %>
+      <h3><%= @news[i-1].date.strftime("%-m/%-d") %> <%= @news[i-1].content.html_safe%></h3>
+    <% end %>
     <p class="detail"><a href="/news">もっと見る</a></p>
   </div>
   <div class="buttons">
@@ -21,7 +21,7 @@
   <p class="copy"><%= image_tag 'catchcopy.png', :width=>'580px' %></p>
   <p class="fullsize"><%= image_tag 'mainimages/home_image1.jpg' %></p>
   <div class="detail1"><p>MISS-SUZUKIは史上初、「鈴木さん」限定のミスコンです。<br>
-   年齢、職業は一切問いません。現在の名前が「鈴木」の方はどなたでもご参加いただけます。</p></div>
+    年齢、職業は一切問いません。現在の名前が「鈴木」の方はどなたでもご参加いただけます。</p></div>
 
   <p class="fullsize"><%= image_tag 'mainimages/home_image2.jpg' %></p>
   <div class="detail2">
@@ -30,9 +30,9 @@
       <div class="explain">
         <p class="icon"><%= image_tag 'icon/icon_laptop.jpg', :width=>'100px' %></p>
         <p class="text text1">エントリー期間は2015年11月13日までです。<br>
-           グループ予選の中から「かわいい！」ポイントの上位１割の方が、<br>
-           予選最終投票に進出します。最終投票の上位12名が第2ラウンドに進出します。<br>
-           投票回数は1日3回、<!-- <a href="#"> -->会員登録してログイン<!-- </a> -->をすると１日10回投票ができます。<br>会員登録は10月上旬に開始予定です。</p>
+        グループ予選の中から「かわいい！」ポイントの上位１割の方が、<br>
+        予選最終投票に進出します。最終投票の上位12名が第2ラウンドに進出します。<br>
+        投票回数は1日3回、<!-- <a href="#"> -->会員登録してログイン<!-- </a> -->をすると１日10回投票ができます。<br>会員登録は10月上旬に開始予定です。</p>
       </div>
     </div>
     <div class="section">
@@ -40,8 +40,8 @@
       <div class="explain">
         <p class="icon"><%= image_tag 'icon/icon_video.jpg', :width=>'100px' %></p>
         <p class="text text2">第2ラウンドは動画審査です。<br>
-            課題となる動画を撮影していただき、審査いたします。<br>
-            6名がファイナルに進出いたします。</p>
+        課題となる動画を撮影していただき、審査いたします。<br>
+        6名がファイナルに進出いたします。</p>
       </div>
     </div>
     <div class="section">
@@ -58,9 +58,9 @@
   <div class="detail3">
     <p class="icon"><%= image_tag 'icon/icon_trophy.jpg', :width=>'100px' %></p>
     <p class="text">グランプリの鈴木さんには「金の表札」、「SUZUKI レッツG」、<br>
-            準グランプリの鈴木さんには「銀の表札」を贈呈いたします。<br>
-            ファイナリストに選ばれた皆様には、<br>
-            当団体が製作する映像コンテンツや各種メディアへの出演も依頼させていただきます。</p>
+    準グランプリの鈴木さんには「銀の表札」を贈呈いたします。<br>
+    ファイナリストに選ばれた皆様には、<br>
+    当団体が製作する映像コンテンツや各種メディアへの出演も依頼させていただきます。</p>
   </div>
   <p class="fullsize"><%= image_tag 'mainimages/home_image4.jpg' %></p>
   <div class="detail4">
@@ -82,7 +82,7 @@
   <div class="detail5">
     <p class="icon"><%= image_tag 'icon/icon_mail.jpg', :width=>'100px' %></p>
     <p class="text">コンテストに関するお問い合わせ、出場者へのお仕事のご依頼は、<br>
-            <a href="mailto:ms.someone2015@gmail.com?subject=お問い合わせ">こちら</a>からからご送信ください。</p>
+    <a href="mailto:ms.someone2015@gmail.com?subject=お問い合わせ">こちら</a>からからご送信ください。</p>
     <p class="text text2">資料請求や協賛をご検討中の企業様は<a href="mailto:ms.someone2015@gmail.com?subject=協賛・資料請求について">こちら</a>からメールをご送信ください。</p>
   </div>
 
