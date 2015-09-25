@@ -5,6 +5,8 @@ ja:
         email: メールアドレス
         password: パスワード
         agreement: 利用規約
+      news:
+        is_important: TOPページに表示
       contestant_profile:
         name: お名前
         hurigana: ふりがな
