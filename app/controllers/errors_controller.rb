@@ -1,3 +1,4 @@
+# エラー発生時の404, 500エラーページを表示させるコントローラ
 class ErrorsController < ApplicationController
 
   layout 'application'
@@ -23,5 +24,4 @@ class ErrorsController < ApplicationController
   def show
     raise env['action_dispatch.exception']
   end
-
 end
