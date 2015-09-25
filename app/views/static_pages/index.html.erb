@@ -9,8 +9,8 @@
 
   <div class="news">
     <h2>NEWS</h2>
-    <% for i in 1..@news.size %>
-      <h3><%= @news[i-1].date.strftime("%-m/%-d") %> <%= @news[i-1].content.html_safe%></h3>
+    <% @news.each do |entry| %>
+      <h3><%= entry.date.strftime("%-m/%-d") %> <%= entry.content.html_safe%></h3>
     <% end %>
     <p class="detail"><a href="/news">もっと見る</a></p>
   </div>
