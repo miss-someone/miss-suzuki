@@ -24,6 +24,7 @@ class ErrorsController < ActionController::Base
   end
 
   def show
-    raise env['action_dispatch.exception']
+    # 例外再送出の場合はraiseを使うべきなので，rubocopを無視する
+    raise env['action_dispatch.exception'] # rubocop:disable Style/SignalException
   end
 end
