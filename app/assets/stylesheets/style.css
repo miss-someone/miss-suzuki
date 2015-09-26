@@ -1104,6 +1104,14 @@ p a{
   font-size: 12px;
   color:#e04974;
 }
+/*====================  Bxslider ==========================*/
+.bx-wrapper{
+  border:0;
+}
+.bx-wrapper img{
+  width:300px;
+  border-radius: 5px 0 0 5px;
+}
 }
 
 
@@ -2254,8 +2262,11 @@ body {
   color:#e04974;
 }
 /*====================  Bxslider ==========================*/
-ul.bxslider {
-  margin: 0;
-  padding: 0;
+.bx-wrapper{
+  border:0;
+}
+.bx-wrapper img{
+  width:500px;
+  border-radius: 5px 0 0 5px;
 }
 }
