@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :contestant_tag_contestants
   # 出場者に関連付けられているタグ一覧
   has_many :contestant_tags, through: :contestant_tag_contestants
+  # インタビューの回答へのリレーション
+  has_many :interview_answers
 
   # ユーザ作成時に，関連テーブルも同時に生成する
   accepts_nested_attributes_for :user_profile, allow_destroy: true, reject_if: :all_blank
@@ -32,6 +34,10 @@ class User < ActiveRecord::Base
     else
       user_profile
     end
+  end
+
+  def to_s
+    "#{email}"
   end
 
   class << self

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921070030) do
+ActiveRecord::Schema.define(version: 20150927070755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,21 @@ ActiveRecord::Schema.define(version: 20150921070030) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "interview_answers", force: :cascade do |t|
+    t.integer  "interview_topic_id", null: false
+    t.integer  "user_id",            null: false
+    t.string   "answer",             null: false
+    t.boolean  "is_pending",         null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "interview_topics", force: :cascade do |t|
+    t.string   "topic",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "news", force: :cascade do |t|
     t.date     "date",                         null: false
     t.boolean  "is_important", default: false
@@ -131,5 +146,7 @@ ActiveRecord::Schema.define(version: 20150921070030) do
   add_foreign_key "contestant_profiles", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "contestant_tags", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interview_answers", "interview_topics", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interview_answers", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_profiles", "users", on_update: :cascade, on_delete: :cascade
 end
