@@ -14,8 +14,8 @@ ActiveAdmin.register InterviewAnswer do
 
   index do
     id_column
-    column :interview_topic_id
-    column :user_id
+    column :interview_topic
+    column :user
     column :answer
     column :is_pending
   end
