@@ -7,8 +7,8 @@
 set :branch, 'master'
 set :rails_env, "production"
 
-role :app, %w(oga@192.168.12.11 oga@192.168.12.12)
-role :db, %w(oga@192.168.12.11)
+role :app, %w(webmaster@192.168.1.21 webmaster@192.168.1.22)
+role :db, %w(webmaster@192.168.1.21)
 
 # Extended Server Syntax
 # ======================
@@ -26,6 +26,6 @@ role :db, %w(oga@192.168.12.11)
 # Global options
 # --------------
 set :ssh_options,
-    keys: %w(/home/oga/.ssh/id_rsa),
+    keys: %w(/home/webmaster/.ssh/id_rsa),
     forward_agent: true,
     auth_methods: %w(publickey)
