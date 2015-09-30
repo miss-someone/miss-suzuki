@@ -8,10 +8,10 @@ set :repo_url, 'git@github.com:miss-someone/miss-suzuki.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # デプロイ先のディレクトリ
-set :deploy_to, '/var/www/miss-suzuki'
+set :deploy_to, '/home/webmaster/rails/miss-suzuki'
 
 # アセットディレクトリを置くリバプロのディレクトリ
-set :assets_to, '/usr/share/nginx/html/assets'
+set :assets_to, '/usr/share/nginx/html/miss-suzuki'
 
 # ログレベル(:info or :debug)
 set :log_level, :debug
@@ -35,7 +35,7 @@ set :rbenv_type, :system
 set :rbenv_ruby, '2.2.2'
 
 # rbenvのインストールパス
-set :rbenv_custom_path, '/home/oga/.rbenv'
+set :rbenv_custom_path, '/home/webmaster/.rbenv'
 # rbenvを実行する際の設定
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 # ???
@@ -54,7 +54,10 @@ after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :copy_assets do
     # アセットのコピーをとりあえず，無理やり
-    sh 'scp -rC public/assets 192.168.11.1:/usr/share/nginx/html/miss-suzuki'
+    sh "scp -rC public/assets 192.168.1.11:#{fetch(:assets_to)}"
+    sh "scp -rC public/assets 192.168.1.12:#{fetch(:assets_to)}"
+    # スケール用
+    # sh "scp -rC public/assets 192.168.1.13:#{fetch(:assets_to)}"
   end
   task :restart do
     invoke 'unicorn:restart'
