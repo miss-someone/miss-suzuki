@@ -42,6 +42,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 # cron
 gem 'whenever', require: false
+# プロファイラサービス
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
