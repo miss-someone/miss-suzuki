@@ -82,5 +82,5 @@ production:
   <<: *default
   database: miss-suzuki
   username: miss-suzuki
-  password: 'p6RctTggL}po&joa2TbwV/Y]DyqLsw' # 新インフラ時に環境変数に切り替え
-  host: 192.168.12.1
+  password: <%= ENV['MISS_SUZUKI_DB_PASS'] %>
+  host: 192.168.1.30
