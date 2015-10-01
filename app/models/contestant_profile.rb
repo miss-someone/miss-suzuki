@@ -14,8 +14,8 @@ class ContestantProfile < ActiveRecord::Base
   validates :come_from, presence: true, length: { maximum: 50 }
   validates :comment, presence: true, length: { maximum: 100 }
   validates :thanks_comment, presence: true, length: { maximum: 100 }
-  validates :is_interest_in_idol_group, inclusion: {in: [true, false]}
-  validates :is_share_with_twitter_ok, inclusion: {in: [true, false]}
+  validates :is_interest_in_idol_group, inclusion: { in: [true, false] }
+  validates :is_share_with_twitter_ok, inclusion: { in: [true, false] }
 
   before_save :prepare_validation
 
