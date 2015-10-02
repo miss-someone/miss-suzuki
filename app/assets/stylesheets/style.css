@@ -266,26 +266,41 @@ p a{
 #home .logo_row{
   overflow: hidden;
   margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  width:300px;
 }
-#home .row1 .logo1,#home .row1 .logo2,#home .row1 .logo3,#home .row1 .logo4{
+#home .smart_row .logo1,#home .smart_row .logo2,#home .smart_row .logo3,#home .smart_row .logo4{
   float: left;
 }
-#home .row1 .logo1 img{
+#home .smart_row{
+  width:300px;
+  margin:0 auto;
+}
+#home .smart_row1{
+  margin-top: 10px;
+}
+#home .smart_row1 .logo1 img{
+  max-width:100px;
+  margin-right:20px;
+  margin-left: 40px;
+}
+#home .smart_row1 .logo2 img{
+  max-width:100px;
+  margin-right:10px;
+}
+#home .smart_row2 .logo3 img{
+  max-width:140px;
+  margin-right:20px;
+  margin-left:20px;
+}
+#home .smart_row2 .logo4 img{
   max-width:80px;
   margin-right:10px;
 }
-#home .row1 .logo2 img{
-  max-width:80px;
-  margin-right:10px;
-}
-#home .row1 .logo3 img{
-  max-width:80px;
-  margin-right: 10px;
-}
-#home .row1 .logo4 img{
-  max-width: 80px;
+#home .smart_row3 .logo1 img{
+  max-width:100px;
+  margin-right:20px;
+  margin-left: 40px;
+  padding:0;
 }
 #home .detail5{
   margin: 0 auto;
@@ -782,6 +797,11 @@ p a{
 #about #content .sponsors .row2 .logo2 img{
   width:140px;
   float: left;
+}
+#about #content .sponsors .row3 .logo1 img{
+  width:140px;
+  margin-right:20px;
+  float:left;
 }
 /*====================CREATE==========================*/
 #completed{
@@ -1409,26 +1429,38 @@ body {
   overflow: hidden;
   max-width:960px;
   margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
 #home .row1 .logo1,#home .row1 .logo2,#home .row1 .logo3,#home .row1 .logo4{
   float: left;
 }
+#home .row1{
+  margin-top: 40px;
+}
 #home .row1 .logo1 img{
   width:200px;
   margin-right: 30px;
+  margin-top: 5px;
 }
 #home .row1 .logo2 img{
   width:220px;
   margin-right: 30px;
 }
 #home .row1 .logo3 img{
-  width:200px;
+  width:250px;
   margin-right: 30px;
+  margin-top: 5px;
 }
 #home .row1 .logo4 img{
   max-width: 200px;
+}
+#home .row2 .logo1,#home .row2 .logo2,#home .row2 .logo3,#home .row2 .logo4{
+  float: left;
+  margin-bottom: 100px;
+}
+#home .row2 .logo1 img{
+  width:200px;
+  margin-right: 30px;
 }
 #home .detail5{
   overflow: hidden;
@@ -1920,6 +1952,8 @@ body {
   margin: 0 auto;
   clear: both;
   margin-top: 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
 }
 #about #content .sponsors .row1{
   overflow: hidden;
@@ -1938,13 +1972,18 @@ body {
   margin-top: 50px;
 }
 #about #content .sponsors .row2 .logo1 img{
-  width:300px;
+  width:350px;
   margin-right:50px;
   float: left;
 }
 #about #content .sponsors .row2 .logo2 img{
-  width:300px;
+  width:250px;
   float: left;
+}
+#about #content .sponsors .row3 .logo1 img{
+  width:250px;
+  float: left;
+  margin-top:20px;
 }
 /*==================== POLICY&TERMS ==========================*/
 #policy{
