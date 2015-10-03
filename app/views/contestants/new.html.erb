@@ -61,13 +61,17 @@
           <%= f.fields_for :contestant_profile do |f| %>
             <tr><td><%= f.label :is_share_with_twitter_ok %></td></tr>
             <tr class="box">
-              <td><%= f.radio_button :is_share_with_twitter_ok, true %>はい</td>
-              <td><%= f.radio_button :is_share_with_twitter_ok, false %>いいえ</td>
+              <td>
+                <%= f.radio_button :is_share_with_twitter_ok, true %>はい
+                <%= f.radio_button :is_share_with_twitter_ok, false %>いいえ
+              </td>
             </tr>
             <tr><td><%= f.label :is_interest_in_idol_group %></td></tr>
             <tr class="box">
-              <td><%= f.radio_button :is_interest_in_idol_group, true %>はい</td>
-              <td><%= f.radio_button :is_interest_in_idol_group, false %>いいえ</td>
+              <td>
+                <%= f.radio_button :is_interest_in_idol_group, true %>はい
+                <%= f.radio_button :is_interest_in_idol_group, false %>いいえ
+              </td>
             </tr>
           <% end %>
         </table>
