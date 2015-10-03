@@ -37,9 +37,9 @@ class User < ActiveRecord::Base
   end
 
   # interview_answerの管理画面で、interview_topicのカラムを、番号でなくtopic名で表示するための記述
-  def to_s
-    "#{email}"
-  end
+  # def to_s
+  #   "#{email}"
+  # end
 
   class << self
     # 出場者一覧を返す

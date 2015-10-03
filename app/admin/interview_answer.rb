@@ -18,6 +18,7 @@ ActiveAdmin.register InterviewAnswer do
     column :user
     column :answer
     column :is_pending
+    actions
   end
 
   permit_params :interview_topic_id, :user_id, :answer, :is_pending
