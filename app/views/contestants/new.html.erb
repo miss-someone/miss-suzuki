@@ -24,7 +24,8 @@
             <tr><%= f.text_field :link_url, class: "full" %></tr><br>
             <tr>投票してくれた方へのお礼メッセージをお願いします！</tr><br>
             <tr><%= f.text_area :thanks_comment, class: "full" %></tr><br>
-            <tr>エントリーする画像を選択してください</tr><br>
+            <tr>①エントリーする画像を選択してください</tr><br>
+            <tr>②画像の中の、青い四角形を動かしてサイズを調整してください</tr><br>
             <tr><%= f.file_field :profile_image, class: "half", id: "image_input" %></tr>
             <div id='entry_img_preview' style="width:300px">
               <%= image_tag 'noimage.png', { width: 300, height: 300, id: 'image_preview' } %>
