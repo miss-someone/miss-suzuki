@@ -43,12 +43,18 @@ module AutomaticDeployJob
         attachments[:pretext] = "[#{target}]デプロイしっぱい(´・ω・｀)"
         attachments[:color] = "#D00000"
         result[:value] = "Failed..."
-        normal_log = { title: "Std Log", value: msg }
-        err_log = { title: "Error log", value: errmsg }
+        normal_log = { title: "Std Log", value: log_tail(msg, 30) }
+        err_log = { title: "Error log", value: log_tail(errmsg, 30) }
         attachments[:fields].push(normal_log)
         attachments[:fields].push(err_log)
       end
       post_json(Settings.deploy_info[:slack_webhook_url], { attachments: [attachments] }, true)
+    end
+
+    def log_tail(logmsg, size)
+      lines = logmsg.lines
+      return logmsg if lines.size <= size
+      lines.reverse.slice(0..size).reverse.join("")
     end
 
     def post_json(url, data, isSSL)
