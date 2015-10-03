@@ -33,7 +33,7 @@ Rails.application.routes.draw do
       end
     end
 
-    get "logout" => "sessions#destroy", :as => "logout"
+    get "logout" => "user_sessions#destroy", :as => "logout"
     get "login" => "user_sessions#new", :as => "login"
     # get "signup" => "users#new", :as => "signup"
     resources :users, only: [:new, :create, :destroy]

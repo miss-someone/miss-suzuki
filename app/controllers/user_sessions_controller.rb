@@ -5,7 +5,7 @@ class UserSessionsController < ApplicationController
   def create
     user = login(params[:email], params[:password], params[:remember_me])
     if user
-      redirect_back_or_to root_url, notice: "Logged in!"
+      redirect_back_or_to root_url
     else
       flash.now.alert = "メールアドレスかユーザ名が間違っています。"
       render :new
@@ -14,6 +14,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to root_url
   end
 end

@@ -7,12 +7,11 @@
     <%= form_tag user_sessions_path do %>
       <div class="form1">
         <table class="table">
-          <tr><%= label_tag "メールアドレス" %><tr><br>
-          <tr><%= text_field_tag :email, params[:email] %><tr><br>
-          <tr><%= label_tag "パスワード"  %><tr><br>
-          <tr><%= password_field_tag :password %><tr><br>
-          <tr><%= check_box_tag :remember_me, 1, params[:remember_me] %><tr>
-          <tr><%= label_tag "次回から自動でログインする" %><tr><br>
+          <tr><td><%= label_tag "メールアドレス" %><td><tr>
+          <tr><td><%= text_field_tag :email, params[:email] %><td><tr>
+          <tr><td><%= label_tag "パスワード" %><td><tr>
+          <tr><td><%= password_field_tag :password %><td><tr>
+          <tr><td><%= check_box_tag :remember_me, 1, params[:remember_me] %><%= label_tag "次回から自動的にログイン" %><tr>
         </table>
       </div>
       <p><%= submit_tag "Log in", class: "submit_btn" %></p>
