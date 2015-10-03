@@ -9,6 +9,7 @@ class CreateInterviewAnswers < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :interview_answers, [:interview_topic_id, :user_id]
+    add_index :interview_answers, :interview_topic_id
+    add_index :interview_answers, :user_id
   end
 end
