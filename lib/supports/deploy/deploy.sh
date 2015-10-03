@@ -52,7 +52,7 @@ bundle exec rake bower:install
 echo "prepare assets"
 bundle exec rake assets:precompile
 git add public/assets/manifest-* # manifestファイルのみ管理対象に追加
-git commit -m 'precompile'
+git commit -m 'precompile [ci skip]'
 git push origin $target_branch
 
 # DBのseed情報書き込み
