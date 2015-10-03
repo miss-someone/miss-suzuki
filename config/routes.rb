@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     get "login" => "user_sessions#new", :as => "login"
     # get "signup" => "users#new", :as => "signup"
     resources :users, only: [:new, :create, :destroy]
-    resources :user_sessions
+    resources :user_sessions, only: [:new, :create, :destroy]
     # get "secret" => "home#secret", :as => "secret"
 
   end
