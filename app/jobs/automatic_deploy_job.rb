@@ -4,6 +4,7 @@ module AutomaticDeployJob
   def do_deploy(target)
     return unless %w(production staging).include? target
     msg, errmsg, status_code = exec_deploy_cmd(target)
+    output_log(msg, errmsg)
     notify_to_slack(target, status_code, msg, errmsg)
   end
 
@@ -15,6 +16,16 @@ module AutomaticDeployJob
       deploy_cmd = "#{Settings.deploy_info[:command]} #{target}"
       result = Open3.capture3(deploy_cmd)
       [result[0], result[1], (result[2].success? ? 0 : 1)]
+    end
+
+    # デプロイのログを記録する
+    def output_log(msg, errmsg)
+      std_logger = ActiveSupport::Logger.new(Rails.root.join("log/automatic_deploy.log"), 3, 5.megabytes)
+      err_logger = ActiveSupport::Logger.new(Rails.root.join("log/automatic_deploy_err.log"), 3, 5.megabytes)
+      std_logger.formatter = ::Logger::Formatter.new
+      err_logger.formatter = ::Logger::Formatter.new
+      std_logger.info msg
+      err_logger.info errmsg
     end
 
     # Slackへの結果通知
