@@ -2,7 +2,7 @@
 # TODO: 非同期タスクへの移行
 module AutomaticDeployJob
   def do_deploy(target)
-    return unless %w{production staging}.include? target
+    return unless %w(production staging).include? target
     msg, errmsg, status_code = exec_deploy_cmd(target)
     notify_to_slack(target, status_code, msg, errmsg)
   end
