@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 20150927070755) do
     t.datetime "updated_at",         null: false
   end
 
+  add_index "interview_answers", ["interview_topic_id", "user_id"], name: "index_interview_answers_on_interview_topic_id_and_user_id", using: :btree
+
   create_table "interview_topics", force: :cascade do |t|
     t.string   "topic",      null: false
     t.datetime "created_at", null: false

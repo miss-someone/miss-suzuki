@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     get "logout" => "sessions#destroy", :as => "logout"
     get "login" => "user_sessions#new", :as => "login"
     # get "signup" => "users#new", :as => "signup"
-    resources :users
+    resources :users, only: [:new, :create, :destroy]
     resources :user_sessions
     # get "secret" => "home#secret", :as => "secret"
 
