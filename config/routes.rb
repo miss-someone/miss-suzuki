@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     devise_for :admin_users, ActiveAdmin::Devise.config
     ActiveAdmin.routes(self)
     root 'admin/dashboard#index'
+
+    # For AutoDeployment
+    post 'api/deploy' => 'api#deploy'
   else
     # 外部向け用
     root 'static_pages#index'

@@ -9,3 +9,10 @@ link_type:
   blog: 4
   movie: 5
   web: 6
+
+# CircleCIからwebhookでデプロイする際のデプロイキー
+deploy_info:
+  key: MJweV0EYMHJQXECqy3PlBbCYwRZ7g6rNhtM0Gl5U7bY0WHzL5hXOLeWtiKKa
+  vcs_url: 'https://github.com/miss-someone/miss-suzuki'
+  command: "sudo -u webmaster -H -i env /home/webmaster/bin/miss-suzuki-deploy.sh"
+  slack_webhook_url: 'https://hooks.slack.com/services/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'
