@@ -3,6 +3,8 @@
 ##############################
 # webmaster権限で動作させること
 # sudo -u webmaster -H -i env deploy.sh [env]
+# あらかじめsudoersの設定が必要
+# apache ALL=(webmaster) /home/webmaster/bin/miss-suzuki-deploy.sh
 ##############################
 
 export RAILS_ROOT='/home/webmaster/rails/miss-suzuki/'
