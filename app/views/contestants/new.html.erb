@@ -8,65 +8,65 @@
       <div class="form1">
         <table class="table">
           <%= f.fields_for :contestant_profile do |f| %>
-          <tr><td><%= f.label :name %></td></tr><br>
-          <tr><td><%= f.text_field :name, class: "half" %></td></tr><br>
-          <tr><td><%= f.label :hurigana %></td></tr><br>
-          <tr><td><%= f.text_field :hurigana, class: "half" %></td></tr><br>
-          <tr><td><%= f.label :age %><span>(必須ではありません。空欄の場合は「ないしょ」と表示されます)</span></td></tr><br>
-          <tr><td><%= f.text_field :age, class: "half" %></td></tr><br>
-          <tr><td><%= f.label :come_from %></td></tr><br>
-          <tr><td><%= f.text_field :come_from %></td></tr><br>
-          <tr><td><%= f.label :height %></td></tr><br>
-          <tr><td><%= f.text_field :height, class: "half" %></td></tr><br>
-          <tr><td><%= f.label :comment %></td></tr><br>
-          <tr><td><%= f.text_area :comment, class: "full" %> </td></tr><br>
-          <tr><td>twitter、ブログなどの紹介したいURL(一つまで)</td></tr><br>
-          <tr><td><%= f.text_field :link_url, class: "full" %></td></tr><br>
-          <tr><td>投票してくれた方へのお礼メッセージをお願いします！</td></tr><br>
-          <tr><td><%= f.text_area :thanks_comment, class: "full" %></td></tr><br>
-          <tr><td>①エントリーする画像を選択してください</td></tr><br>
-          <tr><td>②画像の中の、青い四角形を動かしてサイズを調整してください</td></tr><br>
+          <tr><td><%= f.label :name %></td></tr>
+          <tr><td><%= f.text_field :name, class: "half" %></td></tr>
+          <tr><td><%= f.label :hurigana %></td></tr>
+          <tr><td><%= f.text_field :hurigana, class: "half" %></td></tr>
+          <tr><td><%= f.label :age %><span>(必須ではありません。空欄の場合は「ないしょ」と表示されます)</span></td></tr>
+          <tr><td><%= f.text_field :age, class: "half" %></td></tr>
+          <tr><td><%= f.label :come_from %></td></tr>
+          <tr><td><%= f.text_field :come_from %></td></tr>
+          <tr><td><%= f.label :height %></td></tr>
+          <tr><td><%= f.text_field :height, class: "half" %></td></tr>
+          <tr><td><%= f.label :comment %></td></tr>
+          <tr><td><%= f.text_area :comment, class: "full" %> </td></tr>
+          <tr><td>twitter、ブログなどの紹介したいURL(一つまで)</td></tr>
+          <tr><td><%= f.text_field :link_url, class: "full" %></td></tr>
+          <tr><td>投票してくれた方へのお礼メッセージをお願いします！</td></tr>
+          <tr><td><%= f.text_area :thanks_comment, class: "full" %></td></tr>
+          <tr><td>①エントリーする画像を選択してください</td></tr>
+          <tr><td>②画像の中の、青い四角形を動かしてサイズを調整してください</td></tr>
           <tr><td><%= f.file_field :profile_image, class: "half", id: "image_input" %></td></tr>
-            <div id='entry_img_preview' style="width:300px">
+          <tr><td><div id='entry_img_preview' style="width:300px">
               <%= image_tag 'noimage.png', { width: 300, height: 300, id: 'image_preview' } %>
             </div>
             <tr><td><%= f.hidden_field :profile_image_crop_param_x, id: 'crop_param_x' %></td></tr>
             <tr><td><%= f.hidden_field :profile_image_crop_param_y, id: 'crop_param_y' %></td></tr>
             <tr><td><%= f.hidden_field :profile_image_crop_param_width, id: 'crop_param_width' %></td></tr>
             <tr><td><%= f.hidden_field :profile_image_crop_param_height, id: 'crop_param_height' %></td></tr>
-          <% end %>
+            <% end %></td></tr>
         </table>
       </div>
       <p class="message">ここから先の情報は公開されません</p>
       <div class="form2">
         <table class="table">
-        <tr><td><%= f.label :email %></td></tr><br>
-          <tr><td><%= f.email_field :email, class: "half" %></td></tr><br>
-          <tr><td><%= f.label :password %>(8文字以上、パスワードはマイページ作成の際に必要です。)</td></tr><br>
-          <tr><td><%= f.password_field :password, class: "half" %></td></tr><br>
-          <%= f.fields_for :contestant_profile do |f| %>
-          <tr><td><%= f.label :phone %></td></tr><br>
-          <tr><td><%= f.telephone_field :phone, class: "half" %></td></tr><br>
-          <tr><td><%= f.label :station %>(交通費の精算時に参考にいたします)</td></tr><br>
-          <tr><td><%= f.text_field :station, class: "half" %></td></tr><br>
-          <tr><td><%= f.label :how_know %></td></tr><br>
-          <tr><td><%= f.text_area :how_know , class: "full" %></td></tr><br>
-          <% end %>
-          <tr><td>当てはまるものすべてにチェックをお願いします</td></tr><br>
+        <tr><td><%= f.label :email %></td></tr>
+        <tr><td><%= f.email_field :email, class: "half" %></td></tr>
+        <tr><td><%= f.label :password %>(8文字以上、パスワードはマイページ作成の際に必要です。)</td></tr>
+        <tr><td><%= f.password_field :password, class: "half" %></td></tr>
+        <%= f.fields_for :contestant_profile do |f| %>
+        <tr><td><%= f.label :phone %></td></tr>
+        <tr><td><%= f.telephone_field :phone, class: "half" %></td></tr>
+        <tr><td><%= f.label :station %>(交通費の精算時に参考にいたします)</td></tr>
+        <tr><td><%= f.text_field :station, class: "half" %></td></tr>
+        <tr><td><%= f.label :how_know %></td></tr>
+        <tr><td><%= f.text_area :how_know , class: "full" %></td></tr>
+        <% end %>
+        <tr><td>当てはまるものすべてにチェックをお願いします</td></tr>
+        <tr class="box">
+          <%= f.collection_check_boxes(:contestant_tag_ids, ContestantTag.all, :id, :name) %>
+        </tr></tr>
+        <%= f.fields_for :contestant_profile do |f| %>
+        <tr><td><%= f.label :is_share_with_twitter_ok %></td></tr>
           <tr class="box">
-            <%= f.collection_check_boxes(:contestant_tag_ids, ContestantTag.all, :id, :name) %>
-          </tr></tr><br>
-          <%= f.fields_for :contestant_profile do |f| %>
-          <tr><td><%= f.label :is_share_with_twitter_ok %></td></tr><br>
+            <%= f.radio_button :is_share_with_twitter_ok, true %>はい
+            <%= f.radio_button :is_share_with_twitter_ok, false %>いいえ
+            </tr></tr>
+            <tr><td><%= f.label :is_interest_in_idol_group %></td></tr>
             <tr class="box">
-              <%= f.radio_button :is_share_with_twitter_ok, true %>はい
-              <%= f.radio_button :is_share_with_twitter_ok, false %>いいえ
-              </tr></tr><br>
-              <tr><td><%= f.label :is_interest_in_idol_group %></td></tr><br>
-              <tr class="box">
-                <%= f.radio_button :is_interest_in_idol_group, true %>はい
-                <%= f.radio_button :is_interest_in_idol_group, false %>いいえ
-              </tr></tr><br>
+              <%= f.radio_button :is_interest_in_idol_group, true %>はい
+              <%= f.radio_button :is_interest_in_idol_group, false %>いいえ
+            </tr>
             <% end %>
           </table>
         </div>
