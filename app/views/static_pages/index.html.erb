@@ -7,6 +7,59 @@
     <a href="#home"><%= image_tag 'to_top.png', :width=> '50px' %></a>
   </div>
 
+  <div id="prerelease">
+    <div class="content">
+      <h2 class="title">エントリーしてくれた鈴木さんを１日3名、ランダムで公開します！</h2>
+      <p class="explain">気になる鈴木さんたちのお顔は、11月1日の投票開始日から公開します！</p>
+      <div class="contestants_box">
+        <div class="contestant">
+          <div class="picture">
+            <%= image_tag 'suzuki_reiko.jpg' %>
+          </div>
+          <div class="profile">
+            <p class="furigana">すずきれいこ</p>
+            <h2 class="name">鈴木例子</h2>
+            <p class="age">年齢：22</p>
+            <p class="hometown">出身：東京都</p>
+            <p class="height">身長：161cm</p>
+            <p class="appeal">一言アピール！</p>
+            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
+          </div>
+        </div>
+
+        <div class="contestant">
+          <div class="picture">
+            <%= image_tag 'suzuki_reiko3.jpg' %>
+          </div>
+          <div class="profile">
+            <p class="furigana">すずきれいこ</p>
+            <h2 class="name">鈴木例子</h2>
+            <p class="age">年齢：22</p>
+            <p class="hometown">出身：東京都</p>
+            <p class="height">身長：161cm</p>
+            <p class="appeal">一言アピール！</p>
+            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
+          </div>
+        </div>
+
+        <div class="contestant last">
+          <div class="picture">
+            <%= image_tag 'suzuki_reiko2.jpg' %>
+          </div>
+          <div class="profile">
+            <p class="furigana">すずきれいこ</p>
+            <h2 class="name">鈴木例子</h2>
+            <p class="age">年齢：22</p>
+            <p class="hometown">出身：東京都</p>
+            <p class="height">身長：161cm</p>
+            <p class="appeal">一言アピール！</p>
+            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="news">
     <h2>NEWS</h2>
     <% @news.each do |entry| %>
