@@ -68,11 +68,19 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
     # rubocop:disable Style/SpaceAroundOperators
     "http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
     + "#{file.resource_type}/#{file.storage_type}/"\
+    + "#{extra_param(model)}"\
     + "c_crop,h_#{model.profile_image_crop_param_height},"\
     + "w_#{model.profile_image_crop_param_width},"\
     + "x_#{model.profile_image_crop_param_x},"\
     + "y_#{model.profile_image_crop_param_y}/"\
     + "c_fill,w_#{width},h_#{height}/v#{file.version}/#{file.filename}"
     # rubocop:enable all
+  end
+
+  private
+  # モデルにextra_paramが設定されている場合は/を追加して返す
+  def extra_param(model)
+    extra_param = model.profile_image_crop_param_extra
+    extra_param.empty? ? '' : "#{extra_param}/"
   end
 end
