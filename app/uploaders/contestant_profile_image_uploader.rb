@@ -84,6 +84,7 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
   end
 
   private
+
   # モデルにextra_paramが設定されている場合は/を追加して返す
   def extra_param(model)
     extra_param = model.profile_image_crop_param_extra

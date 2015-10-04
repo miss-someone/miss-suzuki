@@ -3,7 +3,7 @@ class Contestant < User
   # デフォルトスコープの設定. Contestantのみに制限
   default_scope -> { where(user_type: Settings.user_type[:contestant]) }
 
-  scope :random, ->(n){ self.where(id: self.pluck(:id).shuffle[0..n-1]) }
+  scope :random, ->(n) { where(id: pluck(:id).shuffle[0..n - 1]) }
 
   def profile=(p)
     self.contestant_profile = p
