@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     if user
       redirect_back_or_to root_url
     else
-      flash.now.alert = "メールアドレスかユーザ名が間違っています。"
+      flash.now.alert = "メールアドレスかパスワードが間違っています。"
       render :new
     end
   end
