@@ -2,6 +2,8 @@ user_type:
   normal: 1
   contestant: 2
 current_group_id: 1
+contestant:
+  preopen_count: 3 # プレオープンで公開する参加者の数
 link_type:
   facebook: 1
   twitter: 2

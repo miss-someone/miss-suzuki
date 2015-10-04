@@ -23,6 +23,10 @@ require File.expand_path(File.dirname(__FILE__) + "/environment")
 set :output, Rails.root + "log/cron.log"
 
 if Rails.env.production?
+  # プレ公開出場者のアップデートを，毎日0:01に行う
+  every 1.day, at: '0:01 am' do
+    rake "contestant:update_todays_preopens"
+  end
 end
 
 if Rails.env.production? && ENV['IS_ADMIN_WEB'] == true
