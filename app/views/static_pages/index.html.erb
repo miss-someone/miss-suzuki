@@ -9,53 +9,25 @@
 
   <div id="prerelease">
     <div class="content">
-      <h2 class="title">エントリーしてくれた鈴木さんを１日3名、ランダムで公開します！</h2>
+      <h2 class="title">エントリーしてくれた鈴木さんを１日<%= Settings.contestant[:preopen_count] %>名、ランダムで公開します！</h2>
       <p class="explain">気になる鈴木さんたちのお顔は、11月1日の投票開始日から公開します！</p>
       <div class="contestants_box">
-        <div class="contestant">
-          <div class="picture">
-            <%= image_tag 'suzuki_reiko.jpg' %>
+        <% @contestants.each do |contestant| %>
+          <div class="<%= div_contestant_class(@contestants, contestant) %>">
+            <div class="picture">
+              <%= image_tag contestant.profile.profile_image.thumb %>
+            </div>
+            <div class="profile">
+              <p class="furigana"><%= contestant.profile.hurigana %></p>
+              <h2 class="name"><%= contestant.profile.name %></h2>
+              <p class="age">年齢：<%= contestant.profile.age %></p>
+              <p class="hometown">出身：<%= contestant.profile.come_from %></p>
+              <p class="height">身長：<%= contestant.profile.height %></p>
+              <p class="appeal">一言アピール！</p>
+              <textarea name="comment" readonly><%= contestant.profile.comment %></textarea>
+            </div>
           </div>
-          <div class="profile">
-            <p class="furigana">すずきれいこ</p>
-            <h2 class="name">鈴木例子</h2>
-            <p class="age">年齢：22</p>
-            <p class="hometown">出身：東京都</p>
-            <p class="height">身長：161cm</p>
-            <p class="appeal">一言アピール！</p>
-            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
-          </div>
-        </div>
-
-        <div class="contestant">
-          <div class="picture">
-            <%= image_tag 'suzuki_reiko3.jpg' %>
-          </div>
-          <div class="profile">
-            <p class="furigana">すずきれいこ</p>
-            <h2 class="name">鈴木例子</h2>
-            <p class="age">年齢：22</p>
-            <p class="hometown">出身：東京都</p>
-            <p class="height">身長：161cm</p>
-            <p class="appeal">一言アピール！</p>
-            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
-          </div>
-        </div>
-
-        <div class="contestant last">
-          <div class="picture">
-            <%= image_tag 'suzuki_reiko2.jpg' %>
-          </div>
-          <div class="profile">
-            <p class="furigana">すずきれいこ</p>
-            <h2 class="name">鈴木例子</h2>
-            <p class="age">年齢：22</p>
-            <p class="hometown">出身：東京都</p>
-            <p class="height">身長：161cm</p>
-            <p class="appeal">一言アピール！</p>
-            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
