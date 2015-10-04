@@ -1,0 +1,20 @@
+<div id ="create">
+  <h1>ログイン</h1>
+  <div id="entry_form">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= form_tag user_sessions_path do %>
+      <div class="form1">
+        <table class="table">
+          <tr><td><%= label_tag "メールアドレス" %><td><tr>
+          <tr><td><%= text_field_tag :email, params[:email] %><td><tr>
+          <tr><td><%= label_tag "パスワード" %><td><tr>
+          <tr><td><%= password_field_tag :password %><td><tr>
+          <tr><td><%= check_box_tag :remember_me, 1, params[:remember_me] %><%= label_tag "次回から自動的にログイン" %><tr>
+        </table>
+      </div>
+      <p><%= submit_tag "Log in", class: "submit_btn" %></p>
+    <% end %>
+  </div>
+</div>
