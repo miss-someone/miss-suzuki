@@ -23,7 +23,8 @@ require File.expand_path(File.dirname(__FILE__) + "/environment")
 set :output, Rails.root + "log/cron.log"
 
 if Rails.env.production?
-  every '0,30 6-23 * * *' do
+  # 5分ごとに新着応募者チェック
+  every '/5 6-23 * * *' do
     rake "contestant:check_new"
   end
 end
