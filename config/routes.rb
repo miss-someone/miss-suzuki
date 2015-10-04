@@ -33,5 +33,10 @@ Rails.application.routes.draw do
         post  '/:id/vote'   => 'contestants#vote', as: :vote
       end
     end
+
+    get "logout" => "user_sessions#destroy", :as => "logout"
+    get "login" => "user_sessions#new", :as => "login"
+    resources :user_sessions, only: [:new, :create, :destroy]
+
   end
 end
