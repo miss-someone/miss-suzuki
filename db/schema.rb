@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20151004143021) do
     t.integer  "profile_image_crop_param_height"
     t.integer  "link_type"
     t.boolean  "is_preopen",                      default: false, null: false
-    t.string   "profile_image_crop_param_extra",  default: ""
+    t.string   "profile_image_crop_param_extra",  default: "",    null: false
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", using: :btree
