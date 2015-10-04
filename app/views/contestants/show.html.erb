@@ -1,0 +1,86 @@
+<div id="mypage">
+  <div id="content">
+    <div class="mypage_contestant">
+      <div class="picture">
+        <ul class="bxslider">
+          <li><%= image_tag 'suzuki_reiko.jpg' %></li>
+          <li><%= image_tag 'suzuki_reiko2.jpg' %></li>
+          <li><%= image_tag 'suzuki_reiko3.jpg' %></li>
+        </ul>
+      </div>
+
+      <div class="profile">
+        <div class="profile_cotent">
+          <h3 class="furigana"><%= @contestant_profile.hurigana %></h3>
+          <h2 class="name"><%= @contestant_profile.name %></h2>
+          <p class="age">年齢：<%= @contestant_profile.age %></p>
+          <p class="hometown">出身：<%= @contestant_profile.come_from %></p>
+          <p class="height">身長：<%= @contestant_profile.height %></p>
+          <p class="appeal">一言アピール！</p>
+          <textarea name="comment"><%= @contestant_profile.comment %></textarea>
+          <div class="sns_links">
+            <div class="link_row row1">
+              <p class="url">
+              <a href=<%= @contestant_profile.url %>
+                <%= image_tag 'btn/btn_tw.png' %>
+                <%= image_tag 'btn/btn_fb.png' %>
+                <%= image_tag 'btn/btn_site.png' %>
+                <%= image_tag 'btn/btn_insta.png', :width => '80' %>
+                <%= image_tag 'btn/btn_blog.png' %>
+                <%= image_tag 'btn/btn_movie.png' %>
+            </div>
+          </div>
+          <div id="banner_in_profile">
+            <script type="text/javascript">
+              var lists=[
+              '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+              '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+              '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+              '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+              ];
+
+              var rNo = Math.floor(Math.random() * lists.length);
+              $(document).ready(function() {
+                document.getElementById('banner_in_profile').innerHTML = lists[rNo];
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="interview_area">
+      <h2>鈴木例子さんへインタビュー！</h2>
+      <table id="interview">
+        <tr style="margin-bottom:20px;"><th>好きな食べ物は？</th></tr>
+        <tr><td>ロイヤルミルクティーが好きです。お砂糖は多めで！</td></tr>
+        <tr><th>好きな男性のタイプは？</th></tr>
+        <tr><td>余裕があって色気のある人がいいなー</td></tr>
+        <tr><th>マイブームはなんですか？</th></tr>
+        <tr><td>アフタヌーンティー巡りにハマってます！</td></tr>
+        <tr><th>鈴木に生まれてきてよかった？ その理由も教えてください！</th></tr>
+        <tr><td>はい！鈴木さんってクラスに必ず2人はいるので、下の名前でみんなに読んでもらえるのは嬉しいです！</td></tr>
+        <tr><th>最後にMISS-SUZUKIへの意気込みをお願いします！</th></tr>
+        <tr><td>絶対に日本一かわいい鈴木さんになって、親孝行します！みなさん、応援よろしくお願いします！</td></tr>
+      </table>
+      <p>ありがとうございました！</p>
+    </div>
+
+    <div id="banner_big">
+
+      <script type="text/javascript">
+        var lists=[
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+        '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+        '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+        ];
+
+        var rNo = Math.floor(Math.random() * lists.length);
+        $(document).ready(function() {
+          document.getElementById('banner_big').innerHTML = lists[rNo];
+        });
+      </script>
+    </div>
+  </div>
+</div>

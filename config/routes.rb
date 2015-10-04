@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       get   'thankyou'    => 'contestants#thankyou'
       get   'mypage'      => 'contestants#mypage'
       post  'create'      => 'contestants#create'
+      get   'show/:id'    => 'contestants#show'
       if Rails.env.development?
         get   'group/:id'   => 'contestants#index'
         post  '/:id/vote'   => 'contestants#vote', as: :vote
