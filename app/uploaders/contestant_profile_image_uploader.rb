@@ -66,7 +66,7 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
   def thumb(width = 500, height = 500, is_blur = false)
     # 行が長くなりすぎる為，改行を行っているのでrubocopを一部無視
     # rubocop:disable Style/SpaceAroundOperators
-    "http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
+    "https://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
     + "#{file.resource_type}/upload/"\
     + "#{blur_param(is_blur, model)}"\
     + "#{extra_param(model)}"\
