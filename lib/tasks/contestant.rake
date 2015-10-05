@@ -27,8 +27,8 @@ namespace :contestant do
       contestant.profile.update_attribute(:is_preopen, false)
     end
 
-    # 新しいプレオープン出場者の選定
-    news = Contestant.random Settings.contestant[:preopen_count]
+    # 新しいプレオープン出場者の選定(承認済みユーザのみ)
+    news = Contestant.approved.random Settings.contestant[:preopen_count]
     news.each do |contestant|
       contestant.profile.update_attribute(:is_preopen, true)
     end
