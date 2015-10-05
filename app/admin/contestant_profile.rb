@@ -29,6 +29,9 @@ ActiveAdmin.register ContestantProfile do
   show do
     attributes_table do
       row :id
+      row :user_id do
+        link_to contestant_profile.user.id, admin_user_path(contestant_profile.user)
+      end
       row :group_id
       row :name
       row :hurigana
@@ -90,7 +93,6 @@ ActiveAdmin.register ContestantProfile do
 
       action :submit
     end
-
   end
 
   controller do
