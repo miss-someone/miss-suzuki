@@ -7,9 +7,15 @@ ActiveAdmin.register ContestantProfile do
                 :profile_image_crop_param_height, :profile_image_crop_param_width,
                 :profile_image_crop_param_extra, :profile_image_blur_param
 
+  scope :all, default: true
+  scope :pending_approval
+  scope :approved
+  scope :rejected
+
   index do
     selectable_column
     id_column
+    column :status
     column :user_id
     column :group_id
     column :name
@@ -93,6 +99,20 @@ ActiveAdmin.register ContestantProfile do
 
       action :submit
     end
+  end
+
+  batch_action :approve do |ids|
+    ContestantProfile.find(ids).each do |profile|
+      profile.approved!
+    end
+    redirect_to collection_path, alert: "承認しました"
+  end
+
+  batch_action :reject do |ids|
+    ContestantProfile.find(ids).each do |profile|
+      profile.rejected!
+    end
+    redirect_to collection_path, alert: "却下しました"
   end
 
   controller do

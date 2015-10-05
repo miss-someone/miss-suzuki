@@ -17,6 +17,9 @@ class ContestantProfile < ActiveRecord::Base
   validates :is_interest_in_idol_group, inclusion: { in: [true, false] }
   validates :is_share_with_twitter_ok, inclusion: { in: [true, false] }
 
+  # 承認ステータスのenum
+  enum status: { pending_approval: 0, approved: 1, rejected: 2 }
+
   before_save :prepare_validation
 
   def prepare_validation
