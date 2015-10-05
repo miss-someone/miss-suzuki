@@ -23,10 +23,11 @@ class ContestantProfile < ActiveRecord::Base
   before_save :prepare_validation
 
   def prepare_validation
-    if age.blank?
-      # 年齢が未入力の場合はないしょで埋める
-      self.age = 'ないしょ'
-    end
+    # 年齢が未入力の場合はないしょで埋める
+    self.age = 'ないしょ' if age.blank?
+    # statusが存在しない場合は，approval_pendingにする
+    self.status = ContestantProfile.statuses[:pending_approval] if status.blank?
+
     self.link_type = detect_link_type if !link_url.blank? && link_type.blank?
 
     self
