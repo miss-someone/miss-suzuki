@@ -22,7 +22,7 @@ require File.expand_path(File.dirname(__FILE__) + "/environment")
 
 set :output, Rails.root + "log/cron.log"
 
-if Rails.env.production?
+if Rails.env.production? && ENV['IS_ADMIN_WEB'] == 'false'
   # プレ公開出場者のアップデートを，毎日0:01に行う
   # 実行するのは，マイグレーションを行うアプリケーションサーバ上
   every 1.day, at: '0:01 am' do
@@ -30,9 +30,9 @@ if Rails.env.production?
   end
 end
 
-if Rails.env.production? && ENV['IS_ADMIN_WEB'] == true
+if Rails.env.production? && ENV['IS_ADMIN_WEB'] == 'true'
   # 5分ごとに新着応募者チェック
-  every '/5 6-23 * * *' do
+  every '*/5 6-23 * * *' do
     rake "contestant:check_new"
   end
 end
