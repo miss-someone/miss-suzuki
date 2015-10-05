@@ -82,7 +82,7 @@ ActiveAdmin.register ContestantProfile do
       f.input :hurigana
       f.input :group_id
       f.input :profile_image
-      li image_tag contestant_profile.profile_image.thumb(300,300)
+      li image_tag contestant_profile.profile_image.thumb(300, 300)
       f.input :profile_image_crop_param_x
       f.input :profile_image_crop_param_y
       f.input :profile_image_crop_param_height
@@ -102,16 +102,12 @@ ActiveAdmin.register ContestantProfile do
   end
 
   batch_action :approve do |ids|
-    ContestantProfile.find(ids).each do |profile|
-      profile.approved!
-    end
+    ContestantProfile.find(ids).each proc(&:approved!)
     redirect_to collection_path, alert: "承認しました"
   end
 
   batch_action :reject do |ids|
-    ContestantProfile.find(ids).each do |profile|
-      profile.rejected!
-    end
+    ContestantProfile.find(ids).each proc(&:rejected!)
     redirect_to collection_path, alert: "却下しました"
   end
 

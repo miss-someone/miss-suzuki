@@ -4,7 +4,11 @@ class Contestant < User
   default_scope -> { where(user_type: Settings.user_type[:contestant]) }
 
   scope :random, ->(n) { where(id: pluck(:id).shuffle[0..n - 1]) }
-  scope :approved, -> { includes(:contestant_profile).where(contestant_profiles: { status: ContestantProfile.statuses[:approved] }) }
+  scope :approved,
+        lambda do
+          includes(:contestant_profile)
+            .where(contestant_profiles: { status: ContestantProfile.statuses[:approved] })
+        end
   scope :todays_preopen, -> { includes(:contestant_profile).where(contestant_profiles: { is_preopen: true }) }
 
   def profile=(p)
@@ -23,6 +27,5 @@ class Contestant < User
       contestant.user_type = Settings.user_type[:contestant]
       contestant
     end
-
   end
 end
