@@ -31,8 +31,8 @@ if Rails.env.production?
 end
 
 if Rails.env.production? && ENV['IS_ADMIN_WEB'] == true
-  # 新着応募者のチェックタスク
-  every '0,30 6-23 * * *' do
+  # 5分ごとに新着応募者チェック
+  every '/5 6-23 * * *' do
     rake "contestant:check_new"
   end
 end
