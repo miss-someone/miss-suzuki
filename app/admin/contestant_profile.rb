@@ -1,18 +1,11 @@
 ActiveAdmin.register ContestantProfile do
-  actions :index, :show
+  actions :index, :show, :edit, :update
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+  permit_params :name, :hurigana, :group_id, :profile_image, :age, :height,
+                :come_from, :link_url, :comment, :thanks_comment, :station,
+                :profile_image_crop_param_x, :profile_image_crop_param_y,
+                :profile_image_crop_param_height, :profile_image_crop_param_width,
+                :profile_image_crop_param_extra, :profile_image_blur_param
 
   index do
     selectable_column
@@ -72,6 +65,32 @@ ActiveAdmin.register ContestantProfile do
       end
     end
     active_admin_comments
+  end
+
+  form do |f|
+    f.inputs 'UserInfo' do
+      f.input :name
+      f.input :hurigana
+      f.input :group_id
+      f.input :profile_image
+      li image_tag contestant_profile.profile_image.thumb(300,300)
+      f.input :profile_image_crop_param_x
+      f.input :profile_image_crop_param_y
+      f.input :profile_image_crop_param_height
+      f.input :profile_image_crop_param_width
+      f.input :profile_image_crop_param_extra
+      f.input :profile_image_blur_param
+      f.input :age
+      f.input :height
+      f.input :come_from
+      f.input :link_url
+      f.input :comment
+      f.input :thanks_comment
+      f.input :station
+
+      action :submit
+    end
+
   end
 
   controller do
