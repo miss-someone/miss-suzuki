@@ -1,22 +1,21 @@
 ActiveAdmin.register ContestantProfile do
-  actions :index, :show
+  actions :index, :show, :edit, :update
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+  permit_params :name, :hurigana, :group_id, :profile_image, :age, :height,
+                :come_from, :link_url, :comment, :thanks_comment, :station,
+                :profile_image_crop_param_x, :profile_image_crop_param_y,
+                :profile_image_crop_param_height, :profile_image_crop_param_width,
+                :profile_image_crop_param_extra, :profile_image_blur_param
+
+  scope :all, default: true
+  scope :pending_approval
+  scope :approved
+  scope :rejected
 
   index do
     selectable_column
     id_column
+    column :status
     column :user_id
     column :group_id
     column :name
@@ -36,6 +35,9 @@ ActiveAdmin.register ContestantProfile do
   show do
     attributes_table do
       row :id
+      row :user_id do
+        link_to contestant_profile.user.id, admin_user_path(contestant_profile.user)
+      end
       row :group_id
       row :name
       row :hurigana
@@ -72,6 +74,41 @@ ActiveAdmin.register ContestantProfile do
       end
     end
     active_admin_comments
+  end
+
+  form do |f|
+    f.inputs 'UserInfo' do
+      f.input :name
+      f.input :hurigana
+      f.input :group_id
+      f.input :profile_image
+      li image_tag contestant_profile.profile_image.thumb(300, 300)
+      f.input :profile_image_crop_param_x
+      f.input :profile_image_crop_param_y
+      f.input :profile_image_crop_param_height
+      f.input :profile_image_crop_param_width
+      f.input :profile_image_crop_param_extra
+      f.input :profile_image_blur_param
+      f.input :age
+      f.input :height
+      f.input :come_from
+      f.input :link_url
+      f.input :comment
+      f.input :thanks_comment
+      f.input :station
+
+      action :submit
+    end
+  end
+
+  batch_action :approve do |ids|
+    ContestantProfile.find(ids).each &:approved!
+    redirect_to collection_path, alert: "承認しました"
+  end
+
+  batch_action :reject do |ids|
+    ContestantProfile.find(ids).each &:rejected!
+    redirect_to collection_path, alert: "却下しました"
   end
 
   controller do

@@ -63,16 +63,38 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
   end
 
   # 画像をクロップするいい方法が見つからなかったため，urlをハードコードしてクロップ
-  def thumb(width = 500, height = 500)
+  def thumb(width = 500, height = 500, is_blur = false)
     # 行が長くなりすぎる為，改行を行っているのでrubocopを一部無視
     # rubocop:disable Style/SpaceAroundOperators
     "http://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
-    + "#{file.resource_type}/#{file.storage_type}/"\
+    + "#{file.resource_type}/upload/"\
+    + "#{blur_param(is_blur, model)}"\
+    + "#{extra_param(model)}"\
     + "c_crop,h_#{model.profile_image_crop_param_height},"\
     + "w_#{model.profile_image_crop_param_width},"\
     + "x_#{model.profile_image_crop_param_x},"\
     + "y_#{model.profile_image_crop_param_y}/"\
     + "c_fill,w_#{width},h_#{height}/v#{file.version}/#{file.filename}"
     # rubocop:enable all
+  end
+
+  # blurのかかったサムネイルを取得する
+  def thumb_with_blur(width = 500, height = 500)
+    thumb(width, height, true)
+  end
+
+  private
+
+  # モデルにextra_paramが設定されている場合は/を追加して返す
+  def extra_param(model)
+    extra_param = model.profile_image_crop_param_extra
+    extra_param.empty? ? '' : "#{extra_param}/"
+  end
+
+  # blurのパラメタを必要であれば返す
+  def blur_param(is_blur, model)
+    param = model.profile_image_blur_param
+    param = Settings.contestant[:default_blur] if param == 0
+    is_blur ? "e_blur:#{param}/" : ''
   end
 end

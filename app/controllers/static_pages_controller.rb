@@ -2,6 +2,8 @@ class StaticPagesController < ApplicationController
   # トップページ
   def index
     @news = News.where("is_important = 'true'").order("date DESC").limit(5)
+    # プレ公開の出場者を取得
+    @contestants = Contestant.approved.todays_preopen
   end
 
   # News

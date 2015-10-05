@@ -17,13 +17,17 @@ class ContestantProfile < ActiveRecord::Base
   validates :is_interest_in_idol_group, inclusion: { in: [true, false] }
   validates :is_share_with_twitter_ok, inclusion: { in: [true, false] }
 
+  # 承認ステータスのenum
+  enum status: { pending_approval: 0, approved: 1, rejected: 2 }
+
   before_save :prepare_validation
 
   def prepare_validation
-    if age.blank?
-      # 年齢が未入力の場合はないしょで埋める
-      self.age = 'ないしょ'
-    end
+    # 年齢が未入力の場合はないしょで埋める
+    self.age = 'ないしょ' if age.blank?
+    # statusが存在しない場合は，approval_pendingにする
+    self.status = ContestantProfile.statuses[:pending_approval] if status.blank?
+
     self.link_type = detect_link_type if !link_url.blank? && link_type.blank?
 
     self
