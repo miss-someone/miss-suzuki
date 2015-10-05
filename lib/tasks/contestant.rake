@@ -20,7 +20,7 @@ namespace :contestant do
   end
 
   desc "Update todays preopen contestants"
-  task :update_todays_preopens do
+  task update_todays_preopens: :environment do
     # 既存のプレオープン出場者の解除
     olds = Contestant.todays_preopen
     olds.each do |contestant|
