@@ -102,12 +102,12 @@ ActiveAdmin.register ContestantProfile do
   end
 
   batch_action :approve do |ids|
-    ContestantProfile.find(ids).each proc(&:approved!)
+    ContestantProfile.find(ids).each &:approved!
     redirect_to collection_path, alert: "承認しました"
   end
 
   batch_action :reject do |ids|
-    ContestantProfile.find(ids).each proc(&:rejected!)
+    ContestantProfile.find(ids).each &:rejected!
     redirect_to collection_path, alert: "却下しました"
   end
 
