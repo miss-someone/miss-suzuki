@@ -10,7 +10,7 @@
   <div id="prerelease">
     <div class="content">
       <h2 class="title">エントリーしてくれた鈴木さんを１日<%= Settings.contestant[:preopen_count] %>名、ランダムで公開します！</h2>
-      <p class="explain">気になる鈴木さんたちのお顔は、11月1日の投票開始日から公開します！</p>
+      <p class="explain">気になる鈴木さんたちのお顔は、11月1日の投票開始日から大公開！</p>
       <div class="contestants_box">
         <% @contestants.each do |contestant| %>
           <div class="<%= div_contestant_class(@contestants, contestant) %>">
@@ -31,6 +31,8 @@
       </div>
     </div>
   </div>
+
+  <p id="entry_btn"><a href="contestants/entry">ENTRY</a></p>
 
   <div class="news">
     <h2>NEWS</h2>
