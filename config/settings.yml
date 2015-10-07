@@ -4,7 +4,7 @@ user_type:
 current_group_id: 1
 contestant:
   preopen_count: 3 # プレオープンで公開する参加者の数
-  default_blur: 1000
+  default_blur: 500
 link_type:
   facebook: 1
   twitter: 2
