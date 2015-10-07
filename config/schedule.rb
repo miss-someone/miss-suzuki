@@ -26,7 +26,7 @@ if Rails.env.production? && ENV['IS_ADMIN_WEB'] == 'false'
   # プレ公開出場者のアップデートを，毎日0:01に行う
   # 実行するのは，マイグレーションを行うアプリケーションサーバ上
   every 1.day, at: '0:01 am' do
-    rake "db:contestant:update_todays_preopens"
+    rake "contestant:update_todays_preopens"
   end
 end
 

@@ -9,6 +9,7 @@ set :rails_env, "production"
 
 role :app, %w(webmaster@192.168.1.21 webmaster@192.168.1.22)
 role :db, %w(webmaster@192.168.1.21)
+role :contestant, %w(webmaster@192.168.1.21)
 
 # Extended Server Syntax
 # ======================
