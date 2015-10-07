@@ -174,7 +174,7 @@ p a{
   text-align: center;
   color:#191919;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
 }
 #home .news h2{
   color:#e04974;
@@ -1350,6 +1350,7 @@ body {
 #home #prerelease .explain{
   text-align: center;
   color:#191919;
+  font-size: 14px;
 }
 #home .news h2{
   color:#e04974;
