@@ -244,6 +244,8 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.4)
+    rack-dev-mark (0.7.4)
+      rack (>= 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -423,6 +425,7 @@ DEPENDENCIES
   pg
   pry-byebug
   pry-rails
+  rack-dev-mark
   rails (= 4.2.4)
   rails-erd
   rails-i18n
