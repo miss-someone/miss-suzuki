@@ -2105,6 +2105,26 @@ body {
   float: left;
   margin-top:20px;
 }
+/*==================== HISTORY ==========================*/
+#history #content{
+  width:900px;
+  margin:0 auto;
+}
+#history .section h2{
+  color:#191919;
+}
+#history .section h2 span{
+  border-bottom:5px solid #e04974;
+  padding-bottom: 10px;
+}
+#history .section {
+  margin-top:50px;
+}
+#history .section p{
+  font-weight: bold;
+  font-size: 14px;
+  color:#191919;
+}
 /*==================== POLICY&TERMS ==========================*/
 #policy{
   width: 100%;
