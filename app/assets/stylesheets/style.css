@@ -885,6 +885,44 @@ p a{
   color:#666;
   line-height:1.5;
 }
+/*==================== HISTORY ==========================*/
+#history #content{
+  width:300px;
+  margin:0 auto;
+}
+#history .section h2{
+  color:#191919;
+  font-size: 16px;
+}
+#history .section h2 span{
+  border-bottom:3px solid #e04974;
+  padding-bottom: 5px;
+}
+#history .section {
+  margin-top:30px;
+}
+#history .section p{
+  font-weight: bold;
+  font-size: 12px;
+  color:#191919;
+}
+#history .section span.inside{
+  color:#498de0;
+}
+#history .credit{
+  text-align: right;
+  font-weight: bold;
+  font-size: 12px;
+  color:#191919;
+}
+#history .image p{
+  font-size: 10px;
+  margin-top: 0;
+}
+#history .image img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+  max-width: 100%;
+}
 /*==================== POLICY&TERMS ==========================*/
 #policy{
   width: 100%;
@@ -2124,6 +2162,22 @@ body {
   font-weight: bold;
   font-size: 14px;
   color:#191919;
+}
+#history .section span.inside{
+  color:#498de0;
+}
+#history .credit{
+  text-align: right;
+  font-weight: bold;
+  font-size: 14px;
+  color:#191919;
+}
+#history .image p{
+  font-size: 12px;
+  margin-top: 0;
+}
+#history .image img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
 /*==================== POLICY&TERMS ==========================*/
 #policy{
