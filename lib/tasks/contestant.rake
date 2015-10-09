@@ -1,7 +1,7 @@
 namespace :contestant do
   desc "Check new Contestant and notify"
   task check_new: :environment do
-    prev_last_id_file_path = Rails.root +  "tmp/prev_last_contestant_id"
+    prev_last_id_file_path = Rails.root + "tmp/prev_last_contestant_id"
     prev_last_id = 0
     begin
       prev_last_id = File.read(prev_last_id_file_path).to_i
