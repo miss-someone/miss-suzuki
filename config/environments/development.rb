@@ -47,4 +47,7 @@ Rails.application.configure do
     Bullet.console = true
     Bullet.rails_logger = true
   end
+
+  # dev環境であることを示すラベル表示
+  config.rack_dev_mark.enable = true
 end
