@@ -1,21 +1,20 @@
 namespace :contestant do
   desc "Check new Contestant and notify"
   task check_new: :environment do
-    count_file_path = Rails.root + "tmp/prev_contestant_count"
-    prev_count = 0
+    prev_last_id_file_path = Rails.root +  "tmp/prev_last_contestant_id"
+    prev_last_id = 0
     begin
-      prev_count = File.read(count_file_path).to_i
+      prev_last_id = File.read(prev_last_id_file_path).to_i
     rescue SystemCallError => e
       puts "SystemCallError: " + e.message
     rescue IOError => e
       puts "IOError: " + e.message
     end
-    current_count = ContestantProfile.count
-    if current_count > prev_count
-      count = current_count - prev_count
-      new_contestants = ContestantProfile.limit(count).order("created_at DESC").all
+    new_contestants = ContestantProfile.where("id > ?", prev_last_id)
+    if new_contestants.present?
+      last_id = ContestantProfile.last.id
       notify_to_slack(new_contestant_notify_body(new_contestants))
-      File.write(count_file_path, current_count)
+      File.write(prev_last_id_file_path, last_id)
     end
   end
 
