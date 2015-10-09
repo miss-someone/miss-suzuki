@@ -341,6 +341,41 @@ p a{
   margin-left: 40px;
   padding:0;
 }
+
+#home .media{
+  width:130px;
+  border-bottom: 5px solid #e04974;
+  text-align: center;
+  margin:0 auto;
+}
+#home .media h3{
+  font-size:24px;
+}
+#home .media p{
+  font-size: 12px;
+  margin-top: -25px;
+}
+#home .media_logo{
+  overflow: hidden;
+  max-width:300px;
+  margin: 0 auto;
+  margin-bottom:20px;
+  margin-top:10px;
+}
+#home .media_logo .logo1 img{
+  width:150px;
+  margin-right:20px;
+  margin-top: 5px;
+  float:left;
+}
+#home .media_logo .logo2 img{
+  width:100px;
+  float: left;
+  margin-top:-5px;
+}
+
+
+
 #home .cooperation{
   width:200px;
   border-bottom: 5px solid #e04974;
@@ -859,6 +894,9 @@ p a{
   width:140px;
   margin-right:0;
   float: left;
+}
+#about #content .sponsors #ascii img{
+  margin-top:10px;
 }
 /*====================CREATE==========================*/
 #completed{
@@ -1588,6 +1626,38 @@ body {
   width:200px;
   margin-right: 30px;
 }
+#home .media{
+  width:130px;
+  border-bottom: 5px solid #e04974;
+  text-align: center;
+  margin:0 auto;
+}
+#home .media h3{
+  font-size: 30px;
+}
+#home .media p{
+  font-size: 12px;
+  margin-top: -25px;
+}
+#home .media_logo{
+  overflow: hidden;
+  max-width:600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#home .media_logo .logo1 img{
+  width:250px;
+  margin-left: 30px;
+  margin-right:50px;
+  margin-top: 5px;
+  float:left;
+}
+#home .media_logo .logo2 img{
+  width:200px;
+  float: left;
+  margin-top:-5px;
+}
 #home .cooperation{
   width:250px;
   border-bottom: 5px solid #e04974;
@@ -2142,6 +2212,17 @@ body {
   width:250px;
   float: left;
   margin-top:20px;
+}
+#about #content .sponsors #ascii img{
+  width:250px;
+  float: left;
+  margin-top:20px;
+  margin-left:70px;
+}
+#about #content .sponsors #oedo img{
+  width:250px;
+  float: left;
+  margin-top:0px;
 }
 /*==================== HISTORY ==========================*/
 #history #content{
