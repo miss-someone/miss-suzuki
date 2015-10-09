@@ -12,6 +12,13 @@
 
   <%= analytics_init if Rails.env.production? %>
   <%= favicon_link_tag 'favicon.ico' %>
+<script>
+    $(function(){
+        $("#acMenu dt").on("click", function() {
+            $(this).next().slideToggle();
+        });
+    });
+</script>
 </head>
 <body>
 <div id="header">
@@ -24,6 +31,7 @@
         <li class="tab" ><a href="/rules">RULES</a></li>
         <li class="tab"><a href="/contestants/entry">ENTRY</a></li>
         <li class="tab"><a href="/about">ABOUT US</a></li>
+        <li class="tab"><a href="/history">HISTORY</a></li>
       </ul>
     </div>
     <div id="header_right">
@@ -35,13 +43,21 @@
       </ul>
     </div>
   </div>
-  <ul id="smartphone_menu">
-      <li class="tab"><a href="/">HOME</a></li>
-      <li class="tab"><a href="/news">NEWS</a></li>
-      <li class="tab" ><a href="/rules">RULES</a></li>
-      <li class="tab"><a href="/contestants/entry">ENTRY</a></li>
-      <li class="tab"><a href="/about">ABOUT</a></li>
-  </ul>
+
+  <div id="smartphone_menu">
+    <dl id="acMenu">
+      <dt><%= image_tag 'humburger.png' %><span>MENU</span></dt>
+      <dd>
+      <li class="tab"><a href="/">HOME<span>ホーム</span></a></li>
+        <li class="tab even"><a href="/news">NEWS<span>ニュース</span></a></li>
+        <li class="tab" ><a href="/rules">RULES<span>ルール</span></a></li>
+        <li class="tab even"><a href="/contestants/entry">ENTRY<span>エントリー</span></a></li>
+        <li class="tab"><a href="/about">ABOUT<span>運営団体</span></a></li>
+        <li class="tab even"><a href="/history">HISTORY<span>鈴木さんの歴史</span></a></li>
+      </dd>
+    </dl>
+  </div>
+
 </div>
 
 
@@ -63,6 +79,13 @@
   </div>
 </div>
 </footer>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
