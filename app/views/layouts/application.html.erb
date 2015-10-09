@@ -19,6 +19,14 @@
         });
     });
 </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </head>
 <body>
 <div id="header">
@@ -31,7 +39,7 @@
         <li class="tab" ><a href="/rules">RULES</a></li>
         <li class="tab"><a href="/contestants/entry">ENTRY</a></li>
         <li class="tab"><a href="/about">ABOUT US</a></li>
-        <li class="tab"><a href="/about">HISTORY</a></li>
+        <li class="tab"><a href="/history">HISTORY</a></li>
       </ul>
     </div>
     <div id="header_right">
