@@ -1341,23 +1341,29 @@ body {
 }
 #nav li{
   list-style: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
+}
+#nav .tab{
+  max-width: 120px;
+  float: left;
+  display: block;
+  margin-left: 20px;
+  margin-top:20px;
+}
+#nav .tab span{
+  color:#666;
+  font-size:11px;
+  text-align: center;
 }
 #nav li a{
   text-decoration: none;
   color: #191919;
+  display: block;
+  text-align: center;
 }
 #nav li a:hover{
   color:#e04974;
-}
-
-#nav .tab{
-  max-width: 100px;
-  float: left;
-  display: block;
-  margin-left: 20px;
-  line-height: 5;
 }
 #header_right li{
   list-style: none;
