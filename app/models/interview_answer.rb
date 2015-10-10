@@ -4,6 +4,6 @@ class InterviewAnswer < ActiveRecord::Base
 
   validates :user, presence: true
   validates :interview_topic, presence: true
-  validates :answer, presence: true
+  validates :answer, presence: true, length: { maximum: 200 }
   validates :is_pending, inclusion: { in: [true, false] }
 end
