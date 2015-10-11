@@ -14,10 +14,13 @@ ActiveAdmin.register InterviewAnswer do
 
   index do
     id_column
-    column :interview_topic
+    column :interview_topic do |interview_answer|
+      interview_answer.interview_topic.topic
+    end
     column :user
     column :answer
     column :is_pending
+    actions
   end
 
   permit_params :interview_topic_id, :user_id, :answer, :is_pending
