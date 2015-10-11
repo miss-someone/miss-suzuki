@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user_sessions/new'
+
   if ENV['IS_ADMIN_WEB'] == 'true'
     # 管理画面用
     devise_for :admin_users, ActiveAdmin::Devise.config
@@ -34,5 +36,10 @@ Rails.application.routes.draw do
         post  '/:id/vote'   => 'contestants#vote', as: :vote
       end
     end
+
+    get "logout" => "user_sessions#destroy", :as => "logout"
+    get "login" => "user_sessions#new", :as => "login"
+    resources :user_sessions, only: [:new, :create, :destroy]
+
   end
 end
