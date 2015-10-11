@@ -1,9 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe InterviewAnswer, type: :model do
-  let!(:interview_topic) { create(:interview_topic) }
-  let!(:user) { create(:user) }
+  let(:interview_topic) { create(:interview_topic) }
+  let(:user) { create(:user) }
   let(:interview_answer) { build(:interview_answer) }
+  before do
+    interview_answer.interview_topic_id = interview_topic.id
+    interview_answer.user_id = user.id
+  end
 
   describe "validation" do
     context "when interview_answer is valid" do
