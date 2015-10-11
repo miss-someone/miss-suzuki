@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927061501) do
+ActiveRecord::Schema.define(version: 20151005041123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,29 +51,33 @@ ActiveRecord::Schema.define(version: 20150927061501) do
 
   create_table "contestant_profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "group_id",                                    null: false
-    t.string   "name",                                        null: false
-    t.string   "hurigana",                                    null: false
-    t.string   "profile_image",                               null: false
+    t.integer  "group_id",                                        null: false
+    t.string   "name",                                            null: false
+    t.string   "hurigana",                                        null: false
+    t.string   "profile_image",                                   null: false
     t.string   "age"
-    t.string   "height",                                      null: false
-    t.string   "come_from",                                   null: false
+    t.string   "height",                                          null: false
+    t.string   "come_from",                                       null: false
     t.string   "link_url"
-    t.text     "comment",                                     null: false
+    t.text     "comment",                                         null: false
     t.integer  "votes",                           default: 0
-    t.text     "thanks_comment",                              null: false
+    t.text     "thanks_comment",                                  null: false
     t.string   "phone"
     t.string   "station"
     t.string   "how_know"
-    t.boolean  "is_interest_in_idol_group",                   null: false
-    t.boolean  "is_share_with_twitter_ok",                    null: false
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.boolean  "is_interest_in_idol_group",                       null: false
+    t.boolean  "is_share_with_twitter_ok",                        null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.integer  "profile_image_crop_param_x"
     t.integer  "profile_image_crop_param_y"
     t.integer  "profile_image_crop_param_width"
     t.integer  "profile_image_crop_param_height"
     t.integer  "link_type"
+    t.boolean  "is_preopen",                      default: false, null: false
+    t.string   "profile_image_crop_param_extra",  default: "",    null: false
+    t.integer  "profile_image_blur_param",        default: 0,     null: false
+    t.integer  "status",                          default: 0,     null: false
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", using: :btree
@@ -105,6 +109,12 @@ ActiveRecord::Schema.define(version: 20150927061501) do
 
   add_index "interview_answers", ["interview_topic_id"], name: "index_interview_answers_on_interview_topic_id", using: :btree
   add_index "interview_answers", ["user_id"], name: "index_interview_answers_on_user_id", using: :btree
+
+  create_table "interview_topics", force: :cascade do |t|
+    t.string   "topic",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "news", force: :cascade do |t|
     t.date     "date",                         null: false
@@ -143,5 +153,7 @@ ActiveRecord::Schema.define(version: 20150927061501) do
   add_foreign_key "contestant_profiles", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "contestant_tags", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interview_answers", "interview_topics", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interview_answers", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_profiles", "users", on_update: :cascade, on_delete: :cascade
 end
