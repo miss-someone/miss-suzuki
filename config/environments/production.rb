@@ -1,8 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # For Dalli
+  require 'action_dispatch/middleware/session/dalli_store'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
+
+  # セッションの保存をdalliに
+  config.cache_store = :dalli_store, '192.168.1.30:11211', { namespace: MissSuzuki, expires_in: 1.day, compress: true }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

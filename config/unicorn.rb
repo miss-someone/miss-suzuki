@@ -42,6 +42,12 @@ after_fork do |_server, _worker|
   end
 
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
+
+  # unicornの再起動時に，新プロセスのmemcachedへのコネクションを初期化する
+  if defined?(ActiveSupport::Cache::DalliStore) && Rails.cache.is_a?(ActiveSupport::Cache::DalliStore)
+    Rails.cache.reset
+    ObjectSpace.each_object(ActionDispatch::Session::DalliStore, &:reset)
+  end
 end
 
 stderr_path File.expand_path('log/unicorn-err.log', rails_root)
