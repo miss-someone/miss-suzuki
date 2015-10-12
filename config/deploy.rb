@@ -51,7 +51,7 @@ set :unicorn_config_path, "#{File.join(current_path, 'config', 'unicorn.rb')}"
 set :bundle_jos, 2
 
 # wheneverのジョブ識別用のid指定
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
