@@ -14,7 +14,7 @@ tags.each do |tag|
 end
 
 # ユーザー用のseed
-if Rails.env == "development"
+if Rails.env.development?
   user = User.new(email: 'sample@hoge.com', password: 'password', user_type: Settings.user_type[:contestant])
   user.save!
 end
