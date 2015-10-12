@@ -14,8 +14,10 @@ tags.each do |tag|
 end
 
 # ユーザー用のseed
-user = User.new(email: 'sample@hoge.com', password: 'password', user_type: Settings.user_type[:contestant])
-user.save!
+if Rails.env == "development"
+  user = User.new(email: 'sample@hoge.com', password: 'password', user_type: Settings.user_type[:contestant])
+  user.save!
+end
 
 if AdminUser.count == 0
   AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
