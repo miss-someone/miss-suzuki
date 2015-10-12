@@ -72,7 +72,15 @@ $ ->
   messages = {
     "contestant[agreement]": {required: "*利用規約への同意が必要です"}
   }
-  $('#new_contestant').validate {rules: rules, messages: messages}
+  $('#new_contestant').validate(
+    rules: rules
+    messages: messages
+    submitHandler: (form) ->
+      btn = $('.submit_btn')
+      btn.val '送信中...'
+      btn.css(opacity: 0.5)
+      form.submit
+  )
 
 # マイページのスライドショー用
 $ ->
