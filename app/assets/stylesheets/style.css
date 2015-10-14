@@ -1244,6 +1244,50 @@ p a{
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
+/*====================  ログインページ ==========================*/
+#login{
+  clear: both;
+  border-top: 5px solid #e04974;
+  margin-bottom: -30px;
+  height:400px;
+}
+#login{
+  background-position: 50%;
+}
+#login #login_form{
+  width:280px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 30px;
+  padding:0 10px 10px 10px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 260px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
 /*====================  投票ページ ==========================*/
 .content_middle{
   padding-top: 30px;
@@ -1971,6 +2015,9 @@ body {
   width:100%;
   border-top: 5px solid #e04974;
 }
+#create{
+  background-image: url("images/form_background.jpg");
+}
 #create h1{
   color: #e04974;
   text-align: center;
@@ -2550,6 +2597,47 @@ body {
 }
 #mypage .instruction .even{
   background-color: #f9f9f9;
+}
+/*====================  ログインページ ==========================*/
+#login{
+  clear: both;
+  border-top: 5px solid #e04974;
+  margin-bottom: -30px;
+  height: 600px;
+}
+#login #login_form{
+  width:400px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 100px;
+  padding:0 50px 20px 50px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 400px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
