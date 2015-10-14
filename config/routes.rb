@@ -36,6 +36,11 @@ Rails.application.routes.draw do
       end
     end
 
+    scope :users do
+      get   'signup'     => 'user#new'
+      get   'create'  => 'user#create'
+    end
+
     get "logout" => "user_sessions#destroy", :as => "logout"
     get "login" => "user_sessions#new", :as => "login"
     resources :user_sessions, only: :create

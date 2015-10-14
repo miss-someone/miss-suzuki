@@ -28,6 +28,11 @@ ja:
         profile_image_crop_param_width: クロップ領域のwidth
         profile_image_crop_param_extra: 画像に対するCloudinaryの追加パラメタ
         profile_image_blur_param: 画像にかけるblurの強度(0の場合はデフォルト値使用)
+      user_profile:
+        nickname: ニックネーム
+        age: 年齢
+        sex: 性別
+        prefecture: お住まいの都道府県
 
   date:
     abbr_day_names:
