@@ -1288,6 +1288,11 @@ p a{
   color:#fff;
   border:0px;
 }
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
 /*====================  投票ページ ==========================*/
 .content_middle{
   padding-top: 30px;
@@ -2638,6 +2643,11 @@ body {
   font-size: 18px;
   color:#fff;
   border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
