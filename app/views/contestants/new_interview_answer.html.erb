@@ -1,0 +1,23 @@
+<div id ="create">
+<h1>インタビュー回答フォーム</h1>
+<p><%= @contestant.email %>さん、インタビューへの回答をお願いします！</p>
+  <div id="entry_form">
+    <%= form_for @contestant, url: { action: :create_interview_answer } do |f| %>
+      <div class="form1">
+        <table class="table">
+        <% @contestant.interview_answers.each do |interview_answer| %>
+          <%= f.fields_for :interview_answers, interview_answer do |interview_answer_field| %>
+            <tr><td><%= interview_answer_field.label interview_answer.interview_topic.topic %></td></tr>
+            <tr><td><%= interview_answer_field.text_field :answer %></td></tr>
+            <tr><td><%= interview_answer_field.hidden_field :interview_topic %></td></tr>
+          <% end %>
+        <% end %>
+        </table>
+         </div>
+      <p><%= f.submit "送信する", class: "submit_btn" %></p>
+    <% end %>
+  </div><!-- /#entry_form -->
+</div><!-- /#create -->
+<div id="banner_big">
+  <%= image_tag 'banner/cosmeken.jpg' %>
+</div>

@@ -1,5 +1,6 @@
 class ContestantsController < ApplicationController
   include ArrayUtils
+  before_filter :require_login, only: :new_interview_answer
 
   def index
     @contestant = Array.split3(User.contestants.shuffle)
@@ -30,6 +31,18 @@ class ContestantsController < ApplicationController
     end
   end
 
+  def new_interview_answer
+    @contestant = current_user
+    InterviewTopic.find_each do |interview_topic|
+      @contestant.interview_answers.build(interview_topic_id: interview_topic.id)
+    end
+  end
+
+  def create_interview_answer
+    @contestant = current_user.update(answer: contestant_params[:answer])
+    @contestant.save
+  end
+
   private
 
   def contestant_params
@@ -44,7 +57,8 @@ class ContestantsController < ApplicationController
                                          :profile_image_crop_param_x, :profile_image_crop_param_y,
                                          :profile_image_crop_param_height,
                                          :profile_image_crop_param_width
-                                        ]
+                                        ],
+                                       interview_answer_attributes: [:user, :interview_topic, :answer]
                                       )
   end
 end
