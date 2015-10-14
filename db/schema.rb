@@ -98,6 +98,24 @@ ActiveRecord::Schema.define(version: 20151005041123) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "interview_answers", force: :cascade do |t|
+    t.integer  "interview_topic_id", null: false
+    t.integer  "user_id",            null: false
+    t.string   "answer",             null: false
+    t.boolean  "is_pending",         null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "interview_answers", ["interview_topic_id"], name: "index_interview_answers_on_interview_topic_id", using: :btree
+  add_index "interview_answers", ["user_id"], name: "index_interview_answers_on_user_id", using: :btree
+
+  create_table "interview_topics", force: :cascade do |t|
+    t.string   "topic",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "news", force: :cascade do |t|
     t.date     "date",                         null: false
     t.boolean  "is_important", default: false
@@ -135,5 +153,7 @@ ActiveRecord::Schema.define(version: 20151005041123) do
   add_foreign_key "contestant_profiles", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "contestant_tags", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interview_answers", "interview_topics", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "interview_answers", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_profiles", "users", on_update: :cascade, on_delete: :cascade
 end

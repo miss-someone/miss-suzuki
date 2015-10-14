@@ -8,6 +8,10 @@
 + `npm install bower -g`
 + `bundle exec rake bower:install`
 
+## Memcached
++ `brew install memcached`
++ `/usr/local/opt/memcached/bin/memcached &`
+
 # 管理画面
 管理画面へのアクセスには環境変数を設定する必要があります．
 

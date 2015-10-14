@@ -46,6 +46,8 @@ gem 'whenever', require: false
 gem 'newrelic_rpm'
 # 稼働環境をラベルで表示してくれるすぐれもの
 gem "rack-dev-mark"
+# セッションストアとして使うmemcachedクライアント
+gem 'dalli'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

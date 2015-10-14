@@ -191,6 +191,19 @@ p a{
   font-weight: bold;
   font-size: 12px;
 }
+#home .satosan{
+  width:100%;
+  margin:0 auto;
+}
+#home .satosan img{
+  width:100%;
+}
+#home .satosan p{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #191919;
+}
 #home .news h2{
   color:#e04974;
   border-bottom: 3px solid #e04974;
@@ -1244,6 +1257,55 @@ p a{
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
+/*====================  ログインページ ==========================*/
+#login{
+  clear: both;
+  border-top: 5px solid #e04974;
+  margin-bottom: -30px;
+  height:400px;
+}
+#login{
+  background-position: 50%;
+}
+#login #login_form{
+  width:280px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 30px;
+  padding:0 10px 10px 10px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 260px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
 /*====================  投票ページ ==========================*/
 .content_middle{
   padding-top: 30px;
@@ -1466,6 +1528,19 @@ body {
   text-align: center;
   color:#191919;
   font-size: 14px;
+}
+#home .satosan{
+  width:900px;
+  margin:0 auto;
+}
+#home .satosan img{
+  width:100%;
+}
+#home .satosan p{
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #191919;
 }
 #home .news h2{
   color:#e04974;
@@ -1970,6 +2045,9 @@ body {
   clear: both;
   width:100%;
   border-top: 5px solid #e04974;
+}
+#create{
+  background-image: url("images/form_background.jpg");
 }
 #create h1{
   color: #e04974;
@@ -2550,6 +2628,52 @@ body {
 }
 #mypage .instruction .even{
   background-color: #f9f9f9;
+}
+/*====================  ログインページ ==========================*/
+#login{
+  clear: both;
+  border-top: 5px solid #e04974;
+  margin-bottom: -30px;
+  height: 600px;
+}
+#login #login_form{
+  width:400px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 100px;
+  padding:0 50px 20px 50px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 400px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
