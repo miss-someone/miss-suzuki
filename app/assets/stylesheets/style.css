@@ -191,6 +191,19 @@ p a{
   font-weight: bold;
   font-size: 12px;
 }
+#home .satosan{
+  width:100%;
+  margin:0 auto;
+}
+#home .satosan img{
+  width:100%;
+}
+#home .satosan p{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #191919;
+}
 #home .news h2{
   color:#e04974;
   border-bottom: 3px solid #e04974;
@@ -1466,6 +1479,19 @@ body {
   text-align: center;
   color:#191919;
   font-size: 14px;
+}
+#home .satosan{
+  width:900px;
+  margin:0 auto;
+}
+#home .satosan img{
+  width:100%;
+}
+#home .satosan p{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #191919;
 }
 #home .news h2{
   color:#e04974;
