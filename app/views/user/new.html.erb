@@ -2,17 +2,12 @@
 <h1>会員登録</h1>
   <div id="entry_form">
     <% if @voter.errors.any? %>
-      <%= render 'user/error_msg', messages: @user.errors.full_messages %>
+      <%= render 'user/error_msg', messages: @voter.errors.full_messages %>
     <% end %>
     <%= form_for @voter, url: { action: :create } do |f| %>
       <div class="form1">
         <table class="table">
-          <%= f.fields_for :user_profile do |f| %>
-            <tr><td><%= f.label :nickname %></td></tr>
-            <tr><td><%= f.text_field :nickname, class: "half" %></td></tr>
-            <tr><td><%= f.label :age %>(未入力の場合，「ないしょ」となります)</td></tr>
-            <tr><td><%= f.text_field :age , class: "half" %></td></tr>
-          <% end %>
+          <tr><td>====================Stub=====================</td></tr>
           <tr><td><%= f.label :email %></td></tr>
           <tr><td><%= f.email_field :email, class: "half" %></td></tr>
           <tr><td><%= f.label :password %></td></tr>
