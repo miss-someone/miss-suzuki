@@ -30,6 +30,10 @@ class ContestantsController < ApplicationController
     end
   end
 
+  def thankyou
+      @contestant = ContestantProfile.find(params[:id])
+  end
+
   private
 
   def contestant_params
