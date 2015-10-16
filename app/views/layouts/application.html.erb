@@ -12,13 +12,14 @@
 
   <%= analytics_init if Rails.env.production? %>
   <%= favicon_link_tag 'favicon.ico' %>
-<!-- <script>
+  <!-- mypage.html.erbに類似の記述あり。 -->
+<script>
     $(function(){
         $("#acMenu dt").on("click", function() {
             $(this).next().slideToggle();
         });
     });
-</script> -->
+</script>
 </head>
 <body>
 <div id="header">
