@@ -11,4 +11,19 @@ module ApplicationHelper
       ' <li class="header_btn tab"><a href="/login">ログイン</a></li>'
     end
   end
+
+  # FBでシェアする時の画像を指定する
+  def fb_share_setting
+    if class: "fb-history"
+      <meta property="og:title" content="MISS-SUZUKI | 歴史" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://miss-suzuki.com/history" />
+      <meta property="og:image" content="https://miss-suzuki.com/assets/mainimages/history_mainimage-83b98a17d4615164c83b5f68e906a20b.jpg" />
+    else
+      <meta property="og:title" content="MISS-SUZUKI | <%= @contestant.name %>さん" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://miss-suzuki.com/contestant/<%= @contestant.id %>/mypage" />
+      <meta property="og:image" content="<%= @contestant.profile_image %>" />
+    end
+  end
 end
