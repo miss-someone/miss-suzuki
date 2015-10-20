@@ -4,7 +4,7 @@ class UserController < ApplicationController
   end
 
   def create
-    @voter = Voter.new(voter_params)
+    @voter = Voter.new(user_params)
     if @voter.save
       redirect_to root_url
     else
@@ -14,7 +14,7 @@ class UserController < ApplicationController
 
   private
 
-  def voter_params
-    params.require(:voter).permit(:email, :password)
+  def user_params
+    params.require(:user).permit(:email, :password)
   end
 end

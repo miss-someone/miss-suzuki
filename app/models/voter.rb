@@ -3,11 +3,8 @@ class Voter < User
   # デフォルトスコープの設定．normalユーザのみに制限
   default_scope -> { where(user_type: Settings.user_type[:normal]) }
 
-  validate :prepare_validation
-
-  def prepare_validation()
-    check_using_plus_alias and check_duplicate_email_with_alias
-  end
+  validate :check_duplicate_email_with_alias
+  validate :check_using_plus_alias
 
   # Googleの+を用いたエイリアスを弾くため，+が含まれていないかチェック
   # 独自エラーメッセージを出すために，validateでは行わない
@@ -19,7 +16,11 @@ class Voter < User
 
   # Googleの.を用いたエイリアスで，重複するメールアドレスが存在しないかチェックする
   def check_duplicate_email_with_alias()
-    true
+    return if email.nil?
+    striped_email = email.gsub('.', '')
+    if Voter.count_by_sql(["SELECT COUNT(id) FROM users WHERE replace(email, '.', '') = ?", striped_email]) > 0
+      errors.add(:email, "既に登録されているメールアドレスです．")
+    end
   end
 
   def profile=(p)

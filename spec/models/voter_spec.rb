@@ -22,8 +22,8 @@ RSpec.describe Voter, type: :model do
         before { voter2.email = voter.email }
         it { expect(voter2).not_to be_valid(:email) }
       end
-      context 'when email is already registered with gmail dots alias' do
-        let(:alias1) { create(:dot_alias1) }
+      context 'when email with gmail dots alias is already registered' do
+        before { create(:dot_alias1) }
         let(:alias2) { build(:dot_alias2) }
         it { expect(alias2).not_to be_valid(:email) }
       end
