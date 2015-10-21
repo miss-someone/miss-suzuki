@@ -42,6 +42,8 @@ Rails.application.routes.draw do
         post  'create' => 'user#create'
         get   '/:id/activate' => 'user#activate', as: :activation
       end
+
+      resources :password_resets
     end
 
     get "logout" => "user_sessions#destroy", :as => "logout"

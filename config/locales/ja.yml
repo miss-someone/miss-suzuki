@@ -4,6 +4,7 @@ ja:
       user:
         email: メールアドレス
         password: パスワード
+        password_confirmation: パスワードの確認
         agreement: 利用規約
       news:
         is_important: TOPページに表示

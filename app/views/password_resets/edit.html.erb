@@ -1,0 +1,19 @@
+<div id ="login" style="background-image:url(<%= asset_path "form_background.jpg" %>); background-size:cover;" />
+  <div id="login_form">
+    <h1>パスワード再設定</h1>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= form_for @user, url: password_reset_path(@token), html: { method: :put } do |f| %>
+      <div class="form1">
+        <table class="table">
+          <tr><td><%= f.label :email %></td></tr>
+          <tr><td><%= @user.email %></td></tr>
+          <tr><td><%= f.label :password %>(8文字以上30文字以内の半角英数記号)</td></tr>
+          <tr><td><%= f.password_field :password %></td></tr>
+        </table>
+      </div>
+      <p><%= f.submit "リセット", class: "submit_btn" %></p>
+    <% end %>
+  </div>
+</div>
