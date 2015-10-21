@@ -36,9 +36,12 @@ Rails.application.routes.draw do
       end
     end
 
-    scope :users do
-      get   'signup' => 'user#new'
-      post  'create' => 'user#create'
+    if Rails.env.development?
+      scope :users do
+        get   'signup' => 'user#new'
+        post  'create' => 'user#create'
+        get   '/:id/activate' => 'user#activate', as: :activation
+      end
     end
 
     get "logout" => "user_sessions#destroy", :as => "logout"
