@@ -9,19 +9,17 @@ class Voter < User
 
   # Googleの+を用いたエイリアスを弾くため，+が含まれていないかチェック
   # 独自エラーメッセージを出すために，validateでは行わない
-  def check_using_plus_alias()
-    if email.present? and email.include?('+')
-      errors.add(:email, "メールアドレスに「+」を含めることは出来ません")
-    end
+  def check_using_plus_alias
+    return unless email.present? && email.include?('+')
+    errors.add(:email, "メールアドレスに「+」を含めることは出来ません")
   end
 
   # Googleの.を用いたエイリアスで，重複するメールアドレスが存在しないかチェックする
-  def check_duplicate_email_with_alias()
+  def check_duplicate_email_with_alias
     return if email.nil?
-    striped_email = email.gsub('.', '')
-    if Voter.count_by_sql(["SELECT COUNT(id) FROM users WHERE replace(email, '.', '') = ?", striped_email]) > 0
-      errors.add(:email, "既に登録されているメールアドレスです．")
-    end
+    stripped = email.delete('.')
+    return unless Voter.count_by_sql(["SELECT COUNT(id) FROM users WHERE replace(email, '.', '') = ?", stripped]) > 0
+    errors.add(:email, "既に登録されているメールアドレスです．")
   end
 
   def profile=(p)

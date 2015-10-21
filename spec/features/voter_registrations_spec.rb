@@ -65,7 +65,7 @@ RSpec.feature "VoterRegistrations", type: :feature do
       end
     end
     context "when agreement checkbox is checked" do
-      before { check"voter[agreement]" }
+      before { check "voter[agreement]" }
       describe "about user count" do
         it { expect { click_button submit }.to change(User, :count).by(1) }
       end

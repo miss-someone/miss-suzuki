@@ -37,8 +37,8 @@ Rails.application.routes.draw do
     end
 
     scope :users do
-      get   'signup'     => 'user#new'
-      post  'create'  => 'user#create'
+      get   'signup' => 'user#new'
+      post  'create' => 'user#create'
     end
 
     get "logout" => "user_sessions#destroy", :as => "logout"

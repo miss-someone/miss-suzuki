@@ -8,7 +8,7 @@ RSpec.describe Voter, type: :model do
 
     describe 'for email' do
       context 'when email is valid' do
-        it { expect(voter2).to be_valid() }
+        it { expect(voter2).to be_valid }
       end
       context 'when email is nil' do
         before { voter2.email = nil }
