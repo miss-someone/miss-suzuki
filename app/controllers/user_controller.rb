@@ -5,7 +5,8 @@ class UserController < ApplicationController
 
   def create
     @voter = Voter.new(user_params)
-    if @voter.save
+    # TODO: わかりやすいメッセージへ
+    if verify_recaptcha(model: @voter, message: 'reCAPTCHAを選択してください.') && @voter.save
       redirect_to root_url
     else
       render 'new'
