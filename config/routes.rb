@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       end
     end
 
-    if Rails.env.development?
+    if Rails.env.development? || Rails.env.test?
       scope :users do
         get   'signup' => 'user#new'
         post  'create' => 'user#create'
