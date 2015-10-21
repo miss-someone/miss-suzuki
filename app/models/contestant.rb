@@ -10,6 +10,8 @@ class Contestant < User
   }
   scope :todays_preopen, -> { includes(:contestant_profile).where(contestant_profiles: { is_preopen: true }) }
 
+  validates :agreement, acceptance: true
+
   def profile=(p)
     self.contestant_profile = p
   end

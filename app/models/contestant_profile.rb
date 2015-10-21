@@ -20,9 +20,16 @@ class ContestantProfile < ActiveRecord::Base
   # 承認ステータスのenum
   enum status: { pending_approval: 0, approved: 1, rejected: 2 }
 
-  before_save :prepare_validation
+  before_validation :prepare_validation
+  before_save :prepare_save
 
   def prepare_validation
+    # 現在の応募者を割り振るデフォルトグループの設定
+    self.group_id = Settings.current_group_id
+    self
+  end
+
+  def prepare_save
     # 年齢が未入力の場合はないしょで埋める
     self.age = 'ないしょ' if age.blank?
     # statusが存在しない場合は，approval_pendingにする
