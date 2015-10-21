@@ -5,6 +5,7 @@ class Voter < User
 
   validate :check_duplicate_email_with_alias
   validate :check_using_plus_alias
+  validates :agreement, acceptance: true
 
   # Googleの+を用いたエイリアスを弾くため，+が含まれていないかチェック
   # 独自エラーメッセージを出すために，validateでは行わない

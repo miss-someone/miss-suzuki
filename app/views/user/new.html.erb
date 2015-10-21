@@ -14,7 +14,7 @@
           <tr><td><%= f.password_field :password, class: "half" %></td></tr>
         </table>
       </div>
-      <p><a href="/terms" target="_blank">利用規約</a>に同意する<%= check_box_tag 'voter[agreement]', true, false, {} %></p>
+      <p><a href="/terms" target="_blank">利用規約</a>に同意する<%= f.check_box :agreement %></p>
       <p><%= f.submit "登録", class: "submit_btn" %></p>
     <% end %>
   </div><!-- /#entry_form -->

@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   def new
-    @voter = User.new
+    @voter = Voter.new
   end
 
   def create
@@ -15,6 +15,6 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:voter).permit(:email, :password, :agreement)
   end
 end
