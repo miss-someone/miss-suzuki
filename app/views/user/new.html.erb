@@ -11,7 +11,7 @@
         <tr><td><%= f.email_field :email, class: "half" %></td></tr>
         <tr><td><%= f.label :password %>(8文字以上30文字以内の半角英数記号)</td></tr>
         <tr><td><%= f.password_field :password, class: "half" %></td></tr>
-        <tr><td><%= recaptcha_tags ssl: true %></td></tr>
+        <tr><td><%= recaptcha_tags ssl: true, :width =>'80%' %></td></tr>
       </table>
     </div>
     <p><a href="/terms" target="_blank">利用規約</a>に同意する<%= f.check_box :agreement %></p>
