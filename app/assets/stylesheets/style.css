@@ -1,4 +1,5 @@
 
+
 @media all and (max-width:420px){
 body{
   background-color:#faf9f9;
@@ -13,37 +14,10 @@ p a{
 }
 
 /*====================REGIST==========================*/
-#login .rc-anchor-logo-text {
-  color: #9b9b9b;
-  cursor: default;
-  font-family: Roboto,helvetica,arial,san-serif;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 10px;
-  margin-top: 5px;
-  text-align: center;
-  margin-left: -30px;
-}
-#login .rc-anchor-logo-img-portrait {
-  background-size: 32px;
-  height: 32px;
-  margin: 0 13px 0 13px;
-  width: 32px;
-  margin-left: -30px;
-  }
-#login .rc-anchor-checkbox-label {
-  font-family: Roboto,helvetica,arial,san-serif;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 16px;
-}
-#login .rc-anchor-normal .rc-anchor-pt {
-  margin: 4px 13px 0 0;
-  padding-right: 2px;
-  position: absolute;
-  right: 0px;
-  text-align: left;
-  width: 276px;
+
+#rc-imageselect, .g-recaptcha {
+  transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;
+  margin-top: 10px;
 }
 /*====================HEADER==========================*/
 #header{
@@ -2636,6 +2610,10 @@ body {
   border-top: 5px solid #e04974;
   margin-bottom: -30px;
   height: 600px;
+}
+#login a{
+  color:#62a7e7;
+  text-decoration: underline;
 }
 #login #login_form{
   width:400px;
