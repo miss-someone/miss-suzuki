@@ -1,4 +1,5 @@
 
+
 @media all and (max-width:420px){
 body{
   background-color:#faf9f9;
@@ -12,8 +13,12 @@ p a{
   text-decoration: none;
 }
 
+/*====================REGIST==========================*/
 
-
+#rc-imageselect, .g-recaptcha {
+  transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;
+  margin-top: 10px;
+}
 /*====================HEADER==========================*/
 #header{
   clear: both;
@@ -1249,7 +1254,8 @@ p a{
   clear: both;
   border-top: 5px solid #e04974;
   margin-bottom: -30px;
-  height:400px;
+  height:inherit;
+  padding-bottom: 20px;
 }
 #login{
   background-position: 50%;
@@ -2609,6 +2615,10 @@ body {
   border-top: 5px solid #e04974;
   margin-bottom: -30px;
   height: 600px;
+}
+#login a{
+  color:#62a7e7;
+  text-decoration: underline;
 }
 #login #login_form{
   width:400px;

@@ -48,6 +48,8 @@ gem 'newrelic_rpm'
 gem "rack-dev-mark"
 # セッションストアとして使うmemcachedクライアント
 gem 'dalli'
+# GoogleのreCAPTCHAapiのhelpergem
+gem "recaptcha", require: "recaptcha/rails"
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
