@@ -37,7 +37,9 @@ Rails.application.routes.draw do
     end
 
     if Rails.env.development? || Rails.env.test?
-      resource :users, only: [:create]
+      resource :user, only: [:create] do
+        resource :user_profile, path: 'profile', as: :profile
+      end
       scope :users do
         get   'signup' => 'users#new'
         get   '/:id/activate' => 'users#activate', as: :activation
