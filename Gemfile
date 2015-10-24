@@ -50,6 +50,8 @@ gem "rack-dev-mark"
 gem 'dalli'
 # GoogleのreCAPTCHAapiのhelpergem
 gem "recaptcha", require: "recaptcha/rails"
+# ハッシュをActiveRecordライクに扱えるようにするgem
+gem 'active_hash'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
