@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     user = login(params[:email], params[:password], params[:remember_me])
     if user
       if should_create_profile?(user)
-        
+        redirect_to new_user_profile_path
       else
         redirect_back_or_to root_url
       end
