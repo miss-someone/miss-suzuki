@@ -50,7 +50,8 @@ class UserProfilesController < ApplicationController
       :nickname,
       :sex,
       :age_id,
-      :prefecture_code
+      :prefecture_code,
+      :job_id
     )
   end
 end

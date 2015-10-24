@@ -34,6 +34,7 @@ ja:
         age: 年齢
         sex: 性別
         prefecture_code: お住まいの都道府県
+        job: 職業
 
   date:
     abbr_day_names:

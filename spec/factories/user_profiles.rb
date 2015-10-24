@@ -5,5 +5,6 @@ FactoryGirl.define do
     sex       2
     age_id    1
     prefecture_code 1
+    job_id    1
   end
 end
