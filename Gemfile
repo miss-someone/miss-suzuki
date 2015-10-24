@@ -52,6 +52,8 @@ gem 'dalli'
 gem "recaptcha", require: "recaptcha/rails"
 # ハッシュをActiveRecordライクに扱えるようにするgem
 gem 'active_hash'
+# 都道府県扱う用gem
+gem 'jp_prefecture'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
