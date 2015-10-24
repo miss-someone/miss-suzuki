@@ -10,8 +10,8 @@ RSpec.describe UserProfilesController, type: :controller do
     {
       nickname: 'クラウド',
       sex: Settings.sex[:male],
-      age: 22,
-      prefecture: '北海道'
+      age_id: 2,
+      prefecture_code: 10
     }
   }
 

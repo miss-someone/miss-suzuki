@@ -49,8 +49,8 @@ class UserProfilesController < ApplicationController
     params.require(:user_profile).permit(
       :nickname,
       :sex,
-      :age,
-      :prefecture
+      :age_id,
+      :prefecture_code
     )
   end
 end

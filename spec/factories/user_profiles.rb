@@ -3,7 +3,7 @@ FactoryGirl.define do
     user_id   1
     nickname  "鈴木愛理"
     sex       2
-    age       "20代"
-    prefecture "神奈川県"
+    age_id    1
+    prefecture_code 1
   end
 end
