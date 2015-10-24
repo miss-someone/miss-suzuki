@@ -2,7 +2,7 @@
   <div id="login_form">
   <h1>プロフィール登録</h1>
   <% if @profile.errors.any? %>
-    <%= render 'layout/error_msg', messages: @profile.errors.full_messages %>
+    <%= render 'layouts/error_msg', messages: @profile.errors.full_messages %>
   <% end %>
   <%= form_for @profile, url: { action: :create } do |f| %>
     <div class="form1">
@@ -17,11 +17,11 @@
           </td>
         </tr>
         <tr><td><%= f.label :prefecture_code %></td></tr>
-        <tr><td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %></td></tr>
+        <tr><td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, include_blank: "選択してください" %></td></tr>
         <tr><td><%= f.label :age %></td></tr>
-        <tr><td><%= f.collection_select :age_id, Age.all, :id, :name %></td></tr>
+        <tr><td><%= f.collection_select :age_id, Age.all, :id, :name, include_blank: "選択してください" %></td></tr>
         <tr><td><%= f.label :job %></td></tr>
-        <tr><td><%= f.collection_select :job_id, Job.all, :id, :name %></td></tr>
+        <tr><td><%= f.collection_select :job_id, Job.all, :id, :name, include_blank: "選択してください" %></td></tr>
       </table>
     </div>
     <p><%= f.submit "送信", class: "submit_btn" %></p>
