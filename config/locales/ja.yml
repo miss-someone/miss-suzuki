@@ -33,7 +33,7 @@ ja:
         nickname: ニックネーム
         age: 年齢
         sex: 性別
-        prefecture: お住まいの都道府県
+        prefecture_code: お住まいの都道府県
 
   date:
     abbr_day_names:

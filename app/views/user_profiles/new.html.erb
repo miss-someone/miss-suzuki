@@ -1,0 +1,26 @@
+<div id ="login" style="background-image:url(<%= asset_path "regist_background.jpg" %>); background-size:cover;" />
+  <div id="login_form">
+  <h1>プロフィール登録</h1>
+  <% if @profile.errors.any? %>
+    <%= render 'layout/error_msg', messages: @profile.errors.full_messages %>
+  <% end %>
+  <%= form_for @profile, url: { action: :create } do |f| %>
+    <div class="form1">
+      <table class="table">
+        <tr><td><%= f.label :nickname %></td></tr>
+        <tr><td><%= f.email_field :nickname, class: "half" %></td></tr>
+        <tr><td><%= f.label :sex %></td></tr>
+        <tr class="box">
+          <td>
+            <%= f.radio_button :sex, Settings.sex[:male] %>男性
+            <%= f.radio_button :sex, Settings.sex[:female] %>女性
+          </td>
+        </tr>
+        <tr><td><%= f.label :prefecture_code %></td></tr>
+        <tr><td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %></td></tr>
+      </table>
+    </div>
+    <p><%= f.submit "送信", class: "submit_btn" %></p>
+  <% end %>
+  </div>
+</div><!-- /#login -->
