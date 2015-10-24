@@ -70,6 +70,9 @@ group :development do
   gem 'spring'
   gem "spring-commands-rspec"
 
+  # 仮想SMTPサーバ
+  gem 'mailcatcher'
+
   # debug
   # エラー画面をリッチに
   gem 'better_errors'
