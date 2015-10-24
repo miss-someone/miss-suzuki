@@ -1,6 +1,9 @@
 user_type:
   normal: 1
   contestant: 2
+sex:
+  male: 1
+  female: 2
 current_group_id: 2
 contestant:
   preopen_count: 3 # プレオープンで公開する参加者の数

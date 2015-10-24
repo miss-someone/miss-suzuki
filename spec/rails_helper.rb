@@ -35,6 +35,11 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  # For Sorcery
+  config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
+  config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
+
+
   # for database_cleaner
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
