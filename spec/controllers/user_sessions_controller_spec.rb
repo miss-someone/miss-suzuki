@@ -24,5 +24,4 @@ RSpec.describe UserSessionsController, type: :controller do
       end
     end
   end
-
 end

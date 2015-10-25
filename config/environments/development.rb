@@ -26,7 +26,7 @@ Rails.application.configure do
   # RAILS_ROOTでbundle exec mailcatcherを実行し、http://127.0.0.1:1080/でメールが確認できる
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

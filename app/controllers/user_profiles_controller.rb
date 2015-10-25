@@ -13,7 +13,7 @@ class UserProfilesController < ApplicationController
       @profile = UserProfile.new
     end
   end
-  
+
   def create
     @profile = current_user.build_user_profile(user_profile_params)
     if @profile.save

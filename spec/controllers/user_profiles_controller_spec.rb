@@ -6,7 +6,7 @@ RSpec.describe UserProfilesController, type: :controller do
   end
 
   let(:voter) { create(:voter) }
-  let(:post_data) {
+  let(:post_data) do
     {
       nickname: 'クラウド',
       sex: Settings.sex[:male],
@@ -14,7 +14,7 @@ RSpec.describe UserProfilesController, type: :controller do
       prefecture_code: 10,
       job_id: 2
     }
-  }
+  end
 
   describe 'new action' do
     subject { get :new }
@@ -46,7 +46,9 @@ RSpec.describe UserProfilesController, type: :controller do
   describe 'update action' do
     before { voter.profile = build(:user_profile) }
     subject { post :update, user_profile: post_data }
-    it { expect{ subject }.to change(voter.profile, :nickname)
-        .from(voter.profile.nickname).to(post_data[:nickname]) }
+    it do
+      expect { subject }.to change(voter.profile, :nickname)
+        .from(voter.profile.nickname).to(post_data[:nickname])
+    end
   end
 end

@@ -13,6 +13,7 @@ class UserProfile < ActiveRecord::Base
   validates :nickname, presence: true, length: { maximum: 15 }
   validates :sex, presence: true, inclusion: { in: [Settings.sex[:male], Settings.sex[:female]] }
   validates :age_id, presence: true, inclusion: { in: Age.first.id..Age.last.id }
-  validates :prefecture_code, presence: true, inclusion: { in: Prefecture.all.each_with_object([]){ |p, obj| obj << p.code } }
+  validates :prefecture_code, presence: true,
+                              inclusion: { in: Prefecture.all.each_with_object([]) { |p, obj| obj << p.code } }
   validates :job_id, presence: true, inclusion: { in: Job.first.id..Job.last.id }
 end
