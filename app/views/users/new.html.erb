@@ -2,7 +2,7 @@
   <div id="login_form">
   <h1>会員登録</h1>
   <% if @voter.errors.any? %>
-    <%= render 'user/error_msg', messages: @voter.errors.full_messages %>
+    <%= render 'users/error_msg', messages: @voter.errors.full_messages %>
   <% end %>
   <%= form_for @voter, url: { action: :create } do |f| %>
     <div class="form1">

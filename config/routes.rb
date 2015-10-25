@@ -37,12 +37,14 @@ Rails.application.routes.draw do
     end
 
     if Rails.env.development? || Rails.env.test?
-      scope :users do
-        get   'signup' => 'user#new'
-        post  'create' => 'user#create'
-        get   '/:id/activate' => 'user#activate', as: :activation
+      resource :user, only: [:create] do
+        resource :user_profile, path: 'profile', as: :profile
       end
-
+      scope :users do
+        get   'signup' => 'users#new'
+        get   '/:id/activate' => 'users#activate', as: :activation
+        get   'registration_completed' => 'users#registration_completed'
+      end
       resources :password_resets
     end
 

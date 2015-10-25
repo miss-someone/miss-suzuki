@@ -16,6 +16,9 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.activation_success_email.subject
   #
   def activation_success_email(user)
+    @interview_answers = InterviewTopic.each_with_object([]) do |topic, res|
+      res << InterviewAnswer.new(user_id: user.id, topic_id: topic.id)
+    end
     @user = user
     @login_url = "#{Settings.url_without_path}login"
     mail(to: user.email, subject: "メールアドレス認証が完了いたしました．")

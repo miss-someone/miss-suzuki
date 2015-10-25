@@ -32,8 +32,11 @@ ja:
       user_profile:
         nickname: ニックネーム
         age: 年齢
+        age_id: 年齢
         sex: 性別
-        prefecture: お住まいの都道府県
+        prefecture_code: お住まいの都道府県
+        job: 職業
+        job_id: 職業
 
   date:
     abbr_day_names:

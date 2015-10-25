@@ -36,6 +36,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def voter?
+    user_type == Settings.user_type[:normal]
+  end
+
+  def contestant?
+    user_type == Settings.user_type[:contestant]
+  end
+
   class << self
     # 出場者一覧を返す
     def contestants
