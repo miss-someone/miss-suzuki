@@ -43,6 +43,7 @@ Rails.application.routes.draw do
       scope :users do
         get   'signup' => 'users#new'
         get   '/:id/activate' => 'users#activate', as: :activation
+        get   'registration_completed' => 'users#registration_completed'
       end
       resources :password_resets
     end
