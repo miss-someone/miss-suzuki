@@ -1,6 +1,6 @@
 class UserProfilesController < ApplicationController
   # TODO: ログイン制限追加
-  before_filter :voter?
+  before_action :voter?
 
   def show
     @user = current_user
@@ -17,7 +17,7 @@ class UserProfilesController < ApplicationController
   def create
     @profile = current_user.build_user_profile(user_profile_params)
     if @profile.save
-      redirect_to root_path, flush: 'プロフィール情報が登録されました'
+      redirect_to root_path, flash: { success: 'プロフィール情報が登録されました' }
     else
       render :new
     end
@@ -33,7 +33,7 @@ class UserProfilesController < ApplicationController
 
   def update
     if current_user.profile.update(user_profile_params)
-      redirect_to user_profile_path, flush: 'プロフィール情報が更新されました．'
+      redirect_to edit_user_profile_path, flash: { success: 'プロフィール情報が更新されました' }
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class UserProfilesController < ApplicationController
   private
 
   def voter?
-    current_user.present? && current_user.voter?
+    redirect_to root_path unless current_user.present? && current_user.voter?
   end
 
   def user_profile_params

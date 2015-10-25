@@ -1,6 +1,7 @@
 <div id ="login" style="background-image:url(<%= asset_path "regist_background.jpg" %>); background-size:cover;" />
   <div id="login_form">
-  <h1>プロフィール登録</h1>
+  <h1>プロフィール編集</h1>
+  <%= render 'layouts/flash', collections: flash %>
   <% if @profile.errors.any? %>
     <%= render 'layouts/error_msg', messages: @profile.errors.full_messages %>
   <% end %>
