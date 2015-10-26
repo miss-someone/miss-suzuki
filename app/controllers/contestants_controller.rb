@@ -48,6 +48,10 @@ class ContestantsController < ApplicationController
     @contestant_profile = Contestant.approved.find(params[:id]).profile
   end
 
+  def mypage
+    @contestant_profile = Contestant.approved.find(params[:id]).profile
+  end
+
   private
 
   def contestant_params

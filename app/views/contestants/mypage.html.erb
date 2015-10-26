@@ -4,20 +4,17 @@
         <div class="picture">
           <ul class="bxslider">
             <li><%= image_tag 'suzuki_reiko.jpg' %></li>
-            <li><%= image_tag 'suzuki_reiko2.jpg' %></li>
-            <li><%= image_tag 'suzuki_reiko3.jpg' %></li>
-          </ul>
         </div>
 
         <div class="profile">
           <div class="profile_cotent">
-            <h3 class="furigana">すずきれいこ</h3>
-            <h2 class="name">鈴木例子</h2>
-            <p class="age">年齢：22</p>
-            <p class="hometown">出身：東京都</p>
-            <p class="height">身長：161cm</p>
+          <h3 class="furigana"><%= @contestant_profile.hurigana %></h3>
+            <h2 class="name"><%= @contestant_profile.name %></h2>
+            <p class="age">年齢：<%= @contestant_profile.age %></p>
+            <p class="hometown">出身：<%= @contestant_profile.come_from %></p>
+            <p class="height">身長：<%= @contestant_profile.height %></p>
             <p class="appeal">一言アピール！</p>
-            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
+            <textarea name="comment"><%= @contestant_profile.comment %></textarea>
             <div class="sns_links">
               <div class="link_row row1">
                 <p class="url"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/btn_tw.png' %></a></p>
