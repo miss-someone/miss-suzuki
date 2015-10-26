@@ -3,15 +3,15 @@
 module Sorcery
   module Model
     module InstanceMethods
-
       protected
 
       def generic_send_email(method, mailer)
         config = sorcery_config
         mail = config.send(mailer).send(config.send(method), self)
-        if defined?(ActionMailer) and config.send(mailer).kind_of?(Class) and config.send(mailer) < ActionMailer::Base
-          mail.deliver_later
+        unless defined?(ActionMailer) && config.send(mailer).is_a?(Class) && config.send(mailer) < ActionMailer::Base
+          return
         end
+        mail.deliver_later
       end
     end
   end
