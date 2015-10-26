@@ -1,0 +1,23 @@
+<div id ="create">
+  <h1>インタビュー回答フォーム</h1>
+  <div id="entry_form">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= form_tag('/contestants/create_interview_answer') do %>
+      <div class="form1">
+        <table class="table">
+          <% @interview_answers.each do |interview_answer| %>
+            <tr><td><%= label_tag interview_answer.interview_topic.topic %></td></tr>
+            <tr><td><%= text_field_tag nil, interview_answer.answer, name: "interview_answers[][answer]" %></td></tr>
+            <tr><td><%= hidden_field_tag nil, interview_answer.interview_topic.id, name: "interview_answers[][interview_topic_id]" %></td></tr>
+          <% end %>
+        </table>
+      </div>
+      <p><%= submit_tag("送信する", class: "submit_btn") %></p>
+    <% end %>
+  </div><!-- /#entry_form -->
+</div><!-- /#create -->
+<div id="banner_big">
+  <%= image_tag 'banner/cosmeken.jpg' %>
+</div>
