@@ -56,6 +56,8 @@ gem 'active_hash'
 gem 'jp_prefecture'
 # 非同期ジョブを扱うgem
 gem 'sidekiq'
+# sidekiqのWebUIに必要
+gem 'sinatra', require: false
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

@@ -499,6 +499,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   sidekiq
+  sinatra
   sorcery (~> 0.9.1)
   spring
   spring-commands-rspec
