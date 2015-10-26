@@ -48,6 +48,12 @@ gem 'newrelic_rpm'
 gem "rack-dev-mark"
 # セッションストアとして使うmemcachedクライアント
 gem 'dalli'
+# GoogleのreCAPTCHAapiのhelpergem
+gem "recaptcha", require: "recaptcha/rails"
+# ハッシュをActiveRecordライクに扱えるようにするgem
+gem 'active_hash'
+# 都道府県扱う用gem
+gem 'jp_prefecture'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -63,6 +69,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem "spring-commands-rspec"
+
+  # 仮想SMTPサーバ
+  gem 'mailcatcher'
 
   # debug
   # エラー画面をリッチに

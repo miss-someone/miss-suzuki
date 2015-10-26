@@ -70,7 +70,7 @@ $ ->
     "contestant[agreement]": {required: true}
   }
   messages = {
-    "contestant[agreement]": {required: "*利用規約への同意が必要です"}
+    "contestant[agreement]": {required: "*エントリーポリシーへの同意が必要です"}
   }
   $('#new_contestant').validate(
     rules: rules

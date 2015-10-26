@@ -1,0 +1,19 @@
+<div id ="login" style="background-image:url(<%= asset_path "form_background.jpg" %>); background-size:cover;" />
+  <div id="login_form">
+    <h1>パスワードお忘れですか？</h1>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= form_tag password_resets_path, method: :post do %>
+      <div class="form1">
+        <p>登録したメールアドレスを入力し，<br/>リセットボタンを押してください</p>
+        <p>パスワード再設定メールをお送りいたします！</p>
+        <table class="table">
+          <tr><td><%= label_tag "メールアドレス" %></td></tr>
+          <tr><td><%= text_field_tag :email %></td></tr>
+        </table>
+      </div>
+      <p><%= submit_tag "リセット", class: "submit_btn" %></p>
+    <% end %>
+  </div>
+</div>

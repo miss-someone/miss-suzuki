@@ -3,10 +3,10 @@
     <div class="left">
       <div class="message">
        <%= image_tag 'fukidashi.png', :width=>'300px;' %>
-       <p class="text">投票ありがとうございました！<br>明日も投票してくださいね♥</p>
+       <p class="text"><%= @contestant.thanks_comment %></p>
       </div>
       <div class="picture">
-       <%= image_tag 'suzuki_reiko.jpg', :width=>'300px;' %>
+       <%= image_tag @contestant.profile_image.thumb, :width=>'300px;' %>
       </div>
       <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
     <div id="banner_big">

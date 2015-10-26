@@ -36,7 +36,11 @@ RSpec.feature "ContestantEntryForms", type: :feature do
         check "contestant[agreement]"
       end
       it "should create user" do
-        expect { click_button submit }.to change(User, :count)
+        expect { click_button submit }.to change(User, :count).by(1)
+      end
+      context "but agreement checkbox isn't cheked" do
+        before { uncheck "contestant[agreement]" }
+        it { expect { click_button submit }.to change(User, :count).by(0) }
       end
     end
   end

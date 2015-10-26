@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     scope :contestants do
       get   'entry'       => 'contestants#entry'
       get   'new'         => 'contestants#new'
-      get   'thankyou'    => 'contestants#thankyou'
+      get   'thankyou'    => 'contestants#thankyou_sample'
       get   'mypage'      => 'contestants#mypage_sample'
       post  'create'      => 'contestants#create'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
@@ -35,7 +35,20 @@ Rails.application.routes.draw do
         get   'group/:id'   => 'contestants#index'
         post  '/:id/vote'   => 'contestants#vote', as: :vote
         get   '/:id/mypage' => 'contestants#mypage'
+        get   '/:id/thankyou' => 'contestants#thankyou'
       end
+    end
+
+    if Rails.env.development? || Rails.env.test?
+      resource :user, only: [:create] do
+        resource :user_profile, path: 'profile', as: :profile
+      end
+      scope :users do
+        get   'signup' => 'users#new'
+        get   '/:id/activate' => 'users#activate', as: :activation
+        get   'registration_completed' => 'users#registration_completed'
+      end
+      resources :password_resets
     end
 
     get "logout" => "user_sessions#destroy", :as => "logout"

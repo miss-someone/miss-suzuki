@@ -12,18 +12,7 @@ class ContestantsController < ApplicationController
   end
 
   def create
-    # TODO: うまい方法を考えてリファクタ
-    is_agree = contestant_params[:agreement]
-    params = contestant_params
-    params.delete(:agreement) # Contestantの作成には必要ないので削除
-    params[:contestant_profile_attributes][:group_id] = Settings.current_group_id
-
-    @contestant = Contestant.new(params)
-    if is_agree.blank? || !is_agree
-      @contestant.errors.add(:agreement, "に同意してください")
-      render 'new'
-      return
-    end
+    @contestant = Contestant.new(contestant_params)
     if @contestant.save
       render 'completed'
     else
@@ -58,6 +47,9 @@ class ContestantsController < ApplicationController
     end
     flash.now.alert = "インタビューの回答の登録に失敗しました（インタビューの回答は200文字までです）。"
     render 'new_interview_answer'
+
+  def thankyou
+    @contestant_profile = Contestant.approved.find(params[:id]).profile
   end
 
   private
