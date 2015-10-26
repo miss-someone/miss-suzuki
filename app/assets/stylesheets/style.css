@@ -11,6 +11,9 @@ p a{
   color:#62a7e7;
   text-decoration: none;
 }
+
+
+
 /*====================HEADER==========================*/
 #header{
   clear: both;
@@ -61,30 +64,42 @@ p a{
 #header_right .sns img{
   width:15px;
 }
-#header #smartphone_menu{
-  margin-left: -40px;
+#acMenu dt{
+  display:block;
+  text-align:left;
+  cursor:pointer;
 }
-#header #smartphone_menu ul{
-  clear: both;
-  max-width:100%;
-  overflow: hidden;
-}
-#header #smartphone_menu li{
-  list-style: none;
-  font-size: 8px;
+#acMenu dt span{
+  font-size: 18px;
   font-weight: bold;
-  width: 16%;
-  height:30px;
-  text-align:center;
-  float: left;
+  color:#191919;
+  margin-left: 10px;
+  vertical-align: super;
 }
-#header #smartphone_menu li a{
-  text-decoration: none;
-  color: #191919;
-  font-size: 12px;
+#acMenu dd{
+  width:100%;
+  height:300px;
+  line-height:50px;
+  text-align:left;
+  margin-left:0;
+  display:none;
+  list-style:none;
 }
-#header #smartphone_menu li a:hover{
+#acMenu dd a{
   color:#e04974;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 20px;
+  display: block;
+}
+#acMenu dd a span{
+  font-size: 10px;
+  color:#191919;
+  margin-left:10px;
+}
+#acMenu dd .even{
+  background-color: #f1f1f1;
 }
 /*====================FOOTER==========================*/
 #footer{
@@ -152,7 +167,31 @@ p a{
   bottom:3%;
   z-index: 10;
 }
-#home h2{
+#home #mainimage img{
+  width:100%;
+  border-top: 3px solid #e04974;
+  border-bottom: 3px solid #e04974;
+}
+#home #prerelease{
+  width:95%;
+  margin:0 auto;
+  margin-top: 30px;
+}
+#home #prerelease h2.title{
+  font-size: 14px;
+  color: #e04974;
+  border-bottom: 3px solid #e04974;
+}
+#home #prerelease .contestants_box .contestant .furigana{
+  margin-top:15px;
+}
+#home #prerelease .explain{
+  text-align: center;
+  color:#191919;
+  font-weight: bold;
+  font-size: 12px;
+}
+#home .news h2{
   color:#e04974;
   border-bottom: 3px solid #e04974;
   padding-left: 20px;
@@ -266,26 +305,89 @@ p a{
 #home .logo_row{
   overflow: hidden;
   margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  width:300px;
 }
-#home .row1 .logo1,#home .row1 .logo2,#home .row1 .logo3,#home .row1 .logo4{
+#home .smart_row .logo1,#home .smart_row .logo2,#home .smart_row .logo3,#home .smart_row .logo4{
   float: left;
 }
-#home .row1 .logo1 img{
+#home .smart_row{
+  width:300px;
+  margin:0 auto;
+}
+#home .smart_row1{
+  margin-top: 10px;
+}
+#home .smart_row1 .logo1 img{
+  max-width:100px;
+  margin-right:20px;
+  margin-left: 40px;
+}
+#home .smart_row1 .logo2 img{
+  max-width:100px;
+  margin-right:10px;
+}
+#home .smart_row2 .logo3 img{
+  max-width:140px;
+  margin-right:20px;
+  margin-left:20px;
+}
+#home .smart_row2 .logo4 img{
   max-width:80px;
   margin-right:10px;
 }
-#home .row1 .logo2 img{
-  max-width:80px;
-  margin-right:10px;
+#home .smart_row3 .logo1 img{
+  max-width:100px;
+  margin-right:20px;
+  margin-left: 40px;
+  padding:0;
 }
-#home .row1 .logo3 img{
-  max-width:80px;
-  margin-right: 10px;
+
+#home .media{
+  width:130px;
+  border-bottom: 5px solid #e04974;
+  text-align: center;
+  margin:0 auto;
 }
-#home .row1 .logo4 img{
-  max-width: 80px;
+#home .media h3{
+  font-size:24px;
+}
+#home .media p{
+  font-size: 12px;
+  margin-top: -25px;
+}
+#home .media_logo{
+  overflow: hidden;
+  max-width:300px;
+  margin: 0 auto;
+  margin-bottom:20px;
+  margin-top:10px;
+}
+#home .media_logo .logo1 img{
+  width:150px;
+  margin-right:20px;
+  margin-top: 5px;
+  float:left;
+}
+#home .media_logo .logo2 img{
+  width:100px;
+  float: left;
+  margin-top:-5px;
+}
+
+
+
+#home .cooperation{
+  width:200px;
+  border-bottom: 5px solid #e04974;
+  text-align: center;
+  margin:0 auto;
+}
+#home .cooperation h3{
+  font-size: 24px;
+}
+#home .cooperation p{
+  font-size: 12px;
+  margin-top: -25px;
 }
 #home .detail5{
   margin: 0 auto;
@@ -783,6 +885,19 @@ p a{
   width:140px;
   float: left;
 }
+#about #content .sponsors .row3 .logo1 img{
+  width:140px;
+  margin-right:20px;
+  float:left;
+}
+#about #content .sponsors .row1 .zenkoku img{
+  width:140px;
+  margin-right:0;
+  float: left;
+}
+#about #content .sponsors #ascii img{
+  margin-top:10px;
+}
 /*====================CREATE==========================*/
 #completed{
   width:100%;
@@ -807,6 +922,44 @@ p a{
   font-size: 10px;
   color:#666;
   line-height:1.5;
+}
+/*==================== HISTORY ==========================*/
+#history #content{
+  width:300px;
+  margin:0 auto;
+}
+#history .section h2{
+  color:#191919;
+  font-size: 16px;
+}
+#history .section h2 span{
+  border-bottom:3px solid #e04974;
+  padding-bottom: 5px;
+}
+#history .section {
+  margin-top:30px;
+}
+#history .section p{
+  font-weight: bold;
+  font-size: 12px;
+  color:#191919;
+}
+#history .section span.inside{
+  color:#498de0;
+}
+#history .credit{
+  text-align: right;
+  font-weight: bold;
+  font-size: 12px;
+  color:#191919;
+}
+#history .image p{
+  font-size: 10px;
+  margin-top: 0;
+}
+#history .image img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+  max-width: 100%;
 }
 /*==================== POLICY&TERMS ==========================*/
 #policy{
@@ -1091,6 +1244,55 @@ p a{
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
+/*====================  ログインページ ==========================*/
+#login{
+  clear: both;
+  border-top: 5px solid #e04974;
+  margin-bottom: -30px;
+  height:400px;
+}
+#login{
+  background-position: 50%;
+}
+#login #login_form{
+  width:280px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 30px;
+  padding:0 10px 10px 10px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 260px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
 /*====================  投票ページ ==========================*/
 .content_middle{
   padding-top: 30px;
@@ -1188,23 +1390,29 @@ body {
 }
 #nav li{
   list-style: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
+}
+#nav .tab{
+  max-width: 120px;
+  float: left;
+  display: block;
+  margin-left: 20px;
+  margin-top:20px;
+}
+#nav .tab span{
+  color:#666;
+  font-size:11px;
+  text-align: center;
 }
 #nav li a{
   text-decoration: none;
   color: #191919;
+  display: block;
+  text-align: center;
 }
 #nav li a:hover{
   color:#e04974;
-}
-
-#nav .tab{
-  max-width: 100px;
-  float: left;
-  display: block;
-  margin-left: 20px;
-  line-height: 5;
 }
 #header_right li{
   list-style: none;
@@ -1277,7 +1485,38 @@ body {
   border-top: 5px solid #e04974;
   border-bottom: 5px solid #e04974;
 }
-#home h2{
+#home #prerelease{
+  width:1000px;
+  margin:0 auto;
+  margin-top: 50px;
+}
+#home #prerelease h2.title{
+  font-size: 18px;
+  color: #e04974;
+  border-bottom: 5px solid #e04974;
+}
+#home #prerelease .contestants_box{
+  overflow: hidden;
+  max-width: 960px;
+  margin:0 auto;
+}
+#home #prerelease .contestants_box .contestant{
+  float:left;
+  margin-right: 30px;
+}
+#home #prerelease .contestants_box .contestant .furigana{
+  margin-top:15px;
+}
+#home #prerelease .contestants_box .last{
+  float:left;
+  margin-right:0;
+}
+#home #prerelease .explain{
+  text-align: center;
+  color:#191919;
+  font-size: 14px;
+}
+#home .news h2{
   color:#e04974;
   border-bottom: 5px solid #e04974;
   padding-left: 20px;
@@ -1409,27 +1648,103 @@ body {
   overflow: hidden;
   max-width:960px;
   margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 100px;
+  margin-bottom: 0;
 }
 #home .row1 .logo1,#home .row1 .logo2,#home .row1 .logo3,#home .row1 .logo4{
   float: left;
 }
+#home .row1{
+  margin-top: 40px;
+}
 #home .row1 .logo1 img{
   width:200px;
   margin-right: 30px;
+  margin-top: 5px;
 }
 #home .row1 .logo2 img{
   width:220px;
   margin-right: 30px;
 }
 #home .row1 .logo3 img{
-  width:200px;
+  width:250px;
   margin-right: 30px;
+  margin-top: 5px;
 }
 #home .row1 .logo4 img{
   max-width: 200px;
 }
+#home .row2 .logo1,#home .row2 .logo2,#home .row2 .logo3,#home .row2 .logo4{
+  float: left;
+  margin-bottom: 100px;
+}
+#home .row2 .logo1 img{
+  width:200px;
+  margin-right: 30px;
+}
+#home .media{
+  width:130px;
+  border-bottom: 5px solid #e04974;
+  text-align: center;
+  margin:0 auto;
+}
+#home .media h3{
+  font-size: 30px;
+}
+#home .media p{
+  font-size: 12px;
+  margin-top: -25px;
+}
+#home .media_logo{
+  overflow: hidden;
+  max-width:600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#home .media_logo .logo1 img{
+  width:250px;
+  margin-left: 30px;
+  margin-right:50px;
+  margin-top: 5px;
+  float:left;
+}
+#home .media_logo .logo2 img{
+  width:200px;
+  float: left;
+  margin-top:-5px;
+}
+#home .cooperation{
+  width:250px;
+  border-bottom: 5px solid #e04974;
+  text-align: center;
+  margin:0 auto;
+}
+#home .cooperation h3{
+  font-size: 30px;
+}
+#home .cooperation p{
+  font-size: 12px;
+  margin-top: -25px;
+}
+#home .coop_logo{
+  overflow: hidden;
+  max-width:660px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#home .coop_logo .logo1 img{
+  width:300px;
+  margin-right: 30px;
+  margin-top: 5px;
+  float:left;
+}
+#home .coop_logo .logo2 img{
+  width:300px;
+  margin-right: 30px;
+  float: left
+}
+
 #home .detail5{
   overflow: hidden;
   max-width: 600px;
@@ -1705,6 +2020,9 @@ body {
   width:100%;
   border-top: 5px solid #e04974;
 }
+#create{
+  background-image: url("images/form_background.jpg");
+}
 #create h1{
   color: #e04974;
   text-align: center;
@@ -1920,6 +2238,8 @@ body {
   margin: 0 auto;
   clear: both;
   margin-top: 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
 }
 #about #content .sponsors .row1{
   overflow: hidden;
@@ -1938,13 +2258,65 @@ body {
   margin-top: 50px;
 }
 #about #content .sponsors .row2 .logo1 img{
-  width:300px;
+  width:350px;
   margin-right:50px;
   float: left;
 }
 #about #content .sponsors .row2 .logo2 img{
-  width:300px;
+  width:250px;
   float: left;
+}
+#about #content .sponsors .row3 .logo1 img{
+  width:250px;
+  float: left;
+  margin-top:20px;
+}
+#about #content .sponsors #ascii img{
+  width:250px;
+  float: left;
+  margin-top:20px;
+  margin-left:70px;
+}
+#about #content .sponsors #oedo img{
+  width:250px;
+  float: left;
+  margin-top:0px;
+}
+/*==================== HISTORY ==========================*/
+#history #content{
+  width:900px;
+  margin:0 auto;
+}
+#history .section h2{
+  color:#191919;
+}
+#history .section h2 span{
+  border-bottom:5px solid #e04974;
+  padding-bottom: 10px;
+}
+#history .section {
+  margin-top:50px;
+}
+#history .section p{
+  font-weight: bold;
+  font-size: 14px;
+  color:#191919;
+}
+#history .section span.inside{
+  color:#498de0;
+}
+#history .credit{
+  text-align: right;
+  font-weight: bold;
+  font-size: 14px;
+  color:#191919;
+}
+#history .image p{
+  font-size: 12px;
+  margin-top: 0;
+}
+#history .image img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
 /*==================== POLICY&TERMS ==========================*/
 #policy{
@@ -2230,6 +2602,52 @@ body {
 }
 #mypage .instruction .even{
   background-color: #f9f9f9;
+}
+/*====================  ログインページ ==========================*/
+#login{
+  clear: both;
+  border-top: 5px solid #e04974;
+  margin-bottom: -30px;
+  height: 600px;
+}
+#login #login_form{
+  width:400px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 100px;
+  padding:0 50px 20px 50px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 400px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{

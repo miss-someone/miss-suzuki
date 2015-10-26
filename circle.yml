@@ -9,3 +9,6 @@ dependencies:
     - npm install -g bower
   post:
     - bundle exec rake bower:install
+notify:
+  webhooks:
+    - url: 'http://59.106.216.27/miss-suzuki/api/deploy?key=MJweV0EYMHJQXECqy3PlBbCYwRZ7g6rNhtM0Gl5U7bY0WHzL5hXOLeWtiKKa'

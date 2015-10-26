@@ -1,20 +1,20 @@
 <div id ="create">
-<h1>インタビュー回答フォーム</h1>
-<p><%= @contestant.email %>さん、インタビューへの回答をお願いします！</p>
+  <h1>インタビュー回答フォーム</h1>
   <div id="entry_form">
-    <%= form_for @contestant, url: { action: :create_interview_answer } do |f| %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= form_tag('/contestants/create_interview_answer') do %>
       <div class="form1">
         <table class="table">
-        <% @contestant.interview_answers.each do |interview_answer| %>
-          <%= f.fields_for :interview_answers, interview_answer do |interview_answer_field| %>
-            <tr><td><%= interview_answer_field.label interview_answer.interview_topic.topic %></td></tr>
-            <tr><td><%= interview_answer_field.text_field :answer %></td></tr>
-            <tr><td><%= interview_answer_field.hidden_field :interview_topic %></td></tr>
+          <% @interview_answers.each do |interview_answer| %>
+            <tr><td><%= label_tag interview_answer.interview_topic.topic %></td></tr>
+            <tr><td><%= text_field_tag nil, interview_answer.answer, name: "interview_answers[][answer]" %></td></tr>
+            <tr><td><%= hidden_field_tag nil, interview_answer.interview_topic.id, name: "interview_answers[][interview_topic_id]" %></td></tr>
           <% end %>
-        <% end %>
         </table>
-         </div>
-      <p><%= f.submit "送信する", class: "submit_btn" %></p>
+      </div>
+      <p><%= submit_tag("送信する", class: "submit_btn") %></p>
     <% end %>
   </div><!-- /#entry_form -->
 </div><!-- /#create -->

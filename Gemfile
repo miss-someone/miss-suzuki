@@ -42,12 +42,12 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 # cron
 gem 'whenever', require: false
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# プロファイラサービス
+gem 'newrelic_rpm'
+# 稼働環境をラベルで表示してくれるすぐれもの
+gem "rack-dev-mark"
+# セッションストアとして使うmemcachedクライアント
+gem 'dalli'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

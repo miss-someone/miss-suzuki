@@ -7,6 +7,33 @@
     <a href="#home"><%= image_tag 'to_top.png', :width=> '50px' %></a>
   </div>
 
+  <div id="prerelease">
+    <div class="content">
+      <h2 class="title">エントリーしてくれた鈴木さんを１日<%= Settings.contestant[:preopen_count] %>名、ランダムで公開します！</h2>
+      <p class="explain">気になる鈴木さんたちのお顔は、11月1日の投票開始日から大公開！</p>
+      <div class="contestants_box">
+        <% @contestants.each do |contestant| %>
+          <div class="<%= div_contestant_class(@contestants, contestant) %>">
+            <div class="picture">
+              <%= image_tag contestant.profile.profile_image.thumb_with_blur(300, 300), alt: contestant.profile.name %>
+            </div>
+            <div class="profile">
+              <p class="furigana"><%= contestant.profile.hurigana %></p>
+              <h2 class="name"><%= contestant.profile.name %></h2>
+              <p class="age">年齢：<%= contestant.profile.age %></p>
+              <p class="hometown">出身：<%= contestant.profile.come_from %></p>
+              <p class="height">身長：<%= contestant.profile.height %></p>
+              <p class="appeal">一言アピール！</p>
+              <textarea name="comment" readonly><%= contestant.profile.comment %></textarea>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <p id="entry_btn"><a href="contestants/entry">ENTRY</a></p>
+
   <div class="news">
     <h2>NEWS</h2>
     <% @news.each do |entry| %>
@@ -57,9 +84,10 @@
   <p class="fullsize"><%= image_tag 'mainimages/home_image3.jpg' %></p>
   <div class="detail3">
     <p class="icon"><%= image_tag 'icon/icon_trophy.jpg', :width=>'100px' %></p>
-    <p class="text">グランプリの鈴木さんには「金の表札」、「SUZUKI レッツG」、<br>
+    <p class="text">ミス鈴木に選ばれた鈴木さんには「金の表札」、「SUZUKI レッツG」、<br>
     準グランプリの鈴木さんには「銀の表札」を贈呈いたします。<br>
     ファイナリストに選ばれた皆様には、<br>
+    協賛企業様からのプレゼントの贈呈や、<br>
     当団体が製作する映像コンテンツや各種メディアへの出演も依頼させていただきます。</p>
   </div>
   <p class="fullsize"><%= image_tag 'mainimages/home_image4.jpg' %></p>
@@ -72,16 +100,45 @@
     <p>協賛</p>
   </div>
   <div class="logo_row row1">
-    <p class="logo1"><a href="http://www1.suzuki.co.jp/motor/" target="_blank"><%= image_tag 'logo/suzuki.png' %></a></p>
-    <p class="logo2"><a href="http://www.sakura.ne.jp/" target="_blank"><%= image_tag 'logo/sakura.png' %></a></p>
-    <p class="logo3"><a href="http://www.springwater.gr.jp/trigger/" target="_blank"><%= image_tag 'logo/trigger.png' %></a></p>
-    <p class="logo4"><a href="http://karaage.ne.jp/" target="_blank"><%= image_tag 'logo/jka.png' %></a></p>
+    <div class="smart_row smart_row1">
+      <p class="logo1"><a href="http://www1.suzuki.co.jp/motor/" target="_blank"><%= image_tag 'logo/suzuki.png' %></a></p>
+      <p class="logo2"><a href="http://www.sakura.ne.jp/" target="_blank"><%= image_tag 'logo/sakura.png' %></a></p>
+    </div>
+    <div class="smart_row smart_row2">
+      <p class="logo3"><a href="http://www.cosme-ken.org/" target="_blank"><%= image_tag 'logo/cosmeken.png' %></a></p>
+      <p class="logo4"><a href="http://karaage.ne.jp/" target="_blank"><%= image_tag 'logo/jka.png' %></a></p>
+    </div>
+  </div>
+  <div class="logo_row row2">
+    <div class="smart_row smart_row3">
+      <p class="logo1"><a href="http://www.springwater.gr.jp/trigger/" target="_blank"><%= image_tag 'logo/trigger.png' %></a></p>
+    </div>
+  </div>
+  <div class="media">
+    <h3>MEDIA</h3>
+    <p>メディアスポンサー</p>
+  </div>
+  <div class="media_logo">
+    <div class="smart_row smart_row1">
+      <p class="logo1"><a href="http://ascii.jp/" target="_blank"><%= image_tag 'logo/ascii.png', :width => '250' %></a></p>
+      <p class="logo2"><a href="http://weekly.ascii.jp/sp/startup/" target="_blank"><%= image_tag 'logo/oedo2.png',:width => '220'  %></a></p>
+    </div>
+  </div>
+  <div class="cooperation">
+    <h3>COOPERATION</h3>
+    <p>取材協力</p>
+  </div>
+  <div class="coop_logo">
+    <div class="smart_row smart_row1">
+      <p class="logo1"><%= image_tag 'logo/zenkoku.png' %></p>
+      <p class="logo2"><%= image_tag 'logo/kanto.png' %></p>
+    </div>
   </div>
 
   <p class="fullsize"><%= image_tag 'mainimages/home_image5.jpg' %></p>
   <div class="detail5">
     <p class="icon"><%= image_tag 'icon/icon_mail.jpg', :width=>'100px' %></p>
-    <p class="text">コンテストに関するお問い合わせ、出場者へのお仕事のご依頼は、<br>
+    <p class="text">ミス鈴木に関するお問い合わせ、出場者へのお仕事のご依頼は、<br>
     <a href="mailto:ms.someone2015@gmail.com?subject=お問い合わせ">こちら</a>からからご送信ください。</p>
     <p class="text text2">資料請求や協賛をご検討中の企業様は<a href="mailto:ms.someone2015@gmail.com?subject=協賛・資料請求について">こちら</a>からメールをご送信ください。</p>
   </div>

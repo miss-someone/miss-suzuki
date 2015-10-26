@@ -1,21 +1,37 @@
 namespace :contestant do
   desc "Check new Contestant and notify"
   task check_new: :environment do
-    count_file_path = Rails.root + "tmp/prev_contestant_count"
-    prev_count = 0
+    prev_last_id_file_path = Rails.root + "tmp/prev_last_contestant_id"
+    prev_last_id = 0
     begin
-      prev_count = File.read(count_file_path).to_i
+      prev_last_id = File.read(prev_last_id_file_path).to_i
     rescue SystemCallError => e
       puts "SystemCallError: " + e.message
     rescue IOError => e
       puts "IOError: " + e.message
     end
-    current_count = ContestantProfile.count
-    if current_count > prev_count
-      count = current_count - prev_count
-      new_contestants = ContestantProfile.limit(count).order("created_at DESC").all
+    new_contestants = ContestantProfile.where("id > ?", prev_last_id)
+    if new_contestants.present?
+      last_id = ContestantProfile.last.id
       notify_to_slack(new_contestant_notify_body(new_contestants))
-      File.write(count_file_path, current_count)
+      File.write(prev_last_id_file_path, last_id)
+    end
+  end
+
+  desc "Update todays preopen contestants"
+  task update_todays_preopens: :environment do
+    Contestant.with_lock do
+      # 既存のプレオープン出場者の解除
+      olds = Contestant.todays_preopen
+      olds.each do |contestant|
+        contestant.profile.update_attribute(:is_preopen, false)
+      end
+
+      # 新しいプレオープン出場者の選定(承認済みユーザのみ)
+      news = Contestant.approved.random Settings.contestant[:preopen_count]
+      news.each do |contestant|
+        contestant.profile.update_attribute(:is_preopen, true)
+      end
     end
   end
 
@@ -36,7 +52,7 @@ namespace :contestant do
     contestants.each do |contestant|
       attachment = {
         fallback: "新しい応募者が現れた!",
-        pretext: "新しい応募者が現れた！: <http://27.133.130.98/miss-suzuki/admin/contestant_profiles/#{contestant.id}|link>",
+        pretext: "新しい応募者が現れた！: <http://59.106.216.27/miss-suzuki/admin/contestant_profiles/#{contestant.id}|link>",
         color: "#F6546A",
         fields: get_fields(contestant),
         thumb_url: contestant.profile_image.thumb

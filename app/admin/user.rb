@@ -1,21 +1,33 @@
 ActiveAdmin.register User do
-  actions :index
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+  actions :index, :show, :edit, :update
+
+  permit_params :email
 
   index do
     selectable_column
     id_column
     column :email
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :email
+      row '名前' do
+        user.profile.name
+      end
+      row :user_type
+      row :created_at
+      row :updated_at
+    end
+  end
+
+  form do |f|
+    f.inputs 'UserInfo' do
+      li user.profile.name
+      f.input :email
+
+      actions :submit
+    end
   end
 end

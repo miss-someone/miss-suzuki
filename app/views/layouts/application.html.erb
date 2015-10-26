@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MISS-SUZUKI | 鈴木さん限定のミスコン</title>
+  <title>MISS-SUZUKI | 鈴木さん限定のミスコン『ミス鈴木』</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
   <meta name="keywords" content="ミスコン,鈴木さん,Miss-Suzuki,青山学院大学,佐藤さん,ミス鈴木">
-  <meta name="description" content="史上初!「鈴木さん」限定のミスコン MISS-SUZUKI 優勝者には「金の表札」とバイクをプレゼント！「日本一かわいい鈴木さん」は一体だれだ！？" />
+  <meta name="description" content="史上初!「鈴木さん」限定のミスコン MISS-SUZUKI！優勝者には「金の表札」とバイクをプレゼント！日本一かわいい鈴木さん、「ミス鈴木」に輝くのは一体だれだ！？" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
   <%= analytics_init if Rails.env.production? %>
   <%= favicon_link_tag 'favicon.ico' %>
+<script>
+    $(function(){
+        $("#acMenu dt").on("click", function() {
+            $(this).next().slideToggle();
+        });
+    });
+</script>
 </head>
 <body>
 <div id="header">
@@ -19,30 +26,39 @@
     <p id="logo"><a href="/"><%= image_tag 'logo/suzuki_logo_mini.png', :width =>'160' %></a></p>
     <div id="nav">
       <ul id="menu">
-        <li class="tab"><a href="/">HOME</a></li>
-        <li class="tab"><a href="/news">NEWS</a></li>
-        <li class="tab" ><a href="/rules">RULES</a></li>
-        <li class="tab"><a href="/contestants/entry">ENTRY</a></li>
-        <li class="tab"><a href="/about">ABOUT US</a></li>
+        <li class="tab"><a href="/">HOME<br><span>ホーム</span></a></li>
+        <li class="tab"><a href="/news">NEWS<br><span>ニュース</span></a></li>
+        <li class="tab" ><a href="/rules">RULES<br><span>ルール</span></a></li>
+        <li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>
+        <li class="tab"><a href="/about">ABOUT US<br><span>運営団体</span></a></li>
+        <li class="tab"><a href="/history">HISTORY<br><span>鈴木さんの歴史</span></a></li>
       </ul>
     </div>
     <div id="header_right">
       <ul>
         <!-- <li class="header_btn tab"><a href="/signup">新規登録</a></li> -->
-        <!-- <li class="header_btn tab"><a href="/login">ログイン</a></li> -->
+        <!-- ログイン状態に応じて、ログイン/ログアウトリンクを表示しています -->
         <%= raw switch_header_contents %>
         <li class="tab sns"><a href="https://www.facebook.com/MsSuzukiOfficial" target="_blank"><%= image_tag 'icon/icon_fb.png', :width =>'25' %></a></li>
         <li class="tab sns"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'icon/icon_twitter.png', :width =>'25' %></a></li>
       </ul>
     </div>
   </div>
-  <ul id="smartphone_menu">
-      <li class="tab"><a href="/">HOME</a></li>
-      <li class="tab"><a href="/news">NEWS</a></li>
-      <li class="tab" ><a href="/rules">RULES</a></li>
-      <li class="tab"><a href="/contestants/entry">ENTRY</a></li>
-      <li class="tab"><a href="/about">ABOUT</a></li>
-  </ul>
+
+  <div id="smartphone_menu">
+    <dl id="acMenu">
+      <dt><%= image_tag 'humburger.png' %><span>MENU</span></dt>
+      <dd>
+      <li class="tab"><a href="/">HOME<span>ホーム</span></a></li>
+        <li class="tab even"><a href="/news">NEWS<span>ニュース</span></a></li>
+        <li class="tab" ><a href="/rules">RULES<span>ルール</span></a></li>
+        <li class="tab even"><a href="/contestants/entry">ENTRY<span>エントリー</span></a></li>
+        <li class="tab"><a href="/about">ABOUT<span>運営団体</span></a></li>
+        <li class="tab even"><a href="/history">HISTORY<span>鈴木さんの歴史</span></a></li>
+      </dd>
+    </dl>
+  </div>
+
 </div>
 
 
@@ -64,6 +80,13 @@
   </div>
 </div>
 </footer>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

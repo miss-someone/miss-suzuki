@@ -2,6 +2,9 @@ user_type:
   normal: 1
   contestant: 2
 current_group_id: 1
+contestant:
+  preopen_count: 3 # プレオープンで公開する参加者の数
+  default_blur: 500
 link_type:
   facebook: 1
   twitter: 2
@@ -9,3 +12,10 @@ link_type:
   blog: 4
   movie: 5
   web: 6
+
+# CircleCIからwebhookでデプロイする際のデプロイキー
+deploy_info:
+  key: MJweV0EYMHJQXECqy3PlBbCYwRZ7g6rNhtM0Gl5U7bY0WHzL5hXOLeWtiKKa
+  vcs_url: 'https://github.com/miss-someone/miss-suzuki'
+  command: "/home/webmaster/bin/miss-suzuki-deploy.sh"
+  slack_webhook_url: 'https://hooks.slack.com/services/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'

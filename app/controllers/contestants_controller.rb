@@ -32,15 +32,25 @@ class ContestantsController < ApplicationController
   end
 
   def new_interview_answer
-    @contestant = current_user
-    InterviewTopic.find_each do |interview_topic|
-      @contestant.interview_answers.build(interview_topic_id: interview_topic.id)
+    @interview_answers = InterviewTopic.all.each_with_object([]) do |topic, res|
+      res << InterviewAnswer.new(user_id: current_user.id, interview_topic_id: topic.id)
     end
   end
 
   def create_interview_answer
-    @contestant = current_user.update(answer: contestant_params[:answer])
-    @contestant.save
+    @interview_answers = InterviewTopic.all.each_with_object([]) do |topic, res|
+      res << InterviewAnswer.new(user_id: current_user.id, interview_topic_id: topic.id)
+    end
+    InterviewAnswer.transaction do
+      params[:interview_answers].each do |interview_answer|
+        current_user.interview_answers.create!(interview_topic_id: interview_answer[:interview_topic_id], answer: interview_answer[:answer], is_pending: false) unless interview_answer[:answer].blank?
+      end
+    end
+    flash.now.alert = "インタビューの回答の登録に成功しました。"
+    render 'new_interview_answer'
+    rescue => e
+    flash.now.alert = "インタビューの回答の登録に失敗しました（インタビューの回答は200文字までです）。"
+    render 'new_interview_answer'
   end
 
   private
@@ -58,7 +68,7 @@ class ContestantsController < ApplicationController
                                          :profile_image_crop_param_height,
                                          :profile_image_crop_param_width
                                         ],
-                                       interview_answer_attributes: [:user, :interview_topic, :answer]
+                                       interview_answers_attributes: [:user, :interview_topic_id, :answer]
                                       )
   end
 end
