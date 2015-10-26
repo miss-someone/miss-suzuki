@@ -38,23 +38,26 @@ class ContestantsController < ApplicationController
   end
 
   def create_interview_answer
+    InterviewAnswer.transaction do
+      params[:interview_answers].each do |interview_answer|
+        current_user.interview_answers.create!(interview_topic_id: interview_answer[:interview_topic_id],
+                                               answer: interview_answer[:answer],
+                                               is_pending: false) unless interview_answer[:answer].blank?
+      end
+    end
     @interview_answers = InterviewTopic.all.each_with_object([]) do |topic, res|
       res << InterviewAnswer.new(user_id: current_user.id, interview_topic_id: topic.id)
     end
-    begin
-      InterviewAnswer.transaction do
-        params[:interview_answers].each do |interview_answer|
-          current_user.interview_answers.create!(interview_topic_id: interview_answer[:interview_topic_id],
-                                                 answer: interview_answer[:answer],
-                                                 is_pending: false) unless interview_answer[:answer].blank?
-        end
-      end
-      flash.now.alert = "インタビューの回答の登録に成功しました。"
-      render 'new_interview_answer'
-    rescue
-      flash.now.alert = "インタビューの回答の登録に失敗しました（インタビューの回答は200文字までです）。"
-      render 'new_interview_answer'
+    flash.now.alert = "インタビューの回答の登録に成功しました。"
+    render 'new_interview_answer'
+  rescue
+    @interview_answers = params[:interview_answers].each_with_object([]) do |interview_answer, res|
+      res << InterviewAnswer.new(user_id: current_user.id,
+                                 interview_topic_id: interview_answer[:interview_topic_id],
+                                 answer: interview_answer[:answer])
     end
+    flash.now.alert = "インタビューの回答の登録に失敗しました（インタビューの回答は200文字までです）。"
+    render 'new_interview_answer'
   end
 
   private
