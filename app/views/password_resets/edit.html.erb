@@ -8,7 +8,7 @@
       <div class="form1">
         <table class="table">
           <tr><td><%= f.label :email %></td></tr>
-          <tr><td><%= @user.email %></td></tr>
+          <tr><td class="users_address"><%= @user.email %></td></tr>
           <tr><td><%= f.label :password %>(8文字以上30文字以内の半角英数記号)</td></tr>
           <tr><td><%= f.password_field :password %></td></tr>
         </table>
