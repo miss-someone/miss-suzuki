@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024150258) do
+ActiveRecord::Schema.define(version: 20151027134914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20151024150258) do
     t.integer  "group_id",                                        null: false
     t.string   "name",                                            null: false
     t.string   "hurigana",                                        null: false
-    t.string   "profile_image",                                   null: false
+    t.string   "profile_image"
     t.string   "age"
     t.string   "height",                                          null: false
     t.string   "come_from",                                       null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20151024150258) do
     t.string   "profile_image_crop_param_extra",  default: "",    null: false
     t.integer  "profile_image_blur_param",        default: 0,     null: false
     t.integer  "status",                          default: 0,     null: false
+    t.string   "profile_image_tmp"
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", using: :btree

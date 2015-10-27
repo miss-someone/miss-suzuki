@@ -4,6 +4,7 @@
 :queues:
   - default
   - mailers
+  - carrierwave
 :daemon: true
 development:
   :daemon: false
