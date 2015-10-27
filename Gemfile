@@ -30,6 +30,8 @@ gem 'rails-i18n'
 gem 'carrierwave'
 # 画像アップロード時にクロップするgem
 gem 'carrierwave-crop'
+# carrierwaveのアップロードをバックグラウンドで行うgem
+gem 'carrierwave_backgrounder'
 # Cloudinaryとの連携用
 gem 'cloudinary'
 # アプリケーションサーバ
