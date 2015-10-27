@@ -15,6 +15,7 @@
           <td>
             <%= f.radio_button :sex, Settings.sex[:male] %>男性
             <%= f.radio_button :sex, Settings.sex[:female] %>女性
+            <%= f.radio_button :sex, Settings.sex[:unknown] %>未回答
           </td>
         </tr>
         <tr><td><%= f.label :prefecture_code %></td></tr>
