@@ -35,6 +35,9 @@ module MissSuzuki
     # bower用
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
 
+    # ActiveJobのアダプターをsidekiqに設定
+    config.active_job.queue_adapter = :sidekiq
+
     # Adminサーバにて，urlにサブディレクトリを指定しているため，
     # AdminWebの時だけ，urlオプションを指定する．このようにしないとAdminWebでの
     # グローバルナビゲーションがおかしくなってしまう．

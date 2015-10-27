@@ -12,6 +12,16 @@
 + `brew install memcached`
 + `/usr/local/opt/memcached/bin/memcached &`
 
+## Redis
++ `brew install redis`
++ `redis-server /usr/local/etc/redis.conf`
+
+## Sidekiq
++ `bundle exec sidekiq -C config/sidekiq.yml`
+
+## Mailcatcher
++ `bundle exec mailcatcher`
+
 # 管理画面
 管理画面へのアクセスには環境変数を設定する必要があります．
 
