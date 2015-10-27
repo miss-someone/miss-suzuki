@@ -5,3 +5,5 @@
   - default
   - mailers
 :daemon: true
+development:
+  :daemon: false
