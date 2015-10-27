@@ -23,6 +23,12 @@ Rails.application.routes.draw do
 
     get   'news'     => 'news#index'
 
+    scope :contestant_image do
+      get 'new' => 'contestant_image#new'
+      post 'create' => 'contestant_image#create'
+      patch 'create' => 'contestant_image#create'
+    end
+
     scope :contestants do
       get   'entry'       => 'contestants#entry'
       get   'new'         => 'contestants#new'

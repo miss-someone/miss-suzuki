@@ -37,6 +37,8 @@ ja:
         prefecture_code: お住まいの都道府県
         job: 職業
         job_id: 職業
+      contestant_image:
+        profile_image: プロフィール画像
 
   date:
     abbr_day_names:
@@ -50,8 +52,6 @@ ja:
     abbr_month_names:
     - 
     - 1月
-    - 2月
-    - 3月
     - 4月
     - 5月
     - 6月
