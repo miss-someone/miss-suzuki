@@ -30,7 +30,7 @@ class ContestantsController < ApplicationController
     @interview_answers = params[:interview_answers].each_with_object([]) do |interview_answer, res|
       res << current_user.interview_answers.new(interview_topic_id: interview_answer[:interview_topic_id],
                                                 answer: interview_answer[:answer],
-                                                is_pending: false)
+                                                is_pending: true)
     end
     InterviewAnswer.transaction do
       @interview_answers.each do |interview_answer|
