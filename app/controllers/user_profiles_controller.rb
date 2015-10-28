@@ -17,7 +17,7 @@ class UserProfilesController < ApplicationController
   def create
     @profile = current_user.build_user_profile(user_profile_params)
     if @profile.save
-      redirect_to root_path, flash: { success: 'プロフィール情報が登録されました' }
+      redirect_to root_path, flash: { success: 'プロフィール情報が登録されました！ミス鈴木をお楽しみください！' }
     else
       render :new
     end

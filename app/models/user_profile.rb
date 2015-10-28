@@ -11,7 +11,8 @@ class UserProfile < ActiveRecord::Base
   jp_prefecture :prefecture_code, method_name: :pref
 
   validates :nickname, presence: true, length: { maximum: 15 }
-  validates :sex, presence: true, inclusion: { in: [Settings.sex[:male], Settings.sex[:female]] }
+  validates :sex, presence: true,
+                  inclusion: { in: [Settings.sex[:male], Settings.sex[:female], Settings.sex[:unknown]] }
   validates :age_id, presence: true, inclusion: { in: Age.first.id..Age.last.id }
   validates :prefecture_code, presence: true,
                               inclusion: { in: Prefecture.all.each_with_object([]) { |p, obj| obj << p.code } }

@@ -1279,14 +1279,15 @@ p a{
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
-/*====================  ログインページ ==========================*/
+/*====================  ログインページ、その他認証ページ  ==========================*/
 #login{
   clear: both;
-  border-top: 5px solid #e04974;
+  border-top: 3px solid #e04974;
   margin-bottom: -30px;
   height:inherit;
   padding-bottom: 20px;
 }
+
 #login{
   background-position: 50%;
 }
@@ -1301,6 +1302,12 @@ p a{
 #login #login_form h1{
   text-align: center;
   padding-top: 10px;
+}
+#login #login_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 #login #login_form tr{
   font-size: 16px;
@@ -1328,6 +1335,9 @@ p a{
   color:#dd0000;
   text-align: center;
   font-weight: bold;
+}
+#login_form .users_address{
+  color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
@@ -2670,7 +2680,7 @@ body {
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
-/*====================  ログインページ ==========================*/
+/*====================  ログインページ、その他認証ページ ==========================*/
 #login{
   clear: both;
   border-top: 5px solid #e04974;
@@ -2692,6 +2702,12 @@ body {
 #login #login_form h1{
   text-align: center;
   padding-top: 10px;
+}
+#login #login_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 #login #login_form tr{
   font-size: 16px;
@@ -2719,6 +2735,9 @@ body {
   color:#dd0000;
   text-align: center;
   font-weight: bold;
+}
+#login_form .users_address{
+  color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{

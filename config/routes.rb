@@ -64,5 +64,9 @@ Rails.application.routes.draw do
     get "login" => "user_sessions#new", :as => "login"
     resources :user_sessions, only: :create
 
+    # Sidekiqのステータス管理用
+    # 接続元は，ローカルホスト及びAdminサーバのみに制限
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq', constraints: AdminServerConstraint
   end
 end
