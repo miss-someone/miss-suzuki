@@ -50,13 +50,27 @@ class ContestantsController < ApplicationController
 
   def mypage
     @contestant_profile = Contestant.approved.find(params[:id]).profile
+    @interview_answers = {}
+    InterviewTopic.find_each do |interview_topic|
+      answers = InterviewAnswer.where(interview_topic_id: interview_topic.id,
+                                      is_pending: false,
+                                      user_id: params[:id]).order(:updated_at)
+      if answers.present?
+        answer = answers.last.answer
+        topic = interview_topic.topic
+        @interview_answers.store(topic, answer)
+      end
+    end
+    @contestant_images = ContestantImage.where(user_id: params[:id])
   end
 
   def my_own_page
     @contestant_profile = Contestant.approved.find(current_user.id).profile
     @interview_answers = {}
     InterviewTopic.find_each do |interview_topic|
-      answers = InterviewAnswer.where(interview_topic_id: interview_topic.id, is_pending: false).order(:updated_at)
+      answers = InterviewAnswer.where(interview_topic_id:
+                                      interview_topic.id, is_pending: false,
+                                      user_id: current_user.id).order(:updated_at)
       if answers.present?
         answer = answers.last.answer
         topic = interview_topic.topic

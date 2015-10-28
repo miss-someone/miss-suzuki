@@ -3,7 +3,10 @@
       <div class="mypage_contestant">
         <div class="picture">
           <ul class="bxslider">
-            <li><%= image_tag 'suzuki_reiko.jpg' %></li>
+            <li><%= image_tag @contestant_profile.profile_image.thumb %></li>
+          <% @contestant_images.each do |contestant_image| %>
+            <li><%= image_tag contestant_image.profile_image.thumb_at_mypage %></li>
+          <% end %>
         </div>
 
         <div class="profile">
@@ -17,14 +20,7 @@
             <textarea name="comment"><%= @contestant_profile.comment %></textarea>
             <div class="sns_links">
               <div class="link_row row1">
-                <p class="url"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/btn_tw.png' %></a></p>
-                <p class="url"><a href="https://www.facebook.com/MsSuzukiOfficial" target="_blank"><%= image_tag 'btn/btn_fb.png' %></a></p>
-                <p class="url btn3"><a href="http://pixel-aoyama.com" target="_blank"><%= image_tag 'btn/btn_site.png' %></a></p>
-              </div>
-              <div class="link_row row2">
-                <p class="url"><%= image_tag 'btn/btn_insta.png', :width => '80' %></p>
-                <p class="url"><%= image_tag 'btn/btn_blog.png' %></p>
-                <p class="url"><%= image_tag 'btn/btn_movie.png' %></p>
+                <p class="url"><a href="<%= @contestant_profile.link_url %>" target="_blank"><%= image_tag btn_name(@contestant_profile.link_type) %></a></p>
               </div>
             </div>
             <div id="banner_in_profile">
@@ -47,18 +43,16 @@
       </div>
 
       <div class="interview_area">
-        <h2>鈴木例子さんへインタビュー！</h2>
+        <h2><%= @contestant_profile.name %>さんへインタビュー！</h2>
         <table id="interview">
-          <tr style="margin-bottom:20px;"><th>好きな食べ物は？</th></tr>
-          <tr><td>ロイヤルミルクティーが好きです。お砂糖は多めで！</td></tr>
-          <tr><th>好きな男性のタイプは？</th></tr>
-          <tr><td>余裕があって色気のある人がいいなー</td></tr>
-          <tr><th>マイブームはなんですか？</th></tr>
-          <tr><td>アフタヌーンティー巡りにハマってます！</td></tr>
-          <tr><th>鈴木に生まれてきてよかった？ その理由も教えてください！</th></tr>
-          <tr><td>はい！鈴木さんってクラスに必ず2人はいるので、下の名前でみんなに読んでもらえるのは嬉しいです！</td></tr>
-          <tr><th>最後にMISS-SUZUKIへの意気込みをお願いします！</th></tr>
-          <tr><td>絶対にミス鈴木になって、親孝行します！みなさん、応援よろしくお願いします！</td></tr>
+          <% @interview_answers.each do |topic, answer| %>
+            <tr>
+              <th><%= topic %> </th>
+            </tr>
+            <tr>
+              <td><%= answer %></td>
+            </tr>
+          <% end %>
         </table>
         <p>ありがとうございました！</p>
       </div>
