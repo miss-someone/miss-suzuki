@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       get 'new' => 'contestant_image#new'
       post 'create' => 'contestant_image#create'
       patch 'create' => 'contestant_image#create'
+      get   'edit' => 'contestant_image#edit'
+      post  'destroy' => 'contestant_image#destroy'
     end
 
     scope :contestants do
