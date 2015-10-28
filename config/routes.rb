@@ -41,6 +41,7 @@ Rails.application.routes.draw do
         get   'group/:id'   => 'contestants#index'
         post  '/:id/vote'   => 'contestants#vote', as: :vote
         get   '/:id/mypage' => 'contestants#mypage'
+        get   'my_own_page' => 'contestants#my_own_page'
         get   '/:id/thankyou' => 'contestants#thankyou'
       end
     end

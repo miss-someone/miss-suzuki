@@ -1,6 +1,6 @@
 class ContestantsController < ApplicationController
   include ArrayUtils
-  before_filter :require_login, only: [:new_interview_answer, :create_interview_answer]
+  before_filter :require_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
 
   def index
     @contestant = Array.split3(User.contestants.shuffle)
@@ -50,6 +50,20 @@ class ContestantsController < ApplicationController
 
   def mypage
     @contestant_profile = Contestant.approved.find(params[:id]).profile
+  end
+
+  def my_own_page
+    @contestant_profile = Contestant.approved.find(current_user.id).profile
+    @interview_answers = {}
+    InterviewTopic.find_each do |interview_topic|
+      answers = InterviewAnswer.where(interview_topic_id: interview_topic.id, is_pending: false).order(:updated_at)
+      if answers.present?
+        answer = answers.last.answer
+        topic = interview_topic.topic
+        @interview_answers.store(topic, answer)
+      end
+    end
+    @contestant_images = ContestantImage.where(user_id: current_user.id)
   end
 
   private

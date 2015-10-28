@@ -1,0 +1,77 @@
+<div id="mypage">
+  <div id="content">
+      <div class="mypage_contestant">
+        <div class="picture">
+          <ul class="bxslider">
+            <li><%= image_tag @contestant_profile.profile_image.thumb %></li>
+          <% @contestant_images.each do |contestant_image| %>
+            <li><%= image_tag contestant_image.profile_image.thumb_at_mypage %></li>
+          <% end %>
+        </div>
+
+        <div class="profile">
+          <div class="profile_cotent">
+          <h3 class="furigana"><%= @contestant_profile.hurigana %></h3>
+            <h2 class="name"><%= @contestant_profile.name %></h2>
+            <p class="age">年齢：<%= @contestant_profile.age %></p>
+            <p class="hometown">出身：<%= @contestant_profile.come_from %></p>
+            <p class="height">身長：<%= @contestant_profile.height %></p>
+            <p class="appeal">一言アピール！</p>
+            <textarea name="comment"><%= @contestant_profile.comment %></textarea>
+            <div class="sns_links">
+              <div class="link_row row1">
+                <p class="url"><a href="<%= @contestant_profile.link_url %>" target="_blank"><%= image_tag btn_name(@contestant_profile.link_type) %></a></p>
+              </div>
+            </div>
+            <div id="banner_in_profile">
+              <script type="text/javascript">
+              var lists=[
+              '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+              '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+              '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+              '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+              ];
+
+              var rNo = Math.floor(Math.random() * lists.length);
+              $(document).ready(function() {
+              document.getElementById('banner_in_profile').innerHTML = lists[rNo];
+              });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="interview_area">
+        <h2>鈴木例子さんへインタビュー！</h2>
+        <table id="interview">
+          <% @interview_answers.each do |topic, answer| %>
+            <tr>
+              <th><%= topic %> </th>
+            </tr>
+            <tr>
+              <td><%= answer %></td>
+            </tr>
+          <% end %>
+        </table>
+        <p>ありがとうございました！</p>
+      </div>
+
+      <div id="banner_big">
+
+        <script type="text/javascript">
+        var lists=[
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+        '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+        '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+        ];
+
+        var rNo = Math.floor(Math.random() * lists.length);
+        $(document).ready(function() {
+        document.getElementById('banner_big').innerHTML = lists[rNo];
+        });
+        </script>
+      </div>
+  </div>
+</div>
