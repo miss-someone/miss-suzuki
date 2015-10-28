@@ -1,4 +1,6 @@
 class ContestantImageController < ApplicationController
+  before_filter :require_login, only: [:new, :create]
+
   def new
     @contestant_image = ContestantImage.new
   end

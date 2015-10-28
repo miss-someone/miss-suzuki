@@ -1,6 +1,6 @@
 class ContestantsController < ApplicationController
   include ArrayUtils
-  before_filter :require_login, only: :new_interview_answer
+  before_filter :require_login, only: [:new_interview_answer, :create_interview_answer]
 
   def index
     @contestant = Array.split3(User.contestants.shuffle)
