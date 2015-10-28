@@ -1140,12 +1140,23 @@ p a{
   margin:0;
   color:#e04974;
   font-size: 12px;
-  margin-top: 30px;
+  margin-top:10px;
 }
+
 #mypage .profile h2{
   margin:0;
   color:#e04974;
   font-size: 24px;
+}
+#mypage .bx-pager{
+  height: 30px;
+}
+#mypage .profile .share{
+  margin-top:40px;
+}
+#mypage .profile .fb_iframe_widget {
+  position: relative;
+  top: -6px;
 }
 #mypage .profile textarea{
   color:#666;
@@ -2482,6 +2493,14 @@ body {
   margin-left: -10px;
   position: relative;
   z-index: 5;
+  margin-bottom: 20px;
+}
+#mypage .profile .share{
+  margin-top: 10px;
+}
+#mypage .profile .fb_iframe_widget {
+  position: relative;
+  top: -6px;
 }
 #mypage .profile_content{
   width:350px;
@@ -2496,7 +2515,10 @@ body {
   margin:0;
   color:#e04974;
   font-size: 12px;
-  margin-top: 30px;
+  margin-top: 10px;
+}
+#mypage .bx-default-pager{
+  display: none;
 }
 #mypage .profile h2{
   margin:0;
