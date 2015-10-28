@@ -11,4 +11,8 @@ module ApplicationHelper
       ' <li class="header_btn tab"><a href="/login">ログイン</a></li>'
     end
   end
+
+  def show_my_own_page
+    '<li class="tab"><a href="/contestants/my_own_page">MY PAGE<br><span>マイページ</span></a></li>' if current_user
+  end
 end
