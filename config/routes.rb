@@ -25,17 +25,20 @@ Rails.application.routes.draw do
 
     scope :contestants do
       get   'entry'       => 'contestants#entry'
-      get   'new'         => 'contestants#new'
       get   'thankyou'    => 'contestants#thankyou_sample'
       get   'mypage'      => 'contestants#mypage_sample'
-      post  'create'      => 'contestants#create'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
-      post 'create_interview_answer' => 'contestants#create_interview_answer'
+      post  'create_interview_answer' => 'contestants#create_interview_answer'
       if Rails.env.development?
         get   'group/:id'   => 'contestants#index'
-        post  '/:id/vote'   => 'contestants#vote', as: :vote
         get   '/:id/mypage' => 'contestants#mypage'
         get   '/:id/thankyou' => 'contestants#thankyou'
+      end
+    end
+
+    resources :contestants, only: [:new, :create] do
+      unless Rails.env.production?
+        resource :vote, only: [:create]
       end
     end
 
