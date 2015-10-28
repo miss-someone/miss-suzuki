@@ -1,6 +1,8 @@
 <div id="mypage">
   <div id="content">
-      <div class="mypage_contestant">
+    <h1>あなたのマイページ</h1>
+    <p>あなたのマイページは他のユーザーからこのように見られています。</p>
+    <div class="mypage_contestant">
         <div class="picture">
           <ul class="bxslider">
             <li><%= image_tag @contestant_profile.profile_image.thumb %></li>
@@ -56,6 +58,9 @@
         </table>
         <p>ありがとうございました！</p>
       </div>
+
+  <a href="/contestants/new_interview_answer">インタビューの回答はこちら</a>
+  <a href="/contestant_image/new">マイページ掲載写真の追加登録はこちら</a>
 
       <div id="banner_big">
 

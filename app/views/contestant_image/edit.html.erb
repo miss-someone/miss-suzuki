@@ -7,6 +7,7 @@
     <%= form_tag('/contestant_image/destroy') do %>
       <div class="form1">
         <table class="table">
+          <%= raw show_blank_message(@contestant_image) %>
           <% @contestant_images.each do |contestant_image| %>
             <tr><td><%= image_tag contestant_image.profile_image.thumb_at_mypage %></td></tr>
             <tr><td>上記の写真を削除<%= check_box_tag 'delete_images[][delete]', false, false, {} %></td></tr>
