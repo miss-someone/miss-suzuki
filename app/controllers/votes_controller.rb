@@ -52,11 +52,6 @@ class VotesController < ApplicationController
     end
   end
 
-  # 投票が可能かをチェック
-  def can_vote?
-    logged_in? ? exceeded_limit_with_logged_in? : exceeded_limit_with_not_logged_in?
-  end
-
   # 未ログインユーザに対して，cookieとipから投票上限に達しているかチェック
   def exceeded_limit_with_not_logged_in?
     set_vote_token if vote_token.blank?
