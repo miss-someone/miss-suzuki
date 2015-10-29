@@ -12,29 +12,29 @@ class VotesController < ApplicationController
   # ログイン済みユーザ用Voteのcreateアクション
   def create_action_with_logged_in
     if exceeded_limit_with_logged_in?
-      # TODO: ログイン済ユーザ用投票上限を超えている旨表示画面へ遷移
-      fail 'exceeded limitation'
+      render 'exceeded_limitation'
     else
       # 投票可能な場合
       begin
-        contestant_profile = ContestantProfile.approved.contestant_id(vote_params[:contestant_id])
-        Vote.create!(voter_id: current_user.id,
-                     contestant_id: vote_params[:contestant_id], group_id: group_id)
-        contestant_profile.increment!(:votes, 1)
+        Vote.transaction do
+          contestant_profile = ContestantProfile.approved.contestant_id(vote_params[:contestant_id])
+          Vote.create!(voter_id: current_user.id,
+                       contestant_id: vote_params[:contestant_id], group_id: contestant_profile.group_id)
+          contestant_profile.increment!(:votes, 1)
+        end
+        # 投票成功時には，thankyouページヘ
+        redirect_to contestants_thankyou_path(vote_params[:contestant_id])
       rescue => e
-        # TODO: Handling InternalServerError
+        # 通常，ありえないので500を返す
         raise e.message
       end
     end
-    # TODO: redirect proper path
-    redirect_to contestants_thankyou_path(vote_params[:contestant_id])
   end
 
   # 未ログインユーザ用のcreateアクション
   def create_action_with_not_logged_in
     if exceeded_limit_with_not_logged_in?
-      # TODO: 未ログインユーザ用投票上限を超えている旨表示画面へ遷移
-      fail 'exceeded limitation'
+      render 'exceeded_limitation'
     else
       begin
         Vote.transaction do
@@ -43,16 +43,13 @@ class VotesController < ApplicationController
                        contestant_id: vote_params[:contestant_id], group_id: contestant_profile.group_id)
           contestant_profile.increment!(:votes, 1)
         end
+        # 投票成功時には，thankyouページヘ
+        redirect_to contestants_thankyou_path(vote_params[:contestant_id])
       rescue => e
-        # TODO: Handling InternalServerError
+        # 通常，ありえないので500を返す
         raise e.message
       end
     end
-    # TODO: redirect proper path
-    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate' # HTTP 1.1.
-    response.headers['Pragma'] = 'no-cache' # HTTP 1.0.
-    response.headers['Expires'] = '0' # Proxies.
-    redirect_to contestants_thankyou_path(vote_params[:contestant_id])
   end
 
   # 投票が可能かをチェック
