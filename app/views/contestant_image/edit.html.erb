@@ -1,5 +1,5 @@
 <div id ="create">
-  <h1>マイページ写真削除フォーム</h1>
+  <h1>追加写真削除フォーム</h1>
   <div id="entry_form">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -10,7 +10,7 @@
           <%= raw show_blank_message(@contestant_images) %>
           <% @contestant_images.each do |contestant_image| %>
             <tr><td><%= image_tag contestant_image.profile_image.thumb_at_mypage %></td></tr>
-            <tr><td>上記の写真を削除<%= check_box_tag 'delete_images[][delete]', false, false, {} %></td></tr>
+            <tr><td>上の写真を削除<%= check_box_tag 'delete_images[][delete]', false, false, {} %></td></tr>
             <tr><td><%= hidden_field_tag nil, contestant_image.id, name: "delete_images[][id]" %></td></tr>
           <% end %>
         </table>
