@@ -1,5 +1,5 @@
 class ContestantImageController < ApplicationController
-  before_filter :require_login, only: [:new, :create, :edit, :destroy]
+  before_filter :require_contestant_login, only: [:new, :create, :edit, :destroy]
 
   def new
     @contestant_image = ContestantImage.new
@@ -20,7 +20,7 @@ class ContestantImageController < ApplicationController
     ContestantImage.transaction do
       params[:delete_images].each do |delete_image|
         if ContestantImage.find(delete_image[:id]).present? && delete_image[:delete]
-          ContestantImage.find(delete_image[:id]).destroy
+          ContestantImage.find(delete_image[:id]).destroy!
         end
       end
     end
@@ -28,7 +28,7 @@ class ContestantImageController < ApplicationController
     render 'edit'
   rescue
     @contestant_images = ContestantImage.where(user_id: current_user.id)
-    flash.now.alert = "予期せぬエラーが発生しました。"
+    flash.now.alert = "削除に失敗しました。時間を置いて再度お試しください。"
     render 'edit'
   end
 
