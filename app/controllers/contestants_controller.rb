@@ -37,7 +37,7 @@ class ContestantsController < ApplicationController
         interview_answer.save! unless interview_answer.answer.blank?
       end
     end
-    flash.now.alert = "インタビューの回答の登録に成功しました。"
+    flash.now.alert = "インタビューの回答の登録に成功しました。回答が承認され次第マイページに反映されますのでしばらくお待ちください。"
     render 'new_interview_answer'
   rescue
     flash.now.alert = "インタビューの回答の登録に失敗しました（インタビューの回答は200文字までです）。"
