@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def show_my_own_page
     return unless current_user
-    return unless current_user.user_type != 2
+    return unless current_user.user_type == 2
     '<li class="tab"><a href="/contestants/my_own_page">MY PAGE<br><span>マイページ</span></a></li>'
   end
 
