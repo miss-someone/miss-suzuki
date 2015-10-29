@@ -9,6 +9,7 @@ class Contestant < User
       .where(contestant_profiles: { status: ContestantProfile.statuses[:approved] })
   }
   scope :todays_preopen, -> { includes(:contestant_profile).where(contestant_profiles: { is_preopen: true }) }
+  scope :nth_group, ->(n) { includes(:contestant_profile).where(contestant_profiles: { group_id: n }) }
 
   validates :agreement, acceptance: { message: "への同意が必要です" }
 

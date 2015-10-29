@@ -23,20 +23,21 @@ Rails.application.routes.draw do
 
     get   'news'     => 'news#index'
 
-    scope :contestants do
-      get   'entry'       => 'contestants#entry'
-      get   'new'         => 'contestants#new'
-      get   'thankyou'    => 'contestants#thankyou_sample'
-      get   'mypage'      => 'contestants#mypage_sample'
-      post  'create'      => 'contestants#create'
+    scope :contestants, as: :contestants do
+      get   'entry' => 'contestants#entry'
+      get   'thankyou_sample'    => 'contestants#thankyou_sample'
+      get   'mypage_sample'      => 'contestants#mypage_sample'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
-      post 'create_interview_answer' => 'contestants#create_interview_answer'
+      post  'create_interview_answer' => 'contestants#create_interview_answer'
       if Rails.env.development?
         get   'group/:id'   => 'contestants#index'
-        post  '/:id/vote'   => 'contestants#vote', as: :vote
         get   '/:id/mypage' => 'contestants#mypage'
-        get   '/:id/thankyou' => 'contestants#thankyou'
+        get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
       end
+    end
+
+    resources :contestants, only: [:new, :create] do
+      resource :vote, only: [:create] unless Rails.env.production?
     end
 
     if Rails.env.development? || Rails.env.test?
