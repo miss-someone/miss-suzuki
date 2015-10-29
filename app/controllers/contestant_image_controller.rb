@@ -29,6 +29,7 @@ class ContestantImageController < ApplicationController
         end
       end
     end
+    flash.now.alert = "選択された画像を削除しました。"
     @contestant_images = ContestantImage.where(user_id: current_user.id)
     render 'edit'
   rescue
