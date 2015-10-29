@@ -18,6 +18,9 @@ class ContestantProfile < ActiveRecord::Base
   validates :is_interest_in_idol_group, inclusion: { in: [true, false] }
   validates :is_share_with_twitter_ok, inclusion: { in: [true, false] }
 
+  scope :approved, -> { where(status: ContestantProfile.statuses[:approved]) }
+  scope :contestant_id, ->(n) { find_by(user_id: n) }
+
   # 承認ステータスのenum
   enum status: { pending_approval: 0, approved: 1, rejected: 2 }
 

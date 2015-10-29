@@ -1,5 +1,6 @@
-<div id="login">
-  <div id="login_form">
+<div id="mainimage"><%= image_tag 'mainimages/profile_mainimage.jpg' %></div>
+<div id="profile">
+  <div id="profile_form">
   <h1>プロフィール登録</h1>
   <%= render 'layouts/flash', collections: flash %>
   <% if @profile.errors.any? %>
@@ -8,9 +9,9 @@
   <%= form_for @profile, url: { action: :create } do |f| %>
     <div class="form1">
       <table class="table">
-        <tr><td><%= f.label :nickname %></td></tr>
-        <tr><td><%= f.text_field :nickname, class: "half" %></td></tr>
-        <tr><td><%= f.label :sex %></td></tr>
+        <tr class="item"><td><p><%= f.label :nickname %></p></td></tr>
+        <tr class="textarea"><td><%= f.text_field :nickname %></td></tr>
+        <tr class="item"><td><p><%= f.label :sex %></p></td></tr>
         <tr class="box">
           <td>
             <%= f.radio_button :sex, Settings.sex[:male] %>男性
@@ -18,15 +19,15 @@
             <%= f.radio_button :sex, Settings.sex[:unknown] %>未回答
           </td>
         </tr>
-        <tr><td><%= f.label :prefecture_code %></td></tr>
+        <tr  class="item"><td><p><%= f.label :prefecture_code %></p></td></tr>
         <tr><td><%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, include_blank: "選択してください" %></td></tr>
-        <tr><td><%= f.label :age %></td></tr>
+        <tr class="item"><td><p><%= f.label :age %></p></td></tr>
         <tr><td><%= f.collection_select :age_id, Age.all, :id, :name, include_blank: "選択してください" %></td></tr>
-        <tr><td><%= f.label :job %></td></tr>
+        <tr class="item"><td><p><%= f.label :job %></p></td></tr>
         <tr><td><%= f.collection_select :job_id, Job.all, :id, :name, include_blank: "選択してください" %></td></tr>
       </table>
     </div>
     <p><%= f.submit "送信", class: "submit_btn" %></p>
   <% end %>
   </div>
-</div><!-- /#login -->
+</div><!-- /#profile -->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027134914) do
+ActiveRecord::Schema.define(version: 20151028130348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -173,10 +173,27 @@ ActiveRecord::Schema.define(version: 20151027134914) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "voter_id"
+    t.integer  "contestant_id", null: false
+    t.integer  "group_id",      null: false
+    t.string   "ip_address"
+    t.string   "cookie_token"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "votes", ["contestant_id"], name: "index_votes_on_contestant_id", using: :btree
+  add_index "votes", ["cookie_token"], name: "index_votes_on_cookie_token", using: :btree
+  add_index "votes", ["ip_address"], name: "index_votes_on_ip_address", using: :btree
+  add_index "votes", ["voter_id"], name: "index_votes_on_voter_id", using: :btree
+
   add_foreign_key "contestant_profiles", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "contestant_tags", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interview_answers", "interview_topics", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interview_answers", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_profiles", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "votes", "users", column: "contestant_id", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "votes", "users", column: "voter_id", on_update: :cascade, on_delete: :cascade
 end

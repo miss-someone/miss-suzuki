@@ -1339,6 +1339,66 @@ p a{
 #login_form .users_address{
   color:#62a7e7;
 }
+/*====================  プロフィール登録ページ ==========================*/
+#profile{
+  background-position: 50%;
+}
+#profile #profile_form{
+  width:90%;
+  background-color:#fff;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 30px;
+  padding:0 10px 10px 10px;
+}
+#profile #profile_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#profile #profile_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#profile #profile_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#profile #profile_form tr.textarea input{
+  width: 100%;
+  line-height: 2;
+}
+#profile #profile_form p{
+  text-align: center;
+}
+#profile #profile_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#profile #profile_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#profile_form .users_address{
+  color:#62a7e7;
+}
+#profile #profile_form .box{
+  color:#999;
+}
+#profile #profile_form .item p{
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom:0;
+}
 /*====================  投票ページ ==========================*/
 .content_middle{
   padding-top: 30px;
@@ -2737,6 +2797,68 @@ body {
   font-weight: bold;
 }
 #login_form .users_address{
+  color:#62a7e7;
+}
+/*====================  プロフィール編集ページ ==========================*/
+#profile a{
+  color:#62a7e7;
+  text-decoration: underline;
+}
+#profile #profile_form{
+  width:400px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 0px;
+  padding:0 50px 20px 50px;
+}
+#profile #profile_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#profile #profile_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#profile #profile_form .box{
+  color:#999;
+}
+#profile #profile_form .item p{
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom:0;
+}
+#profile #profile_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+  padding-top: 20px;
+}
+#profile #profile_form tr.textarea input{
+  width: 400px;
+  line-height: 2;
+}
+#profile #profile_form p{
+  text-align: center;
+}
+#profile #profile_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#profile #profile_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#profile_form .users_address{
   color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/

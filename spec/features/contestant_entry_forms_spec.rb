@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "ContestantEntryForms", type: :feature do
   describe "Contestant entry paage" do
     subject { page }
-    before { visit '/contestants/new/' }
+    before { visit new_contestant_path }
     let(:submit) { "送信する" }
 
     context "with invalid information" do
