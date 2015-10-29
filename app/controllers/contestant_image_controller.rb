@@ -8,8 +8,13 @@ class ContestantImageController < ApplicationController
   def create
     @contestant_image = ContestantImage.new(contestant_image_params)
     @contestant_image.user_id = current_user.id
-    flash.now.alert = "登録に成功しました。" if @contestant_image.save
-    render 'new'
+    if ContestantImage.where(user_id: current_user.id).count > 2
+      @contestant_image.errors[:base] << "登録されている写真の数が上限を超えています。写真を削除してから再度お試し下さい。"
+      render 'new'
+    else
+      flash.now.alert = "登録に成功しました。" if @contestant_image.save
+      render 'new'
+    end
   end
 
   def edit

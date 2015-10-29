@@ -1,6 +1,9 @@
 <div id ="create">
 <h1>マイページ掲載画像追加フォーム</h1>
   <div id="entry_form">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
     <% if @contestant_image.errors.any? %>
       <%= render 'contestants/error_msg', messages: @contestant_image.errors.full_messages %>
     <% end %>
