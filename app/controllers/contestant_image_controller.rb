@@ -8,7 +8,7 @@ class ContestantImageController < ApplicationController
   def create
     @contestant_image = ContestantImage.new(contestant_image_params)
     @contestant_image.user_id = current_user.id
-    @contestant_image.errors[:base] << "登録に成功しました。" if @contestant_image.save
+    flash.now.alert = "登録に成功しました。" if @contestant_image.save
     render 'new'
   end
 

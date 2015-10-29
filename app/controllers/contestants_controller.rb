@@ -68,8 +68,8 @@ class ContestantsController < ApplicationController
     @contestant_profile = Contestant.approved.find(current_user.id).profile
     @interview_answers = {}
     InterviewTopic.find_each do |interview_topic|
-      answers = InterviewAnswer.where(interview_topic_id:
-                                      interview_topic.id, is_pending: false,
+      answers = InterviewAnswer.where(interview_topic_id: interview_topic.id,
+                                      is_pending: false,
                                       user_id: current_user.id).order(:updated_at)
       if answers.present?
         answer = answers.last.answer
