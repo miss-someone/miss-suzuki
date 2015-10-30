@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe VotesController, type: :controller do
   let(:contestant) { create(:contestant) }
   let(:user) { create(:user) }
+  let(:user2) { create(:user2) }
+  let(:today) { Date.new(2015, 11, 1) }
+  let(:tomorrow) { Date.new(2015, 11, 2) }
+  let(:not_login_limit) { Settings.vote[:daily_limit][:not_logined] }
+  let(:with_login_limit) { Settings.vote[:daily_limit][:logined] }
   before do
     allow_any_instance_of(ActionDispatch::Request).to receive(:remote_ip).and_return("192.168.99.225")
     # Cloudinaryのモジュールを使っているため，image_url=が
@@ -16,6 +21,8 @@ RSpec.describe VotesController, type: :controller do
 
   describe 'POST create' do
     subject { post :create, contestant_id: contestant.id }
+    before(:each) { Timecop.freeze(today) }
+    after(:each) { Timecop.return }
     context 'by an user who not logged in' do
       context 'in todays 1st vote' do
         it { expect { subject }.to change(Vote, :count).by(1) }
@@ -34,7 +41,17 @@ RSpec.describe VotesController, type: :controller do
         it { expect { subject }.not_to change { contestant.reload.profile.votes } }
         it { expect(subject).to render_template('exceeded_limitation') }
       end
+      context 'in tomorrows 1st vote(in case of that he has voted 3times today)' do
+        before do
+          not_login_limit.times.each { post :create, contestant_id: contestant.id }
+          Timecop.freeze(tomorrow)
+        end
+        it { expect { subject }.to change(Vote, :count).from(3).to(4) }
+        it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
+        it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
+      end
     end
+
     context 'by an user who logged in' do
       before { login_user(user) }
       context 'in todays 1st vote' do
@@ -53,6 +70,15 @@ RSpec.describe VotesController, type: :controller do
         it { expect { subject }.not_to change(Vote, :count) }
         it { expect { subject }.not_to change { contestant.reload.profile.votes } }
         it { expect(subject).to render_template('exceeded_limitation') }
+      end
+      context 'in tomorrows 1st vote(in case of that he has voted 10times today)' do
+        before do
+          with_login_limit.times.each { post :create, contestant_id: contestant.id }
+          Timecop.freeze(tomorrow)
+        end
+        it { expect { subject }.to change(Vote, :count).from(10).to(11) }
+        it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
+        it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
       end
     end
   end
