@@ -31,7 +31,7 @@ RSpec.describe VotesController, type: :controller do
         it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
         it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
         context 'when another user already voted 3times' do
-          before  do
+          before do
             not_login_limit.times.each { post :create, contestant_id: contestant.id }
             # 別IPにセット
             allow_any_instance_of(ActionDispatch::Request).to receive(:remote_ip).and_return(ip2)
@@ -73,7 +73,7 @@ RSpec.describe VotesController, type: :controller do
         it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
         it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
         context 'when another user already voted 10 times' do
-          before  do
+          before do
             with_login_limit.times.each { post :create, contestant_id: contestant.id }
             logout_user
             login_user(user1)
