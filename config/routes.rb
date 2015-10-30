@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       get   'mypage_sample'      => 'contestants#mypage_sample'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
       post  'create_interview_answer' => 'contestants#create_interview_answer'
-      if Rails.env.development?
+      unless Rails.env.production?
         get   'group/:id'   => 'contestants#index'
         get   '/:id/mypage' => 'contestants#mypage'
         get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
