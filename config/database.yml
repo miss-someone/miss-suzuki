@@ -78,6 +78,14 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  database: miss-suzuki_stg
+  username: miss-suzuki
+  password: <%= ENV['MISS_SUZUKI_STG_DB_PASS'] %>
+  host: 192.168.1.131
+  pool: 10
+
 production:
   <<: *default
   database: miss-suzuki

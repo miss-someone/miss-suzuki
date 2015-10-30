@@ -1,3 +1,4 @@
+# Staging environment
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -8,7 +9,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   # セッションの保存をdalliに
-  config.cache_store = :dalli_store, '192.168.1.30:11211', { namespace: MissSuzuki, expires_in: 1.day, compress: true }
+  config.cache_store = :dalli_store, '192.168.1.131:11211', { namespace: MissSuzuki, expires_in: 1.day, compress: true }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -17,7 +18,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -93,4 +94,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # stg環境であることを示すラベル表示
+  config.rack_dev_mark.enable = true
+  config.rack_dev_mark.env = 'staging'
 end

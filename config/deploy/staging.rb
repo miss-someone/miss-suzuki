@@ -3,10 +3,11 @@
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
+set :branch, 'develop'
+set :rails_env, 'staging'
 
-role :app, %w(deploy@example.com)
-role :web, %w(deploy@example.com)
-role :db,  %w(deploy@example.com)
+role :app, %w(webmaster@192.168.1.121)
+role :db,  %w(webmaster@192.168.1.121)
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +15,6 @@ role :db,  %w(deploy@example.com)
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'deploy', roles: %w(web app), my_property: :my_value
 
 # Custom SSH Options
 # ==================
@@ -29,6 +29,11 @@ server 'example.com', user: 'deploy', roles: %w(web app), my_property: :my_value
 #    auth_methods: %w(password)
 #  }
 #
+set :ssh_options,
+    keys: %w(/home/webmaster/.ssh/id_rsa)
+    forward_agent: true,
+    auth_methods: %w(publickey)
+
 # And/or per server (overrides global)
 # ------------------------------------
 # server 'example.com',
