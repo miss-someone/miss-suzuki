@@ -1,5 +1,10 @@
 <div id ="create">
+  <div id="interview_anser_user_photo">
+    <%= image_tag current_user.contestant_profile.profile_image.thumb %>
+  </div>
+
   <h1>インタビュー回答フォーム</h1>
+  <div class="mypage_interview_answer_explain"><p>すべての質問にお答えいただく必要はありません！5から10項目程度お答えください！<br>ご自身に当てはまらない質問や、回答したくない質問は空欄のままご送信お願いします。</p></div>
   <div id="entry_form">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -7,9 +12,9 @@
     <%= form_tag('/contestants/create_interview_answer') do %>
       <div class="form1">
         <table class="table">
-          <% @interview_answers.each do |interview_answer| %>
-            <tr><td><%= label_tag interview_answer.interview_topic.topic %></td></tr>
-            <tr><td><%= text_field_tag nil, interview_answer.answer, name: "interview_answers[][answer]" %></td></tr>
+          <% @interview_answers.each.with_index(1) do |interview_answer, index| %>
+            <tr><td><span id="interview_question_number"><%= index %></span><%= label_tag interview_answer.interview_topic.topic %></td></tr>
+            <tr><td class="mypage_interview_answer"><%= text_field_tag nil, interview_answer.answer, name: "interview_answers[][answer]" %></td></tr>
             <tr><td><%= hidden_field_tag nil, interview_answer.interview_topic.id, name: "interview_answers[][interview_topic_id]" %></td></tr>
           <% end %>
         </table>
@@ -18,6 +23,3 @@
     <% end %>
   </div><!-- /#entry_form -->
 </div><!-- /#create -->
-<div id="banner_big">
-  <%= image_tag 'banner/cosmeken.jpg' %>
-</div>
