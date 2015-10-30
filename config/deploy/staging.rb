@@ -30,7 +30,7 @@ role :db,  %w(webmaster@192.168.1.121)
 #  }
 #
 set :ssh_options,
-    keys: %w(/home/webmaster/.ssh/id_rsa)
+    keys: %w(/home/webmaster/.ssh/id_rsa),
     forward_agent: true,
     auth_methods: %w(publickey)
 
