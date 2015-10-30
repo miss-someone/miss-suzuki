@@ -11,6 +11,12 @@ production:
   api_secret: e2yhSFxKHcExkOrLcI5ccO_M2Iw
   enhance_image_tag: true
   static_image_support: true
+staging:
+  cloud_name: ms-someone-dev
+  api_key: '296661433353382'
+  api_secret: dzhLxCbKKUFA7f5u_au-A4ybHLE
+  enhance_image_tag: true
+  static_image_support: false
 test:
   cloud_name: ms-someone-dev
   api_key: '296661433353382'

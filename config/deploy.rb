@@ -60,10 +60,14 @@ after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :copy_assets do
     # アセットのコピーをとりあえず，無理やり
-    sh "scp -rC public/assets 192.168.1.11:#{fetch(:assets_to)}"
-    sh "scp -rC public/assets 192.168.1.12:#{fetch(:assets_to)}"
-    # スケール用
-    # sh "scp -rC public/assets 192.168.1.13:#{fetch(:assets_to)}"
+    if fetch(:stage) == 'production'
+      sh "scp -rC public/assets 192.168.1.11:#{fetch(:assets_to)}"
+      sh "scp -rC public/assets 192.168.1.12:#{fetch(:assets_to)}"
+      # スケール用
+      # sh "scp -rC public/assets 192.168.1.13:#{fetch(:assets_to)}"
+    elsif fetch(:stage) == 'staging'
+      sh "scp -rC public/assets 192.168.1.111:#{fetch(:assets_to)}"
+    end
   end
   task :restart do
     invoke 'unicorn:restart'
