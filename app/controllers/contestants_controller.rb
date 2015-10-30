@@ -31,7 +31,7 @@ class ContestantsController < ApplicationController
   end
 
   def mypage
-    @contestant = ContestantProfile.find(params[:id])
+    @contestant_profile = Contestant.find(params[:id]).profile
   end
 
   private
