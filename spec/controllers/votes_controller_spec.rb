@@ -3,13 +3,15 @@ require 'rails_helper'
 RSpec.describe VotesController, type: :controller do
   let(:contestant) { create(:contestant) }
   let(:user) { create(:user) }
-  let(:user2) { create(:user2) }
+  let(:user1) { create(:user1) }
+  let(:ip1) { "10.105.17.19" }
+  let(:ip2) { "10.105.18.128" }
   let(:today) { Date.new(2015, 11, 1) }
   let(:tomorrow) { Date.new(2015, 11, 2) }
   let(:not_login_limit) { Settings.vote[:daily_limit][:not_logined] }
   let(:with_login_limit) { Settings.vote[:daily_limit][:logined] }
   before do
-    allow_any_instance_of(ActionDispatch::Request).to receive(:remote_ip).and_return("192.168.99.225")
+    allow_any_instance_of(ActionDispatch::Request).to receive(:remote_ip).and_return(ip1)
     # Cloudinaryのモジュールを使っているため，image_url=が
     # 書き換えられており，buildメソッドでは追加されないためここで追加
     contestant_profile = build(:contestant_profile)
@@ -28,6 +30,18 @@ RSpec.describe VotesController, type: :controller do
         it { expect { subject }.to change(Vote, :count).by(1) }
         it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
         it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
+        context 'when another user already voted 3times' do
+          before  do
+            not_login_limit.times.each { post :create, contestant_id: contestant.id }
+            # 別IPにセット
+            allow_any_instance_of(ActionDispatch::Request).to receive(:remote_ip).and_return(ip2)
+            # cookieも一度クリア
+            cookies.signed[Settings.vote[:token_name]] = nil
+          end
+          it { expect { subject }.to change(Vote, :count).by(1) }
+          it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
+          it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
+        end
       end
       context 'in todays 3rd vote' do
         before { 2.times.each { post :create, contestant_id: contestant.id } }
@@ -58,6 +72,16 @@ RSpec.describe VotesController, type: :controller do
         it { expect { subject }.to change(Vote, :count).by(1) }
         it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
         it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
+        context 'when another user already voted 10 times' do
+          before  do
+            with_login_limit.times.each { post :create, contestant_id: contestant.id }
+            logout_user
+            login_user(user1)
+          end
+          it { expect { subject }.to change(Vote, :count).by(1) }
+          it { expect { subject }.to change { contestant.reload.profile.votes }.by(1) }
+          it { expect(subject).to redirect_to(contestants_thankyou_path(contestant.id)) }
+        end
       end
       context 'in todays 10th vote' do
         before { 9.times.each { post :create, contestant_id: contestant.id } }
