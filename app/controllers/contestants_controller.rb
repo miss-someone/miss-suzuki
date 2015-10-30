@@ -65,7 +65,7 @@ class ContestantsController < ApplicationController
   end
 
   def my_own_page
-    @contestant_profile = Contestant.approved.find(current_user.id).profile
+    @contestant_profile = Contestant.find(current_user.id).profile
     @interview_answers = {}
     InterviewTopic.find_each do |interview_topic|
       answers = InterviewAnswer.where(interview_topic_id: interview_topic.id,

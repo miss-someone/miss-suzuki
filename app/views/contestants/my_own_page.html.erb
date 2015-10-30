@@ -1,8 +1,14 @@
 <div id="mypage">
   <div id="content">
-    <h1>あなたのマイページ</h1>
-    <p>あなたのマイページは他のユーザーからこのように見られています。</p>
     <div class="mypage_contestant">
+      <h1 class="yourmypage"><span>あなたのマイページ</span></h1>
+        <div class="edit_box">
+          <div class="edit_btn"><%= image_tag 'icon/answer.png' %><a href="/contestants/new_interview_answer">インタビューへの回答はこちら！</a></div>
+          <div class="edit_btn"><%= image_tag 'icon/add_photo.png' %><a href="/contestant_image/new">マイページ掲載写真の追加登録はこちら！</a></div>
+          <div class="edit_btn"><%= image_tag 'icon/delete.png' %><a href="/contestant_image/edit">追加掲載写真の削除はこちら！</a></div>
+          <p>あなたのマイページは他のユーザーからこのように見られています。</p>
+        </div>
+
         <div class="picture">
           <ul class="bxslider">
             <li><%= image_tag @contestant_profile.profile_image.thumb %></li>
@@ -22,7 +28,9 @@
             <textarea name="comment"><%= @contestant_profile.comment %></textarea>
             <div class="sns_links">
               <div class="link_row row1">
-                <p class="url"><a href="<%= @contestant_profile.link_url %>" target="_blank"><%= image_tag btn_name(@contestant_profile.link_type) %></a></p>
+                <% if @contestant_profile.link_url.present? %>
+                  <p class="url"><a href="<%= @contestant_profile.link_url %>" target="_blank"><%= image_tag btn_name(@contestant_profile.link_type) %></a></p>
+                <% end %>
               </div>
             </div>
             <div id="banner_in_profile">
@@ -61,9 +69,6 @@
         </div>
       <% end %>
 
-  <a href="/contestants/new_interview_answer">インタビューの回答はこちら</a>
-  <a href="/contestant_image/new">マイページ掲載写真の追加登録はこちら</a>
-  <a href="/contestant_image/edit">追加掲載写真の削除はこちら</a>
 
       <div id="banner_big">
 
