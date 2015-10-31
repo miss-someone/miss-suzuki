@@ -10,6 +10,14 @@
         </div>
 
         <div class="profile">
+          <div class="share">
+            <!-- twitterシェアボタンに変換される -->
+            <a class="twitter-share-button" href="https://twitter.com/share" data-text="<%= @contestant_profile.name %>さん、頑張れ！" data-related="2015MissSuzuki:最新情報をお届けします！フォローよろしくお願いします！" data-count="horizontal" data-hashtags="ミス鈴木" data-dnt="true">Tweet</a>
+
+            <!-- FBシェアボタンに変換される -->
+            <div class="fb-share-button" data-href="https://miss-suzuki.com/contestants/<%= @contestant_profile.user_id %>/mypage" data-layout="button_count"></div>
+          </div>
+
           <div class="profile_cotent">
           <h3 class="furigana"><%= @contestant_profile.hurigana %></h3>
             <h2 class="name"><%= @contestant_profile.name %></h2>
@@ -40,7 +48,6 @@
             </div>
           </div>
         </div>
-      </div>
 
       <% if @interview_answers.present? %>
         <div class="interview_area">
@@ -75,5 +82,30 @@
         });
         </script>
       </div>
+
+      <!-- twitterスクリプト [head]内や、[body]の終了直前などに配置 -->
+      <script>
+        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+      </script>
+      <!-- facebookスクリプト [head]内や、[body]の終了直前などに配置 -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '529248367239781',
+            xfbml      : true,
+            version    : 'v2.5'
+          });
+        };
+
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5&appId=529229320575019";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
+    </div>
   </div>
 </div>

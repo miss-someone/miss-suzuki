@@ -20,6 +20,10 @@ class ContestantsController < ApplicationController
     end
   end
 
+  def mypage
+    @contestant_profile = Contestant.approved.find(params[:id]).profile
+  end
+
   def new_interview_answer
     @interview_answers = InterviewTopic.all.each_with_object([]) do |topic, res|
       res << InterviewAnswer.new(user_id: current_user.id, interview_topic_id: topic.id)

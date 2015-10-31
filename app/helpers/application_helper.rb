@@ -22,4 +22,30 @@ module ApplicationHelper
     return if current_user && current_user.user_type == Settings.user_type.contestant
     '<li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
   end
+
+  # FBでシェアする時の画像を指定する
+  def fb_meta_tags(controller_name, action_name, contestant_profile)
+    if controller_name == "static_pages" && action_name == "history"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | 歴史",
+        type:  "article",
+        url:   "https://miss-suzuki.com/history",
+        image: "https://miss-suzuki.com/assets/mainimages/history_mainimage-83b98a17d4615164c83b5f68e906a20b.jpg"
+      }
+    elsif controller_name == "contestants" && contestant_profile.present?
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | #{contestant_profile.name}さん",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contestant/#{contestant_profile.user_id}/mypage",
+        image: "#{contestant_profile.profile_image}"
+      }
+    else
+      set_meta_tags og: {
+        title: "MISS-SUZUKI",
+        type:  "article",
+        url:   "https://miss-suzuki.com",
+        image: "/Users/shigeru/miss-suzuki/app/assets/images/catchcopy.png"
+      }
+    end
+  end
 end
