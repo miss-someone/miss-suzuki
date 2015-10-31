@@ -27,7 +27,7 @@ require 'capistrano3/unicorn'
 require 'whenever/capistrano'
 
 # For Sidekiq
-# require 'capistrano/sidekiq'
+require 'capistrano/sidekiq'
 # require 'capistrano/sidekiq/monit'
 # 独自拡張したものを利用 lib/capistrano/tasks/miss-suzuki-sidekiq.rake
 

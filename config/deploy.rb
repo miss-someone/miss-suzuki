@@ -56,6 +56,8 @@ set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 # Sidekiqの設定ファイルに基づいて，Capistranoの設定を行う
 set :sidekiq_config, -> { File.join(shared_path, 'config', 'sidekiq.yml') }
 
+set :sidekiq_default_hooks, false
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :copy_assets do
@@ -72,4 +74,10 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  task :restart_sidekiq do
+    invoke 'sidekiq:stop'
+  end
+
+  after :publishing, :restart_sidekiq
 end
