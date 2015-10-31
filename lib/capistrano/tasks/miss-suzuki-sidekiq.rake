@@ -2,7 +2,7 @@
 #
 # sidekiqをsystemdで起動するようにしたことに伴い，
 # sidekiq起動系のタスクを実行しないようにしたrakeタスク
-# 
+#
 # generated_at: 2015/10/31
 ###############################################
 
@@ -16,7 +16,7 @@ namespace :deploy do
 end
 
 namespace :sidekiq do
-  def for_each_process(reverse = false, &block)
+  def for_each_process(reverse = false, &_block)
     pids = processes_pids
     pids.reverse! if reverse
     pids.each_with_index do |pid_file, idx|
@@ -41,7 +41,7 @@ namespace :sidekiq do
   end
 
   def pid_process_exists?(pid_file)
-    pid_file_exists?(pid_file) and test(*("kill -0 $( cat #{pid_file} )").split(' '))
+    pid_file_exists?(pid_file) && test(*("kill -0 $( cat #{pid_file} )").split(' '))
   end
 
   def pid_file_exists?(pid_file)
@@ -84,10 +84,8 @@ namespace :sidekiq do
     on roles fetch(:sidekiq_role) do
       switch_user do
         if test("[ -d #{release_path} ]") # fixes #11
-          for_each_process(true) do |pid_file, idx|
-            if pid_process_exists?(pid_file)
-              quiet_sidekiq(pid_file)
-            end
+          for_each_process(true) do |pid_file, _idx|
+            quiet_sidekiq(pid_file) if pid_process_exists?(pid_file)
           end
         end
       end
@@ -99,10 +97,8 @@ namespace :sidekiq do
     on roles fetch(:sidekiq_role) do
       switch_user do
         if test("[ -d #{release_path} ]")
-          for_each_process(true) do |pid_file, idx|
-            if pid_process_exists?(pid_file)
-              stop_sidekiq(pid_file)
-            end
+          for_each_process(true) do |pid_file, _idx|
+            stop_sidekiq(pid_file) if pid_process_exists?(pid_file)
           end
         end
       end
@@ -120,7 +116,7 @@ namespace :sidekiq do
   task :cleanup do
     on roles fetch(:sidekiq_role) do
       switch_user do
-        for_each_process do |pid_file, idx|
+        for_each_process do |pid_file, _idx|
           if pid_file_exists?(pid_file)
             execute "rm #{pid_file}" unless pid_process_exists?(pid_file)
           end
@@ -129,7 +125,7 @@ namespace :sidekiq do
     end
   end
 
-  def switch_user(&block)
+  def switch_user(&_block)
     su_user = fetch(:sidekiq_user)
     if su_user
       as su_user do
@@ -156,7 +152,7 @@ namespace :sidekiq do
     ].map { |filename| File.join(local_template_directory, filename) }
 
     global_search_path = File.expand_path(
-      File.join(*%w[.. .. .. generators capistrano sidekiq monit templates], "#{name}.conf.erb"),
+      File.join(*%w(.. .. .. generators capistrano sidekiq monit templates), "#{name}.conf.erb"),
       __FILE__
     )
 
