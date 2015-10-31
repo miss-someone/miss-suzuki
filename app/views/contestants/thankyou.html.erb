@@ -2,42 +2,39 @@
   <div id="content">
     <div class="left">
       <div class="message">
-       <%= image_tag 'fukidashi.png', :width=>'300px;' %>
-       <p class="text">投票ありがとうございました！<br>明日も投票してくださいね♥</p>
+        <div class="arrow_box">
+          <p class="text">投票ありがとうございました！<br>明日も投票してくださいね♥</p>
+        </div>
       </div>
       <div class="picture">
        <%= image_tag 'suzuki_reiko.jpg', :width=>'300px;' %>
       </div>
       <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
-    <div id="banner_big">
-      <script type="text/javascript" style="margin-top:30px;">
-      var lists=[
-      '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
-      '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
-      '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
-      '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
-      ];
+      <div id="banner_big">
+        <script type="text/javascript" style="margin-top:30px;">
+        var lists=[
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+        '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+        '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+        ];
 
-      var rNo = Math.floor(Math.random() * lists.length);
-      $(document).ready(function() {
-      document.getElementById('banner_big').innerHTML = lists[rNo];
-      });
-      </script>
-    </div>
-<!--       <div class="banner">
-        <%= image_tag 'banner/karaage.jpg', :width=>'300px' %>
-      </div> -->
-    </div>
+        var rNo = Math.floor(Math.random() * lists.length);
+        $(document).ready(function() {
+        document.getElementById('banner_big').innerHTML = lists[rNo];
+        });
+        </script>
+      </div>
 
-<!--     <div class="right">
+    </div>
+<!--
+    <div class="right">
       <div class="buttons">
         <p class="button btn1"><a href="#">予選第1グループへ</a></p>
         <p class="button btn2"><a href="#">予選第2グループへ</a></p>
         <p class="button btn3"><a href="#">予選第3グループへ</a></p>
       </div>
-      <div class="banner">
-        <%= image_tag 'banner/karaage.jpg', :width=>'300px' %>
-      </div>
     </div> -->
+
   </div>
 </div>
