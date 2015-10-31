@@ -8,7 +8,7 @@ class ContestantImageController < ApplicationController
   def create
     @contestant_image = ContestantImage.new(contestant_image_params)
     @contestant_image.user_id = current_user.id
-    if ContestantImage.where(user_id: current_user.id).count > 12
+    if ContestantImage.where(user_id: current_user.id).count > Settings.contestant_image_max
       @contestant_image.errors[:base] << "登録されている写真の数が上限を超えています。写真を削除してから再度お試し下さい。"
       render 'new'
     else
@@ -29,7 +29,7 @@ class ContestantImageController < ApplicationController
         end
       end
     end
-    flash.now.alert = "選択された画像を削除しました。"
+    flash.now.success = "選択された画像を削除しました。"
     @contestant_images = ContestantImage.where(user_id: current_user.id)
     render 'edit'
   rescue
