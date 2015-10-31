@@ -74,7 +74,7 @@ namespace :deploy do
   end
 
   task :restart_sidekiq do
-    invoke 'sidekiq:restart'
+    invoke 'sidekiq:stop'
   end
 
   after :publishing, :restart_sidekiq
