@@ -1,4 +1,5 @@
 
+
 @media all and (max-width:420px){
 body{
   background-color:#faf9f9;
@@ -12,8 +13,12 @@ p a{
   text-decoration: none;
 }
 
+/*====================REGIST==========================*/
 
-
+#rc-imageselect, .g-recaptcha {
+  transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;
+  margin-top: 10px;
+}
 /*====================HEADER==========================*/
 #header{
   clear: both;
@@ -191,6 +196,19 @@ p a{
   font-weight: bold;
   font-size: 12px;
 }
+#home .satosan{
+  width:100%;
+  margin:0 auto;
+}
+#home .satosan img{
+  width:100%;
+}
+#home .satosan p{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #191919;
+}
 #home .news h2{
   color:#e04974;
   border-bottom: 3px solid #e04974;
@@ -341,6 +359,12 @@ p a{
   margin-left: 40px;
   padding:0;
 }
+#home .smart_row3 .logo2 img{
+  max-width:50px;
+  margin-top:-10px;
+  margin-left: 30px;
+  padding:0;
+}
 
 #home .media{
   width:130px;
@@ -362,18 +386,23 @@ p a{
   margin-bottom:20px;
   margin-top:10px;
 }
-#home .media_logo .logo1 img{
+#home .media_logo .smart_row1 .logo1 img{
   width:150px;
   margin-right:20px;
   margin-top: 5px;
   float:left;
 }
-#home .media_logo .logo2 img{
+#home .media_logo .smart_row1 .logo2 img{
   width:100px;
   float: left;
   margin-top:-5px;
 }
-
+#home .media_logo .smart_row2 .logo1 img{
+  width:150px;
+  margin-right:20px;
+  margin-top: 5px;
+  float:left;
+}
 
 
 #home .cooperation{
@@ -888,7 +917,13 @@ p a{
 #about #content .sponsors .row3 .logo1 img{
   width:140px;
   margin-right:20px;
+  margin-top: 30px;
   float:left;
+}
+#about #content .sponsors .row3 .logo2 img{
+  width: 80px;
+  margin-left: 30px;
+  margin-top: 10px;
 }
 #about #content .sponsors .row1 .zenkoku img{
   width:140px;
@@ -1255,13 +1290,15 @@ p a{
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
-/*====================  ログインページ ==========================*/
+/*====================  ログインページ、その他認証ページ  ==========================*/
 #login{
   clear: both;
-  border-top: 5px solid #e04974;
+  border-top: 3px solid #e04974;
   margin-bottom: -30px;
-  height:400px;
+  height:inherit;
+  padding-bottom: 20px;
 }
+
 #login{
   background-position: 50%;
 }
@@ -1276,6 +1313,12 @@ p a{
 #login #login_form h1{
   text-align: center;
   padding-top: 10px;
+}
+#login #login_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 #login #login_form tr{
   font-size: 16px;
@@ -1298,6 +1341,74 @@ p a{
   font-size: 18px;
   color:#fff;
   border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#login_form .users_address{
+  color:#62a7e7;
+}
+/*====================  プロフィール登録ページ ==========================*/
+#profile{
+  background-position: 50%;
+}
+#profile #profile_form{
+  width:90%;
+  background-color:#fff;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 30px;
+  padding:0 10px 10px 10px;
+}
+#profile #profile_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#profile #profile_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#profile #profile_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#profile #profile_form tr.textarea input{
+  width: 100%;
+  line-height: 2;
+}
+#profile #profile_form p{
+  text-align: center;
+}
+#profile #profile_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#profile #profile_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#profile_form .users_address{
+  color:#62a7e7;
+}
+#profile #profile_form .box{
+  color:#999;
+}
+#profile #profile_form .item p{
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom:0;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
@@ -1522,6 +1633,19 @@ body {
   color:#191919;
   font-size: 14px;
 }
+#home .satosan{
+  width:900px;
+  margin:0 auto;
+}
+#home .satosan img{
+  width:100%;
+}
+#home .satosan p{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #191919;
+}
 #home .news h2{
   color:#e04974;
   border-bottom: 5px solid #e04974;
@@ -1686,6 +1810,12 @@ body {
 #home .row2 .logo1 img{
   width:200px;
   margin-right: 30px;
+  margin-top: 20px;
+}
+#home .row2 .logo2 img{
+  width:100px;
+  margin-left:50px;
+  margin-top: -10px;
 }
 #home .media{
   width:130px;
@@ -1702,7 +1832,7 @@ body {
 }
 #home .media_logo{
   overflow: hidden;
-  max-width:600px;
+  max-width:860px;
   margin: 0 auto;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -1718,6 +1848,12 @@ body {
   width:200px;
   float: left;
   margin-top:-5px;
+}
+#home .media_logo .logo3 img{
+  width:250px;
+  float: left;
+  margin-left: 40px;
+  margin-top:10px;
 }
 #home .cooperation{
   width:250px;
@@ -2275,7 +2411,13 @@ body {
 #about #content .sponsors .row3 .logo1 img{
   width:250px;
   float: left;
-  margin-top:20px;
+  margin-top:40px;
+}
+#about #content .sponsors .row3 .logo2 img{
+  width: 120px;
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 #about #content .sponsors #ascii img{
   width:250px;
@@ -2620,12 +2762,16 @@ body {
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
-/*====================  ログインページ ==========================*/
+/*====================  ログインページ、その他認証ページ ==========================*/
 #login{
   clear: both;
   border-top: 5px solid #e04974;
   margin-bottom: -30px;
   height: 600px;
+}
+#login a{
+  color:#62a7e7;
+  text-decoration: underline;
 }
 #login #login_form{
   width:400px;
@@ -2638,6 +2784,12 @@ body {
 #login #login_form h1{
   text-align: center;
   padding-top: 10px;
+}
+#login #login_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 #login #login_form tr{
   font-size: 16px;
@@ -2660,6 +2812,76 @@ body {
   font-size: 18px;
   color:#fff;
   border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#login_form .users_address{
+  color:#62a7e7;
+}
+/*====================  プロフィール編集ページ ==========================*/
+#profile a{
+  color:#62a7e7;
+  text-decoration: underline;
+}
+#profile #profile_form{
+  width:400px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 0px;
+  padding:0 50px 20px 50px;
+}
+#profile #profile_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#profile #profile_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#profile #profile_form .box{
+  color:#999;
+}
+#profile #profile_form .item p{
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom:0;
+}
+#profile #profile_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+  padding-top: 20px;
+}
+#profile #profile_form tr.textarea input{
+  width: 400px;
+  line-height: 2;
+}
+#profile #profile_form p{
+  text-align: center;
+}
+#profile #profile_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#profile #profile_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#profile_form .users_address{
+  color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{

@@ -30,6 +30,8 @@ gem 'rails-i18n'
 gem 'carrierwave'
 # 画像アップロード時にクロップするgem
 gem 'carrierwave-crop'
+# carrierwaveのアップロードをバックグラウンドで行うgem
+gem 'carrierwave_backgrounder'
 # Cloudinaryとの連携用
 gem 'cloudinary'
 # アプリケーションサーバ
@@ -48,6 +50,16 @@ gem 'newrelic_rpm'
 gem "rack-dev-mark"
 # セッションストアとして使うmemcachedクライアント
 gem 'dalli'
+# GoogleのreCAPTCHAapiのhelpergem
+gem "recaptcha", require: "recaptcha/rails"
+# ハッシュをActiveRecordライクに扱えるようにするgem
+gem 'active_hash'
+# 都道府県扱う用gem
+gem 'jp_prefecture'
+# 非同期ジョブを扱うgem
+gem 'sidekiq'
+# sidekiqのWebUIに必要
+gem 'sinatra', require: false
 
 gem 'meta-tags' #簡単にmetaタグを追加できる
 
@@ -66,6 +78,9 @@ group :development do
   gem 'spring'
   gem "spring-commands-rspec"
 
+  # 仮想SMTPサーバ
+  gem 'mailcatcher'
+
   # debug
   # エラー画面をリッチに
   gem 'better_errors'
@@ -78,12 +93,16 @@ group :development do
   # コーディング規約チェック
   gem 'rubocop', require: false
 
+  # 複数プロセスの管理ツール
+  gem 'foreman'
+
   # 自動デプロイ用
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano3-unicorn'
+  gem 'capistrano-sidekiq'
 end
 
 group :test do

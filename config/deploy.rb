@@ -50,6 +50,12 @@ set :unicorn_config_path, "#{File.join(current_path, 'config', 'unicorn.rb')}"
 # bundle installの並列実行(アプリケーションサーバのコア数まで
 set :bundle_jos, 2
 
+# wheneverのジョブ識別用のid指定
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
+
+# Sidekiqの設定ファイルに基づいて，Capistranoの設定を行う
+set :sidekiq_config, -> { File.join(shared_path, 'config', 'sidekiq.yml') }
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :copy_assets do

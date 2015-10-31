@@ -23,22 +23,42 @@ Rails.application.routes.draw do
 
     get   'news'     => 'news#index'
 
-    scope :contestants do
-      get   'entry'       => 'contestants#entry'
-      get   'new'         => 'contestants#new'
-      get   'thankyou'    => 'contestants#thankyou'
-      get   'mypage'      => 'contestants#mypage_sample'
-      post  'create'      => 'contestants#create'
+    scope :contestants, as: :contestants do
+      get   'entry' => 'contestants#entry'
+      get   'thankyou_sample'    => 'contestants#thankyou_sample'
+      get   'mypage_sample'      => 'contestants#mypage_sample'
+      get   'new_interview_answer' => 'contestants#new_interview_answer'
+      post  'create_interview_answer' => 'contestants#create_interview_answer'
       if Rails.env.development?
         get   'group/:id'   => 'contestants#index'
-        post  '/:id/vote'   => 'contestants#vote', as: :vote
         get   '/:id/mypage' => 'contestants#mypage'
+        get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
       end
+    end
+
+    resources :contestants, only: [:new, :create] do
+      resource :vote, only: [:create] unless Rails.env.production?
+    end
+
+    if Rails.env.development? || Rails.env.test?
+      resource :user, only: [:create] do
+        resource :user_profile, path: 'profile', as: :profile
+      end
+      scope :users do
+        get   'signup' => 'users#new'
+        get   '/:id/activate' => 'users#activate', as: :activation
+        get   'registration_completed' => 'users#registration_completed'
+      end
+      resources :password_resets
     end
 
     get "logout" => "user_sessions#destroy", :as => "logout"
     get "login" => "user_sessions#new", :as => "login"
     resources :user_sessions, only: :create
 
+    # Sidekiqのステータス管理用
+    # 接続元は，ローカルホスト及びAdminサーバのみに制限
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq', constraints: AdminServerConstraint
   end
 end

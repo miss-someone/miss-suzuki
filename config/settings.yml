@@ -1,7 +1,11 @@
 user_type:
   normal: 1
   contestant: 2
-current_group_id: 1
+sex:
+  male: 1
+  female: 2
+  unknown: 3
+current_group_id: 2
 contestant:
   preopen_count: 3 # プレオープンで公開する参加者の数
   default_blur: 500
@@ -12,6 +16,11 @@ link_type:
   blog: 4
   movie: 5
   web: 6
+vote:
+  token_name: nekot_etov
+  daily_limit:
+    not_logined: 3
+    logined: 10
 
 # CircleCIからwebhookでデプロイする際のデプロイキー
 deploy_info:

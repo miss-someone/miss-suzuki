@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005041123) do
+ActiveRecord::Schema.define(version: 20151028130348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20151005041123) do
     t.integer  "group_id",                                        null: false
     t.string   "name",                                            null: false
     t.string   "hurigana",                                        null: false
-    t.string   "profile_image",                                   null: false
+    t.string   "profile_image"
     t.string   "age"
     t.string   "height",                                          null: false
     t.string   "come_from",                                       null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20151005041123) do
     t.string   "profile_image_crop_param_extra",  default: "",    null: false
     t.integer  "profile_image_blur_param",        default: 0,     null: false
     t.integer  "status",                          default: 0,     null: false
+    t.string   "profile_image_tmp"
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", using: :btree
@@ -125,30 +126,54 @@ ActiveRecord::Schema.define(version: 20151005041123) do
   end
 
   create_table "user_profiles", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.string   "nickname",   null: false
-    t.integer  "sex",        null: false
-    t.string   "age",        null: false
-    t.string   "prefecture", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",         null: false
+    t.string   "nickname",        null: false
+    t.integer  "sex",             null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "prefecture_code", null: false
+    t.integer  "age_id",          null: false
+    t.integer  "job_id",          null: false
   end
 
   add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                        null: false
+    t.string   "email",                           null: false
     t.string   "crypted_password"
     t.string   "salt"
-    t.integer  "user_type",                    null: false
+    t.integer  "user_type",                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
+    t.string   "activation_state"
+    t.string   "activation_token"
+    t.datetime "activation_token_expires_at"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
   end
 
+  add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "voter_id"
+    t.integer  "contestant_id", null: false
+    t.integer  "group_id",      null: false
+    t.string   "ip_address"
+    t.string   "cookie_token"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "votes", ["contestant_id"], name: "index_votes_on_contestant_id", using: :btree
+  add_index "votes", ["cookie_token"], name: "index_votes_on_cookie_token", using: :btree
+  add_index "votes", ["ip_address"], name: "index_votes_on_ip_address", using: :btree
+  add_index "votes", ["voter_id"], name: "index_votes_on_voter_id", using: :btree
 
   add_foreign_key "contestant_profiles", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "contestant_tag_contestants", "contestant_tags", on_update: :cascade, on_delete: :cascade
@@ -156,4 +181,6 @@ ActiveRecord::Schema.define(version: 20151005041123) do
   add_foreign_key "interview_answers", "interview_topics", on_update: :cascade, on_delete: :cascade
   add_foreign_key "interview_answers", "users", on_update: :cascade, on_delete: :cascade
   add_foreign_key "user_profiles", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "votes", "users", column: "contestant_id", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "votes", "users", column: "voter_id", on_update: :cascade, on_delete: :cascade
 end
