@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   def create
+    # TODO: VOTE対象をcontestantにのみ制限
     if logged_in?
       create_action_with_logged_in
     else
