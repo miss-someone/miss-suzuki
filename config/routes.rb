@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  if ENV['IS_ADMIN_WEB'] == 'true'
+  if ENV['IS_ADMIN_WEB'] == 'true' && !Rails.env.staging?
     # 管理画面用
     devise_for :admin_users, ActiveAdmin::Devise.config
     ActiveAdmin.routes(self)
