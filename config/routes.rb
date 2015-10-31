@@ -60,5 +60,12 @@ Rails.application.routes.draw do
     # 接続元は，ローカルホスト及びAdminサーバのみに制限
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq', constraints: AdminServerConstraint
+
+    # ステージングでは管理画面もマウントする
+    if Rails.env.staging?
+      # 管理画面用
+      devise_for :admin_users, ActiveAdmin::Devise.config
+      ActiveAdmin.routes(self)
+    end
   end
 end
