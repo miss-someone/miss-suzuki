@@ -27,15 +27,6 @@ namespace :load do
   end
 end
 
-namespace :deploy do
-  before :starting, :check_sidekiq_hooks do
-    invoke 'sidekiq:add_default_hooks' if fetch(:sidekiq_default_hooks)
-  end
-  after :publishing, :restart_sidekiq do
-    invoke 'sidekiq:restart' if fetch(:sidekiq_default_hooks)
-  end
-end
-
 namespace :sidekiq do
   def pid_process_exists?(pid_file)
     pid_file_exists?(pid_file) && test(*("kill -0 $( cat #{pid_file} )").split(' '))

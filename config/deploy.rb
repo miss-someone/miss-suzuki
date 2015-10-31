@@ -72,4 +72,10 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  task :restart_sidekiq do
+    invoke 'sidekiq:restart'
+  end
+
+  after :publishing, :restart_sidekiq
 end
