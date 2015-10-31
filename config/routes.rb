@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  if ENV['IS_ADMIN_WEB'] == 'true'
+  if ENV['IS_ADMIN_WEB'] == 'true' && !Rails.env.staging?
     # 管理画面用
     devise_for :admin_users, ActiveAdmin::Devise.config
     ActiveAdmin.routes(self)
@@ -37,7 +37,7 @@ Rails.application.routes.draw do
       get   'mypage_sample'      => 'contestants#mypage_sample'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
       post  'create_interview_answer' => 'contestants#create_interview_answer'
-      if Rails.env.development?
+      unless Rails.env.production?
         get   'group/:id'   => 'contestants#index'
         get   '/:id/mypage' => 'contestants#mypage'
         get   'my_own_page' => 'contestants#my_own_page'
@@ -49,7 +49,7 @@ Rails.application.routes.draw do
       resource :vote, only: [:create] unless Rails.env.production?
     end
 
-    if Rails.env.development? || Rails.env.test?
+    unless Rails.env.production?
       resource :user, only: [:create] do
         resource :user_profile, path: 'profile', as: :profile
       end
@@ -69,5 +69,12 @@ Rails.application.routes.draw do
     # 接続元は，ローカルホスト及びAdminサーバのみに制限
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq', constraints: AdminServerConstraint
+
+    # ステージングでは管理画面もマウントする
+    if Rails.env.staging?
+      # 管理画面用
+      devise_for :admin_users, ActiveAdmin::Devise.config
+      ActiveAdmin.routes(self)
+    end
   end
 end
