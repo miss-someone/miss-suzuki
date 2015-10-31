@@ -6,6 +6,27 @@
 # generated_at: 2015/10/31
 ###############################################
 
+namespace :load do
+  task :defaults do
+    set :sidekiq_default_hooks, -> { true }
+
+    set :sidekiq_pid, -> { File.join(shared_path, 'tmp', 'pids', 'sidekiq.pid') }
+    set :sidekiq_env, -> { fetch(:rack_env, fetch(:rails_env, fetch(:stage))) }
+    set :sidekiq_log, -> { File.join(shared_path, 'log', 'sidekiq.log') }
+    set :sidekiq_timeout, -> { 10 }
+    set :sidekiq_role, -> { :app }
+    set :sidekiq_processes, -> { 1 }
+    set :sidekiq_options_per_process, -> { nil }
+    set :sidekiq_user, -> { 'webmaster' }
+    # Rbenv, Chruby, and RVM integration
+    set :rbenv_map_bins, fetch(:rbenv_map_bins).to_a.concat(%w(sidekiq sidekiqctl))
+    set :rvm_map_bins, fetch(:rvm_map_bins).to_a.concat(%w(sidekiq sidekiqctl))
+    set :chruby_map_bins, fetch(:chruby_map_bins).to_a.concat(%w{ sidekiq sidekiqctl })
+    # Bundler integration
+    set :bundle_bins, fetch(:bundle_bins).to_a.concat(%w(sidekiq sidekiqctl))
+  end
+end
+
 namespace :deploy do
   before :starting, :check_sidekiq_hooks do
     invoke 'sidekiq:add_default_hooks' if fetch(:sidekiq_default_hooks)
@@ -16,30 +37,6 @@ namespace :deploy do
 end
 
 namespace :sidekiq do
-  def for_each_process(reverse = false, &_block)
-    pids = processes_pids
-    pids.reverse! if reverse
-    pids.each_with_index do |pid_file, idx|
-      within release_path do
-        yield(pid_file, idx)
-      end
-    end
-  end
-
-  def processes_pids
-    pids = []
-    sidekiq_roles = Array(fetch(:sidekiq_role))
-    sidekiq_roles.each do |role|
-      next unless host.roles.include?(role)
-      processes = fetch(:"#{ role }_processes") || fetch(:sidekiq_processes)
-      processes.times do |idx|
-        pids.push fetch(:sidekiq_pid).gsub(/\.pid$/, "-#{idx}.pid")
-      end
-    end
-
-    pids
-  end
-
   def pid_process_exists?(pid_file)
     pid_file_exists?(pid_file) && test(*("kill -0 $( cat #{pid_file} )").split(' '))
   end
@@ -84,9 +81,8 @@ namespace :sidekiq do
     on roles fetch(:sidekiq_role) do
       switch_user do
         if test("[ -d #{release_path} ]") # fixes #11
-          for_each_process(true) do |pid_file, _idx|
-            quiet_sidekiq(pid_file) if pid_process_exists?(pid_file)
-          end
+          pid_file = fetch(:sidekiq_pid)
+          quiet_sidekiq(pid_file) if pid_process_exists?(pid_file)
         end
       end
     end
@@ -97,9 +93,8 @@ namespace :sidekiq do
     on roles fetch(:sidekiq_role) do
       switch_user do
         if test("[ -d #{release_path} ]")
-          for_each_process(true) do |pid_file, _idx|
-            stop_sidekiq(pid_file) if pid_process_exists?(pid_file)
-          end
+          pid_file = fetch(:sidekiq_pid)
+          stop_sidekiq(pid_file) if pid_process_exists?(pid_file)
         end
       end
     end
@@ -116,10 +111,9 @@ namespace :sidekiq do
   task :cleanup do
     on roles fetch(:sidekiq_role) do
       switch_user do
-        for_each_process do |pid_file, _idx|
-          if pid_file_exists?(pid_file)
-            execute "rm #{pid_file}" unless pid_process_exists?(pid_file)
-          end
+        pid_file = fetch(:sidekiq_pid)
+        if pid_file_exists?(pid_file)
+          execute "rm #{pid_file}" unless pid_process_exists?(pid_file)
         end
       end
     end
@@ -134,31 +128,5 @@ namespace :sidekiq do
     end
 
     yield
-  end
-
-  def upload_sidekiq_template(from, to, role)
-    template = sidekiq_template(from, role)
-    upload!(StringIO.new(ERB.new(template).result(binding)), to)
-  end
-
-  def sidekiq_template(name, role)
-    local_template_directory = fetch(:sidekiq_monit_templates_path)
-
-    search_paths = [
-      "#{name}-#{role.hostname}-#{fetch(:stage)}.erb",
-      "#{name}-#{role.hostname}.erb",
-      "#{name}-#{fetch(:stage)}.erb",
-      "#{name}.erb"
-    ].map { |filename| File.join(local_template_directory, filename) }
-
-    global_search_path = File.expand_path(
-      File.join(*%w(.. .. .. generators capistrano sidekiq monit templates), "#{name}.conf.erb"),
-      __FILE__
-    )
-
-    search_paths << global_search_path
-
-    template_path = search_paths.detect { |path| File.file?(path) }
-    File.read(template_path)
   end
 end
