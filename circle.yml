@@ -7,6 +7,7 @@ machine:
 dependencies:
   pre:
     - npm install -g bower
+    - sudo apt-get update; sudo apt-get install memcached
   post:
     - bundle exec rake bower:install
 notify:

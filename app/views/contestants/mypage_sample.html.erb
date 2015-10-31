@@ -1,0 +1,91 @@
+<div id="mypage">
+  <div id="content">
+      <div class="instruction">
+          <h3>マイページでは</h3>
+          <p class="even">・写真がより大きく表示されます！</p>
+          <p class="odd">・参加者へのインタビューが掲載されます！</p>
+      </div>
+      <div class="mypage_contestant">
+        <div class="picture">
+          <ul class="bxslider">
+            <li><%= image_tag 'suzuki_reiko.jpg' %></li>
+            <li><%= image_tag 'suzuki_reiko2.jpg' %></li>
+            <li><%= image_tag 'suzuki_reiko3.jpg' %></li>
+          </ul>
+        </div>
+
+        <div class="profile">
+          <div class="profile_cotent">
+            <h3 class="furigana">すずきれいこ</h3>
+            <h2 class="name">鈴木例子</h2>
+            <p class="age">年齢：22歳</p>
+            <p class="hometown">出身：東京都</p>
+            <p class="height">身長：161cm</p>
+            <p class="appeal">一言アピール！</p>
+            <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
+            <div class="sns_links">
+              <div class="link_row row1">
+                <p class="url"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/btn_tw.png' %></a></p>
+                <p class="url"><a href="https://www.facebook.com/MsSuzukiOfficial" target="_blank"><%= image_tag 'btn/btn_fb.png' %></a></p>
+                <p class="url btn3"><a href="http://pixel-aoyama.com" target="_blank"><%= image_tag 'btn/btn_site.png' %></a></p>
+              </div>
+              <div class="link_row row2">
+                <p class="url"><%= image_tag 'btn/btn_insta.png', :width => '80' %></p>
+                <p class="url"><%= image_tag 'btn/btn_blog.png' %></p>
+                <p class="url"><%= image_tag 'btn/btn_movie.png' %></p>
+              </div>
+            </div>
+            <div id="banner_in_profile">
+              <script type="text/javascript">
+              var lists=[
+              '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+              '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+              '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+              '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+              ];
+
+              var rNo = Math.floor(Math.random() * lists.length);
+              $(document).ready(function() {
+              document.getElementById('banner_in_profile').innerHTML = lists[rNo];
+              });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="interview_area">
+        <h2>鈴木例子さんへインタビュー！</h2>
+        <table id="interview">
+          <tr style="margin-bottom:20px;"><th>好きな食べ物は？</th></tr>
+          <tr><td>ロイヤルミルクティーが好きです。お砂糖は多めで！</td></tr>
+          <tr><th>好きな男性のタイプは？</th></tr>
+          <tr><td>余裕があって色気のある人がいいなー</td></tr>
+          <tr><th>マイブームはなんですか？</th></tr>
+          <tr><td>アフタヌーンティー巡りにハマってます！</td></tr>
+          <tr><th>鈴木に生まれてきてよかった？ その理由も教えてください！</th></tr>
+          <tr><td>はい！鈴木さんってクラスに必ず2人はいるので、下の名前でみんなに読んでもらえるのは嬉しいです！</td></tr>
+          <tr><th>最後にMISS-SUZUKIへの意気込みをお願いします！</th></tr>
+          <tr><td>絶対にミス鈴木になって、親孝行します！みなさん、応援よろしくお願いします！</td></tr>
+        </table>
+        <p>ありがとうございました！</p>
+      </div>
+
+      <div id="banner_big">
+
+        <script type="text/javascript">
+        var lists=[
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
+        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
+        '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
+        '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
+        ];
+
+        var rNo = Math.floor(Math.random() * lists.length);
+        $(document).ready(function() {
+        document.getElementById('banner_big').innerHTML = lists[rNo];
+        });
+        </script>
+      </div>
+  </div>
+</div>

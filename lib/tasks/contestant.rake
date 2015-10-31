@@ -20,16 +20,18 @@ namespace :contestant do
 
   desc "Update todays preopen contestants"
   task update_todays_preopens: :environment do
-    # 既存のプレオープン出場者の解除
-    olds = Contestant.todays_preopen
-    olds.each do |contestant|
-      contestant.profile.update_attribute(:is_preopen, false)
-    end
+    Contestant.with_lock do
+      # 既存のプレオープン出場者の解除
+      olds = Contestant.todays_preopen
+      olds.each do |contestant|
+        contestant.profile.update_attribute(:is_preopen, false)
+      end
 
-    # 新しいプレオープン出場者の選定(承認済みユーザのみ)
-    news = Contestant.approved.random Settings.contestant[:preopen_count]
-    news.each do |contestant|
-      contestant.profile.update_attribute(:is_preopen, true)
+      # 新しいプレオープン出場者の選定(承認済みユーザのみ)
+      news = Contestant.approved.random Settings.contestant[:preopen_count]
+      news.each do |contestant|
+        contestant.profile.update_attribute(:is_preopen, true)
+      end
     end
   end
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <head>
   <title>MISS-SUZUKI | 鈴木さん限定のミスコン『ミス鈴木』</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -12,6 +12,9 @@
 
   <%= analytics_init if Rails.env.production? %>
   <%= favicon_link_tag 'favicon.ico' %>
+
+  <%= display_meta_tags(fb_meta_tags(controller_name, action_name, @contestant_profile)) %>
+
 <script>
     $(function(){
         $("#acMenu dt").on("click", function() {
@@ -29,15 +32,17 @@
         <li class="tab"><a href="/">HOME<br><span>ホーム</span></a></li>
         <li class="tab"><a href="/news">NEWS<br><span>ニュース</span></a></li>
         <li class="tab" ><a href="/rules">RULES<br><span>ルール</span></a></li>
-        <li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>
+        <%= raw show_entry  %>
         <li class="tab"><a href="/about">ABOUT US<br><span>運営団体</span></a></li>
         <li class="tab"><a href="/history">HISTORY<br><span>鈴木さんの歴史</span></a></li>
+        <%= raw show_my_own_page %>
       </ul>
     </div>
     <div id="header_right">
       <ul>
-<!--         <li class="header_btn tab"><a href="/signup">新規登録</a></li>
-        <li class="header_btn tab"><a href="/login">ログイン</a></li> -->
+        <!-- <li class="header_btn tab"><a href="/signup">新規登録</a></li> -->
+        <!-- ログイン状態に応じて、ログイン/ログアウトリンクを表示しています -->
+        <%= raw switch_header_contents %>
         <li class="tab sns"><a href="https://www.facebook.com/MsSuzukiOfficial" target="_blank"><%= image_tag 'icon/icon_fb.png', :width =>'25' %></a></li>
         <li class="tab sns"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'icon/icon_twitter.png', :width =>'25' %></a></li>
       </ul>

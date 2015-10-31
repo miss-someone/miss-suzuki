@@ -1,10 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # For Dalli
+  require 'action_dispatch/middleware/session/dalli_store'
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+
+  # セッションの保存をdalliに
+  config.cache_store = :dalli_store, 'localhost', { namespace: MissSuzuki, expires_in: 1.day, compress: true }
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -14,7 +20,13 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  # Dev環境でののメール関連はMailCatcherを利用
+  # RAILS_ROOTでbundle exec mailcatcherを実行し、http://127.0.0.1:1080/でメールが確認できる
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

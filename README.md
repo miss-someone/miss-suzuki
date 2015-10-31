@@ -8,6 +8,25 @@
 + `npm install bower -g`
 + `bundle exec rake bower:install`
 
+## foreman
++ `bundle exec foreman start`
+
+### foremanで起動されるもの
+次のものが起動されます．インストールはあらかじめ各々やっておく必要があります．
+
+個別に起動するコマンド及びインストールコマンドは以下の通り
+
++ Memcached
+  + `brew install memcached`
+  + `/usr/local/opt/memcached/bin/memcached &`
++ Redis
+  + `brew install redis`
+  + `redis-server /usr/local/etc/redis.conf`
++ Sidekiq
+  + `bundle exec sidekiq -C config/sidekiq.yml`
++  Mailcatcher
+  + `bundle exec mailcatcher`
+
 # 管理画面
 管理画面へのアクセスには環境変数を設定する必要があります．
 
