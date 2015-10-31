@@ -779,17 +779,42 @@ p a{
   width:300px;
   margin: 0 auto;
 }
-#thankyou #content  .message{
+#thankyou .arrow_box {
   position: relative;
-  margin-bottom: -20px;
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#thankyou .arrow_box:after, #thankyou .arrow_box:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+#thankyou .arrow_box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 30px;
+  margin-left: -30px;
+}
+#thankyou .arrow_box:before {
+  border-color: rgba(215, 215, 215, 0);
+  border-top-color: #d7d7d7;
+  border-width: 31px;
+  margin-left: -31px;
 }
 #thankyou #content .message .text{
-  position: absolute;
   color:#e04974;
-  top:10%;
-  left:10%;
 }
-#thankyou #content .left .banner{
+#thankyou #content .left #banner_big{
   margin-top: 20px;
 }
 #thankyou #content .buttons{
@@ -2332,9 +2357,9 @@ body {
   border-top:5px solid #e04974;
 }
 #thankyou #content{
-  /*overflow: hidden;*/
-  /*width:700px;*/
-  width:300px;
+  overflow: hidden;
+    width:300px;
+/*  width:700px;*/
   margin:0 auto;
   margin-top: 30px;
 }
@@ -2346,19 +2371,44 @@ body {
 /*#thankyou #content .right{
   width:300px;
   float:left;
-}*/
-#thankyou #content  .message{
+}
+*/
+#thankyou .arrow_box {
   position: relative;
-  margin-bottom: -20px;
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#thankyou .arrow_box:after, #thankyou .arrow_box:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+#thankyou .arrow_box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 30px;
+  margin-left: -30px;
+}
+#thankyou .arrow_box:before {
+  border-color: rgba(215, 215, 215, 0);
+  border-top-color: #d7d7d7;
+  border-width: 31px;
+  margin-left: -31px;
 }
 #thankyou #content .message .text{
-  position: absolute;
   color:#e04974;
-  top:10%;
-  left:10%;
 }
-#thankyou #content .left .banner{
-  margin-top: 40px;
+#thankyou #content .left #banner_big{
+  margin-top: 10px;
 }
 #thankyou #content .buttons{
   margin-top: 130px;
