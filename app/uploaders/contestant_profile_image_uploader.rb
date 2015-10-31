@@ -79,6 +79,19 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
     # rubocop:enable all
   end
 
+  def thumb_at_mypage(width = 500, height = 500)
+    # 行が長くなりすぎる為，改行を行っているのでrubocopを一部無視
+    # rubocop:disable Style/SpaceAroundOperators
+    "https://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
+    + "#{file.resource_type}/upload/"\
+    + "c_crop,h_#{model.profile_image_crop_param_height},"\
+    + "w_#{model.profile_image_crop_param_width},"\
+    + "x_#{model.profile_image_crop_param_x},"\
+    + "y_#{model.profile_image_crop_param_y}/"\
+    + "c_fill,w_#{width},h_#{height}/v#{file.version}/#{file.filename}"
+    # rubocop:enable all
+  end
+
   # blurのかかったサムネイルを取得する
   def thumb_with_blur(width = 500, height = 500)
     thumb(width, height, true)

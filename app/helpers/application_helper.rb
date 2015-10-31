@@ -12,6 +12,17 @@ module ApplicationHelper
     end
   end
 
+  def show_my_own_page
+    return unless current_user
+    return unless current_user.user_type == Settings.user_type.contestant
+    '<li class="tab"><a href="/contestants/my_own_page">MY PAGE<br><span>マイページ</span></a></li>'
+  end
+
+  def show_entry
+    return if current_user && current_user.user_type == Settings.user_type.contestant
+    '<li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
+  end
+
   # FBでシェアする時の画像を指定する
   def fb_meta_tags(controller_name, action_name, contestant_profile)
     if controller_name == "static_pages" && action_name == "history"

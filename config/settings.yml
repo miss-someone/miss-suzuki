@@ -21,6 +21,7 @@ vote:
   daily_limit:
     not_logined: 3
     logined: 10
+contestant_image_max: 12
 
 # CircleCIからwebhookでデプロイする際のデプロイキー
 deploy_info:

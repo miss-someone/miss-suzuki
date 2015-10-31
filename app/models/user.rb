@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   # インタビューの回答へのリレーション
   has_many :interview_answers
   has_many :interview_topics, through: :interview_answers
+  # マイページに表示する追加画像
+  has_many :contestant_images
 
   # ユーザ作成時に，関連テーブルも同時に生成する
   accepts_nested_attributes_for :user_profile, allow_destroy: true, reject_if: :all_blank

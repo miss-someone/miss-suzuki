@@ -1,0 +1,30 @@
+<div id ="create">
+<h1>マイページ掲載画像追加フォーム</h1>
+  <div id="entry_form">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <% if @contestant_image.errors.any? %>
+      <%= render 'contestants/error_msg', messages: @contestant_image.errors.full_messages %>
+    <% end %>
+    <%= form_for @contestant_image, url: { action: :create } do |f| %>
+      <div class="form1">
+        <table class="table">
+          <tr><td>①エントリーする画像を選択してください</td></tr>
+          <tr><td>②画像の中の、青い四角形を動かしてサイズを調整してください</td></tr>
+          <tr><td><%= f.file_field :profile_image, class: "half", id: "image_input" %></td></tr>
+          <tr><td>
+              <div id='entry_img_preview' style="width:300px">
+                <%= image_tag 'noimage.png', { width: 300, height: 300, id: 'image_preview' } %>
+              </div>
+          </td></tr>
+          <tr><td><%= f.hidden_field :profile_image_crop_param_x, id: 'crop_param_x' %></td></tr>
+            <tr><td><%= f.hidden_field :profile_image_crop_param_y, id: 'crop_param_y' %></td></tr>
+            <tr><td><%= f.hidden_field :profile_image_crop_param_width, id: 'crop_param_width' %></td></tr>
+            <tr><td><%= f.hidden_field :profile_image_crop_param_height, id: 'crop_param_height' %></td></tr>
+        </table>
+      </div>
+      <p><%= f.submit "送信する", class: "submit_btn" %></p>
+    <% end %>
+  </div><!-- /#entry_form -->
+</div><!-- /#create -->

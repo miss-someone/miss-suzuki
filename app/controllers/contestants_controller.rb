@@ -1,6 +1,6 @@
 class ContestantsController < ApplicationController
   include ArrayUtils
-  before_filter :require_login, only: :new_interview_answer
+  before_filter :require_contestant_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
 
   def index
     @contestant = Array.split3(Contestant.approved.nth_group(params[:id]).shuffle)
@@ -34,14 +34,14 @@ class ContestantsController < ApplicationController
     @interview_answers = params[:interview_answers].each_with_object([]) do |interview_answer, res|
       res << current_user.interview_answers.new(interview_topic_id: interview_answer[:interview_topic_id],
                                                 answer: interview_answer[:answer],
-                                                is_pending: false)
+                                                is_pending: true)
     end
     InterviewAnswer.transaction do
       @interview_answers.each do |interview_answer|
         interview_answer.save! unless interview_answer.answer.blank?
       end
     end
-    flash.now.alert = "インタビューの回答の登録に成功しました。"
+    flash.now.alert = "インタビューの回答の登録に成功しました。回答が承認され次第マイページに反映されますのでしばらくお待ちください。"
     render 'new_interview_answer'
   rescue
     flash.now.alert = "インタビューの回答の登録に失敗しました（インタビューの回答は200文字までです）。"
@@ -50,6 +50,38 @@ class ContestantsController < ApplicationController
 
   def thankyou
     @contestant_profile = Contestant.approved.find(params[:id]).profile
+  end
+
+  def mypage
+    @contestant_profile = Contestant.approved.find(params[:id]).profile
+    @interview_answers = {}
+    InterviewTopic.find_each do |interview_topic|
+      answers = InterviewAnswer.where(interview_topic_id: interview_topic.id,
+                                      is_pending: false,
+                                      user_id: params[:id]).order(:updated_at)
+      if answers.present?
+        answer = answers.last.answer
+        topic = interview_topic.topic
+        @interview_answers.store(topic, answer)
+      end
+    end
+    @contestant_images = ContestantImage.where(user_id: params[:id])
+  end
+
+  def my_own_page
+    @contestant_profile = Contestant.find(current_user.id).profile
+    @interview_answers = {}
+    InterviewTopic.find_each do |interview_topic|
+      answers = InterviewAnswer.where(interview_topic_id: interview_topic.id,
+                                      is_pending: false,
+                                      user_id: current_user.id).order(:updated_at)
+      if answers.present?
+        answer = answers.last.answer
+        topic = interview_topic.topic
+        @interview_answers.store(topic, answer)
+      end
+    end
+    @contestant_images = ContestantImage.where(user_id: current_user.id)
   end
 
   private

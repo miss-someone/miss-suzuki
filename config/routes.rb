@@ -23,6 +23,14 @@ Rails.application.routes.draw do
 
     get   'news'     => 'news#index'
 
+    scope :contestant_image do
+      get 'new' => 'contestant_image#new'
+      post 'create' => 'contestant_image#create'
+      patch 'create' => 'contestant_image#create'
+      get   'edit' => 'contestant_image#edit'
+      post  'destroy' => 'contestant_image#destroy'
+    end
+
     scope :contestants, as: :contestants do
       get   'entry' => 'contestants#entry'
       get   'thankyou_sample'    => 'contestants#thankyou_sample'
@@ -32,6 +40,7 @@ Rails.application.routes.draw do
       if Rails.env.development?
         get   'group/:id'   => 'contestants#index'
         get   '/:id/mypage' => 'contestants#mypage'
+        get   'my_own_page' => 'contestants#my_own_page'
         get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
       end
     end
