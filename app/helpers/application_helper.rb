@@ -12,15 +12,6 @@ module ApplicationHelper
     end
   end
 
-def is_needed_fb_tag?
-
-  if
-    display_meta_tags(fb_meta_tags(controller_name, action_name, nil))
-  else
-    display_meta_tags(fb_meta_tags(controller_name, action_name, @contestant.profile))
-  end
-end
-
   # FBでシェアする時の画像を指定する
   def fb_meta_tags(controller_name, action_name, contestant_profile)
     if controller_name == "static_pages" && action_name == "history"
