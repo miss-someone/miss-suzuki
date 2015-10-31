@@ -61,6 +61,8 @@ gem 'sidekiq'
 # sidekiqのWebUIに必要
 gem 'sinatra', require: false
 
+gem 'meta-tags' #簡単にmetaタグを追加できる
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

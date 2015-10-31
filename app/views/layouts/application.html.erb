@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <head>
   <title>MISS-SUZUKI | 鈴木さん限定のミスコン『ミス鈴木』</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -12,6 +12,9 @@
 
   <%= analytics_init if Rails.env.production? %>
   <%= favicon_link_tag 'favicon.ico' %>
+
+  <%= display_meta_tags(fb_meta_tags(controller_name, action_name, @contestant_profile)) %>
+
 <script>
     $(function(){
         $("#acMenu dt").on("click", function() {
