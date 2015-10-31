@@ -111,4 +111,6 @@ group :test do
   gem 'factory_girl_rails'     # テストデータの生成
   gem 'database_cleaner'       # テスト実行後にDBをクリア
   gem 'capybara'               # ブラウザでの操作をシミュレートしてテストができる
+  # Rspec時に時間を指定できる
+  gem 'timecop'
 end
