@@ -1,6 +1,5 @@
 class UserProfilesController < ApplicationController
-  # TODO: ログイン制限追加
-  before_action :voter?
+  before_filter :require_voter_login
 
   def show
     @user = current_user
@@ -40,10 +39,6 @@ class UserProfilesController < ApplicationController
   end
 
   private
-
-  def voter?
-    redirect_to root_path unless current_user.present? && current_user.voter?
-  end
 
   def user_profile_params
     params.require(:user_profile).permit(
