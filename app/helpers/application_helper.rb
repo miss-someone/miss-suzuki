@@ -1,8 +1,13 @@
 module ApplicationHelper
   # ログイン状態に応じてヘッダー表示を切り替える
   def switch_header_contents
-    if current_user
-      '<li class="header_btn tab"><a href="/logout">ログアウト</a></li>'
+    if logged_in?
+      if current_user.user_type == Settings.user_type[:contestant]
+        '<li class="header_btn tab"><a href="/contestants/my_own_page">マイページ</a></li>
+        <li class="header_btn tab"><a href="/logout">ログアウト</a></li>'
+      else
+        '<li class="header_btn tab"><a href="/logout">ログアウト</a></li>'
+      end
     else
       '<li class="header_btn tab"><a href="/users/signup">新規登録</a></li>
        <li class="header_btn tab"><a href="/login">ログイン</a></li>'
