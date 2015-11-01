@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_voter_login
-    require_specific_user_login(Settings.user_type[:voter])
+    require_specific_user_login(Settings.user_type[:normal])
   end
 
   def not_found
