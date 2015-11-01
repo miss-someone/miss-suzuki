@@ -1,30 +1,26 @@
 <div class="contestant">
-   <div class="vote_system">
-     <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: contestant.id), method: :post, params: { group_id: contestant.profile.group_id } %>
-     <p class="counter"><%= contestant.profile.votes %></p>
-   </div>
-   <%
-=begin
-   %>
-   <div class="mypage_btn">
-          <a href="#"><%= if mypage_url_prestnt ? %>
-         <%= image_tag 'btn/btn_mypage.png', :width => '80' %>
-           <% end %></a>
-   </div>
-   <%
-=end
-    %>
-   <div class="picture">
-     <%= image_tag contestant.profile.profile_image.thumb %>
-   </div>
-   <div class="profile">
-     <p class="url"><%= link_btn(contestant.profile) %></p>
-     <h3 class="furigana"><%= contestant.profile.hurigana %></h3>
-     <h2 class="name"><%= contestant.profile.name %></h2>
-     <p class="age">年齢：<%= contestant.profile.age %></p>
-     <p class="hometown">出身：<%= contestant.profile.come_from %></p>
-     <p class="height">身長：<%= contestant.profile.height %></p>
-     <p class="appeal">一言アピール！</p>
-     <textarea name="comment"><%= contestant.profile.comment %></textarea>
-   </div>
- </div>
+  <div class="vote_system">
+    <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: contestant.id), method: :post, params: { group_id: contestant.profile.group_id } %>
+    <p class="counter"><%= contestant.profile.votes %></p>
+  </div>
+
+  <% if is_mypage_present?(contestant) %>
+    <div class="mypage_btn">
+      <a href="/contestants/<%= contestant.profile.user_id %>/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+    </div>
+  <% end %>
+
+  <div class="picture">
+    <%= image_tag contestant.profile.profile_image.thumb %>
+  </div>
+  <div class="profile">
+    <p class="url"><%= link_btn(contestant.profile) %></p>
+    <h3 class="furigana"><%= contestant.profile.hurigana %></h3>
+    <h2 class="name"><%= contestant.profile.name %></h2>
+    <p class="age">年齢：<%= contestant.profile.age %></p>
+    <p class="hometown">出身：<%= contestant.profile.come_from %></p>
+    <p class="height">身長：<%= contestant.profile.height %></p>
+    <p class="appeal">一言アピール！</p>
+    <textarea name="comment"><%= contestant.profile.comment %></textarea>
+  </div>
+</div>
