@@ -829,6 +829,28 @@ p a{
   line-height:5;
   margin-bottom: 20px;
 }
+#thankyou #content .yet{
+  width:300px;
+  height:70px;
+  background-color: #999;
+  border-radius: 5px;
+  text-align: center;
+  line-height:1;
+  margin-bottom: 45px;
+}
+#thankyou #content .yet span.group{
+  color:#fff;
+  font-size:14px;
+  font-weight: bold;
+  display: block;
+  padding-top: 30px;
+}
+#thankyou #content .yet span.date{
+  color:#191919;
+  display: block;
+  padding-top: 5px;
+  font-size: 12px;
+}
 #thankyou #content .button a{
   color:#fff;
   font-size:14px;
