@@ -1482,6 +1482,12 @@ span#interview_question_number{
 #login_form .users_address{
   color:#62a7e7;
 }
+#mypage #flash_alert{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color:#62a7e7;
+}
 /*====================  プロフィール登録ページ ==========================*/
 #profile{
   background-position: 50%;
@@ -3062,6 +3068,12 @@ span#interview_question_number{
   font-weight: bold;
   padding-right: 10px;
 }
+#mypage #flash_alert{
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color:#62a7e7;
+}
 /*====================  ログインページ、その他認証ページ ==========================*/
 #login{
   clear: both;
@@ -3226,7 +3238,7 @@ span#interview_question_number{
 
 /*====================  Slick ==========================*/
 #home .slideshow{
-  z-index: -1;
+  position: static;
 }
 #home .slideshow *{
   width:100%;
