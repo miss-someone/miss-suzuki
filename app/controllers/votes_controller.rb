@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  skip_before_filter :require_login, only: [:create]
+
   def create
     # TODO: VOTE対象をcontestantにのみ制限
     if logged_in?
