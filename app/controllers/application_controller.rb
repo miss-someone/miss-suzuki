@@ -12,13 +12,23 @@ class ApplicationController < ActionController::Base
   end
 
   def require_contestant_login
-    if !logged_in? || current_user.user_type != Settings.user_type.contestant
-      session[:return_to_url] = request.url if Config.save_return_to_url && request.get?
-      send(Config.not_authenticated_action)
-    end
+    require_specific_user_login(Settings.user_type[:contestant])
+  end
+  
+  def require_voter_login
+    require_specific_user_login(Settings.user_type[:voter])
   end
 
   def not_found
     raise ActionController::RoutingError.new('404 Not Found')
+  end
+
+  private
+
+  def require_specific_user_login(user_type)
+    if !logged_in? || current_user.user_type != user_type
+      session[:return_to_url] = request.url if Config.save_return_to_url && request.get?
+      send(Config.not_authenticated_action)
+    end
   end
 end
