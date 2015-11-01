@@ -9,11 +9,17 @@ class User < ActiveRecord::Base
   has_many :contestant_tag_contestants
   # 出場者に関連付けられているタグ一覧
   has_many :contestant_tags, through: :contestant_tag_contestants
+  # インタビューの回答へのリレーション
+  has_many :interview_answers
+  has_many :interview_topics, through: :interview_answers
+  # マイページに表示する追加画像
+  has_many :contestant_images
 
   # ユーザ作成時に，関連テーブルも同時に生成する
   accepts_nested_attributes_for :user_profile, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :contestant_profile, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :contestant_tags, allow_destroy: true
+  accepts_nested_attributes_for :interview_answers, allow_destroy: true
 
   # バリデーション
   # @マークを含むこと，後半には半角英数.-のみ含むことの軽いバリデーション
@@ -32,6 +38,14 @@ class User < ActiveRecord::Base
     else
       user_profile
     end
+  end
+
+  def voter?
+    user_type == Settings.user_type[:normal]
+  end
+
+  def contestant?
+    user_type == Settings.user_type[:contestant]
   end
 
   class << self

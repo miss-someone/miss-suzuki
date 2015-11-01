@@ -26,5 +26,10 @@ require 'capistrano3/unicorn'
 # For whenever
 require 'whenever/capistrano'
 
+# For Sidekiq
+require 'capistrano/sidekiq'
+# require 'capistrano/sidekiq/monit'
+# 独自拡張したものを利用 lib/capistrano/tasks/miss-suzuki-sidekiq.rake
+
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }

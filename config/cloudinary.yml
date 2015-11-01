@@ -11,6 +11,12 @@ production:
   api_secret: e2yhSFxKHcExkOrLcI5ccO_M2Iw
   enhance_image_tag: true
   static_image_support: true
+staging:
+  cloud_name: miss-someone
+  api_key: '579619788246129'
+  api_secret: e2yhSFxKHcExkOrLcI5ccO_M2Iw
+  enhance_image_tag: true
+  static_image_support: true
 test:
   cloud_name: ms-someone-dev
   api_key: '296661433353382'

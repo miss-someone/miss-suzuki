@@ -3,11 +3,11 @@
     <div class="left">
       <div class="message">
         <div class="arrow_box">
-          <p class="text">投票ありがとうございました！<br>明日も投票してくださいね♥</p>
+          <p class="text"><%= @contestant_profile.thanks_comment %></p>
         </div>
       </div>
       <div class="picture">
-       <%= image_tag 'suzuki_reiko.jpg', :width=>'300px;' %>
+       <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
       </div>
       <div id="more_vote_btn"><a href="/users/signup" target="_blank">鈴木例子さんをもっと応援する？</a></div>
       <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
@@ -28,14 +28,16 @@
       </div>
 
     </div>
-<!--
+
     <div class="right">
       <div class="buttons">
-        <p class="button btn1"><a href="#">予選第1グループへ</a></p>
-        <p class="button btn2"><a href="#">予選第2グループへ</a></p>
-        <p class="button btn3"><a href="#">予選第3グループへ</a></p>
+        <p class="button btn1"><a href="/contestants/group/1">予選第1グループへ</a></p>
+        <p class="button btn2 yet"><!-- <a href="/contestants/group/2"> --><span class="group">予選第2グループへ<span><br><span class="date">11/11(水) スタート！</span></p>
+        <p class="button btn3 yet"><!-- <a href="/contestants/group/2"> --><span class="group">予選第3グループへ<span><br><span class="date">11/21(土) スタート！</span></p>
+
       </div>
-    </div> -->
+    </div>
 
   </div>
 </div>
+<div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>

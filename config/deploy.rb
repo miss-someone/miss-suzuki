@@ -53,16 +53,31 @@ set :bundle_jos, 2
 # wheneverのジョブ識別用のid指定
 set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 
+# Sidekiqの設定ファイルに基づいて，Capistranoの設定を行う
+set :sidekiq_config, -> { File.join(shared_path, 'config', 'sidekiq.yml') }
+
+set :sidekiq_default_hooks, false
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :copy_assets do
     # アセットのコピーをとりあえず，無理やり
-    sh "scp -rC public/assets 192.168.1.11:#{fetch(:assets_to)}"
-    sh "scp -rC public/assets 192.168.1.12:#{fetch(:assets_to)}"
-    # スケール用
-    # sh "scp -rC public/assets 192.168.1.13:#{fetch(:assets_to)}"
+    if fetch(:stage) == 'production'
+      sh "scp -rC public/assets 192.168.1.11:#{fetch(:assets_to)}"
+      sh "scp -rC public/assets 192.168.1.12:#{fetch(:assets_to)}"
+      # スケール用
+      # sh "scp -rC public/assets 192.168.1.13:#{fetch(:assets_to)}"
+    elsif fetch(:stage) == 'staging'
+      sh "scp -rC public/assets 192.168.1.111:#{fetch(:assets_to)}"
+    end
   end
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  task :restart_sidekiq do
+    invoke 'sidekiq:stop'
+  end
+
+  after :publishing, :restart_sidekiq
 end

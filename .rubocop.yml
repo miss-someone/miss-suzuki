@@ -4,6 +4,7 @@ AllCops:
   Exclude:
     - !ruby/regexp /\/db\/schema\.rb$/
     - !ruby/regexp /\/vendor\/.*/
+    - !ruby/regexp /\/bin\/*/
 
 # OFF: Use only ascii symbols in comments.
 AsciiComments:

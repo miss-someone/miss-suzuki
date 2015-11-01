@@ -1,4 +1,5 @@
 
+
 @media all and (max-width:420px){
 body{
   background-color:#faf9f9;
@@ -12,8 +13,12 @@ p a{
   text-decoration: none;
 }
 
+/*====================REGIST==========================*/
 
-
+#rc-imageselect, .g-recaptcha {
+  transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;
+  margin-top: 10px;
+}
 /*====================HEADER==========================*/
 #header{
   clear: both;
@@ -824,6 +829,28 @@ p a{
   line-height:5;
   margin-bottom: 20px;
 }
+#thankyou #content .yet{
+  width:300px;
+  height:70px;
+  background-color: #999;
+  border-radius: 5px;
+  text-align: center;
+  line-height:1;
+  margin-bottom: 45px;
+}
+#thankyou #content .yet span.group{
+  color:#fff;
+  font-size:14px;
+  font-weight: bold;
+  display: block;
+  padding-top: 30px;
+}
+#thankyou #content .yet span.date{
+  color:#191919;
+  display: block;
+  padding-top: 5px;
+  font-size: 12px;
+}
 #thankyou #content .button a{
   color:#fff;
   font-size:14px;
@@ -1211,12 +1238,23 @@ p a{
   margin:0;
   color:#e04974;
   font-size: 12px;
-  margin-top: 30px;
+  margin-top:10px;
 }
+
 #mypage .profile h2{
   margin:0;
   color:#e04974;
   font-size: 24px;
+}
+#mypage .bx-pager{
+  height: 30px;
+}
+#mypage .profile .share{
+  margin-top:40px;
+}
+#mypage .profile .fb_iframe_widget {
+  position: relative;
+  top: -6px;
 }
 #mypage .profile textarea{
   color:#666;
@@ -1314,6 +1352,197 @@ p a{
 }
 #mypage .instruction .even{
   background-color: #f9f9f9;
+}
+/*==================== マイページ編集 ==========================*/
+#mypage h1.yourmypage{
+  margin: 0;
+  color: #e04974;
+  margin-bottom: 20px;
+  font-weight: 14px
+}
+#mypage h1 span{
+  border-bottom: 3px solid #e04974;
+  padding-bottom: 5px;
+}
+#mypage .edit_box{
+  max-width:100%;
+  margin:0 auto;
+}
+#mypage .edit_box p{
+  font-weight: bold;
+  color:#62a7e7;
+  text-align: left;
+  font-size: 12px;
+}
+#mypage .edit_btn{
+  display: block;
+  font-size: 12px;
+  overflow: hidden;
+}
+#mypage .edit_btn img{
+  width:40px;
+  float: left;
+}
+
+#mypage .edit_btn a{
+  text-decoration: none;
+  color:#333;
+  font-weight: bold;
+  line-height: 4;
+  float:left;
+  padding-left: 10px;
+}
+#mypage .edit_btn a:hover{
+  color:#e04974;
+}
+.mypage_interview_answer input{
+  width: 95%;
+}
+.mypage_interview_answer{
+  padding-bottom:20px;
+}
+#interview_anser_user_photo{
+  width: 300px;
+  margin:0 auto;
+}
+#interview_anser_user_photo img{
+  width:300px;
+  margin-top: 30px;
+}
+.mypage_interview_answer_explain{
+  text-align:left;
+  margin:0 auto;
+  width: 80%;
+}
+.mypage_interview_answer_explain p{
+  font-size: 12px;
+  font-weight: bold;
+}
+span#interview_question_number{
+  color: #e04974;
+  font-size:16px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+/*====================  ログインページ、その他認証ページ  ==========================*/
+#login{
+  clear: both;
+  border-top: 3px solid #e04974;
+  margin-bottom: -30px;
+  height:inherit;
+  padding-bottom: 20px;
+}
+
+#login{
+  background-position: 50%;
+}
+#login #login_form{
+  width:280px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 30px;
+  padding:0 10px 10px 10px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 260px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#login_form .users_address{
+  color:#62a7e7;
+}
+/*====================  プロフィール登録ページ ==========================*/
+#profile{
+  background-position: 50%;
+}
+#profile #profile_form{
+  width:90%;
+  background-color:#fff;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 30px;
+  padding:0 10px 10px 10px;
+}
+#profile #profile_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#profile #profile_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#profile #profile_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#profile #profile_form tr.textarea input{
+  width: 100%;
+  line-height: 2;
+}
+#profile #profile_form p{
+  text-align: center;
+}
+#profile #profile_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#profile #profile_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#profile_form .users_address{
+  color:#62a7e7;
+}
+#profile #profile_form .box{
+  color:#999;
+}
+#profile #profile_form .item p{
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom:0;
 }
 /*====================  投票ページ ==========================*/
 .content_middle{
@@ -2067,6 +2296,9 @@ body {
   width:100%;
   border-top: 5px solid #e04974;
 }
+#create{
+  background-image: url("images/form_background.jpg");
+}
 #create h1{
   color: #e04974;
   text-align: center;
@@ -2164,21 +2396,19 @@ body {
 }
 #thankyou #content{
   overflow: hidden;
-    width:300px;
-/*  width:700px;*/
+  width:700px;
   margin:0 auto;
   margin-top: 30px;
 }
 #thankyou #content .left{
   width:300px;
-/*  float:left;*/
-/*  margin-right: 100px;*/
+  float:left;
+  margin-right: 100px;
 }
-/*#thankyou #content .right{
+  #thankyou #content .right{
   width:300px;
   float:left;
 }
-*/
 #thankyou .arrow_box {
   position: relative;
   background: #fff;
@@ -2227,6 +2457,28 @@ body {
   text-align: center;
   line-height:5;
   margin-bottom: 45px;
+}
+#thankyou #content .yet{
+  width:300px;
+  height:70px;
+  background-color: #999;
+  border-radius: 5px;
+  text-align: center;
+  line-height:1;
+  margin-bottom: 45px;
+}
+#thankyou #content .yet span.group{
+  color:#fff;
+  font-size:14px;
+  font-weight: bold;
+  display: block;
+  padding-top: 30px;
+}
+#thankyou #content .yet span.date{
+  color:#191919;
+  display: block;
+  padding-top: 5px;
+  font-size: 12px;
 }
 #thankyou #content .button a{
   color:#fff;
@@ -2553,7 +2805,7 @@ body {
 #mypage .mypage_contestant{
   max-width:900px;
   margin:0 auto;
-  margin-top: 50px;
+  margin-top:20px;
   overflow: hidden;
   margin-bottom: 30px;
 }
@@ -2578,6 +2830,14 @@ body {
   margin-left: -10px;
   position: relative;
   z-index: 5;
+  margin-bottom: 20px;
+}
+#mypage .profile .share{
+  margin-top: 10px;
+}
+#mypage .profile .fb_iframe_widget {
+  position: relative;
+  top: -6px;
 }
 #mypage .profile_content{
   width:350px;
@@ -2592,7 +2852,10 @@ body {
   margin:0;
   color:#e04974;
   font-size: 12px;
-  margin-top: 30px;
+  margin-top: 10px;
+}
+#mypage .bx-default-pager{
+  display: none;
 }
 #mypage .profile h2{
   margin:0;
@@ -2694,6 +2957,196 @@ body {
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
+/*==================== マイページ編集 ==========================*/
+#mypage h1{
+  margin: 0;
+  color: #e04974;
+  margin-bottom: 20px;
+}
+#mypage h1 span{
+  border-bottom: 5px solid #e04974;
+  padding-bottom: 10px;
+}
+#mypage .edit_box{
+  width:900px;
+  margin:0 auto;
+}
+#mypage .edit_box p{
+  font-weight: bold;
+  color:#62a7e7;
+  text-align: center;
+}
+#mypage .edit_btn{
+  display: block;
+  font-size: 18px;
+  overflow: hidden;
+}
+#mypage .edit_btn img{
+  width:50px;
+  float: left;
+}
+
+#mypage .edit_btn a{
+  text-decoration: none;
+  color:#333;
+  font-weight: bold;
+  line-height: 4;
+  margin-top: -10px;
+  float:left;
+  padding-left: 10px;
+}
+#mypage .edit_btn a:hover{
+  color:#e04974;
+}
+.mypage_interview_answer input{
+  width: 95%;
+}
+.mypage_interview_answer{
+  padding-bottom:20px;
+}
+#interview_anser_user_photo{
+  width: 300px;
+  margin:0 auto;
+}
+#interview_anser_user_photo img{
+  width:300px;
+  margin-top: 30px;
+}
+.mypage_interview_answer_explain{
+  text-align: center;
+  margin:0 auto;
+}
+.mypage_interview_answer_explain p{
+  font-size: 14px;
+  font-weight: bold;
+}
+span#interview_question_number{
+  color: #e04974;
+  font-size:16px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+/*====================  ログインページ、その他認証ページ ==========================*/
+#login{
+  clear: both;
+  border-top: 5px solid #e04974;
+  margin-bottom: -30px;
+  height: 600px;
+}
+#login a{
+  color:#62a7e7;
+  text-decoration: underline;
+}
+#login #login_form{
+  width:400px;
+  background:rgba(255,255,255,0.8);
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 100px;
+  padding:0 50px 20px 50px;
+}
+#login #login_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#login #login_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#login #login_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+}
+#login #login_form tr input{
+  width: 400px;
+  line-height: 2;
+}
+#login #login_form p{
+  text-align: center;
+}
+#login #login_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#login #login_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#login_form .users_address{
+  color:#62a7e7;
+}
+/*====================  プロフィール編集ページ ==========================*/
+#profile a{
+  color:#62a7e7;
+  text-decoration: underline;
+}
+#profile #profile_form{
+  width:400px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 0px;
+  padding:0 50px 20px 50px;
+}
+#profile #profile_form h1{
+  text-align: center;
+  padding-top: 10px;
+}
+#profile #profile_form #flash_notice{
+  text-align: center;
+  color:#e04974;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#profile #profile_form .box{
+  color:#999;
+}
+#profile #profile_form .item p{
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom:0;
+}
+#profile #profile_form tr{
+  font-size: 16px;
+  font-weight: bold;
+  color:#666;
+  padding-top: 20px;
+}
+#profile #profile_form tr.textarea input{
+  width: 400px;
+  line-height: 2;
+}
+#profile #profile_form p{
+  text-align: center;
+}
+#profile #profile_form .submit_btn{
+  width:200px;
+  height:50px;
+  background-color: #e04974;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  border:0px;
+}
+#profile #profile_form #flash_alert{
+  color:#dd0000;
+  text-align: center;
+  font-weight: bold;
+}
+#profile_form .users_address{
+  color:#62a7e7;
+}
 /*====================  投票ページ ==========================*/
 .content_middle{
   padding-top: 30px;
@@ -2731,5 +3184,13 @@ body {
 .bx-wrapper img{
   width:500px;
   border-radius: 5px 0 0 5px;
+}
+
+/*====================  Slick ==========================*/
+#home .slideshow *{
+  width:100%;
+}
+#home .slideshow img{
+  width:100%;
 }
 }
