@@ -5,19 +5,9 @@
    </div>
 
    <div class="mypage_btn">
-       <%= link_to (image_tag 'btn/btn_mypage.png', width: 80), "/contestants/#{contestant.profile.user_id}/mypage" %>
+          <a href="/contestants/<%= contestant.profile.user_id %>/mypage"><%= is_mypage_present? %></a>
    </div>
-   <%
-=begin
-   %>
-   <div class="mypage_btn">
-          <a href="#"><%= if mypage_url_prestnt ? %>
-         <%= image_tag 'btn/btn_mypage.png', :width => '80' %>
-           <% end %></a>
-   </div>
-   <%
-=end
-    %>
+
    <div class="picture">
      <%= image_tag contestant.profile.profile_image.thumb %>
    </div>

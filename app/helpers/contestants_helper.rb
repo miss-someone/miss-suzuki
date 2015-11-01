@@ -6,6 +6,12 @@ module ContestantsHelper
     end
   end
 
+  def is_mypage_present?
+    if InterviewAnswer.contestant.present? || ContestantImage.contestant.present?
+      image_tag 'btn/btn_mypage.png', :width => '80'
+    end
+  end
+
   private
 
   # リンク種別から表示するボタン画像のファイル名を取得する
