@@ -10,9 +10,8 @@ module ContestantsHelper
   end
 
   def is_mypage_present?(contestant)
-    answers = InterviewAnswer.where(user_id: contestant.profile.user_id,
-                                    is_pending: false)
-    imgs = ContestantImage.where(user_id: contestant.profile.user_id)
+    answers = contestant.interview_answers.each_with_object([]) { |a, obj| obj << a unless a.is_pending }
+    imgs = contestant.contestant_images
     answers.present? || imgs.present?
   end
 
