@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def restrict_contestant_login
+    redirect_to root_path if current_user && current_user.user_type == Settings.user_type.contestant
+  end
+
   def require_contestant_login
     if !logged_in? || current_user.user_type != Settings.user_type.contestant
       session[:return_to_url] = request.url if Config.save_return_to_url && request.get?
