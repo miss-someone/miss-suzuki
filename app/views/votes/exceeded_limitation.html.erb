@@ -2,9 +2,22 @@
 
   <div id="thankyou">
     <div id="content">
+<!--     ゲストユーザーの場合 -->
         <div class="message">
           <div class="arrow_box">
             <p class="text">ごめんなさい！<br>ゲストユーザーさんの投票回数は1日3回までみたいです・・・</p>
+          </div>
+        </div>
+        <div class="picture">
+          <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
+        </div>
+        <div id="more_vote_btn"><a href="/users/signup" target="_blank">鈴木例子さんをもっと応援する？</a></div>
+    </div>
+  </div>
+<!--   会員の場合 -->
+        <div class="message">
+          <div class="arrow_box">
+            <p class="text">ごめんなさい！<br>今日はもう10回投票しちゃったみたいです・・・</p>
           </div>
         </div>
         <div class="picture">
