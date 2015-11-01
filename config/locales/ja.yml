@@ -16,6 +16,7 @@ ja:
         height: 身長
         come_from: 出身(都道府県)
         link_url: 紹介リンク
+        link_type: 紹介リンクタイプ
         comment: 一言アピール!
         thanks_comment: 投票お礼メッセージ
         phone: 電話番号

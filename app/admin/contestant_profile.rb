@@ -52,6 +52,9 @@ ActiveAdmin.register ContestantProfile do
       row :link_url do
         link_to contestant_profile.link_url, contestant_profile.link_url
       end
+      row :link_type do
+        Settings.link_type.to_h.key(contestant_profile.link_type)
+      end
       row 'タグ' do
         tags = ""
         contestant_profile.user.contestant_tags.each do |tag|
@@ -93,6 +96,7 @@ ActiveAdmin.register ContestantProfile do
       f.input :height
       f.input :come_from
       f.input :link_url
+      f.input :link_type, as: :select, collection: Settings.link_type
       f.input :comment
       f.input :thanks_comment
       f.input :station
