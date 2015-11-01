@@ -1,5 +1,3 @@
-
-
 @media all and (max-width:420px){
 body{
   background-color:#faf9f9;
@@ -83,7 +81,7 @@ p a{
 }
 #acMenu dd{
   width:100%;
-  height:300px;
+  height:340px;
   line-height:50px;
   text-align:left;
   margin-left:0;
@@ -861,6 +859,22 @@ p a{
 #thankyou #content .button .btn1{
   margin-top: 0;
 }
+#thankyou #more_vote_btn a{
+  width:278px;
+  border:1px solid #d7d7d7;
+  border-radius: 10px;
+  padding:10px;
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+  display: block;
+  color:#666;
+  text-decoration: none;
+  font-weight: bold;
+}
+#thankyou #more_vote_btn a:hover{
+  color: #e04974;
+}
 /*====================ABOUT US==========================*/
 #about #content .slogan img{
   width:90%;
@@ -1172,9 +1186,15 @@ p a{
   height: 40px;
   resize: none;
 }
-.contestant .profile .url img{
+.contestant .profile .anchor img{
   position: absolute;
   right:10px;
+  bottom:72px;
+  width:25px;
+}
+.contestant .profile .url img{
+  position: absolute;
+  right:40px;
   bottom:70px;
   width: 120px;
 }
@@ -1468,6 +1488,12 @@ span#interview_question_number{
 #login_form .users_address{
   color:#62a7e7;
 }
+#mypage #flash_alert{
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color:#62a7e7;
+}
 /*====================  プロフィール登録ページ ==========================*/
 #profile{
   background-position: 50%;
@@ -1649,6 +1675,43 @@ body {
 #nav li a:hover{
   color:#e04974;
 }
+#nav li.girls{
+  display: table-cell;
+}
+/*#nav li.arrow_box {
+  position: relative;
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+  padding:5px;
+}*/
+/*#nav li.arrow_box:after, .arrow_box:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}*/
+
+/*#nav li.arrow_box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+#nav li.arrow_box:before {
+  border-color: rgba(215, 215, 215, 0);
+  border-top-color: #d7d7d7;
+  border-width: 11px;
+  margin-left: -11px;
+}*/
+#nav li.girls a{
+  display: block;
+  color: #e04974;
+}
 #header_right li{
   list-style: none;
   float: right;
@@ -1720,6 +1783,7 @@ body {
   border-top: 5px solid #e04974;
   border-bottom: 5px solid #e04974;
 }
+
 #home #prerelease{
   width:1000px;
   margin:0 auto;
@@ -2472,7 +2536,23 @@ body {
   display: block;
 }
 #thankyou #content .button .btn1{
-  margin-top: 0;
+  margin-top:0;
+}
+#thankyou #more_vote_btn a{
+  width:278px;
+  border:1px solid #d7d7d7;
+  border-radius: 10px;
+  padding:10px;
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+  display: block;
+  color:#666;
+  text-decoration: none;
+  font-weight: bold;
+}
+#thankyou #more_vote_btn a:hover{
+  color: #e04974;
 }
 /*====================ABOUT US==========================*/
 #about #content .slogan{
@@ -2758,9 +2838,15 @@ body {
   height: 40px;
   resize: none;
 }
-.contestant .profile .url img{
+.contestant .profile .anchor img{
   position: absolute;
   right:10px;
+  bottom:72px;
+  width:25px;
+}
+.contestant .profile .url img{
+  position: absolute;
+  right:40px;
   bottom:70px;
   width: 120px;
 }
@@ -2994,6 +3080,12 @@ span#interview_question_number{
   font-weight: bold;
   padding-right: 10px;
 }
+#mypage #flash_alert{
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color:#62a7e7;
+}
 /*====================  ログインページ、その他認証ページ ==========================*/
 #login{
   clear: both;
@@ -3136,6 +3228,8 @@ span#interview_question_number{
   width:300px;
   float:left;
 }
+
+
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
@@ -3152,5 +3246,16 @@ span#interview_question_number{
 .bx-wrapper img{
   width:500px;
   border-radius: 5px 0 0 5px;
+}
+
+/*====================  Slick ==========================*/
+#home .slideshow{
+  position: static;
+}
+#home .slideshow *{
+  width:100%;
+}
+#home .slideshow img{
+  width:100%;
 }
 }

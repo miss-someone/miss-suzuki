@@ -1,23 +1,36 @@
 <div id="home">
   <div id="mainimage">
-    <%= image_tag 'mainimages/mainimage1.jpg' %>
+    <div class="slideshow">
+      <div><%= link_to(image_tag("mainimages/group1_mainimage_home.jpg"), "/contestants/group/1") %></div>
+      <div><%= image_tag "mainimages/interview_yokoku.jpg" %></div>
+      <div><%= image_tag "mainimages/mainimage1.jpg" %></div>
+    </div>
+    <script>
+    $('.slideshow').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      nextArrow:false,
+      prevArrow:false,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    });
+    </script>
   </div>
 
-  <%= raw show_entry_btn %>
+  <p id="entry_btn"><a href="contestants/group/1">投票ページはこちら！</a></p>
 
   <div id="to_top">
     <a href="#home"><%= image_tag 'to_top.png', :width=> '50px' %></a>
   </div>
 
-  <div id="prerelease">
+<div id="prerelease">
     <div class="content">
-      <h2 class="title">エントリーしてくれた鈴木さんを１日<%= Settings.contestant[:preopen_count] %>名、ランダムで公開します！</h2>
-      <p class="explain">気になる鈴木さんたちのお顔は、11月1日の投票開始日から大公開！</p>
+      <h2 class="title">現在投票期間中の鈴木さんたちを3名、ランダムでご紹介！</h2>
       <div class="contestants_box">
         <% @contestants.each do |contestant| %>
           <div class="<%= div_contestant_class(@contestants, contestant) %>">
             <div class="picture">
-              <%= image_tag contestant.profile.profile_image.thumb_with_blur(300, 300), alt: contestant.profile.name %>
+              <%= image_tag contestant.profile.profile_image.thumb, alt: contestant.profile.name %>
             </div>
             <div class="profile">
               <p class="furigana"><%= contestant.profile.hurigana %></p>
@@ -33,10 +46,8 @@
       </div>
     </div>
   </div>
-  <div class="satosan">
-    <p class="image"><%= image_tag 'sato_sato.jpg' %></p>
-    <p>前回は300名以上の佐藤さんにエントリーしていただきました！</p>
-  </div>
+
+  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p>
 
   <div class="news">
     <h2>NEWS</h2>

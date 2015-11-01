@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  skip_before_filter :require_login, only: [:create]
+
   def create
     # TODO: VOTE対象をcontestantにのみ制限
     if logged_in?
@@ -13,6 +15,7 @@ class VotesController < ApplicationController
   # ログイン済みユーザ用Voteのcreateアクション
   def create_action_with_logged_in
     if exceeded_limit_with_logged_in?
+      @contestant_profile = ContestantProfile.approved.contestant_id(vote_params[:contestant_id])
       render 'exceeded_limitation'
     else
       # 投票可能な場合
@@ -35,6 +38,7 @@ class VotesController < ApplicationController
   # 未ログインユーザ用のcreateアクション
   def create_action_with_not_logged_in
     if exceeded_limit_with_not_logged_in?
+      @contestant_profile = ContestantProfile.approved.contestant_id(vote_params[:contestant_id])
       render 'exceeded_limitation'
     else
       begin

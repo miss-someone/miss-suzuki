@@ -6,3 +6,4 @@
 asset 'cropper'
 asset 'jquery-validation'
 asset 'bxslider-4'
+asset 'slick-carousel'

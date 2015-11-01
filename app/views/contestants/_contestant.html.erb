@@ -1,4 +1,4 @@
-<div class="contestant">
+<div id='contestant-<%= contestant.id %>' class="contestant">
   <div class="vote_system">
     <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: contestant.id), method: :post, params: { group_id: contestant.profile.group_id } %>
     <p class="counter"><%= contestant.profile.votes %></p>
@@ -21,6 +21,7 @@
     <p class="hometown">出身：<%= contestant.profile.come_from %></p>
     <p class="height">身長：<%= contestant.profile.height %></p>
     <p class="appeal">一言アピール！</p>
+    <p class="anchor"><a style="float:right;" href="<%= contestant_anchor_url(contestant) %>"><%= image_tag 'icon/chain.png' %></a></p>
     <textarea name="comment"><%= contestant.profile.comment %></textarea>
   </div>
 </div>
