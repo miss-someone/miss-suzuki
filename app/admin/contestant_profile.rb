@@ -2,7 +2,7 @@ ActiveAdmin.register ContestantProfile do
   actions :index, :show, :edit, :update
 
   permit_params :name, :hurigana, :group_id, :profile_image, :age, :height,
-                :come_from, :link_url, :comment, :thanks_comment, :station,
+                :come_from, :link_url, :link_type, :comment, :thanks_comment, :station,
                 :profile_image_crop_param_x, :profile_image_crop_param_y,
                 :profile_image_crop_param_height, :profile_image_crop_param_width,
                 :profile_image_crop_param_extra, :profile_image_blur_param
