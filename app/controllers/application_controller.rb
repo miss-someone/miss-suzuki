@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   # sorceryのメソッドをオーバライドしています
   def not_authenticated
-    render 'errors/error_404', status: 404
+    redirect_to login_path, flash: { alert: 'ログインが必要です' }
   end
 
   def require_not_login
