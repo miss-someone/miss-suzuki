@@ -5,7 +5,7 @@ class Vote < ActiveRecord::Base
   validates :contestant_id, presence: true
   validates :group_id,      presence: true
 
-  scope :today, -> { where(['(TIMESTAMP ?) <= updated_at and updated_at < (TIMESTAMP ?)', Date.today, Date.tomorrow]) }
+  scope :today, -> { where(:created_at => (Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)) }
 
   class << self
     def todays_vote_count_with_no_login(ip_address, cookie_token)
