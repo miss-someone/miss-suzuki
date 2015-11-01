@@ -57,7 +57,7 @@ class ContestantsController < ApplicationController
   end
 
   def thankyou
-    @contestant_profile = Contestant.approved.find(params[:id]).profile
+    @contestant_profile = Contestant.approved.nth_group(1).find(params[:id]).profile
   end
 
   def mypage
