@@ -1,6 +1,5 @@
 class UserProfilesController < ApplicationController
   before_filter :require_voter_login
-  before_action :voter?
 
   def show
     @user = current_user
