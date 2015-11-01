@@ -6,10 +6,11 @@ module ContestantsHelper
     end
   end
 
-  def is_mypage_present?
-    if InterviewAnswer.contestant.present? || ContestantImage.contestant.present?
-      image_tag 'btn/btn_mypage.png', :width => '80'
-    end
+  def is_mypage_present?(contestant)
+    answers = InterviewAnswer.where(user_id: contestant.profile.user_id,
+                                    is_pending: false)
+    imgs = ContestantImage.where(user_id: contestant.profile.user_id)
+    answers.present? || imgs.present?
   end
 
   private
