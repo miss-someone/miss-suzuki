@@ -29,7 +29,7 @@ class ContestantProfile < ActiveRecord::Base
 
   def prepare_validation
     # 現在の応募者を割り振るデフォルトグループの設定
-    self.group_id = Settings.current_group_id
+    self.group_id = Settings.current_group_id if group_id.blank?
     self
   end
 
