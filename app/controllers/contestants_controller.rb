@@ -1,6 +1,10 @@
 class ContestantsController < ApplicationController
   include ArrayUtils
+  skip_before_filter :require_login, only: [:entry, :thankyou_sample, :mypage_sample, :index, :mypage, :thankyou, :new, :create]
+
   before_filter :require_contestant_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
+  before_filter :restrict_contestant_login, only: [:entry, :new, :create]
+
 
   def index
     if params[:id].to_i <= Settings.current_open_group_id

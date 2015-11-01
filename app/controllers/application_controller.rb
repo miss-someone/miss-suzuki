@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def restrict_contestant_login
+    redirect_to root_path if current_user && current_user.user_type == Settings.user_type.contestant
+  end
+
   def require_contestant_login
     require_specific_user_login(Settings.user_type[:contestant])
   end
