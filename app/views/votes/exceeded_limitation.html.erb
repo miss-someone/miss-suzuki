@@ -1,28 +1,17 @@
 <div id="overvoted">
 
-<div id="thankyou">
-  <div id="content">
-      <div class="message">
-        <div class="arrow_box">
-          <p class="text">ごめんなさい！ゲストユーザーの方の投票回数は1日3回までみたいです・・・></p>
+  <div id="thankyou">
+    <div id="content">
+        <div class="message">
+          <div class="arrow_box">
+            <p class="text">ごめんなさい！<br>ゲストユーザーさんの投票回数は1日3回までみたいです・・・</p>
+          </div>
         </div>
-      </div>
-      <div class="picture">
-       <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
-      </div>
-
-
-
+        <div class="picture">
+          <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
+        </div>
+        <div id="more_vote_btn"><a href="/users/signup" target="_blank">鈴木例子さんをもっと応援する？</a></div>
     </div>
-<!--
-    <div class="right">
-      <div class="buttons">
-        <p class="button btn1"><a href="#">予選第1グループへ</a></p>
-        <p class="button btn2"><a href="#">予選第2グループへ</a></p>
-        <p class="button btn3"><a href="#">予選第3グループへ</a></p>
-      </div>
-    </div> -->
-
   </div>
-</div>
+  <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
 </div>
