@@ -93,6 +93,7 @@ ActiveAdmin.register ContestantProfile do
       f.input :height
       f.input :come_from
       f.input :link_url
+      f.input :link_type, as: :select, collection: Settings.link_type
       f.input :comment
       f.input :thanks_comment
       f.input :station
