@@ -29,7 +29,7 @@ class ContestantsController < ApplicationController
   end
 
   def mypage
-    @contestant_profile = Contestant.approved.find(params[:id]).profile
+    @contestant_profile = Contestant.approved.nth_group(1).find(params[:id]).profile
   end
 
   def new_interview_answer
