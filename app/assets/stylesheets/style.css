@@ -3204,12 +3204,7 @@ span#interview_question_number{
   width:300px;
   float:left;
 }
-/*====================  投票回数を超えた時 ==========================*/
-#overvoted {
-  max-width:100%;
-  clear: both;
-  border-top:5px solid #e04974;
-}
+
 
 /*====================  VALIDATION ==========================*/
 .error{
