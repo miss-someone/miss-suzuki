@@ -2,28 +2,17 @@
 
   <div id="thankyou">
     <div id="content">
-<!--     ゲストユーザーの場合 -->
-        <div class="message">
-          <div class="arrow_box">
-            <p class="text">ごめんなさい！<br>ゲストユーザーさんの投票回数は1日3回までみたいです・・・</p>
-          </div>
+      <div class="message">
+        <div class="arrow_box">
+          <p class="text"><%= raw cannot_vote_text %></p>
         </div>
-        <div class="picture">
-          <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
-        </div>
+      </div>
+      <div class="picture">
+        <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
+      </div>
+      <% unless logged_in? %>
         <div id="more_vote_btn"><a href="/users/signup" target="_blank">鈴木例子さんをもっと応援する？</a></div>
-    </div>
-  </div>
-<!--   会員の場合 -->
-        <div class="message">
-          <div class="arrow_box">
-            <p class="text">ごめんなさい！<br>今日はもう10回投票しちゃったみたいです・・・</p>
-          </div>
-        </div>
-        <div class="picture">
-          <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
-        </div>
-        <div id="more_vote_btn"><a href="/users/signup" target="_blank">鈴木例子さんをもっと応援する？</a></div>
+      <% end %>
     </div>
   </div>
   <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
