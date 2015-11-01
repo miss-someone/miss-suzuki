@@ -12,9 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_not_login
-    if logged_in?
-      redirect_to root_path
-    end
+    return unless logged_in?
+    redirect_to root_path
   end
 
   def require_contestant_login
@@ -22,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_voter_login
-    require_specific_user_login(Settings.user_type[:voter])
+    require_specific_user_login(Settings.user_type[:normal])
   end
 
   def not_found
