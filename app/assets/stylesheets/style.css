@@ -3230,6 +3230,9 @@ span#interview_question_number{
 }
 
 /*====================  Slick ==========================*/
+#home .slideshow{
+  z-index: -1;
+}
 #home .slideshow *{
   width:100%;
 }
