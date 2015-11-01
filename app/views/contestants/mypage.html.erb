@@ -27,9 +27,11 @@
             <p class="appeal">一言アピール！</p>
             <textarea name="comment"><%= @contestant_profile.comment %></textarea>
             <div class="sns_links">
-              <div class="link_row row1">
-                <p class="url"><a href="<%= @contestant_profile.link_url %>" target="_blank"><%= image_tag btn_name(@contestant_profile.link_type) %></a></p>
-              </div>
+              <% if @contestant_profile.link_url.present? %>
+                <div class="link_row row1">
+                  <p class="url"><a href="<%= @contestant_profile.link_url %>" target="_blank"><%= image_tag btn_name(@contestant_profile.link_type) %></a></p>
+                </div>
+              <% end %>
             </div>
             <div id="banner_in_profile">
               <script type="text/javascript">
