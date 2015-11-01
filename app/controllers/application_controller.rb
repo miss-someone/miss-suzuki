@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
       send(Config.not_authenticated_action)
     end
   end
+
+  def not_found
+    raise ActionController::RoutingError.new('404 Not Found')
+  end
 end

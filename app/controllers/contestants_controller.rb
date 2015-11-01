@@ -3,7 +3,11 @@ class ContestantsController < ApplicationController
   before_filter :require_contestant_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
 
   def index
-    @contestant = Array.split3(Contestant.approved.nth_group(params[:id]).shuffle)
+    if params[:id].to_i <= Settings.current_open_group_id
+      @contestant = Array.split3(Contestant.approved.nth_group(params[:id]).shuffle)
+    else
+      not_found
+    end
   end
 
   def new
