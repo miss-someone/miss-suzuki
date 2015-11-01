@@ -1,7 +1,7 @@
 module ContestantsHelper
   # 紹介リンクへのボタンを作成
   def link_btn(contestant_profile)
-    return if contestant_profile.link_url?
+    return unless contestant_profile.link_url?
     link_to image_tag(btn_name(contestant_profile.link_type)), contestant_profile.link_url, width: 80
   end
 
