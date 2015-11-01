@@ -3,6 +3,7 @@
   "dependencies": {
     "cropper": "latest",
     "jquery-validation": "latest",
-    "bxslider-4": "latest"
+    "bxslider-4": "latest",
+    "slick-carousel": "latest"
   }
 }

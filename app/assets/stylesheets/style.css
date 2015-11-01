@@ -3153,4 +3153,12 @@ span#interview_question_number{
   width:500px;
   border-radius: 5px 0 0 5px;
 }
+
+/*====================  Slick ==========================*/
+#home .slideshow *{
+  width:100%;
+}
+#home .slideshow img{
+  width:100%;
+}
 }
