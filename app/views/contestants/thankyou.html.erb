@@ -9,7 +9,9 @@
       <div class="picture">
        <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
       </div>
-      <div id="more_vote_btn"><a href="/users/signup" target="_blank">鈴木例子さんをもっと応援する？</a></div>
+      <% unless logged_in? %>
+      <div id="more_vote_btn"><a href="/users/signup" target="_blank"><%= @contestant_profile.name %>さんをもっと応援する？</a></div>
+      <% end %>
       <div id="banner_big">
         <script type="text/javascript" style="margin-top:30px;">
         var lists=[
