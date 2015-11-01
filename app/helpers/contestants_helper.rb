@@ -5,6 +5,13 @@ module ContestantsHelper
     link_to image_tag(btn_name(contestant_profile.link_type)), contestant_profile.link_url, width: 80
   end
 
+  def is_mypage_present?(contestant)
+    answers = InterviewAnswer.where(user_id: contestant.profile.user_id,
+                                    is_pending: false)
+    imgs = ContestantImage.where(user_id: contestant.profile.user_id)
+    answers.present? || imgs.present?
+  end
+
   private
 
   # リンク種別から表示するボタン画像のファイル名を取得する
