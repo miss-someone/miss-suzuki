@@ -861,6 +861,22 @@ p a{
 #thankyou #content .button .btn1{
   margin-top: 0;
 }
+#thankyou #more_vote_btn a{
+  width:278px;
+  border:1px solid #d7d7d7;
+  border-radius: 10px;
+  padding:10px;
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+  display: block;
+  color:#666;
+  text-decoration: none;
+  font-weight: bold;
+}
+#thankyou #more_vote_btn a:hover{
+  color: #e04974;
+}
 /*====================ABOUT US==========================*/
 #about #content .slogan img{
   width:90%;
@@ -2472,7 +2488,23 @@ body {
   display: block;
 }
 #thankyou #content .button .btn1{
-  margin-top: 0;
+  margin-top:0;
+}
+#thankyou #more_vote_btn a{
+  width:278px;
+  border:1px solid #d7d7d7;
+  border-radius: 10px;
+  padding:10px;
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+  display: block;
+  color:#666;
+  text-decoration: none;
+  font-weight: bold;
+}
+#thankyou #more_vote_btn a:hover{
+  color: #e04974;
 }
 /*====================ABOUT US==========================*/
 #about #content .slogan{
