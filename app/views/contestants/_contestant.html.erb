@@ -3,6 +3,10 @@
      <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: contestant.id), method: :post, params: { group_id: contestant.profile.group_id } %>
      <p class="counter"><%= contestant.profile.votes %></p>
    </div>
+
+   <div class="mypage_btn">
+       <%= link_to (image_tag 'btn/btn_mypage.png', width: 80), "/contestants/#{contestant.profile.id}/mypage" %>
+   </div>
    <%
 =begin
    %>
