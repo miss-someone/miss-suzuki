@@ -1,4 +1,4 @@
-<div class="contestant">
+<div id='contestant-<%= contestant.id %>' class="contestant">
   <div class="vote_system">
     <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: contestant.id), method: :post, params: { group_id: contestant.profile.group_id } %>
     <p class="counter"><%= contestant.profile.votes %></p>
@@ -14,6 +14,7 @@
     <%= image_tag contestant.profile.profile_image.thumb %>
   </div>
   <div class="profile">
+    <p><a href="<%= contestant_anchor_url(contestant) %>">anchor</a></p>
     <p class="url"><%= link_btn(contestant.profile) %></p>
     <h3 class="furigana"><%= contestant.profile.hurigana %></h3>
     <h2 class="name"><%= contestant.profile.name %></h2>

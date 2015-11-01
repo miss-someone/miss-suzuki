@@ -5,6 +5,10 @@ module ContestantsHelper
     link_to image_tag(btn_name(contestant_profile.link_type)), contestant_profile.link_url, width: 80, target: '_blank'
   end
 
+  def contestant_anchor_url(contestant)
+    "/contestants/group/#{contestant.profile.group_id}#contestant-#{contestant.id}"
+  end
+
   def is_mypage_present?(contestant)
     answers = InterviewAnswer.where(user_id: contestant.profile.user_id,
                                     is_pending: false)
