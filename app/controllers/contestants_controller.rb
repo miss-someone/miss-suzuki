@@ -28,10 +28,6 @@ class ContestantsController < ApplicationController
     end
   end
 
-  def mypage
-    @contestant_profile = Contestant.approved.nth_group(1).find(params[:id]).profile
-  end
-
   def new_interview_answer
     @interview_answers = InterviewTopic.all.each_with_object([]) do |topic, res|
       res << InterviewAnswer.new(user_id: current_user.id, interview_topic_id: topic.id)
@@ -73,7 +69,7 @@ class ContestantsController < ApplicationController
         @interview_answers.store(topic, answer)
       end
     end
-    @contestant_images = ContestantImage.where(user_id: params[:id])
+    @contestant_images = ContestantImage.approved.where(user_id: params[:id])
   end
 
   def my_own_page
@@ -89,7 +85,7 @@ class ContestantsController < ApplicationController
         @interview_answers.store(topic, answer)
       end
     end
-    @contestant_images = ContestantImage.where(user_id: current_user.id)
+    @contestant_images = ContestantImage.approved.where(user_id: current_user.id)
   end
 
   private
