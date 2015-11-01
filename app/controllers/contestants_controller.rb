@@ -61,7 +61,7 @@ class ContestantsController < ApplicationController
   end
 
   def mypage
-    @contestant_profile = Contestant.approved.find(params[:id]).profile
+    @contestant_profile = Contestant.approved.nth_group(1).find(params[:id]).profile
     @interview_answers = {}
     InterviewTopic.find_each do |interview_topic|
       answers = InterviewAnswer.where(interview_topic_id: interview_topic.id,
