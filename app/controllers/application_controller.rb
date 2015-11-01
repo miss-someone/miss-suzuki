@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_filter :require_login
 
   private
 
@@ -15,5 +16,9 @@ class ApplicationController < ActionController::Base
       session[:return_to_url] = request.url if Config.save_return_to_url && request.get?
       send(Config.not_authenticated_action)
     end
+  end
+
+  def not_found
+    raise ActionController::RoutingError.new('404 Not Found')
   end
 end
