@@ -827,6 +827,28 @@ p a{
   line-height:5;
   margin-bottom: 20px;
 }
+#thankyou #content .yet{
+  width:300px;
+  height:70px;
+  background-color: #999;
+  border-radius: 5px;
+  text-align: center;
+  line-height:1;
+  margin-bottom: 45px;
+}
+#thankyou #content .yet span.group{
+  color:#fff;
+  font-size:14px;
+  font-weight: bold;
+  display: block;
+  padding-top: 30px;
+}
+#thankyou #content .yet span.date{
+  color:#191919;
+  display: block;
+  padding-top: 5px;
+  font-size: 12px;
+}
 #thankyou #content .button a{
   color:#fff;
   font-size:14px;
@@ -836,6 +858,22 @@ p a{
 }
 #thankyou #content .button .btn1{
   margin-top: 0;
+}
+#thankyou #more_vote_btn a{
+  width:278px;
+  border:1px solid #d7d7d7;
+  border-radius: 10px;
+  padding:10px;
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+  display: block;
+  color:#666;
+  text-decoration: none;
+  font-weight: bold;
+}
+#thankyou #more_vote_btn a:hover{
+  color: #e04974;
 }
 /*====================ABOUT US==========================*/
 #about #content .slogan img{
@@ -2394,21 +2432,19 @@ body {
 }
 #thankyou #content{
   overflow: hidden;
-    width:300px;
-/*  width:700px;*/
+  width:700px;
   margin:0 auto;
   margin-top: 30px;
 }
 #thankyou #content .left{
   width:300px;
-/*  float:left;*/
-/*  margin-right: 100px;*/
+  float:left;
+  margin-right: 100px;
 }
-/*#thankyou #content .right{
+  #thankyou #content .right{
   width:300px;
   float:left;
 }
-*/
 #thankyou .arrow_box {
   position: relative;
   background: #fff;
@@ -2458,6 +2494,28 @@ body {
   line-height:5;
   margin-bottom: 45px;
 }
+#thankyou #content .yet{
+  width:300px;
+  height:70px;
+  background-color: #999;
+  border-radius: 5px;
+  text-align: center;
+  line-height:1;
+  margin-bottom: 45px;
+}
+#thankyou #content .yet span.group{
+  color:#fff;
+  font-size:14px;
+  font-weight: bold;
+  display: block;
+  padding-top: 30px;
+}
+#thankyou #content .yet span.date{
+  color:#191919;
+  display: block;
+  padding-top: 5px;
+  font-size: 12px;
+}
 #thankyou #content .button a{
   color:#fff;
   font-size:14px;
@@ -2466,7 +2524,23 @@ body {
   display: block;
 }
 #thankyou #content .button .btn1{
-  margin-top: 0;
+  margin-top:0;
+}
+#thankyou #more_vote_btn a{
+  width:278px;
+  border:1px solid #d7d7d7;
+  border-radius: 10px;
+  padding:10px;
+  text-align: center;
+  display: table-cell;
+  vertical-align:middle;
+  display: block;
+  color:#666;
+  text-decoration: none;
+  font-weight: bold;
+}
+#thankyou #more_vote_btn a:hover{
+  color: #e04974;
 }
 /*====================ABOUT US==========================*/
 #about #content .slogan{
@@ -3153,5 +3227,13 @@ span#interview_question_number{
 .bx-wrapper img{
   width:500px;
   border-radius: 5px 0 0 5px;
+}
+
+/*====================  Slick ==========================*/
+#home .slideshow *{
+  width:100%;
+}
+#home .slideshow img{
+  width:100%;
 }
 }
