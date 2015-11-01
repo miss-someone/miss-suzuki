@@ -56,6 +56,8 @@ class ContestantProfile < ActiveRecord::Base
       Settings.link_type[:facebook]
     when 'twitter.com' then
       Settings.link_type[:twitter]
+    when 'mobile.twitter.com' then
+      Settings.link_type[:twitter]
     when 'instagram.com' then
       Settings.link_type[:instagram]
     when 'ameblo.jp' then
