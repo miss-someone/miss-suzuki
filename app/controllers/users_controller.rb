@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:new, :create, :activate, :registration_completed]
+  before_filter :require_not_login
 
   def new
     @voter = Voter.new
