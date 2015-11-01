@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
     render 'errors/error_404', status: 404
   end
 
+  def require_not_login
+    if logged_in?
+      redirect_to root_path
+    end
+  end
+
   def require_contestant_login
     require_specific_user_login(Settings.user_type[:contestant])
   end
