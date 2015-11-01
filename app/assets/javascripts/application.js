@@ -15,4 +15,5 @@
 //= require cropper
 //= require jquery-validation
 //= require bxslider-4
+//= require slick-carousel
 //= require_tree .
