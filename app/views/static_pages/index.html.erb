@@ -30,7 +30,7 @@
         <% @contestants.each do |contestant| %>
           <div class="<%= div_contestant_class(@contestants, contestant) %>">
             <div class="picture">
-              <%= image_tag contestant.profile.profile_image.thumb, alt: contestant.profile.name %>
+              <%= image_tag contestant.profile.profile_image.thumb(300, 300), alt: contestant.profile.name %>
             </div>
             <div class="profile">
               <p class="furigana"><%= contestant.profile.hurigana %></p>

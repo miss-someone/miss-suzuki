@@ -11,7 +11,7 @@
   <% end %>
 
   <div class="picture">
-    <%= image_tag contestant.profile.profile_image.thumb %>
+    <%= image_tag contestant.profile.profile_image.thumb(300, 300) %>
   </div>
   <div class="profile">
     <p class="url"><%= link_btn(contestant.profile) %></p>
