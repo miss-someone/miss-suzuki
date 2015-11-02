@@ -13,7 +13,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "最近の応募者" do
           ul do
-            ContestantProfile.all.order("created_at").reverse.map do |profile|
+            ContestantProfile.limit(5).order("created_at").reverse.map do |profile|
               li link_to(profile.name, admin_contestant_profile_path(profile))
               div profile.created_at.in_time_zone('Tokyo')
             end
@@ -21,8 +21,13 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
       column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
+        panel "承認ステータス" do
+          ul do
+            li "出場者画像承認待ち"
+            div "#{ContestantImage.where(is_pending: true).count}件"
+            li "インタビュー承認待ち"
+            div "#{InterviewAnswer.where(is_pending: true).count}件"
+          end
         end
       end
     end
