@@ -1,8 +1,8 @@
 namespace :report do
   desc "Report yesterday's vote count to slack"
   task check_yesterdays_vote_count: :environment do
-    notify_to_slack(vote_count_notify_body)
-    notify_to_slack(user_count_notify_body)
+    notify_to_slack_for_report(vote_count_notify_body)
+    notify_to_slack_for_report(user_count_notify_body)
   end
 
   def vote_count_notify_body
@@ -54,7 +54,7 @@ namespace :report do
     body.to_json
   end
 
-  def notify_to_slack(body_json)
+  def notify_to_slack_for_report(body_json)
     api_url = 'https://hooks.slack.com/services/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'
     uri = URI.parse(api_url)
     https = Net::HTTP.new(uri.host, uri.port)
@@ -65,5 +65,4 @@ namespace :report do
     req.body = body_json
     https.request(req)
   end
-
 end
