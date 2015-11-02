@@ -3229,6 +3229,60 @@ span#interview_question_number{
   float:left;
 }
 
+/*====================  えらい鈴木さんにインタビュー!==========================*/
+#interview1 #content{
+  width:900px;
+  margin: 0 auto;
+}
+#interview1 h2{
+  font-size: 24px;
+  font-weight:bold;
+  color: #e04974;
+}
+#interview1 h2 span{
+  border-bottom:2px solid #e04974;
+}
+#interview1 .bold{
+  font-weight: bold;
+}
+#interview1 .blue{
+  color:#62a7e7;
+}
+#interview1 .bigger{
+  font-size: 18px;
+}
+#interview1 .super_bigger{
+  font-size: 30px;
+}
+#interview1 .big_image img{
+  width:600px;
+  text-align: left;
+}
+#interview1 .half_image_box{
+  overflow: hidden;
+}
+#interview1 .half_image img{
+  width:300px;
+  float:left;
+  margin-right: 20px;
+}
+#interview1 .dialog_box{
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+#interview1 .dialog_box .icon img{
+  width:80px;
+  float: left;
+}
+#interview1 .dialog_box .comment{
+  display: table-cell;
+}
+#interview1 .dialog_box .comment p{
+  float: left;
+  width: 700px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
 
 /*====================  VALIDATION ==========================*/
 .error{
