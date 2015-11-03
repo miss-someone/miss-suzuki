@@ -16,9 +16,9 @@ class ApiController < ApplicationController
     # masterブランチor developブランチの時のみデプロイを行う
     case params[:payload][:branch]
     when "master"
-      AutomaticDeployJob.do_deploy("production")
+      AutomaticDeployJob.perform_later("production")
     when "develop"
-      AutomaticDeployJob.do_deploy("staging")
+      AutomaticDeployJob.perform_later("staging")
     end
     head 200
   end

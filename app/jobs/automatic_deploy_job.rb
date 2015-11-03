@@ -1,6 +1,11 @@
 # 自動デプロイを行うクラス
-# TODO: 非同期タスクへの移行
-module AutomaticDeployJob
+module AutomaticDeployJob < ActiveJob::Base
+  queue_as :default
+
+  def perform(target)
+    do_deploy(target)
+  end
+
   def do_deploy(target)
     return unless %w(production staging).include? target
     msg, errmsg, status_code = exec_deploy_cmd(target)
