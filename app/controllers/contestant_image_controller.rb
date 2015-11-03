@@ -12,7 +12,7 @@ class ContestantImageController < ApplicationController
       @contestant_image.errors[:base] << "登録されている写真の数が上限を超えています。写真を削除してから再度お試し下さい。"
       render 'new'
     else
-      flash.now.alert = "登録に成功しました！" if @contestant_image.save
+      flash.now.alert = "登録に成功しました！写真が承認され次第マイページに反映されますのでしばらくお待ち下さい！" if @contestant_image.save
       render 'new'
     end
   end
