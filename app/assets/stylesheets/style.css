@@ -164,6 +164,29 @@ p a{
   display: block;
   text-decoration: none;
 }
+
+.left_vote_btn a{
+  font-size: 20px;
+  color:#fff;
+  display: block;
+}
+#entry_btn div{
+float: left;
+}
+.top_vote_and_entry_btn {
+overflow: hidden;
+margin:0 auto;
+}
+/* clearfix */
+/*.top_vote_and_entry_btn:before,
+.top_vote_and_entry_btn:after {
+content: "";
+display: table;
+}*/
+/*.top_vote_and_entry_btn:after {
+clear: both;
+}*/
+
 #to_top img{
   position: fixed;
   right:3%;
@@ -1614,7 +1637,7 @@ body {
   line-height: 3.5;
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 100px;
+  /*margin-bottom: 100px;*/
 }
 #entry_btn a{
   font-size: 20px;
