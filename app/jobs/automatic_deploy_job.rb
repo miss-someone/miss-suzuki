@@ -75,5 +75,4 @@ class AutomaticDeployJob < ActiveJob::Base
       http.request(req)
     end
   end
-  module_function :do_deploy
 end
