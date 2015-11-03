@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     get   'entrypolicy'    => 'static_pages#entrypolicy'
     get   'terms'    => 'static_pages#terms'
     get   'policy'   => 'static_pages#policy'
-
+    get   'contents'   => 'contents#index'
+    get   'contents/history'   => 'contents#history'
+    get   'contents/erai_suzukisan1'   => 'contents#interview1'
     get   'news'     => 'news#index'
 
     scope :contestant_image do
