@@ -13,6 +13,16 @@ ActiveAdmin.register ContestantImage do
 #   permitted
 # end
 
+  index do
+    selectable_column
+    id_column
+    column :user_id
+    column '画像' do |img|
+      image_tag img.profile_image.thumb_at_mypage, width: 100
+    end
+    column :is_pending
+  end
+
   show do
     attributes_table do
       row :user
@@ -25,4 +35,8 @@ ActiveAdmin.register ContestantImage do
 
   permit_params :user, :profile_image, :is_pending
 
+  batch_action :approve do |ids|
+    ContestantImage.find(ids).each { |image| image.update(is_pending: false) }
+    redirect_to collection_path, alert: "承認しました"
+  end
 end
