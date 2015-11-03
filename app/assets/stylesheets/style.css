@@ -3230,9 +3230,25 @@ span#interview_question_number{
 }
 
 /*====================  えらい鈴木さんにインタビュー!==========================*/
-#interview1 #content{
+#contents #content .contents_box{
+  width: 900px;
+  margin:0 auto;
+  overflow: hidden;
+}
+#contents #content .contents_box img{
   width:900px;
-  margin: 0 auto;
+  margin-bottom: 30px;
+}
+#contents #content h2{
+  margin-bottom: 0;
+  color:#1b6ddc;
+}
+#interview1{
+  width:100%;
+}
+#interview1 #content{
+  width: 900px;
+  margin:0 auto;
 }
 #interview1 h2{
   font-size: 24px;
@@ -3246,13 +3262,20 @@ span#interview_question_number{
   font-weight: bold;
 }
 #interview1 .blue{
-  color:#62a7e7;
+  color:#1b6ddc;
 }
 #interview1 .bigger{
   font-size: 18px;
 }
 #interview1 .super_bigger{
   font-size: 30px;
+}
+#interview1 .italic{
+  font-family: serif;
+  font-style: italic;
+}
+#interview1 a{
+  color:#62a7e7;
 }
 #interview1 .big_image img{
   width:600px;
@@ -3261,10 +3284,19 @@ span#interview_question_number{
 #interview1 .half_image_box{
   overflow: hidden;
 }
-#interview1 .half_image img{
+#interview1 .half_image{
   width:300px;
   float:left;
   margin-right: 20px;
+}
+#interview1 .half_image img{
+  width:300px;
+  float:left;
+}
+#interview1 .half_image p{
+  clear: both;
+  font-size:12px;
+  font-weight: bold;
 }
 #interview1 .dialog_box{
   overflow: hidden;
@@ -3282,6 +3314,86 @@ span#interview_question_number{
   width: 700px;
   margin-left: 20px;
   vertical-align: middle;
+}
+#interview1 .top0{
+  padding-top: 0px;
+}
+#interview1 .bottom0{
+  padding-bottom: 0px;
+}
+#interview1 .both0{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#interview1 .top30{
+  padding-top: 30px;
+}
+#interview1 .bottom30{
+  padding-bottom: 30px;
+}
+#interview1 .both30{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#interview1 .top50{
+  padding-top: 50px;
+}
+#interview1 .bottom50{
+  padding-bottom: 50px;
+}
+#interview1 .both50{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#interview1 .cityinfo{
+  width: 860px;
+  overflow: hidden;
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  display: table;
+}
+#interview1 .cityinfo h3{
+  padding-left: 30px;
+  font-size: 24px;
+  font-weight:bold;
+  color: #e04974;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+#interview1 .cityinfo img{
+  width: 300px;
+  float: left;
+  margin-left: 20px;
+}
+#interview1 .cityinfo table{
+  width:500px;
+  padding:0 20px 20px 20px;
+  text-align: left;
+  float: left;
+  margin-top: -4px;
+}
+
+#interview1 .cityinfo table tr{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  width: 500px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#interview1 .cityinfo table tr.odd{
+  background-color: #f5f5f5;
+}
+#interview1 .cityinfo table td{
+  font-size: 12px;
+  color:#333;
+  font-weight: bold;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+#interview1 .city_link{
 }
 
 /*====================  VALIDATION ==========================*/
