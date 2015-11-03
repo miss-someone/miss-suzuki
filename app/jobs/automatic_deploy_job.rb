@@ -1,19 +1,20 @@
 # 自動デプロイを行うクラス
-module AutomaticDeployJob < ActiveJob::Base
+class AutomaticDeployJob < ActiveJob::Base
   queue_as :default
 
   def perform(target)
     do_deploy(target)
   end
 
-  def do_deploy(target)
-    return unless %w(production staging).include? target
-    msg, errmsg, status_code = exec_deploy_cmd(target)
-    output_log(msg, errmsg)
-    notify_to_slack(target, status_code, msg, errmsg)
-  end
-
   class << self
+
+    def do_deploy(target)
+      return unless %w(production staging).include? target
+      msg, errmsg, status_code = exec_deploy_cmd(target)
+      output_log(msg, errmsg)
+      notify_to_slack(target, status_code, msg, errmsg)
+    end
+
     # デプロイスクリプトの実行
     # return: [標準出力，標準エラー出力，完了ステータス(成功:0, 失敗:1)
     def exec_deploy_cmd(target)
