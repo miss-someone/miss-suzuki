@@ -13,7 +13,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "最近の応募者" do
           ul do
-            ContestantProfile.limit(5).order("created_at").reverse.map do |profile|
+            ContestantProfile.order("created_at").limit(5).reverse.map do |profile|
               li link_to(profile.name, admin_contestant_profile_path(profile))
               div profile.created_at.in_time_zone('Tokyo')
             end
