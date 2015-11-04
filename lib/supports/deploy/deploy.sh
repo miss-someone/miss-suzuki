@@ -69,4 +69,11 @@ bundle exec cap $target_env deploy:copy_assets
 bundle exec cap $target_env deploy
 # bundle exec cpa $target_env restart # うまく再起動しなかったら入れる
 
+echo 'killing sidekiq...'
+# 4台までのアプリケーションサーバとりあえず対応
+for i in `seq 1 4`
+do
+  ssh 192.168.1.2$i "pkill -f 'sidekiq'" || true
+done
+
 echo "successfully finished deployment"
