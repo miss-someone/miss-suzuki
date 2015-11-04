@@ -55,9 +55,13 @@ git add public/assets/manifest-* # manifestファイルのみ管理対象に追�
 git commit -m 'precompile [ci skip]' || true
 git push origin $target_branch || true
 
+# マイグレーション
+echo "doing migration..."
+RAILS_ENV=$target_env bundle exec rake db:migrate
+
 # DBのseed情報書き込み
 echo "running seed"
-bundle exec rake db:seed
+RAILS_ENV=$target_env bundle exec rake db:seed
 
 # デプロイ
 echo "deploying..."

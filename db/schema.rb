@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101124114) do
+ActiveRecord::Schema.define(version: 20151103131646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20151101124114) do
 
   create_table "contestant_images", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "profile_image",                                  null: false
+    t.string   "profile_image"
     t.integer  "profile_image_crop_param_x",                     null: false
     t.integer  "profile_image_crop_param_y",                     null: false
     t.integer  "profile_image_crop_param_width",                 null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20151101124114) do
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.boolean  "is_pending",                      default: true, null: false
+    t.string   "profile_image_tmp"
   end
 
   add_index "contestant_images", ["user_id"], name: "index_contestant_images_on_user_id", using: :btree
