@@ -27,12 +27,19 @@ module ApplicationHelper
 
   # FBでシェアする時の画像を指定する
   def fb_meta_tags(controller_name, action_name, contestant_profile)
-    if controller_name == "static_pages" && action_name == "history"
+    if controller_name == "contents" && action_name == "history"
       set_meta_tags og: {
         title: "MISS-SUZUKI | 歴史",
         type:  "article",
-        url:   "https://miss-suzuki.com/history",
+        url:   "https://miss-suzuki.com/contents/history",
         image: "https://miss-suzuki.com/assets/mainimages/history_mainimage-83b98a17d4615164c83b5f68e906a20b.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "interview1"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー！",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/erai_suzukisan1",
+        image: "/Users/shigeru/miss-suzuki/app/assets/images/mainimages/interview_mainimage.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
