@@ -165,28 +165,6 @@ p a{
   text-decoration: none;
 }
 
-.left_vote_btn a{
-  font-size: 20px;
-  color:#fff;
-  display: block;
-}
-#entry_btn div{
-float: left;
-}
-.top_vote_and_entry_btn {
-overflow: hidden;
-margin:0 auto;
-}
-/* clearfix */
-/*.top_vote_and_entry_btn:before,
-.top_vote_and_entry_btn:after {
-content: "";
-display: table;
-}*/
-/*.top_vote_and_entry_btn:after {
-clear: both;
-}*/
-
 #to_top img{
   position: fixed;
   right:3%;
@@ -197,6 +175,45 @@ clear: both;
   width:100%;
   border-top: 3px solid #e04974;
   border-bottom: 3px solid #e04974;
+}
+#home .top_vote_and_entry_btn{
+  width:300px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top:30px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn{
+  width:140px;
+  background-color: #e04974;
+  height:40px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+  margin-right:20px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn a{
+  color:#fff;
+  font-size:12px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+  text-decoration: none;
+}
+#home .top_vote_and_entry_btn .right_entry_btn{
+  width:140px;
+  background-color: #e04974;
+  height:40px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+}
+#home .top_vote_and_entry_btn .right_entry_btn a{
+  color:#fff;
+  font-size:12px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+  text-decoration: none;
 }
 #home #prerelease{
   width:95%;
@@ -1806,7 +1823,43 @@ body {
   border-top: 5px solid #e04974;
   border-bottom: 5px solid #e04974;
 }
-
+#home .top_vote_and_entry_btn{
+  width:800px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top:50px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn{
+  width:350px;
+  background-color: #e04974;
+  height:70px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+  margin-right: 100px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn a{
+  color:#fff;
+  font-size:20px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+}
+#home .top_vote_and_entry_btn .right_entry_btn{
+  width:350px;
+  background-color: #e04974;
+  height:70px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+}
+#home .top_vote_and_entry_btn .right_entry_btn a{
+  color:#fff;
+  font-size:20px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+}
 #home #prerelease{
   width:1000px;
   margin:0 auto;
