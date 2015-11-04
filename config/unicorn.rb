@@ -15,6 +15,9 @@ timeout 30
 # ダウンタイム無し
 preload_app true
 
+# Capistrano用にRAILS_ROOTを指定
+working_directory rails_root
+
 # リクエストを受け付けるポート番号
 listen 3200
 
