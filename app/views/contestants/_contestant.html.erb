@@ -22,6 +22,6 @@
     <p class="height">身長：<%= contestant.profile.height %></p>
     <p class="appeal">一言アピール！</p>
     <p class="anchor"><a style="float:right;" href="<%= contestant_anchor_url(contestant) %>"><%= image_tag 'icon/chain.png' %></a></p>
-    <textarea name="comment"><%= contestant.profile.comment %></textarea>
+    <textarea readonly name="comment"><%= contestant.profile.comment %></textarea>
   </div>
 </div>
