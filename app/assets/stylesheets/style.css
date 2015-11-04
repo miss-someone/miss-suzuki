@@ -1715,7 +1715,12 @@ span#interview_question_number{
 }
 #interview1 .city_link{
 }
-
+#interview1 .share{
+  margin-top: 10px;
+}
+#interview1 .fb_iframe_widget{
+  top:-6px;
+}
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
@@ -3392,6 +3397,7 @@ span#interview_question_number{
   width: 900px;
   margin:0 auto;
   overflow: hidden;
+  position: relative;
 }
 #contents #content .contents_box img{
   width:900px;
@@ -3553,7 +3559,12 @@ span#interview_question_number{
 }
 #interview1 .city_link{
 }
-
+#interview1 .share{
+  margin-top: 10px;
+}
+#interview1 .fb_iframe_widget{
+  top:-6px;
+}
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
