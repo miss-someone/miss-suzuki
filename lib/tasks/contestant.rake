@@ -13,7 +13,7 @@ namespace :contestant do
     new_contestants = ContestantProfile.where("id > ?", prev_last_id)
     if new_contestants.present?
       last_id = ContestantProfile.last.id
-      notify_to_slack(new_contestant_notify_body(new_contestants))
+      notify_to_slack_for_new_contestant(new_contestant_notify_body(new_contestants))
       File.write(prev_last_id_file_path, last_id)
     end
   end
@@ -35,7 +35,7 @@ namespace :contestant do
     end
   end
 
-  def notify_to_slack(body_json)
+  def notify_to_slack_for_new_contestant(body_json)
     api_url = 'https://hooks.slack.com/services/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'
     uri = URI.parse(api_url)
     https = Net::HTTP.new(uri.host, uri.port)

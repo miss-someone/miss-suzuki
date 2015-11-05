@@ -16,11 +16,13 @@ Rails.application.routes.draw do
     get   'how_to_vote' => 'static_pages#how_to_vote'
     get   'flow_chart'  => 'static_pages#flow_chart'
     get   'next'        => 'static_pages#next'
-    get   'history'        => 'static_pages#history'
+    get   'history'        => 'contents#history' # 旧urlもcontentへリダイレクト
     get   'entrypolicy'    => 'static_pages#entrypolicy'
     get   'terms'    => 'static_pages#terms'
     get   'policy'   => 'static_pages#policy'
-
+    get   'contents'   => 'contents#index'
+    get   'contents/history'   => 'contents#history'
+    get   'contents/erai_suzukisan1'   => 'contents#interview1'
     get   'news'     => 'news#index'
 
     scope :contestant_image do

@@ -55,14 +55,25 @@ git add public/assets/manifest-* # manifestファイルのみ管理対象に追�
 git commit -m 'precompile [ci skip]' || true
 git push origin $target_branch || true
 
+# マイグレーション
+echo "doing migration..."
+RAILS_ENV=$target_env bundle exec rake db:migrate
+
 # DBのseed情報書き込み
 echo "running seed"
-bundle exec rake db:seed
+RAILS_ENV=$target_env bundle exec rake db:seed
 
 # デプロイ
 echo "deploying..."
 bundle exec cap $target_env deploy:copy_assets
 bundle exec cap $target_env deploy
 # bundle exec cpa $target_env restart # うまく再起動しなかったら入れる
+
+echo 'killing sidekiq...'
+# 4台までのアプリケーションサーバとりあえず対応
+for i in `seq 1 4`
+do
+  ssh 192.168.1.2$i "pkill -f 'sidekiq'" || true
+done
 
 echo "successfully finished deployment"

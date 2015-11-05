@@ -1,8 +1,8 @@
 <div id="home">
   <div id="mainimage">
     <div class="slideshow">
+      <div><%= link_to(image_tag("mainimages/interview_mainimage_home.jpg"), "/contents/erai_suzukisan1") %></div>
       <div><%= link_to(image_tag("mainimages/group1_mainimage_home.jpg"), "/contestants/group/1") %></div>
-      <div><%= image_tag "mainimages/interview_yokoku.jpg" %></div>
       <div><%= image_tag "mainimages/mainimage1.jpg" %></div>
     </div>
     <script>
@@ -17,7 +17,14 @@
     </script>
   </div>
 
-  <p id="entry_btn"><a href="contestants/group/1">投票ページはこちら！</a></p>
+  <div class="top_vote_and_entry_btn">
+    <div class="left_vote_btn">
+      <a href="contestants/group/1">投票ページはこちら！</a>
+    </div>
+    <div class="right_entry_btn">
+      <a href="contestants/entry">エントリーはこちら！</a>
+    </div>
+  </div>
 
   <div id="to_top">
     <a href="#home"><%= image_tag 'to_top.png', :width=> '50px' %></a>
@@ -30,7 +37,7 @@
         <% @contestants.each do |contestant| %>
           <div class="<%= div_contestant_class(@contestants, contestant) %>">
             <div class="picture">
-              <%= image_tag contestant.profile.profile_image.thumb, alt: contestant.profile.name %>
+              <%= image_tag contestant.profile.profile_image.thumb(300, 300), alt: contestant.profile.name %>
             </div>
             <div class="profile">
               <p class="furigana"><%= contestant.profile.hurigana %></p>
@@ -47,7 +54,7 @@
     </div>
   </div>
 
-  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p>
+ <!--  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
 
   <div class="news">
     <h2>NEWS</h2>
@@ -71,10 +78,10 @@
       <h3>ENTRY</h3>
       <div class="explain">
         <p class="icon"><%= image_tag 'icon/icon_laptop.jpg', :width=>'100px' %></p>
-        <p class="text text1">エントリー期間は2015年11月13日までです。<br>
-        グループ予選の中から「かわいい！」ポイントの上位１割の方が、<br>
+        <p class="text text1">エントリー期間は2015年11月19日までです。<br>
+        グループ予選の中から「かわいい！」ポイントの上位2割の方が、<br>
         予選最終投票に進出します。最終投票の上位12名が第2ラウンドに進出します。<br>
-        投票回数は1日3回、<!-- <a href="#"> -->会員登録してログイン<!-- </a> -->をすると１日10回投票ができます。<br>会員登録は10月上旬に開始予定です。</p>
+        投票回数は1日3回、<a href="https://miss-suzuki.com/users/signup">会員登録してログイン</a>をすると１日10回投票ができます。</p>
       </div>
     </div>
     <div class="section">

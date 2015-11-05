@@ -1,6 +1,4 @@
 class ApiController < ApplicationController
-  include AutomaticDeployJob
-
   # CircleCIから直接叩くので，CSRF対策無効
   protect_from_forgery except: :deploy
 
@@ -16,9 +14,9 @@ class ApiController < ApplicationController
     # masterブランチor developブランチの時のみデプロイを行う
     case params[:payload][:branch]
     when "master"
-      AutomaticDeployJob.do_deploy("production")
+      AutomaticDeployJob.perform_later("production")
     when "develop"
-      AutomaticDeployJob.do_deploy("staging")
+      AutomaticDeployJob.perform_later("staging")
     end
     head 200
   end

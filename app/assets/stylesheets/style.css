@@ -164,6 +164,7 @@ p a{
   display: block;
   text-decoration: none;
 }
+
 #to_top img{
   position: fixed;
   right:3%;
@@ -174,6 +175,45 @@ p a{
   width:100%;
   border-top: 3px solid #e04974;
   border-bottom: 3px solid #e04974;
+}
+#home .top_vote_and_entry_btn{
+  width:300px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top:30px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn{
+  width:140px;
+  background-color: #e04974;
+  height:40px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+  margin-right:20px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn a{
+  color:#fff;
+  font-size:12px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+  text-decoration: none;
+}
+#home .top_vote_and_entry_btn .right_entry_btn{
+  width:140px;
+  background-color: #e04974;
+  height:40px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+}
+#home .top_vote_and_entry_btn .right_entry_btn a{
+  color:#fff;
+  font-size:12px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+  text-decoration: none;
 }
 #home #prerelease{
   width:95%;
@@ -1183,7 +1223,7 @@ p a{
   font-weight: bold;
   width: 270px;
   margin: 0 auto;
-  height: 40px;
+  height: 50px;
   resize: none;
 }
 .contestant .profile .anchor img{
@@ -1558,6 +1598,169 @@ span#interview_question_number{
 .content_middle{
   padding-top: 30px;
 }
+/*====================  えらい鈴木さんにインタビュー!==========================*/
+#contents #content .contents_box{
+  width:100%;
+}
+#contents #content .contents_box img{
+  width:100%;
+  margin-bottom: 10px;
+}
+#contents #content h2{
+  margin-bottom: 0;
+  color:#1b6ddc;
+  font-size: 14px;
+}
+
+#interview1{
+  width:100%;
+}
+#interview1 #content{
+  width:95%;
+  margin:0 auto;
+}
+#interview1 h2{
+  font-size: 24px;
+  font-weight:bold;
+  color: #e04974;
+}
+#interview1 h2 span{
+  border-bottom:2px solid #e04974;
+}
+#interview1 .bold{
+  font-weight: bold;
+}
+#interview1 .blue{
+  color:#1b6ddc;
+}
+#interview1 .bigger{
+  font-size: 18px;
+}
+#interview1 .super_bigger{
+  font-size: 30px;
+}
+#interview1 .italic{
+  font-family: serif;
+  font-style: italic;
+}
+#interview1 a{
+  color:#62a7e7;
+}
+#interview1 .big_image img{
+  width:100%;
+}
+
+#interview1 .half_image img{
+  width:100%;
+}
+#interview1 .half_image p{
+  clear: both;
+  font-size:12px;
+  font-weight: bold;
+}
+#interview1 .dialog_box{
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+#interview1 .dialog_box .icon img{
+  width:15%;
+  float: left;
+}
+#interview1 .dialog_box .comment{
+  display: table-cell;
+  width:100%;
+}
+#interview1 .dialog_box .comment p{
+  float: left;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+#interview1 .top0{
+  padding-top: 0px;
+}
+#interview1 .bottom0{
+  padding-bottom: 0px;
+}
+#interview1 .both0{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#interview1 .top30{
+  padding-top: 30px;
+}
+#interview1 .bottom30{
+  padding-bottom: 30px;
+}
+#interview1 .both30{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#interview1 .top50{
+  padding-top: 50px;
+}
+#interview1 .bottom50{
+  padding-bottom: 50px;
+}
+#interview1 .both50{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#interview1 .cityinfo{
+  width:95%;
+  overflow: hidden;
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  display: table;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+#interview1 .cityinfo h3{
+  padding-left: 30px;
+  font-size: 24px;
+  font-weight:bold;
+  color: #e04974;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+#interview1 .cityinfo img{
+  width:90%;
+  margin-left: 20px;
+}
+#interview1 .cityinfo table{
+  width:100%;
+  padding:0 20px 20px 20px;
+  text-align: left;
+  margin-top: -4px;
+}
+
+#interview1 .cityinfo table tr{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#interview1 .cityinfo table tr.odd{
+  background-color: #f5f5f5;
+}
+#interview1 .cityinfo table td{
+  font-size: 12px;
+  color:#333;
+  font-weight: bold;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+#interview1 .city_link{
+}
+#interview1 .share{
+  margin-top: 10px;
+}
+#interview1 .fb_iframe_widget{
+  top:-6px;
+}
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
@@ -1614,7 +1817,7 @@ body {
   line-height: 3.5;
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 100px;
+  /*margin-bottom: 100px;*/
 }
 #entry_btn a{
   font-size: 20px;
@@ -1783,7 +1986,43 @@ body {
   border-top: 5px solid #e04974;
   border-bottom: 5px solid #e04974;
 }
-
+#home .top_vote_and_entry_btn{
+  width:800px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top:50px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn{
+  width:350px;
+  background-color: #e04974;
+  height:70px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+  margin-right: 100px;
+}
+#home .top_vote_and_entry_btn .left_vote_btn a{
+  color:#fff;
+  font-size:20px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+}
+#home .top_vote_and_entry_btn .right_entry_btn{
+  width:350px;
+  background-color: #e04974;
+  height:70px;
+  border-radius:5px;
+  text-align: center;
+  float:left;
+}
+#home .top_vote_and_entry_btn .right_entry_btn a{
+  color:#fff;
+  font-size:20px;
+  font-weight: bold;
+  display: block;
+  line-height: 3.5;
+}
 #home #prerelease{
   width:1000px;
   margin:0 auto;
@@ -2834,8 +3073,8 @@ body {
   font-size: 12px;
   font-weight: bold;
   width: 270px;
+  height: 50px;
   margin: 0 auto;
-  height: 40px;
   resize: none;
 }
 .contestant .profile .anchor img{
@@ -3229,7 +3468,179 @@ span#interview_question_number{
   float:left;
 }
 
+/*====================  えらい鈴木さんにインタビュー!==========================*/
+#contents #content .contents_box{
+  width: 900px;
+  margin:0 auto;
+  overflow: hidden;
+  position: relative;
+}
+#contents #content .contents_box img{
+  width:900px;
+  margin-bottom: 30px;
+}
+#contents #content h2{
+  margin-bottom: 0;
+  color:#1b6ddc;
+}
+#interview1{
+  width:100%;
+}
+#interview1 #content{
+  width: 900px;
+  margin:0 auto;
+}
+#interview1 h2{
+  font-size: 24px;
+  font-weight:bold;
+  color: #e04974;
+}
+#interview1 h2 span{
+  border-bottom:2px solid #e04974;
+}
+#interview1 .bold{
+  font-weight: bold;
+}
+#interview1 .blue{
+  color:#1b6ddc;
+}
+#interview1 .bigger{
+  font-size: 18px;
+}
+#interview1 .super_bigger{
+  font-size: 30px;
+}
+#interview1 .italic{
+  font-family: serif;
+  font-style: italic;
+}
+#interview1 a{
+  color:#62a7e7;
+}
+#interview1 .big_image img{
+  width:600px;
+  text-align: left;
+}
+#interview1 .half_image_box{
+  overflow: hidden;
+}
+#interview1 .half_image{
+  width:300px;
+  float:left;
+  margin-right: 20px;
+}
+#interview1 .half_image img{
+  width:300px;
+  float:left;
+}
+#interview1 .half_image p{
+  clear: both;
+  font-size:12px;
+  font-weight: bold;
+}
+#interview1 .dialog_box{
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+#interview1 .dialog_box .icon img{
+  width:80px;
+  float: left;
+}
+#interview1 .dialog_box .comment{
+  display: table-cell;
+}
+#interview1 .dialog_box .comment p{
+  float: left;
+  width: 700px;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+#interview1 .top0{
+  padding-top: 0px;
+}
+#interview1 .bottom0{
+  padding-bottom: 0px;
+}
+#interview1 .both0{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#interview1 .top30{
+  padding-top: 30px;
+}
+#interview1 .bottom30{
+  padding-bottom: 30px;
+}
+#interview1 .both30{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#interview1 .top50{
+  padding-top: 50px;
+}
+#interview1 .bottom50{
+  padding-bottom: 50px;
+}
+#interview1 .both50{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#interview1 .cityinfo{
+  width: 860px;
+  overflow: hidden;
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  display: table;
+}
+#interview1 .cityinfo h3{
+  padding-left: 30px;
+  font-size: 24px;
+  font-weight:bold;
+  color: #e04974;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+#interview1 .cityinfo img{
+  width: 300px;
+  float: left;
+  margin-left: 20px;
+}
+#interview1 .cityinfo table{
+  width:500px;
+  padding:0 20px 20px 20px;
+  text-align: left;
+  float: left;
+  margin-top: -4px;
+}
 
+#interview1 .cityinfo table tr{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  width: 500px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#interview1 .cityinfo table tr.odd{
+  background-color: #f5f5f5;
+}
+#interview1 .cityinfo table td{
+  font-size: 12px;
+  color:#333;
+  font-weight: bold;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+#interview1 .city_link{
+}
+#interview1 .share{
+  margin-top: 10px;
+}
+#interview1 .fb_iframe_widget{
+  top:-6px;
+}
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
