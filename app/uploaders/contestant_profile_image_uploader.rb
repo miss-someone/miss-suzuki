@@ -67,7 +67,7 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
   def thumb(width = 500, height = 500, is_blur = false)
     # 行が長くなりすぎる為，改行を行っているのでrubocopを一部無視
     # rubocop:disable Style/SpaceAroundOperators
-    "https://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
+    "https://#{img_server_host_name}/#{Cloudinary.config.cloud_name}/"\
     + "#{file.resource_type}/upload/"\
     + "#{blur_param(is_blur, model)}"\
     + "#{extra_param(model)}"\
@@ -82,7 +82,7 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
   def thumb_at_mypage(width = 500, height = 500)
     # 行が長くなりすぎる為，改行を行っているのでrubocopを一部無視
     # rubocop:disable Style/SpaceAroundOperators
-    "https://res.cloudinary.com/#{Cloudinary.config.cloud_name}/"\
+    "https://#{img_server_host_name}/#{Cloudinary.config.cloud_name}/"\
     + "#{file.resource_type}/upload/"\
     + "c_crop,h_#{model.profile_image_crop_param_height},"\
     + "w_#{model.profile_image_crop_param_width},"\
@@ -110,5 +110,11 @@ class ContestantProfileImageUploader < CarrierWave::Uploader::Base
     param = model.profile_image_blur_param
     param = Settings.contestant[:default_blur] if param == 0
     is_blur ? "e_blur:#{param}/" : ''
+  end
+
+  # 画像リクエスト先サーバのホスト名を返す
+  def img_server_host_name
+    # Production時のみ，プロキシを介すようにする
+    Rails.env.production? ? 'miss-suzuki.com' : 'res.cloudinary.com'
   end
 end
