@@ -1176,6 +1176,7 @@ p a{
   margin:0;
   color:#e04974;
   font-size: 24px;
+  margin-bottom: -5px;
 }
 .contestant .profile textarea{
   color:#666;
@@ -1185,17 +1186,18 @@ p a{
   margin: 0 auto;
   height: 50px;
   resize: none;
+  margin-top: 10px;
 }
 .contestant .profile .anchor img{
   position: absolute;
   right:10px;
-  bottom:72px;
+  bottom:82px;
   width:25px;
 }
 .contestant .profile .url img{
   position: absolute;
   right:40px;
-  bottom:70px;
+  bottom:80px;
   width: 120px;
 }
 /*==================== MYPAGE ==========================*/
@@ -2991,6 +2993,7 @@ body {
   margin:0;
   color:#e04974;
   font-size: 24px;
+  margin-bottom: -5px;
 }
 .contestant .profile textarea{
   color:#666;
@@ -3000,17 +3003,18 @@ body {
   height: 50px;
   margin: 0 auto;
   resize: none;
+  margin-top: 10px;
 }
 .contestant .profile .anchor img{
   position: absolute;
   right:10px;
-  bottom:72px;
+  bottom:82px;
   width:25px;
 }
 .contestant .profile .url img{
   position: absolute;
   right:40px;
-  bottom:70px;
+  bottom:80px;
   width: 120px;
 }
 /*==================== MYPAGE ==========================*/
