@@ -39,7 +39,7 @@ module ApplicationHelper
         title: "MISS-SUZUKI | えらい鈴木さんにインタビュー！",
         type:  "article",
         url:   "https://miss-suzuki.com/contents/erai_suzukisan1",
-        image: "/Users/shigeru/miss-suzuki/app/assets/images/mainimages/interview_mainimage.jpg"
+        image: "https://miss-suzuki.com/assets/mainimages/interview_mainimage-e512df2ab276ed9d54ecb8485bb8194e.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
