@@ -1269,7 +1269,7 @@ p a{
   padding-top: 20px;
   margin-top: -80px;
   position: relative;
-  z-index:1;
+  z-index:10;
 }
 #mypage .profile_content{
   width:300px;
@@ -1308,7 +1308,7 @@ p a{
   font-weight: bold;
   width: 95%;
   margin: 0 auto;
-  height: 40px;
+  height: 50px;
   resize: none;
 }
 #mypage .profile .url img{
