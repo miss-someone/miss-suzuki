@@ -7,7 +7,7 @@ class ContestantsController < ApplicationController
   before_filter :restrict_contestant_login, only: [:entry, :new, :create]
 
   def index
-    if params[:id].to_i <= Settings.current_open_group_id
+    if group_opened?(params[:id].to_i)
       @contestant = Array.split3(
         Contestant.approved.nth_group(params[:id]).includes(:interview_answers)
           .includes(:contestant_images).shuffle
@@ -56,11 +56,11 @@ class ContestantsController < ApplicationController
   end
 
   def thankyou
-    @contestant_profile = Contestant.approved.nth_group(1).find(params[:id]).profile
+    @contestant_profile = Contestant.approved.current_open_group.find(params[:id]).profile
   end
 
   def mypage
-    @contestant_profile = Contestant.approved.nth_group(1).find(params[:id]).profile
+    @contestant_profile = Contestant.approved.current_open_group.find(params[:id]).profile
     @interview_answers = {}
     InterviewTopic.find_each do |interview_topic|
       answers = InterviewAnswer.where(interview_topic_id: interview_topic.id,
@@ -92,6 +92,10 @@ class ContestantsController < ApplicationController
   end
 
   private
+
+  def group_opened?(group_id)
+    (1..Settings.current_open_group_id).to_a.include?(group_id)
+  end
 
   def contestant_params
     params.require(:contestant).permit(:email, :password, :agreement,
