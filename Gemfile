@@ -96,6 +96,9 @@ group :development do
   # 複数プロセスの管理ツール
   gem 'foreman'
 
+  # パフォーマンスのプロファイリングツール
+  gem 'rack-mini-profiler', require: false
+
   # 自動デプロイ用
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails'
