@@ -1269,7 +1269,7 @@ p a{
   padding-top: 20px;
   margin-top: -80px;
   position: relative;
-  z-index: -1;
+  z-index:1;
 }
 #mypage .profile_content{
   width:300px;
