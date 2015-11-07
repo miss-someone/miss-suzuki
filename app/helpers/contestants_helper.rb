@@ -21,6 +21,10 @@ module ContestantsHelper
     ids
   end
 
+  def remaining_vote_count_text(group_id)
+    "#{current_user.profile.name}さん，第#{group_id}グループの本日の投票回数残り#{current_user.todays_remaining_vote_count(group_id)}回です！" if logged_in?
+  end
+
   private
 
   # リンク種別から表示するボタン画像のファイル名を取得する
