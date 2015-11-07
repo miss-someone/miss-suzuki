@@ -32,14 +32,14 @@ module ApplicationHelper
         title: "MISS-SUZUKI | 歴史",
         type:  "article",
         url:   "https://miss-suzuki.com/contents/history",
-        image: "https://miss-suzuki.com/assets/mainimages/history_mainimage-83b98a17d4615164c83b5f68e906a20b.jpg"
+        image:  asset_path("/assets/images/mainimages/history_mainimage.jpg")
       }
     elsif controller_name == "contents" && action_name == "interview1"
       set_meta_tags og: {
         title: "MISS-SUZUKI | えらい鈴木さんにインタビュー！",
         type:  "article",
         url:   "https://miss-suzuki.com/contents/erai_suzukisan1",
-        image: "https://miss-suzuki.com/assets/mainimages/interview_mainimage-e512df2ab276ed9d54ecb8485bb8194e.jpg"
+        image: asset_path("/assets/images/mainimages/interview_mainimage.jpg")
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
