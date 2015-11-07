@@ -15,6 +15,12 @@ module ContestantsHelper
     answers.present? || imgs.present?
   end
 
+  def link_group_ids(current_page_id)
+    ids = (1..Settings.current_open_group_id).to_a
+    ids.delete(current_page_id)
+    ids
+  end
+
   private
 
   # リンク種別から表示するボタン画像のファイル名を取得する
