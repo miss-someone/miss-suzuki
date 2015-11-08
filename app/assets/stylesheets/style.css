@@ -1622,6 +1622,22 @@ span#interview_question_number{
   margin-bottom:0;
 }
 /*====================  投票ページ ==========================*/
+.group_btn{
+  width:120px;
+  height: 40px;
+  background-color: #e04974;
+  text-align: center;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 10px;
+}
+.group_btn a{
+  color:#fff;
+  font-size: 12px;
+  line-height: 3;
+  text-decoration: none;
+  display: block;
+}
 .content_middle{
   padding-top: 30px;
 }
@@ -3493,6 +3509,23 @@ span#interview_question_number{
   color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/
+.group_btn{
+  width:300px;
+  height: 70px;
+  background-color: #e04974;
+  text-align: center;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 20px;
+}
+.group_btn a{
+  font-weight: bold;
+  color:#fff;
+  font-size: 16px;
+  line-height: 5;
+  text-decoration: none;
+  display: block;
+}
 .content_middle{
   padding-top: 30px;
   max-width: 1000px;
