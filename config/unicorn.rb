@@ -16,7 +16,7 @@ timeout 30
 preload_app true
 
 # Capistrano用にRAILS_ROOTを指定
-working_directory rails_root
+working_directory '/home/webmaster/rails/miss-suzuki/current/'
 
 # リクエストを受け付けるポート番号
 listen 3200
