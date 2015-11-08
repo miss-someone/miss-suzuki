@@ -24,10 +24,7 @@ namespace :report do
       }]
     }
     attachments.push(attachment)
-    body = {
-      attachments: attachments
-    }
-    body.to_json
+    { attachments: attachments }.to_json
   end
 
   def user_count_notify_body
@@ -48,10 +45,7 @@ namespace :report do
       }]
     }
     attachments.push(attachment)
-    body = {
-      attachments: attachments
-    }
-    body.to_json
+    { attachments: attachments }.to_json
   end
 
   def notify_to_slack_for_report(body_json)

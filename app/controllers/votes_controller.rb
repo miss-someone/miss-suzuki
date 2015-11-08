@@ -57,12 +57,14 @@ class VotesController < ApplicationController
   # 未ログインユーザに対して，cookieとipから投票上限に達しているかチェック
   def exceeded_limit_with_not_logged_in?(contestant_profile)
     set_vote_token if vote_token.blank?
-    Vote.todays_vote_count_with_no_login(request.remote_ip, vote_token, contestant_profile.group_id) >= Settings.vote[:daily_limit][:not_logined]
+    count = Vote.todays_vote_count_with_no_login(request.remote_ip, vote_token, contestant_profile.group_id)
+    count >= Settings.vote[:daily_limit][:not_logined]
   end
 
   # ログイン済みユーザに対して，user_idから投票上限に達しているかチェック
   def exceeded_limit_with_logged_in?(contestant_profile)
-    Vote.todays_vote_count_with_login(current_user.id, contestant_profile.group_id) >= Settings.vote[:daily_limit][:logined]
+    count = Vote.todays_vote_count_with_login(current_user.id, contestant_profile.group_id)
+    count >= Settings.vote[:daily_limit][:logined]
   end
 
   # vote_tokenをcookieにセットする

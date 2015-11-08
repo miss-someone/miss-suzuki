@@ -12,7 +12,7 @@ class Contestant < User
   scope :nth_group, ->(n) { includes(:contestant_profile).where(contestant_profiles: { group_id: n }) }
   scope :current_open_group, lambda {
     includes(:contestant_profile)
-      .where(contestant_profiles: { group_id: 1..Settings.current_open_group_id } )
+      .where(contestant_profiles: { group_id: 1..Settings.current_open_group_id })
   }
 
   validates :agreement, acceptance: { message: "への同意が必要です" }

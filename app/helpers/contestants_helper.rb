@@ -9,7 +9,7 @@ module ContestantsHelper
     "/contestants/group/#{contestant.profile.group_id}#contestant-#{contestant.id}"
   end
 
-  def is_mypage_present?(contestant)
+  def mypage_present?(contestant)
     answers = contestant.interview_answers.each_with_object([]) { |a, obj| obj << a unless a.is_pending }
     imgs = contestant.contestant_images
     answers.present? || imgs.present?
@@ -22,7 +22,8 @@ module ContestantsHelper
   end
 
   def remaining_vote_count_text(group_id)
-    "#{current_user.profile.name}さん，第#{group_id}グループの本日の投票回数残り#{current_user.todays_remaining_vote_count(group_id)}回です！" if logged_in?
+    remaining_vote = current_user.todays_remaining_vote_count(group_id)
+    "#{current_user.profile.name}さん，第#{group_id}グループの本日の投票回数残り#{remaining_vote}回です！" if logged_in?
   end
 
   private

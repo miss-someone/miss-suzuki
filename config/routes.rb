@@ -20,10 +20,10 @@ Rails.application.routes.draw do
     get   'entrypolicy'    => 'static_pages#entrypolicy'
     get   'terms'    => 'static_pages#terms'
     get   'policy'   => 'static_pages#policy'
-    get   'contents'   => 'contents#index'
-    get   'contents/history'   => 'contents#history'
-    get   'contents/erai_suzukisan1'   => 'contents#interview1'
-    get   'news'     => 'news#index'
+    get   'contents' => 'contents#index'
+    get   'contents/history' => 'contents#history'
+    get   'contents/erai_suzukisan1' => 'contents#interview1'
+    get   'news' => 'news#index'
 
     scope :contestant_image do
       get 'new' => 'contestant_image#new'
@@ -39,12 +39,12 @@ Rails.application.routes.draw do
       get   'mypage_sample'      => 'contestants#mypage_sample'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
       post  'create_interview_answer' => 'contestants#create_interview_answer'
-      #unless Rails.env.production?
-        get   'group/:id'   => 'contestants#index'
-        get   '/:id/mypage' => 'contestants#mypage'
-        get   'my_own_page' => 'contestants#my_own_page'
-        get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
-      #end
+      # unless Rails.env.production?
+      get   'group/:id'   => 'contestants#index'
+      get   '/:id/mypage' => 'contestants#mypage'
+      get   'my_own_page' => 'contestants#my_own_page'
+      get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
+      # end
     end
 
     resources :contestants, only: [:new, :create] do
@@ -52,15 +52,15 @@ Rails.application.routes.draw do
     end
 
     # unless Rails.env.production?
-      resource :user, only: [:create] do
-        resource :user_profile, path: 'profile', as: :profile
-      end
-      scope :users do
-        get   'signup' => 'users#new'
-        get   '/:id/activate' => 'users#activate', as: :activation
-        get   'registration_completed' => 'users#registration_completed'
-      end
-      resources :password_resets
+    resource :user, only: [:create] do
+      resource :user_profile, path: 'profile', as: :profile
+    end
+    scope :users do
+      get   'signup' => 'users#new'
+      get   '/:id/activate' => 'users#activate', as: :activation
+      get   'registration_completed' => 'users#registration_completed'
+    end
+    resources :password_resets
     # end
 
     get "logout" => "user_sessions#destroy", :as => "logout"
