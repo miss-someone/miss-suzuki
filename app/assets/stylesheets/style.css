@@ -1253,6 +1253,30 @@ p a{
   overflow: hidden;
   margin-bottom: 20px;
 }
+#mypage .picture{
+  position:relative;
+}
+#mypage .picture .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:220px;
+  left:10px;
+}
+#mypage .picture .vote_system img{
+  width:80px;
+  height:40px;
+}
+#mypage .picture .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
 #mypage .picture img{
   width:300px;
   height:300px;
@@ -1269,7 +1293,7 @@ p a{
   padding-top: 20px;
   margin-top: -80px;
   position: relative;
-  z-index: -1;
+  z-index:10;
 }
 #mypage .profile_content{
   width:300px;
@@ -1308,7 +1332,7 @@ p a{
   font-weight: bold;
   width: 95%;
   margin: 0 auto;
-  height: 40px;
+  height: 50px;
   resize: none;
 }
 #mypage .profile .url img{
@@ -1399,6 +1423,7 @@ p a{
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
+
 /*==================== マイページ編集 ==========================*/
 #mypage h1.yourmypage{
   margin: 0;
@@ -3253,6 +3278,23 @@ body {
 }
 #mypage .instruction .even{
   background-color: #f9f9f9;
+}
+#mypage .picture .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:420px;
+  left:10px;
+}
+#mypage .picture .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
 }
 /*==================== マイページ編集 ==========================*/
 #mypage h1{

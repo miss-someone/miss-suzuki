@@ -2,11 +2,16 @@
   <div id="content">
       <div class="mypage_contestant">
         <div class="picture">
+          <div class="vote_system">
+            <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: @contestant_profile.user_id), method: :post, params: { group_id: @contestant_profile.group_id } %>
+            <p class="counter"><%= @contestant_profile.votes %></p>
+          </div>
           <ul class="bxslider">
             <li><%= image_tag @contestant_profile.profile_image.thumb %></li>
           <% @contestant_images.each do |contestant_image| %>
             <li><%= image_tag contestant_image.profile_image.thumb_at_mypage %></li>
           <% end %>
+          </ul>
         </div>
 
         <div class="profile">
