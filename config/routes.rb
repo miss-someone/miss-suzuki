@@ -39,29 +39,25 @@ Rails.application.routes.draw do
       get   'mypage_sample'      => 'contestants#mypage_sample'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
       post  'create_interview_answer' => 'contestants#create_interview_answer'
-      # unless Rails.env.production?
       get   'group/:id'   => 'contestants#index'
       get   '/:id/mypage' => 'contestants#mypage'
       get   'my_own_page' => 'contestants#my_own_page'
       get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
-      # end
     end
 
     resources :contestants, only: [:new, :create] do
-      resource :vote, only: [:create] # unless Rails.env.production?
+      resource :vote, only: [:create]
     end
 
-    # unless Rails.env.production?
     resource :user, only: [:create] do
-      resource :user_profile, path: 'profile', as: :profile
+      resource :user_profile, except: [:destroy], path: 'profile', as: :profile
     end
     scope :users do
       get   'signup' => 'users#new'
       get   '/:id/activate' => 'users#activate', as: :activation
       get   'registration_completed' => 'users#registration_completed'
     end
-    resources :password_resets
-    # end
+    resources :password_resets, only: [:create, :edit, :update]
 
     get "logout" => "user_sessions#destroy", :as => "logout"
     get "login" => "user_sessions#new", :as => "login"
