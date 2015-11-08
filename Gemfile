@@ -60,8 +60,10 @@ gem 'jp_prefecture'
 gem 'sidekiq'
 # sidekiqのWebUIに必要
 gem 'sinatra', require: false
-
-gem 'meta-tags' #簡単にmetaタグを追加できる
+# 簡単にmetaタグを追加できる
+gem 'meta-tags'
+# パフォーマンスのプロファイリングツール
+gem 'rack-mini-profiler', require: false
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
