@@ -1,5 +1,5 @@
 ActiveAdmin.register Ad do
-  actions :index, :show, :edit, :update
+  actions :new, :create, :index, :show, :edit, :update
 
   permit_params :name, :image, :is_active, :memo
 
@@ -8,7 +8,7 @@ ActiveAdmin.register Ad do
     id_column
     column :name
     column '画像' do |ad|
-      image_tag ad.image, width: 100
+      image_tag ad.image_url, width: 100
     end
     column :is_active
     column :memo
@@ -18,7 +18,7 @@ ActiveAdmin.register Ad do
     attributes_table do
       row :name
       row '画像' do |ad|
-        image_tag ad.image, width: 100
+        image_tag ad.image_url, width: 100
       end
       row :is_active
       row :memo

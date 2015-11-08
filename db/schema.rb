@@ -51,7 +51,8 @@ ActiveRecord::Schema.define(version: 20151108071222) do
 
   create_table "ads", force: :cascade do |t|
     t.string   "name",       null: false
-    t.string   "image",      null: false
+    t.string   "image"
+    t.string   "image_tmp"
     t.boolean  "is_active",  null: false
     t.text     "memo"
     t.datetime "created_at", null: false

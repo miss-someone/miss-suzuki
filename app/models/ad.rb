@@ -8,4 +8,5 @@ class Ad < ActiveRecord::Base
   validates :is_active, presence: true
 
   scope :active, -> { where(is_active: true) }
+  scope :random, -> { where(id: pluck(:id).shuffle[0]).first }
 end
