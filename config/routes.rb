@@ -57,7 +57,7 @@ Rails.application.routes.draw do
       get   '/:id/activate' => 'users#activate', as: :activation
       get   'registration_completed' => 'users#registration_completed'
     end
-    resources :password_resets, only: [:create, :edit, :update]
+    resources :password_resets, only: [:new, :create, :edit, :update]
 
     get "logout" => "user_sessions#destroy", :as => "logout"
     get "login" => "user_sessions#new", :as => "login"
