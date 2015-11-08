@@ -39,7 +39,7 @@ ActiveAdmin.register InterviewAnswer do
 
   batch_action :delete do |ids|
     # FIXME: トランザクション
-    InterviewAnswer.find(ids).each { |answer| answer.destroy }
+    InterviewAnswer.find(ids).each(&:destroy)
     redirect_to collection_path, alert: "削除しました"
   end
 end
