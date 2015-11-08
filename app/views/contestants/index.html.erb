@@ -5,8 +5,8 @@
 
 <div class="group_btn_wrap">
   <% link_group_ids(url_for(params[:id]).to_i).each do |i| %>
-    <div class='<%= i.ordinalize %>_group_btn group_link_btn'>
-      <%= link_to"第#{i}グループ", contestants_path(i) %>
+    <div class='<%= i.ordinalize %>_group_btn group_link_btn group_btn'>
+      <%= link_to"予選第#{i}グループ", contestants_path(i) %>
     </div>
   <% end %>
 </div>
