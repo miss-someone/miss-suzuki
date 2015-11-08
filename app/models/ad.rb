@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Ad < ActiveRecord::Base
   mount_uploader :image, AdsUploader
   store_in_background :image
