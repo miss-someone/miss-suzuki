@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   def index
     @news = News.where("is_important = 'true'").order("date DESC").limit(5)
 
-    @contestants = Contestant.approved.nth_group(1).random(3)
+    @contestants = Contestant.approved.current_open_group.random(3)
   end
 
   # News

@@ -1,10 +1,12 @@
 <div id='contestant-<%= contestant.id %>' class="contestant">
   <div class="vote_system">
+  <% if contestant.profile.group_id == 1 %>
     <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: contestant.id), method: :post, params: { group_id: contestant.profile.group_id } %>
     <p class="counter"><%= contestant.profile.votes %></p>
+  <% end %>
   </div>
 
-  <% if is_mypage_present?(contestant) %>
+  <% if mypage_present?(contestant) && contestant.profile.group_id == 1 %>
     <div class="mypage_btn">
       <a href="/contestants/<%= contestant.profile.user_id %>/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
     </div>

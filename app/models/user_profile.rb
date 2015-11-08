@@ -4,8 +4,6 @@ class UserProfile < ActiveRecord::Base
   belongs_to_active_hash :age
   belongs_to_active_hash :job
 
-  alias_attribute :name, :nickname
-
   # 都道府県扱うgem
   include JpPrefecture
   jp_prefecture :prefecture_code, method_name: :pref
@@ -17,4 +15,8 @@ class UserProfile < ActiveRecord::Base
   validates :prefecture_code, presence: true,
                               inclusion: { in: Prefecture.all.each_with_object([]) { |p, obj| obj << p.code } }
   validates :job_id, presence: true, inclusion: { in: Job.first.id..Job.last.id }
+
+  def name
+    nickname.blank? ? '名無し' : nickname
+  end
 end

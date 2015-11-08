@@ -867,6 +867,12 @@ p a{
   line-height:5;
   margin-bottom: 20px;
 }
+#thankyou #content .btn2 span.date{
+  color: #191919;
+  position: relative;
+  top: -50px;
+  font-size: 12px;
+}
 #thankyou #content .yet{
   width:300px;
   height:70px;
@@ -1253,6 +1259,30 @@ p a{
   overflow: hidden;
   margin-bottom: 20px;
 }
+#mypage .picture{
+  position:relative;
+}
+#mypage .picture .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:220px;
+  left:10px;
+}
+#mypage .picture .vote_system img{
+  width:80px;
+  height:40px;
+}
+#mypage .picture .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
 #mypage .picture img{
   width:300px;
   height:300px;
@@ -1399,6 +1429,7 @@ p a{
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
+
 /*==================== マイページ編集 ==========================*/
 #mypage h1.yourmypage{
   margin: 0;
@@ -1597,6 +1628,22 @@ span#interview_question_number{
   margin-bottom:0;
 }
 /*====================  投票ページ ==========================*/
+.group_btn{
+  width:120px;
+  height: 40px;
+  background-color: #e04974;
+  text-align: center;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 10px;
+}
+.group_btn a{
+  color:#fff;
+  font-size: 12px;
+  line-height: 3;
+  text-decoration: none;
+  display: block;
+}
 .content_middle{
   padding-top: 30px;
 }
@@ -2747,6 +2794,12 @@ body {
   line-height:5;
   margin-bottom: 45px;
 }
+#thankyou #content .btn2 span.date{
+  color: #191919;
+  position: relative;
+  top: -50px;
+  font-size: 12px;
+}
 #thankyou #content .yet{
   width:300px;
   height:70px;
@@ -3254,6 +3307,23 @@ body {
 #mypage .instruction .even{
   background-color: #f9f9f9;
 }
+#mypage .picture .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:420px;
+  left:10px;
+}
+#mypage .picture .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
 /*==================== マイページ編集 ==========================*/
 #mypage h1{
   margin: 0;
@@ -3451,6 +3521,23 @@ span#interview_question_number{
   color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/
+.group_btn{
+  width:300px;
+  height: 70px;
+  background-color: #e04974;
+  text-align: center;
+  border-radius: 5px;
+  margin:0 auto;
+  margin-top: 20px;
+}
+.group_btn a{
+  font-weight: bold;
+  color:#fff;
+  font-size: 16px;
+  line-height: 5;
+  text-decoration: none;
+  display: block;
+}
 .content_middle{
   padding-top: 30px;
   max-width: 1000px;
