@@ -18,7 +18,7 @@ module ContestantsHelper
   def link_group_ids(current_page_id)
     # アドホック対応 11/08
     # ids = (1..Settings.current_open_group_id).to_a
-    ids = [1,2]
+    ids = [1, 2]
     ids.delete(current_page_id)
     ids
   end

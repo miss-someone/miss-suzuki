@@ -8,7 +8,7 @@ class ContestantsController < ApplicationController
 
   def index
     # アドホック対応 11/08
-    if [1,2].include?(params[:id].to_i) # group_opened?(params[:id].to_i)
+    if [1, 2].include?(params[:id].to_i) # group_opened?(params[:id].to_i)
       @contestant = Array.split3(
         Contestant.approved.nth_group(params[:id]).includes(:interview_answers)
           .includes(:contestant_images).shuffle
