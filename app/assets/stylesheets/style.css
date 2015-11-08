@@ -867,6 +867,12 @@ p a{
   line-height:5;
   margin-bottom: 20px;
 }
+#thankyou #content .btn2 span.date{
+  color: #191919;
+  position: relative;
+  top: -50px;
+  font-size: 12px;
+}
 #thankyou #content .yet{
   width:300px;
   height:70px;
@@ -2787,6 +2793,12 @@ body {
   text-align: center;
   line-height:5;
   margin-bottom: 45px;
+}
+#thankyou #content .btn2 span.date{
+  color: #191919;
+  position: relative;
+  top: -50px;
+  font-size: 12px;
 }
 #thankyou #content .yet{
   width:300px;
