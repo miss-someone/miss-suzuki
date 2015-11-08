@@ -867,6 +867,7 @@ p a{
   line-height:5;
   margin-bottom: 20px;
 }
+
 #thankyou #content .btn2 span.date{
   color: #191919;
   position: relative;
@@ -1628,6 +1629,12 @@ span#interview_question_number{
   margin-bottom:0;
 }
 /*====================  投票ページ ==========================*/
+.group_btn_wrap{
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 .group_btn{
   width:120px;
   height: 40px;
@@ -1636,6 +1643,7 @@ span#interview_question_number{
   border-radius: 5px;
   margin:0 auto;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .group_btn a{
   color:#fff;
@@ -1647,6 +1655,7 @@ span#interview_question_number{
 .content_middle{
   padding-top: 30px;
 }
+
 /*====================  えらい鈴木さんにインタビュー!==========================*/
 #contents #content .contents_box{
   width:100%;
@@ -3521,6 +3530,11 @@ span#interview_question_number{
   color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/
+.group_btn_wrap{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  }
 .group_btn{
   width:300px;
   height: 70px;
@@ -3529,6 +3543,7 @@ span#interview_question_number{
   border-radius: 5px;
   margin:0 auto;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 .group_btn a{
   font-weight: bold;
