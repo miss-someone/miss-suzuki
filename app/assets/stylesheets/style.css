@@ -1253,23 +1253,6 @@ p a{
   overflow: hidden;
   margin-bottom: 20px;
 }
-#mypage .vote_system{
-  z-index: 3;
-  position: absolute;
-  top:220px;
-  left:10px;
-}
-#mypage .vote_system .counter{
-  background-color: #fff;
-  width: 50px;
-  height:30px;
-  font-size: 12px;
-  text-align: center;
-  color:#62a7e7;
-  line-height: 2.5;
-  font-weight: bold;
-  margin-top: -5px;
-}
 #mypage .picture img{
   width:300px;
   height:300px;
