@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   has_many :interview_topics, through: :interview_answers
   # マイページに表示する追加画像
   has_many :contestant_images
+  # 投票情報
+  has_many :votes, foreign_key: :voter_id
 
   # ユーザ作成時に，関連テーブルも同時に生成する
   accepts_nested_attributes_for :user_profile, allow_destroy: true, reject_if: :all_blank
@@ -46,6 +48,10 @@ class User < ActiveRecord::Base
 
   def contestant?
     user_type == Settings.user_type[:contestant]
+  end
+
+  def todays_remaining_vote_count(group_id)
+    Settings.vote[:daily_limit][:logined] - votes.today.where(group_id: group_id).count
   end
 
   class << self
