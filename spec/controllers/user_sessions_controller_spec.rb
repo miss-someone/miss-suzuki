@@ -4,6 +4,11 @@ RSpec.describe UserSessionsController, type: :controller do
   let(:voter) { create(:voter) }
   let(:contestant) { create(:contestant) }
 
+  describe '#new' do
+    subject (:response) { get :new }
+    it { expect(response.status).to eq 200 }
+  end
+
   describe 'create action' do
     subject { post :create, email: user.email, password: user.password, remember_me: 1 }
 
