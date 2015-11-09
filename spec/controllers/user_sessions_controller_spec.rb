@@ -5,7 +5,7 @@ RSpec.describe UserSessionsController, type: :controller do
   let(:contestant) { create(:contestant) }
 
   describe '#new' do
-    subject (:response) { get :new }
+    subject(:response) { get :new }
     it { expect(response.status).to eq 200 }
   end
 

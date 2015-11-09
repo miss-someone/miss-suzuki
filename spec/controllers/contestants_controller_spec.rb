@@ -13,21 +13,21 @@ RSpec.describe ContestantsController, type: :controller do
   end
 
   describe '#index' do
-    subject (:response) { get :index, id: 1 }
+    subject(:response) { get :index, id: 1 }
     it { expect(response.status).to eq 200 }
   end
 
   describe '#new' do
-    subject (:response) { get :new }
+    subject(:response) { get :new }
     it { expect(response.status).to eq 200 }
   end
 
   describe '#mypage' do
-    subject (:response) { get :mypage, id: contestant.id }
+    subject(:response) { get :mypage, id: contestant.id }
     it { expect(response.status).to eq 200 }
   end
   describe '#thankyou' do
-    subject (:response) { get :thankyou, id: contestant.id }
+    subject(:response) { get :thankyou, id: contestant.id }
     it { expect(response.status).to eq 200 }
   end
 end

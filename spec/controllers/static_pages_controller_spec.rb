@@ -16,7 +16,7 @@ RSpec.describe StaticPagesController, type: :controller do
 
   target_get_actions.each do |get_action|
     describe "##{get_action}" do
-      subject (:response) { get get_action }
+      subject(:response) { get get_action }
       it { expect(response.status).to eq 200 }
     end
   end
