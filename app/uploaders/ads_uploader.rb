@@ -9,6 +9,7 @@ class AdsUploader < CarrierWave::Uploader::Base
   end
 
   def url
+    return if file.nil?
     # 行が長くなりすぎる為，改行を行っているのでrubocopを一部無視
     # rubocop:disable Style/SpaceAroundOperators
     "https://#{img_server_host_name}/#{Cloudinary.config.cloud_name}/"\
