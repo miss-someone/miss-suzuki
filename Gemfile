@@ -115,4 +115,6 @@ group :test do
   gem 'capybara'               # ブラウザでの操作をシミュレートしてテストができる
   # Rspec時に時間を指定できる
   gem 'timecop'
+  # カバレッジを計測するツール
+  gem 'simplecov', require: false
 end
