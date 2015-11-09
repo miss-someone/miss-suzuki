@@ -28,3 +28,4 @@ config/environments/*.local.yml
 bower_components
 # upload images
 /public/uploads
+/coverage
