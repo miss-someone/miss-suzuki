@@ -33,6 +33,7 @@ ActiveAdmin.register Ad do
       f.input :image
       f.input :is_active
       f.input :memo
+      actions
     end
   end
 end
