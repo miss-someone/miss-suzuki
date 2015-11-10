@@ -13,8 +13,7 @@ class VotesController < ApplicationController
 
   # ログイン済みユーザ用Voteのcreateアクション
   def create_action_with_logged_in
-    @contestant_profile = ContestantProfile.approved.contestant_id(vote_params[:contestant_id])
-    not_found if @contestant_profile.group_id != 1
+    @contestant_profile = ContestantProfile.approved.current_open_group.contestant_id(vote_params[:contestant_id])
     if exceeded_limit_with_logged_in?(@contestant_profile)
       render 'exceeded_limitation'
     else
@@ -36,8 +35,7 @@ class VotesController < ApplicationController
 
   # 未ログインユーザ用のcreateアクション
   def create_action_with_not_logged_in
-    @contestant_profile = ContestantProfile.approved.contestant_id(vote_params[:contestant_id])
-    not_found if @contestant_profile.group_id != 1
+    @contestant_profile = ContestantProfile.approved.current_open_group.contestant_id(vote_params[:contestant_id])
     if exceeded_limit_with_not_logged_in?(@contestant_profile)
       render 'exceeded_limitation'
     else
