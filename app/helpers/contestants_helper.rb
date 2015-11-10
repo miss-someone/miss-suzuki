@@ -22,6 +22,7 @@ module ContestantsHelper
   end
 
   def remaining_vote_count_text(group_id)
+    return if current_user.profile.nil?
     remaining_vote = current_user.todays_remaining_vote_count(group_id)
     "#{current_user.profile.name}さん，第#{group_id}グループの本日の投票回数残り#{remaining_vote}回です！" if logged_in?
   end
