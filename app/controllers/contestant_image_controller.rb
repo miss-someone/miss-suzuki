@@ -32,7 +32,7 @@ class ContestantImageController < ApplicationController
     flash.now[:success] = "選択された画像を削除しました。"
     @contestant_images = ContestantImage.where(user_id: current_user.id)
     render 'edit'
-  rescue
+  rescue => e
     @contestant_images = ContestantImage.where(user_id: current_user.id)
     # flash.now.alert = "削除に失敗しました。時間を置いて再度お試しください。"
     flash.now.alert = e.message
