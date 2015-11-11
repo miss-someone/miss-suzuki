@@ -2543,6 +2543,9 @@ body {
   color: #e04974;
   font-weight: bold;
 }
+#rules #next img{
+  width:900px;
+}
 /*====================ENTRY==========================*/
 #entry .sample{
   position: relative;
