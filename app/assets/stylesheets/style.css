@@ -1629,6 +1629,16 @@ span#interview_question_number{
   margin-bottom:0;
 }
 /*====================  投票ページ ==========================*/
+.voter_dialog{
+  background-color: #fff;
+  max-width:300px;
+  padding:10px;
+  margin:0 auto;
+  border:1px solid #d7d7d7;
+}
+.voter_dialog span{
+  font-weight: bold;
+}
 .group_btn_wrap{
   text-align: center;
   font-size: 14px;
@@ -3533,6 +3543,16 @@ span#interview_question_number{
   color:#62a7e7;
 }
 /*====================  投票ページ ==========================*/
+.voter_dialog{
+  background-color: #fff;
+  width:500px;
+  padding:20px;
+  margin:0 auto;
+  border:1px solid #d7d7d7;
+}
+.voter_dialog span{
+  font-weight: bold;
+}
 .group_btn_wrap{
   text-align: center;
   font-size: 18px;

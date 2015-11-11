@@ -8,17 +8,12 @@
     <div class='<%= i.ordinalize %>_group_btn group_link_btn group_btn'>
     <%= link_to"予選第#{i}グループへ", contestants_path(i) %>
     </div>
-    <% if i == 2 %><span>11月11日スタート！</span><% end %>
   <% end %>
 </div>
 
-<%
-=begin
 <div>
-  <aaa%= remaining_vote_count_text(url_for(params[:id]).to_i) %aaa>
+  <%= remaining_vote_count_text(url_for(params[:id]).to_i) %>
 </div>
-=end
-%>
 
 <div class="content_top">
   <% if flash[:alert] %>

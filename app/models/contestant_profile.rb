@@ -20,6 +20,7 @@ class ContestantProfile < ActiveRecord::Base
 
   scope :approved, -> { where(status: ContestantProfile.statuses[:approved]) }
   scope :contestant_id, ->(n) { find_by(user_id: n) }
+  scope :current_open_group, -> { where(group_id: 1..Settings.current_open_group_id) }
 
   # 承認ステータスのenum
   enum status: { pending_approval: 0, approved: 1, rejected: 2 }
