@@ -19,10 +19,6 @@ class PasswordEditsController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:email, :password)
-  end
-
   def validate_before_update(p)
     target_user = User.authenticate(current_user.email, p[:current_password])
     if target_user.blank?
