@@ -5,7 +5,6 @@ class PasswordEditsController < ApplicationController
       begin
         current_user.update!(password: params[:new_password])
       rescue => e
-        binding.pry
         err_msg = e.message
       end
     end
@@ -13,9 +12,9 @@ class PasswordEditsController < ApplicationController
     if err_msg.blank?
       flash.now[:success] = 'パスワードを変更しました'
     else
-      flash.now[:alert] =  err_msg
+      flash.now[:alert] = err_msg
     end
-      render 'edit'
+    render 'edit'
   end
 
   private
@@ -32,8 +31,6 @@ class PasswordEditsController < ApplicationController
       '新しいパスワードを入力してください'
     elsif p[:new_password] != p[:new_password_confirmation]
       '新しいパスワードと，確認パスワードが一致しません．'
-    else
-      nil
     end
   end
 end
