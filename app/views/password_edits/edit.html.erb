@@ -1,0 +1,21 @@
+<div id ="login" style="background-image:url(<%= asset_path "form_background.jpg" %>); background-size:cover;" />
+  <div id="login_form">
+    <h1>パスワード変更</h1>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+    <%= form_tag(controller: 'password_edits', action: 'update') do %>
+      <div class="form1">
+        <table class="table">
+          <tr><td>現在のパスワード</td></tr>
+          <tr><td><%= password_field_tag :current_password %></td></tr>
+          <tr><td>新しいパスワード(8文字以上30文字以内の半角英数記号)</td></tr>
+          <tr><td><%= password_field_tag :new_password %></td></tr>
+          <tr><td>[再入力]新しいパスワード</td></tr>
+          <tr><td><%= password_field_tag :new_password_confirmation %></td></tr>
+        </table>
+      </div>
+      <p><%= submit_tag "変更", class: "submit_btn" %></p>
+    <% end %>
+  </div>
+</div>
