@@ -1,5 +1,4 @@
 class ContestantsController < ApplicationController
-  include ArrayUtils
   skip_before_filter :require_login, only: [:entry, :thankyou_sample, :mypage_sample,
                                             :index, :mypage, :thankyou, :new, :create]
 
@@ -9,10 +8,8 @@ class ContestantsController < ApplicationController
   def index
     # アドホック対応 11/08
     if [1, 2].include?(params[:id].to_i) # group_opened?(params[:id].to_i)
-      @contestant = Array.split3(
-        Contestant.approved.nth_group(params[:id]).includes(:interview_answers)
-          .includes(:contestant_images).shuffle
-      )
+      @contestant = Contestant.approved.nth_group(params[:id]).includes(:interview_answers)
+                    .includes(:contestant_images).shuffle.group_by.with_index { |_e, i| i % 3 }.values
     else
       not_found
     end
