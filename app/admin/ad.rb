@@ -1,7 +1,7 @@
 ActiveAdmin.register Ad do
   actions :new, :create, :index, :show, :edit, :update
 
-  permit_params :name, :image, :is_active, :memo
+  permit_params :name, :image, :link_url, :is_active, :memo
 
   index do
     selectable_column
@@ -10,6 +10,7 @@ ActiveAdmin.register Ad do
     column '画像' do |ad|
       image_tag ad.image.url, width: 100
     end
+    column :link_url
     column :is_active
     column :memo
   end
@@ -20,6 +21,7 @@ ActiveAdmin.register Ad do
       row '画像' do |ad|
         image_tag ad.image.url, width: 100
       end
+      row :link_url
       row :is_active
       row :memo
       row :created_at
@@ -31,6 +33,7 @@ ActiveAdmin.register Ad do
     f.inputs 'AdInfo' do
       f.input :name
       f.input :image
+      f.input :link_url
       f.input :is_active
       f.input :memo
       actions
