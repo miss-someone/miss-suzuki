@@ -46,7 +46,7 @@ module ApplicationHelper
         title: "MISS-SUZUKI | #{contestant_profile.name}さん",
         type:  "article",
         url:   "https://miss-suzuki.com/contestant/#{contestant_profile.user_id}/mypage",
-        image: "#{contestant_profile.profile_image}"
+        image: "#{contestant_profile.profile_image.thumb}"
       }
     else
       set_meta_tags og: {
