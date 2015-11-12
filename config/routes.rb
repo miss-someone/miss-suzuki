@@ -51,6 +51,8 @@ Rails.application.routes.draw do
 
     resource :user, only: [:create] do
       resource :user_profile, except: [:destroy], path: 'profile', as: :profile
+      get   'password_edit' => 'password_edits#edit'
+      post  'password_update' => 'password_edits#update'
     end
     scope :users do
       get   'signup' => 'users#new'
