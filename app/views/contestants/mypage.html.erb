@@ -71,20 +71,7 @@
       <% end %>
 
       <div id="banner_big">
-
-        <script type="text/javascript">
-        var lists=[
-        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
-        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
-        '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
-        '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
-        ];
-
-        var rNo = Math.floor(Math.random() * lists.length);
-        $(document).ready(function() {
-        document.getElementById('banner_big').innerHTML = lists[rNo];
-        });
-        </script>
+        <%= ad_img %>
       </div>
 
       <!-- twitterスクリプト [head]内や、[body]の終了直前などに配置 -->

@@ -37,21 +37,10 @@
   </div>
   <div id="entry_btn" style="margin-bottom:20px;"><a href="new">エントリーする</a></div>
 
-  <div id="banner_big"></div>
-    <script type="text/javascript">
-    var lists=[
-    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
-    '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
-    '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
-    '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
-    ];
-
-    var rNo = Math.floor(Math.random() * lists.length);
-    $(document).ready(function() {
-    document.getElementById('banner_big').innerHTML = lists[rNo];
-    });
-    </script>
+  <div id="banner_big" style="margin-top:10px;">
+    <%= ad_img %>
   </div>
+
 
 
 

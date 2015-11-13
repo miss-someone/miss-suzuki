@@ -14,15 +14,18 @@
         <% unless logged_in? %>
           <div id="more_vote_btn"><a href="/users/signup" target="_blank"><%= @contestant_profile.name %>さんをもっと応援する？</a></div>
         <% end %>
-
       </div>
       <div class="right">
         <div class="buttons">
           <p class="button btn1"><a href="/contestants/group/1">予選第1グループへ</a></p>
           <p class="button btn2"><a href="/contestants/group/2">予選第2グループへ</a></p>
                 <p class="button btn3 yet"><!-- <a href="/contestants/group/2"> --><span class="group">予選第3グループへ<span><br><span class="date">11/21(土) スタート！</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
-              </div>
+        </div>
+      </div>
+    </div><!-- /content  -->
+<div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
+
+
+<div id="banner_big" style="margin-top:10px;">
+  <%= ad_img %>
+</div>
