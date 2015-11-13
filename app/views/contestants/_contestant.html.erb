@@ -1,3 +1,4 @@
+<% cache contestant.profile do %>
 <div id='contestant-<%= contestant.id %>' class="contestant">
   <div class="vote_system">
     <%= link_to (image_tag 'kawaii.png', width: 80), contestant_vote_path(contestant_id: contestant.id), method: :post, params: { group_id: contestant.profile.group_id } %>
@@ -25,3 +26,4 @@
     <textarea readonly name="comment"><%= contestant.profile.comment %></textarea>
   </div>
 </div>
+<% end %>
