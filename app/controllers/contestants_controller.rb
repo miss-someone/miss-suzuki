@@ -8,7 +8,7 @@ class ContestantsController < ApplicationController
   def index
     if group_opened?(params[:id].to_i)
       @contestant = Contestant.approved.nth_group(params[:id]).includes(:interview_answers)
-                    .includes(:contestant_images).shuffle.group_by.with_index { |_e, i| i % 3 }.values
+                    .includes(:contestant_images).order('RANDOM()').group_by.with_index { |_e, i| i % 3 }.values
     else
       not_found
     end
