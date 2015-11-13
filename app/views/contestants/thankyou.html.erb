@@ -12,20 +12,8 @@
       <% unless logged_in? %>
       <div id="more_vote_btn"><a href="/users/signup" target="_blank"><%= @contestant_profile.name %>さんをもっと応援する？</a></div>
       <% end %>
-      <div id="banner_big">
-        <script type="text/javascript" style="margin-top:30px;">
-        var lists=[
-        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel.jpg' %></a>',
-        '<a href="http://pixel-aoyama.com" target="blank_"><%= image_tag 'banner/pixel2.jpg' %></a>',
-        '<a href="http://www.surf-bev.com/" target="blank_"><%= image_tag 'banner/surf.jpg' %></a>',
-        '<a href="http://www.cosme-ken.org/" target="blank_"><%= image_tag 'banner/cosmeken.jpg' %></a>',
-        ];
-
-        var rNo = Math.floor(Math.random() * lists.length);
-        $(document).ready(function() {
-        document.getElementById('banner_big').innerHTML = lists[rNo];
-        });
-        </script>
+      <div id="banner_big" style="margin-top:10px;">
+        <%= ad_img %>
       </div>
 
     </div>
@@ -42,3 +30,7 @@
   </div>
 </div>
 <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px;"><%= link_to "トップページに戻る",'/'  %></div>
+
+<div id="banner_big" style="margin-top:10px;">
+  <%= ad_img %>
+</div>
