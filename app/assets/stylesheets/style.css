@@ -347,7 +347,7 @@ p a{
 }
 #home .sponsors{
   width:180px;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   text-align: center;
   margin:0 auto;
 }
@@ -406,7 +406,7 @@ p a{
 
 #home .media{
   width:130px;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   text-align: center;
   margin:0 auto;
 }
@@ -445,7 +445,7 @@ p a{
 
 #home .cooperation{
   width:200px;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   text-align: center;
   margin:0 auto;
 }
@@ -1103,6 +1103,12 @@ p a{
 #history .image img{
   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
   max-width: 100%;
+}
+#history .share{
+  margin-top: 10px;
+}
+#history .fb_iframe_widget{
+  top:-6px;
 }
 /*==================== POLICY&TERMS ==========================*/
 #policy{
@@ -1865,8 +1871,8 @@ body {
 }
 #mainimage img{
   width:100%;
-  border-top: 5px solid #e04974;
-  border-bottom: 5px solid #e04974;
+  border-top: 3px solid #e04974;
+  border-bottom: 3px solid #e04974;
 }
 #banner_big{
   text-align: center;
@@ -2051,8 +2057,8 @@ body {
 }
 #home #mainimage img{
   width:100%;
-  border-top: 5px solid #e04974;
-  border-bottom: 5px solid #e04974;
+  border-top: 3px solid #e04974;
+  border-bottom: 3px solid #e04974;
 }
 #home .top_vote_and_entry_btn{
   width:800px;
@@ -2099,7 +2105,7 @@ body {
 #home #prerelease h2.title{
   font-size: 18px;
   color: #e04974;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
 }
 #home #prerelease .contestants_box{
   overflow: hidden;
@@ -2137,7 +2143,7 @@ body {
 }
 #home .news h2{
   color:#e04974;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   padding-left: 20px;
   margin-top: 5px;
 }
@@ -2252,7 +2258,7 @@ body {
 }
 #home .sponsors{
   width:180px;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   text-align: center;
   margin:0 auto;
 }
@@ -2308,7 +2314,7 @@ body {
 }
 #home .media{
   width:130px;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   text-align: center;
   margin:0 auto;
 }
@@ -2346,7 +2352,7 @@ body {
 }
 #home .cooperation{
   width:250px;
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   text-align: center;
   margin:0 auto;
 }
@@ -2998,7 +3004,7 @@ body {
   color:#191919;
 }
 #history .section h2 span{
-  border-bottom:5px solid #e04974;
+  border-bottom:3px solid #e04974;
   padding-bottom: 10px;
 }
 #history .section {
@@ -3025,11 +3031,17 @@ body {
 #history .image img{
   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
+#history .share{
+  margin-top: 10px;
+}
+#history .fb_iframe_widget{
+  top:-6px;
+}
 /*==================== POLICY&TERMS ==========================*/
 #policy{
   width: 100%;
   clear: both;
-  border-top: 5px solid #e04974;
+  border-top: 3px solid #e04974;
 }
 #policy h1{
   font-size: 18px;
@@ -3056,7 +3068,7 @@ body {
 #terms{
   width: 100%;
   clear: both;
-  border-top: 5px solid #e04974;
+  border-top: 3px solid #e04974;
 }
 #terms h1{
   font-size: 18px;
@@ -3172,7 +3184,7 @@ body {
 #mypage{
   width:100%;
   clear: both;
-  border-top:5px solid #e04974;
+  border-top:3px solid #e04974;
 }
 #mypage .mypage_contestant{
   max-width:900px;
@@ -3353,7 +3365,7 @@ body {
   margin-bottom: 20px;
 }
 #mypage h1 span{
-  border-bottom: 5px solid #e04974;
+  border-bottom: 3px solid #e04974;
   padding-bottom: 10px;
 }
 #mypage .edit_box{
@@ -3424,7 +3436,7 @@ span#interview_question_number{
 /*====================  ログインページ、その他認証ページ ==========================*/
 #login{
   clear: both;
-  border-top: 5px solid #e04974;
+  border-top: 3px solid #e04974;
   margin-bottom: -30px;
   height: 600px;
 }
