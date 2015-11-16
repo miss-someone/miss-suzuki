@@ -233,9 +233,12 @@ p a{
 }
 #home #home_icons .contestant_icon img{
   width:45px;
-  border-radius:50%;
-/*  border:2px solid #e04974;*/
+  border-radius:25px;
   float:left;
+}
+#home #home_icons .contestant_icon a:hover img,#home #home_icons .contestant_icon a:active img{
+  width:41px;
+  border:2px solid #e04974;
 }
 #home #prerelease{
   width:95%;
@@ -2139,10 +2142,12 @@ body {
 #home #home_icons .contestant_icon img{
   width:125px;
   border-radius:50%;
-/*  border:2px solid #e04974;*/
   float:left;
 }
-
+#home #home_icons .contestant_icon a:hover img{
+  border:2px solid #e04974;
+  width:121px;
+}
 #home #prerelease{
   width:1000px;
   margin:0 auto;
