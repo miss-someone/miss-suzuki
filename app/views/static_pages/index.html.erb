@@ -31,7 +31,17 @@
     <a href="#home"><%= image_tag 'to_top.png', :width=> '50px' %></a>
   </div>
 
-<div id="prerelease">
+  <div id="home_icons">
+    <h2>鈴木さん、続々エントリー中！</h2>
+        <% @contestants.each do |contestant| %>
+            <div class="contestant_icon">
+              <%= image_tag contestant.profile.profile_image.thumb(300, 300), alt: contestant.profile.name %>
+            </div>
+        <% end %>
+  </div>
+
+
+<!-- <div id="prerelease">
     <div class="content">
       <h2 class="title">現在投票期間中の鈴木さんたちを3名、ランダムでご紹介！</h2>
       <div class="contestants_box">
@@ -54,9 +64,8 @@
       </div>
     </div>
   </div>
-
+ -->
  <!--  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
-
   <div class="news">
     <h2>NEWS</h2>
     <% @news.each do |entry| %>
@@ -172,3 +181,5 @@
 
 
 </div>
+
+
