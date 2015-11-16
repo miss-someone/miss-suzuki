@@ -232,9 +232,9 @@ p a{
   float:left;
 }
 #home #home_icons .contestant_icon img{
-  width:41px;
+  width:45px;
   border-radius:50%;
-  border:2px solid #e04974;
+/*  border:2px solid #e04974;*/
   float:left;
 }
 #home #prerelease{
@@ -2137,9 +2137,9 @@ body {
   float:left;
 }
 #home #home_icons .contestant_icon img{
-  width:121px;
+  width:125px;
   border-radius:50%;
-  border:2px solid #e04974;
+/*  border:2px solid #e04974;*/
   float:left;
 }
 
