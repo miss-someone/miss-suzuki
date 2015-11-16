@@ -215,6 +215,28 @@ p a{
   line-height: 3.5;
   text-decoration: none;
 }
+#home #home_icons{
+  width:320px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#home #home_icons h2{
+  font-size:14px;
+  color: #e04974;
+  border-bottom: 3px solid #e04974;
+}
+#home #home_icons .contestant_icon{
+  margin-right:5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  float:left;
+}
+#home #home_icons .contestant_icon img{
+  width:41px;
+  border-radius:50%;
+  border:2px solid #e04974;
+  float:left;
+}
 #home #prerelease{
   width:95%;
   margin:0 auto;
@@ -2097,6 +2119,30 @@ body {
   display: block;
   line-height: 3.5;
 }
+#home #home_icons{
+  width:930px;
+  margin:0 auto;
+  margin-top:30px;
+  overflow: hidden;
+}
+#home #home_icons h2{
+  font-size:24px;
+  color: #e04974;
+  border-bottom: 3px solid #e04974;
+}
+#home #home_icons .contestant_icon{
+  margin-right:30px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  float:left;
+}
+#home #home_icons .contestant_icon img{
+  width:121px;
+  border-radius:50%;
+  border:2px solid #e04974;
+  float:left;
+}
+
 #home #prerelease{
   width:1000px;
   margin:0 auto;
