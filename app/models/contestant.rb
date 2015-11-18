@@ -56,7 +56,7 @@ class Contestant < User
                 SELECT id FROM interview_answers AS i WHERE i.user_id = u.id AND i.is_pending = FALSE
               )
             )"
-      )
+                 )
     end
   end
 end

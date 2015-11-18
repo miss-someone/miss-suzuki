@@ -8,8 +8,8 @@ class StaticPagesController < ApplicationController
     # トップページに表示する18人を選択
     # トップページの表示は遅くしたくないので，キャッシュを行う
     # 更新は30分毎
-    @contestants = Rails.cache.fetch('toppage_contestants', :expires_in => 30.minute) do
-        Contestant.toppage_contestants.sample(18)
+    @contestants = Rails.cache.fetch('toppage_contestants', expires_in: 30.minute) do
+      Contestant.toppage_contestants.sample(18)
     end
   end
 
