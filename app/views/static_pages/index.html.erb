@@ -34,11 +34,9 @@
   <div id="home_icons">
     <h2>鈴木さん、続々エントリー中！</h2>
         <% @contestants.each do |contestant| %>
-          <% if mypage_present?(contestant) %>
-            <div class="contestant_icon">
-            <a href="contestants/group/<%= contestant.profile.group_id %>#contestant-<%= contestant.profile.user_id %>"><%= image_tag contestant.profile.profile_image.thumb(300, 300), alt: contestant.profile.name %></a>
-            </div>
-          <% end %>
+          <div class="contestant_icon">
+          <a href="contestants/group/<%= contestant.profile.group_id %>#contestant-<%= contestant.profile.user_id %>"><%= image_tag contestant.profile.profile_image.thumb(300, 300), alt: contestant.profile.name %></a>
+          </div>
         <% end %>
   </div>
 
