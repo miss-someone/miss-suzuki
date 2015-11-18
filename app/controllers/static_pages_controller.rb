@@ -5,7 +5,12 @@ class StaticPagesController < ApplicationController
   def index
     @news = News.where("is_important = 'true'").order("date DESC").limit(5)
 
-    @contestants = Contestant.approved.current_open_group.random(18)
+    # トップページに表示する18人を選択
+    # トップページの表示は遅くしたくないので，キャッシュを行う
+    # 更新は30分毎
+    @contestants = Rails.cache.fetch('toppage_contestants', :expires_in => 30.minute) do
+        Contestant.toppage_contestants.sample(18)
+    end
   end
 
   # News

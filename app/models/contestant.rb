@@ -33,5 +33,30 @@ class Contestant < User
       contestant.user_type = Settings.user_type[:contestant]
       contestant
     end
+
+    # トップページに表示するContestantを取得する
+    # 条件は
+    #   + マイページを作成していること
+    #   + 承認済みであること
+    #   + 現在の公開グループであること
+    def toppage_contestants
+      find_by_sql("
+      SELECT * FROM users AS u
+          WHERE user_type = #{Settings.user_type[:contestant]}
+            AND EXISTS(
+                  SELECT id FROM contestant_profiles AS cp
+                    WHERE u.id = cp.user_id AND cp.status = 1 AND cp.group_id <= #{Settings.current_open_group_id}
+                    )
+            AND (
+              EXISTS(
+                SELECT id FROM contestant_images AS c WHERE c.user_id = u.id AND c.is_pending = FALSE
+              )
+              OR
+              EXISTS(
+                SELECT id FROM interview_answers AS i WHERE i.user_id = u.id AND i.is_pending = FALSE
+              )
+            )"
+      )
+    end
   end
 end
