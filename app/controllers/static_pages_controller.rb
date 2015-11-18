@@ -9,7 +9,9 @@ class StaticPagesController < ApplicationController
     # トップページの表示は遅くしたくないので，キャッシュを行う
     # 更新は30分毎
     @contestants = Rails.cache.fetch('toppage_contestants', expires_in: 30.minute) do
-      Contestant.toppage_contestants.sample(18)
+      contestants = Contestant.toppage_contestants.sample(18)
+      ActiveRecord::Associations::Preloader.new.preload(contestants, :contestant_profile)
+      contestants
     end
   end
 
