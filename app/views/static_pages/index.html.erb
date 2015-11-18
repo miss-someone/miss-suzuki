@@ -34,40 +34,13 @@
   <div id="home_icons">
     <h2>鈴木さん、続々エントリー中！</h2>
         <% @contestants.each do |contestant| %>
-          <% if mypage_present?(contestant) %>
-            <div class="contestant_icon">
-            <a href="contestants/group/<%= contestant.profile.group_id %>#contestant-<%= contestant.profile.user_id %>"><%= image_tag contestant.profile.profile_image.thumb(300, 300), alt: contestant.profile.name %></a>
-            </div>
-          <% end %>
-        <% end %>
-  </div>
-
-
-<!-- <div id="prerelease">
-    <div class="content">
-      <h2 class="title">現在投票期間中の鈴木さんたちを3名、ランダムでご紹介！</h2>
-      <div class="contestants_box">
-        <% @contestants.each do |contestant| %>
-          <div class="<%= div_contestant_class(@contestants, contestant) %>">
-            <div class="picture">
-              <%= image_tag contestant.profile.profile_image.thumb(300, 300), alt: contestant.profile.name %>
-            </div>
-            <div class="profile">
-              <p class="furigana"><%= contestant.profile.hurigana %></p>
-              <h2 class="name"><%= contestant.profile.name %></h2>
-              <p class="age">年齢：<%= contestant.profile.age %></p>
-              <p class="hometown">出身：<%= contestant.profile.come_from %></p>
-              <p class="height">身長：<%= contestant.profile.height %></p>
-              <p class="appeal">一言アピール！</p>
-              <textarea name="comment" readonly><%= contestant.profile.comment %></textarea>
-            </div>
+          <div class="contestant_icon">
+            <%= link_to (image_tag contestant.profile.profile_image.thumb(125, 125), alt: contestant.profile.name), contestants_mypage_path(contestant.id) %>
           </div>
         <% end %>
-      </div>
-    </div>
   </div>
- -->
- <!--  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
+
+<!--  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
   <div class="news">
     <h2>NEWS</h2>
     <% @news.each do |entry| %>
@@ -183,5 +156,3 @@
 
 
 </div>
-
-
