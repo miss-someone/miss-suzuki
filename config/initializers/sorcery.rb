@@ -249,7 +249,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `nil`
     #
     # アクティベーションURLの有効期限は1時間
-    user.activation_token_expiration_period = 3600
+    user.activation_token_expiration_period = 86400
 
     # your mailer class. Required.
     # Default: `nil`
