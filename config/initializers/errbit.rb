@@ -6,7 +6,7 @@ if Rails.env.production?
     config.host    = ENV['ERRBIT_API_HOST']
     config.port    = ENV['ERRBIT_API_PORT']
     config.development_environments = []
-    config.secure  = config.port == 443
+    config.secure = config.port == 443
 
     # report exceptions that happen inside a rake task
     config.rescue_rake_exceptions = true
