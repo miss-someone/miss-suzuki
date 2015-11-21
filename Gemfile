@@ -64,6 +64,8 @@ gem 'sinatra', require: false
 gem 'meta-tags'
 # パフォーマンスのプロファイリングツール
 gem 'rack-mini-profiler', require: false
+# error tracking
+gem 'airbrake'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
