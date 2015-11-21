@@ -1670,6 +1670,11 @@ span#interview_question_number{
 .voter_dialog span{
   font-weight: bold;
 }
+.vote_page_ads{
+  width:300px;
+  margin:0 auto;
+  margin-bottom: 30px;
+}
 .group_btn_wrap{
   text-align: center;
   font-size: 12px;
@@ -3624,7 +3629,11 @@ span#interview_question_number{
 .voter_dialog span{
   font-weight: bold;
 }
-
+.vote_page_ads{
+  width:300px;
+  margin:0 auto;
+  margin-bottom: 30px;
+}
 .group_btn_wrap{
   text-align: center;
   font-size: 18px;
@@ -3661,17 +3670,17 @@ span#interview_question_number{
   margin:0 auto;
   overflow: hidden;
 }
+.content_middle .column0{
+  width:300px;
+  margin-right:40px;
+  float:left;
+}
 .content_middle .column1{
   width:300px;
   margin-right:40px;
   float:left;
 }
 .content_middle .column2{
-  width:300px;
-  margin-right:40px;
-  float:left;
-}
-.content_middle .column3{
   width:300px;
   float:left;
 }
