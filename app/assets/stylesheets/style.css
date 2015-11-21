@@ -1672,9 +1672,15 @@ span#interview_question_number{
 }
 .group_btn_wrap{
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   margin-top: 10px;
+  width:270px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.group_btn_wrap :first-child{
+  margin-right:10px;
 }
 .group_btn{
   width:120px;
@@ -1685,6 +1691,8 @@ span#interview_question_number{
   margin:0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
+  float:left;
+  padding-left: 10px;
 }
 .group_btn a{
   color:#fff;
@@ -3616,20 +3624,28 @@ span#interview_question_number{
 .voter_dialog span{
   font-weight: bold;
 }
+
 .group_btn_wrap{
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  }
+  width:650px;
+  margin:0 auto;
+  overflow: hidden;
+}
+.group_btn_wrap :first-child{
+  margin-right:50px;
+}
 .group_btn{
-  width:300px;
+  width:250px;
   height: 70px;
   background-color: #e04974;
   text-align: center;
   border-radius: 5px;
-  margin:0 auto;
   margin-top: 20px;
   margin-bottom: 10px;
+  float:left;
+  padding-left: 50px;
 }
 .group_btn a{
   font-weight: bold;
