@@ -20,15 +20,18 @@
     <p><%= flash[:alert] %></p>
   <% end %>
   <div class="content_middle">
-    <div class="column column1">
-      <%= render :partial => 'contestant', :collection => @contestant[0] %>
-    </div>
-    <div class="column column2">
-      <%= render :partial => 'contestant', :collection => @contestant[1] %>
-    </div>
-    <div class="column column3">
-      <%= render :partial => 'contestant', :collection => @contestant[2] %>
-    </div>
+    <% 3.times do |i| %>
+      <div class="column column<%= i %>">
+        <% @contestant[i - 1].each.with_index do |contestant, i| %>
+          <%= render :partial => 'contestant', locals: {contestant: contestant} %>
+          <% if i % 3 == 2 %>
+            <div class="vote_page_ads">
+              <%= adsense('contestants_index_ads') %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
     <p id="to_top"><a href=<% '/' %>><%= image_tag 'to_top.png', :width=> '50px'   %></a></p>
   </div>
 </div>
