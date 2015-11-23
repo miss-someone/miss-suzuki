@@ -408,13 +408,13 @@ p a{
   margin-right:10px;
 }
 #home .smart_row2 .logo3 img{
-  max-width:140px;
-  margin-right:20px;
-  margin-left:20px;
+  max-width: 120px;
+  margin-right:10px;
+  margin-left: 20px;
+  margin-top: -3px;
 }
 #home .smart_row2 .logo4 img{
-  max-width:80px;
-  margin-right:10px;
+  max-width:130px;
 }
 #home .smart_row3 .logo1 img{
   max-width:100px;
@@ -428,7 +428,12 @@ p a{
   margin-left: 30px;
   padding:0;
 }
-
+#home .smart_row3 .logo3 img{
+  max-width:120px;
+  margin-top:-10px;
+  margin-left: 30px;
+  padding:0;
+}
 #home .media{
   width:130px;
   border-bottom: 3px solid #e04974;
@@ -1015,31 +1020,32 @@ p a{
   margin-top: 0;
 }
 #about #content .sponsors{
-  width:100%;
+  width:300px;
   margin: 0 auto;
   clear: both;
   margin-top: 30px;
-  margin-left: 20px;
 }
 #about #content .sponsors .row1{
   overflow: hidden;
 }
 #about #content .sponsors .row1 .logo1 img{
-  width:140px;
+  width:130px;
   margin-right:20px;
   float: left;
 }
 #about #content .sponsors .row1 .logo2 img{
-  width:140px;
+  width:130px;
   float: left;
 }
-
 #about #content .sponsors .row2{
   overflow: hidden;
   margin-top: 30px;
 }
+#about #content .sponsors .row3{
+  overflow: hidden;
+}
 #about #content .sponsors .row2 .logo1 img{
-  width:140px;
+  width:130px;
   margin-right:20px;
   float: left;
 }
@@ -1054,17 +1060,33 @@ p a{
   float:left;
 }
 #about #content .sponsors .row3 .logo2 img{
-  width: 80px;
+  width: 70px;
   margin-left: 30px;
   margin-top: 10px;
+}
+#about #content .sponsors .row3 .logo3 img{
+  width:140px;
+  margin-right:20px;
+  margin-top:0;
+  float:left;
+}
+#about #content .sponsors .row1 .logo1#ascii img{
+  width:140px;
+  margin-right:20px;
+  float: left;
+  margin-top:10px;
+}
+#about #content .sponsors .row1 .logo2#oedo img{
+  width:140px;
+  float: left;
 }
 #about #content .sponsors .row1 .zenkoku img{
   width:140px;
   margin-right:0;
   float: left;
 }
-#about #content .sponsors #ascii img{
-  margin-top:10px;
+#about #content #zenkoku img, #about #content #kanto img{
+  width:140px;
 }
 /*====================CREATE==========================*/
 #completed{
@@ -2355,12 +2377,12 @@ body {
   margin-right: 30px;
 }
 #home .row1 .logo3 img{
-  width:250px;
+  width:220px;
   margin-right: 30px;
-  margin-top: 5px;
+  margin-top: -3px;
 }
 #home .row1 .logo4 img{
-  max-width: 200px;
+  max-width: 230px;
 }
 #home .row2 .logo1,#home .row2 .logo2,#home .row2 .logo3,#home .row2 .logo4{
   float: left;
@@ -2373,8 +2395,14 @@ body {
 }
 #home .row2 .logo2 img{
   width:100px;
-  margin-left:50px;
+  margin-left:70px;
   margin-top: -10px;
+}
+#home .row2 .logo3 img{
+  width:200px;
+  margin-right: 30px;
+  margin-left: 80px;
+  margin-top: 20px;
 }
 #home .media{
   width:130px;
@@ -3026,15 +3054,16 @@ body {
 }
 #about #content .sponsors .row2{
   overflow: hidden;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 #about #content .sponsors .row2 .logo1 img{
-  width:350px;
+  width:300px;
   margin-right:50px;
   float: left;
 }
 #about #content .sponsors .row2 .logo2 img{
-  width:250px;
+  width:320px;
+  margin-top: 10px;
   float: left;
 }
 #about #content .sponsors .row3 .logo1 img{
@@ -3047,6 +3076,12 @@ body {
   float: left;
   margin-left: 30px;
   margin-top: 20px;
+}
+#about #content .sponsors .row3 .logo3 img{
+  width:250px;
+  float: left;
+  margin-left: 30px;
+  margin-top:40px;
 }
 #about #content .sponsors #ascii img{
   width:250px;
