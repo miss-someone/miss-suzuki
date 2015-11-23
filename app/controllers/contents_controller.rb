@@ -8,5 +8,4 @@ class ContentsController < ApplicationController
 
   def interview1_2
   end
-
 end
