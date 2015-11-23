@@ -5,6 +5,8 @@ class ContentsController < ApplicationController
 
   def interview1
   end
+
   def interview1_2
   end
+
 end
