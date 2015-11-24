@@ -9,8 +9,12 @@ module ApplicationHelper
         '<li class="header_btn tab"><a href="/logout">ログアウト</a></li>'
       end
     else
-      '<li class="header_btn tab"><a href="/users/signup">新規登録</a></li>
-       <li class="header_btn tab"><a href="/login">ログイン</a></li>'
+      '<ul>
+        <li class="header_btn tab"><a href="/users/signup">新規登録</a></li>
+        <li class="header_btn tab"><a href="/login">ログイン</a></li>
+      </ul>
+      <p class="to_help"><a href="/help">ログイン・会員登録に関するお問い合わせ</a></p>
+      '
     end
   end
 

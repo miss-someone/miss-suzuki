@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get   'entrypolicy'    => 'static_pages#entrypolicy'
     get   'terms'    => 'static_pages#terms'
     get   'policy'   => 'static_pages#policy'
+    get   'help' => 'static_pages#help'
     get   'contents' => 'contents#index'
     get   'contents/history' => 'contents#history'
     get   'contents/erai_suzukisan1' => 'contents#interview1'
