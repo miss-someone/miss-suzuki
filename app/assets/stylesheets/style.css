@@ -27,7 +27,7 @@ p a{
   margin-top: -10px;
 }
 #logo img{
-  max-width:80px;
+  max-width:100px;
   float: left;
   margin-left: 10px;
   margin-top:0px;
@@ -46,13 +46,13 @@ p a{
   margin-top: 20px;
 }
 #header_right .header_btn{
-  width: 50px;
-  height:20px;
+  width: 80px;
+  height:30px;
   background-color:#e04974;
   border-radius: 2px;
-  font-size: 9px;
+  font-size:12px;
   text-align: center;
-  line-height: 2.0;
+  line-height: 2.5;
   float: right;
   margin-top:10px;
 }
@@ -1733,17 +1733,40 @@ span#interview_question_number{
 }
 
 /*====================  えらい鈴木さんにインタビュー!==========================*/
-#contents #content .contents_box{
+#contents #content{
   width:100%;
 }
 #contents #content .contents_box img{
+  text-align: center;
   width:100%;
-  margin-bottom: 10px;
+  margin-bottom: -10px;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
 #contents #content h2{
-  margin-bottom: 0;
+  margin-bottom: -10px;
+  margin-top:30px;
   color:#1b6ddc;
   font-size: 14px;
+}
+#contents #content .ads_box{
+  display: none;
+}
+#contents #content .contents_box .detail_box{
+  border:1px solid #d7d7d7;
+  border-bottom: 2px solid #d7d7d7;
+  padding:5px 10px 0 10px;
+}
+#contents #content .contents_box .detail_box p{
+  font-weight: bold;
+  font-size: 12px;
+}
+#contents #content .contents_box .detail_box p.to_article{
+  text-align: right;
+}
+#contents #content .contents_box .detail_box a{
+  font-weight: bold;
+  font-size: 12px;
+  color:#62a7e7;
 }
 
 #interview1{
@@ -3721,19 +3744,53 @@ span#interview_question_number{
 }
 
 /*====================  えらい鈴木さんにインタビュー!==========================*/
-#contents #content .contents_box{
-  width: 900px;
+#contents #content{
+  width: 960px;
   margin:0 auto;
   overflow: hidden;
   position: relative;
 }
+#contents #content .ads_box{
+  float:left;
+  width:300px;
+  height:600px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+#contents #content .contents_box{
+  width: 600px;
+  float:left;
+  overflow: hidden;
+  position: relative;
+}
+#contents #content .contents_box .detail_box{
+  border:1px solid #d7d7d7;
+  border-bottom: 2px solid #d7d7d7;
+  padding:5px 20px 0 20px;
+}
+#contents #content .contents_box .detail_box p{
+  font-weight: bold;
+  font-size: 14px;
+}
+#contents #content .contents_box .detail_box p.to_article{
+  text-align: right;
+}
+#contents #content .contents_box .detail_box a{
+  font-weight: bold;
+  font-size: 14px;
+  color:#62a7e7;
+}
 #contents #content .contents_box img{
-  width:900px;
-  margin-bottom: 30px;
+  width:600px;
 }
 #contents #content h2{
-  margin-bottom: 0;
+  margin-top:30px;
   color:#1b6ddc;
+  font-size: 18px;
+  margin-bottom:-10px;
+}
+#contents #content img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
 #interview1{
   width:100%;

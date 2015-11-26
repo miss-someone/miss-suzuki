@@ -36,3 +36,16 @@
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+- id: 4
+  name: contents_index_ads
+  code: |
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- contents_index_ads -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3153635342972018"
+         data-ad-slot="3781977288"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
