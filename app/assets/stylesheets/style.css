@@ -3795,6 +3795,10 @@ span#interview_question_number{
 #interview1{
   width:100%;
 }
+#interview1 .go_another_page{
+  font-weight: bold;
+  font-size: 20px;
+}
 #interview1 #content{
   width: 900px;
   margin:0 auto;
