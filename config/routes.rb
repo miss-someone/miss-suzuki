@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get   'contents/history' => 'contents#history'
     get   'contents/erai_suzukisan1' => 'contents#interview1'
     get   'contents/erai_suzukisan1_2' => 'contents#interview1_2'
+    get   'contents/erai_suzukisan_sp1' => 'contents#interview_sp1'
     get   'news' => 'news#index'
 
     scope :contestant_image do
