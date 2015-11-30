@@ -1847,7 +1847,11 @@ span#interview_question_number{
   font-size: 18px;
 }
 #interview1 .super_bigger{
-  font-size: 30px;
+  font-size: 24px;
+}
+#interview1 .biggest{
+  font-size: 24px;
+  margin-top:0;
 }
 #interview1 .italic{
   font-family: serif;
@@ -3928,6 +3932,10 @@ span#interview_question_number{
 }
 #interview1 .super_bigger{
   font-size: 30px;
+}
+#interview1 .biggest{
+  font-size: 50px;
+  margin-top:0;
 }
 #interview1 .italic{
   font-family: serif;

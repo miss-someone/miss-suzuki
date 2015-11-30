@@ -44,10 +44,17 @@ module ApplicationHelper
       }
     elsif controller_name == "contents" && action_name == "interview1"
       set_meta_tags og: {
-        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー！",
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第１弾！浜松市長 鈴木康友さん！",
         type:  "article",
         url:   "https://miss-suzuki.com/contents/erai_suzukisan1",
         image: "https://miss-suzuki.com/miss-someone/image/upload/v1447324228/interview_mainimage_ql7aw3.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "interview_sp1"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー特別編！鈴木Q太郎さん",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/erai_suzukisan_sp1",
+        image: "https://miss-suzuki.com/assets/mainimages/mainimage_qtaro-b07aab0ecf0df82778ac8932db8cd7d5.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
