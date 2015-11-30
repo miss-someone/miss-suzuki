@@ -31,7 +31,7 @@ module ContestantsHelper
 
   def remaining_vote_count_text(group_id)
     if vote_end?
-      "<div class='voter_dialog'>予選の投票期間が終了しました．たくさんのご投票ありがとうございました!</div>".html_safe
+      "<div class='voter_dialog'>予選の投票期間が終了しました。<br>たくさんのご投票ありがとうございました!</div>".html_safe
     else
       return unless logged_in?
       return if current_user.profile.nil?
