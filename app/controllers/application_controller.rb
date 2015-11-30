@@ -34,6 +34,10 @@ class ApplicationController < ActionController::Base
     fail ActionController::RoutingError, '404 Not Found'
   end
 
+  def vote_end?
+    Time.zone.now > Settings.contestant[:qualifying_vote_limit_day].to_date.in_time_zone.end_of_day
+  end
+
   private
 
   def require_specific_user_login(user_type)

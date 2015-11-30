@@ -1,0 +1,28 @@
+<div id="overvoted">
+
+  <div id="thankyou">
+    <div id="content">
+      <div class="left">
+        <div class="message">
+          <div class="arrow_box">
+            <p class="text">投票期間が終わっちゃいました&gt; &lt;</p>
+          </div>
+        </div>
+        <div class="picture">
+          <%= image_tag @contestant_profile.profile_image.thumb, :width=>'300px;' %>
+        </div>
+      </div>
+      <div class="right">
+        <div class="buttons">
+          <p class="button btn1"><a href="/contestants/group/1">予選第1グループへ</a></p>
+          <p class="button btn2"><a href="/contestants/group/2">予選第2グループへ</a></p>
+          <p class="button btn3"><a href="/contestants/group/3">予選第3グループへ</a></p>
+        </div>
+      </div>
+    </div><!-- /content  -->
+<div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px; background-color:#62a7e7;"><%= link_to "トップページに戻る",'/'  %></div>
+
+
+<div id="banner_big" style="margin-top:10px;">
+  <%= ad_img %>
+</div>

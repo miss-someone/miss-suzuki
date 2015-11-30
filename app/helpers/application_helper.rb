@@ -29,6 +29,10 @@ module ApplicationHelper
     '<li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
   end
 
+  def vote_end?
+    Time.zone.now > Settings.contestant[:qualifying_vote_limit_day].to_date.in_time_zone.end_of_day
+  end
+
   # FBでシェアする時の画像を指定する
   def fb_meta_tags(controller_name, action_name, contestant_profile)
     if controller_name == "contents" && action_name == "history"
