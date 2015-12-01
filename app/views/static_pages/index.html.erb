@@ -1,9 +1,9 @@
 <div id="home">
   <div id="mainimage">
     <div class="slideshow">
+      <div><%= link_to(image_tag("mainimages/group_mainimage_home.jpg"), "/contestants/second_stage") %></div>
       <div><%= image_tag "mainimages/mainimage_mr.jpg" %></div>
       <div><%= link_to(image_tag("mainimages/mainimage_qtaro.jpg"), "/contents/erai_suzukisan_sp1") %></div>
-      <div><%= link_to(image_tag("mainimages/group3_mainimage_home.jpg"), "/contestants/group/3") %></div>
       <div><%= image_tag "mainimages/mainimage1.jpg" %></div>
     </div>
     <script>
@@ -17,22 +17,22 @@
     });
     </script>
   </div>
-
+<!--
   <div class="top_vote_and_entry_btn">
     <div class="left_vote_btn">
-      <a href="contestants/group/3">投票ページはこちら！</a>
+      <a href="contestants/second_group">投票ページはこちら！</a>
     </div>
     <div class="right_entry_btn">
       <a href="contestants/entry">エントリーはこちら！</a>
     </div>
-  </div>
+  </div> -->
 
   <div id="to_top">
     <a href="#home"><%= image_tag 'to_top.png', :width=> '50px' %></a>
   </div>
 
   <div id="home_icons">
-    <h2>鈴木さん、続々エントリー中！</h2>
+    <h2>予選最終ラウンド、開幕！</h2>
         <% @contestants.each do |contestant| %>
           <div class="contestant_icon">
             <%= link_to (image_tag contestant.profile.profile_image.thumb(125, 125), alt: contestant.profile.name), contestants_mypage_path(contestant.id) %>
