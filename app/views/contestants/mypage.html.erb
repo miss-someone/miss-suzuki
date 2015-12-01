@@ -4,7 +4,9 @@
         <div class="picture">
           <div class="vote_system">
             <%= vote_btn(@contestant_profile.user) %>
-            <p class="counter"><%= @contestant_profile.votes %></p>
+            <p class="counter">
+              <%= vote_count(@contestant_profile.user) %>
+            </p>
           </div>
           <ul class="bxslider">
             <li><%= image_tag @contestant_profile.profile_image.thumb %></li>

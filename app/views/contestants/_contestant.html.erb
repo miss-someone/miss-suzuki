@@ -2,7 +2,9 @@
 <div id='contestant-<%= contestant.id %>' class="contestant">
   <div class="vote_system">
     <%= vote_btn(contestant) %>
-    <p class="counter"><%= contestant.profile.votes %></p>
+    <p class="counter">
+    <%= vote_count(contestant) %>
+    </p>
   </div>
 
   <% if mypage_present?(contestant) %>
