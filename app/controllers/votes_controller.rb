@@ -3,7 +3,7 @@ class VotesController < ApplicationController
 
   def create
     @contestant_profile = ContestantProfile.approved.current_open_group.contestant_id(vote_params[:contestant_id])
-    if vote_end?
+    if vote_end? || !@contestant_profile.is_in_2nd_stage
       render 'vote_end'
     elsif logged_in?
       create_action_with_logged_in
@@ -24,7 +24,7 @@ class VotesController < ApplicationController
         Vote.transaction do
           Vote.create!(voter_id: current_user.id,
                        contestant_id: vote_params[:contestant_id], group_id: @contestant_profile.group_id)
-          @contestant_profile.increment!(:votes, 1)
+          @contestant_profile.vote!
         end
         # 投票成功時には，thankyouページヘ
         redirect_to contestants_thankyou_path(vote_params[:contestant_id])
@@ -44,7 +44,7 @@ class VotesController < ApplicationController
         Vote.transaction do
           Vote.create!(ip_address: request.remote_ip, cookie_token: vote_token,
                        contestant_id: vote_params[:contestant_id], group_id: @contestant_profile.group_id)
-          @contestant_profile.increment!(:votes, 1)
+          @contestant_profile.vote!
         end
         # 投票成功時には，thankyouページヘ
         redirect_to contestants_thankyou_path(vote_params[:contestant_id])

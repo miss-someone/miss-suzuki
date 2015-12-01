@@ -45,6 +45,16 @@ class ContestantProfile < ActiveRecord::Base
     self
   end
 
+  # stageに応じて１票投票
+  def vote!
+    case Settings.current_stage
+    when 1 then
+      increment!(:votes, 1)
+    when 2 then
+      increment!(:second_stage_votes, 1)
+    end
+  end
+
   private
 
   # link_urlのドメインからリンク種別を自動判別する

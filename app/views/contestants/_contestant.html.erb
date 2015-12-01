@@ -1,8 +1,10 @@
 <% cache contestant.profile do %>
 <div id='contestant-<%= contestant.id %>' class="contestant">
   <div class="vote_system">
-    <%= image_tag 'kawaii.png', :width => '80' %>
-    <p class="counter"><%= contestant.profile.votes %></p>
+    <%= vote_btn(contestant) %>
+    <p class="counter">
+    <%= vote_count(contestant) %>
+    </p>
   </div>
 
   <% if mypage_present?(contestant) %>

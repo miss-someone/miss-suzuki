@@ -22,11 +22,24 @@ module ContestantsHelper
   end
 
   def vote_btn(contestant)
-    return if vote_end?
-    link_to((image_tag 'kawaii.png', width: 80),
-            contestant_vote_path(contestant_id: contestant.id),
-            method: :post,
-            params: { group_id: contestant.profile.group_id })
+    if !vote_end? && @stage.present? && @stage == Settings.current_stage
+      link_to((image_tag 'kawaii.png', width: 80),
+              contestant_vote_path(contestant_id: contestant.id),
+              method: :post,
+              params: { group_id: contestant.profile.group_id })
+    else
+      image_tag 'kawaii.png', width: 80
+    end
+  end
+
+  def vote_count(contestant)
+    if @stage.present? && @stage == 1
+      contestant.profile.votes
+    elsif (@stage.present? && @stage == 2) || contestant.profile.is_in_2nd_stage
+      contestant.profile.second_stage_votes
+    else
+      contestant.profile.votes
+    end
   end
 
   def remaining_vote_count_text(group_id)
