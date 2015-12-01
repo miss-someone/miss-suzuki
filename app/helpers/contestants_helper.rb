@@ -22,11 +22,14 @@ module ContestantsHelper
   end
 
   def vote_btn(contestant)
-    return if vote_end?
+    # if !vote_end? and @stage.present? and  @stage == Settings.current_stage
     link_to((image_tag 'kawaii.png', width: 80),
             contestant_vote_path(contestant_id: contestant.id),
             method: :post,
             params: { group_id: contestant.profile.group_id })
+    # else
+    #  image_tag 'kawaii.png', width: 80
+    # end
   end
 
   def remaining_vote_count_text(group_id)

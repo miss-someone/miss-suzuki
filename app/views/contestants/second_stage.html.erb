@@ -1,14 +1,6 @@
-<% @stage = 1 %>
+<% @stage = 2 %>
 <div id="mainimage">
   <%= image_tag "mainimages/group#{params[:id]}_mainimage.jpg" %>
-</div>
-
-<div class="group_btn_wrap">
-  <% link_group_ids(url_for(params[:id]).to_i).each do |i| %>
-    <div class='<%= i.ordinalize %>_group_btn group_link_btn group_btn'>
-    <%= link_to"予選第#{i}グループへ", contestants_path(i) %>
-    </div>
-  <% end %>
 </div>
 
 <div>

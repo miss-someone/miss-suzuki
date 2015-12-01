@@ -42,7 +42,8 @@ Rails.application.routes.draw do
       get   'mypage_sample'      => 'contestants#mypage_sample'
       get   'new_interview_answer' => 'contestants#new_interview_answer'
       post  'create_interview_answer' => 'contestants#create_interview_answer'
-      get   'group/:id'   => 'contestants#index'
+      get   'group/:id' => 'contestants#index'
+      get   'second_stage' => 'contestants#second_stage'
       get   '/:id/mypage' => 'contestants#mypage', as: :mypage
       get   'my_own_page' => 'contestants#my_own_page'
       get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
