@@ -35,6 +35,8 @@ module MissSuzuki
     # bower用
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
 
+    config.autoload_paths += Dir["#{config.root}/lib"]
+
     # ActiveJobのアダプターをsidekiqに設定
     config.active_job.queue_adapter = :sidekiq
 
