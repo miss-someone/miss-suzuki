@@ -21,11 +21,24 @@ module ContestantsHelper
     ids
   end
 
+  def vote_btn(contestant)
+    return if vote_end?
+    link_to((image_tag 'kawaii.png', width: 80),
+            contestant_vote_path(contestant_id: contestant.id),
+            method: :post,
+            params: { group_id: contestant.profile.group_id })
+  end
+
   def remaining_vote_count_text(group_id)
-    return unless logged_in?
-    return if current_user.profile.nil?
-    remaining_vote = current_user.todays_remaining_vote_count(group_id)
-    "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，第#{group_id}グループの本日の投票回数は残り<span>#{remaining_vote}回</span>です！<br>他のグループにはもう投票しましたか？</div>".html_safe if logged_in?
+    if vote_end?
+      "<div class='voter_dialog'>予選の投票期間が終了しました。<br>たくさんのご投票ありがとうございました!</div>".html_safe
+    else
+      return unless logged_in?
+      return if current_user.profile.nil?
+
+      remaining_vote = current_user.todays_remaining_vote_count(group_id)
+      "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，第#{group_id}グループの本日の投票回数は残り<span>#{remaining_vote}回</span>です！<br>他のグループにはもう投票しましたか？</div>".html_safe if logged_in?
+    end
   end
 
   private
