@@ -1,5 +1,5 @@
 module VotesHelper
-  def cannot_vote_text(group_id)
+  def cannot_vote_text
     if logged_in?
       "ごめんなさい！今日はもう10回投票しちゃったみたいです・・・".html_safe
     else
