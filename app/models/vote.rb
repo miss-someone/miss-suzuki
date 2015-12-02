@@ -18,7 +18,7 @@ class Vote < ActiveRecord::Base
 
     def todays_vote_count_with_login(voter_id, group_id)
       if Settings.current_stage >= 2
-        today.where(voter_id: voter_id).group_condition_if_needed(group_id).count
+        today.where(voter_id: voter_id).count
       else
         today.where(voter_id: voter_id, group_id: group_id).count
       end

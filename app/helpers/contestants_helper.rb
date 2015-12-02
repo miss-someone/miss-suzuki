@@ -22,7 +22,7 @@ module ContestantsHelper
   end
 
   def vote_btn(contestant)
-    if !vote_end? && @stage.present? && @stage == Settings.current_stage
+    if show_vote_btn?(contestant)
       link_to((image_tag 'kawaii.png', width: 80),
               contestant_vote_path(contestant_id: contestant.id),
               method: :post,
@@ -55,6 +55,13 @@ module ContestantsHelper
   end
 
   private
+
+  def show_vote_btn?(contestant)
+    !vote_end? && contestant.profile.send("is_in_#{Settings.current_stage.ordinalize}_stage")
+  rescue => e
+    Airbrake.notify(e)
+    false
+  end
 
   # リンク種別から表示するボタン画像のファイル名を取得する
   def btn_name(link_type)
