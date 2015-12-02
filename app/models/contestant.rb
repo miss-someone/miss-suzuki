@@ -49,7 +49,7 @@ class Contestant < User
           WHERE user_type = #{Settings.user_type[:contestant]}
             AND EXISTS(
                   SELECT id FROM contestant_profiles AS cp
-                    WHERE u.id = cp.user_id AND cp.status = 1 AND cp.group_id <= #{Settings.current_open_group_id}
+                    WHERE u.id = cp.user_id AND cp.status = 1 AND cp.is_in_2nd_stage = TRUE
                     )
             AND (
               EXISTS(
