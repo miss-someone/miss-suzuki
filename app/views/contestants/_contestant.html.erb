@@ -1,10 +1,12 @@
-<% cache contestant.profile do %>
 <div id='contestant-<%= contestant.id %>' class="contestant">
   <div class="vote_system">
-    <%= image_tag 'kawaii.png', :width => '80' %>
-    <p class="counter"><%= contestant.profile.votes %></p>
+    <%= vote_btn(contestant) %>
+    <p class="counter">
+    <%= vote_count(contestant) %>
+    </p>
   </div>
 
+<% cache contestant.profile do %>
   <% if mypage_present?(contestant) %>
     <div class="mypage_btn">
       <a href="/contestants/<%= contestant.profile.user_id %>/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
@@ -25,5 +27,5 @@
     <p class="anchor"><a style="float:right;" href="<%= contestant_anchor_url(contestant) %>"><%= image_tag 'icon/chain.png' %></a></p>
     <textarea readonly name="comment"><%= contestant.profile.comment %></textarea>
   </div>
-</div>
 <% end %>
+</div>

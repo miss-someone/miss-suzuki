@@ -1,6 +1,6 @@
 class ContestantsController < ApplicationController
   skip_before_filter :require_login, only: [:entry, :thankyou_sample, :mypage_sample,
-                                            :index, :mypage, :thankyou, :new, :create]
+                                            :index, :second_stage, :mypage, :thankyou, :new, :create]
 
   before_filter :require_contestant_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
   before_filter :restrict_contestant_login, only: [:entry, :new, :create]
@@ -12,6 +12,11 @@ class ContestantsController < ApplicationController
     else
       not_found
     end
+  end
+
+  def second_stage
+    @contestant = Contestant.approved.nth_stage(2).includes(:interview_answers)
+                  .includes(:contestant_images).shuffle.group_by.with_index { |_e, i| i % 3 }.values
   end
 
   def new

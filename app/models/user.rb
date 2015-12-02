@@ -50,8 +50,12 @@ class User < ActiveRecord::Base
     user_type == Settings.user_type[:contestant]
   end
 
-  def todays_remaining_vote_count(group_id)
-    Settings.vote[:daily_limit][:logined] - votes.today.where(group_id: group_id).count
+  def todays_remaining_vote_count(group_id = nil)
+    if group_id.present?
+      Settings.vote[:daily_limit][:logined] - votes.today.where(group_id: group_id).count
+    else
+      Settings.vote[:daily_limit][:logined] - votes.today.count
+    end
   end
 
   class << self

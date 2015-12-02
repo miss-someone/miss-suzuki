@@ -22,26 +22,42 @@ module ContestantsHelper
   end
 
   def vote_btn(contestant)
-    return if vote_end?
-    link_to((image_tag 'kawaii.png', width: 80),
-            contestant_vote_path(contestant_id: contestant.id),
-            method: :post,
-            params: { group_id: contestant.profile.group_id })
-  end
-
-  def remaining_vote_count_text(group_id)
-    if vote_end?
-      "<div class='voter_dialog'>予選の投票期間が終了しました。<br>たくさんのご投票ありがとうございました!</div>".html_safe
+    if show_vote_btn?(contestant)
+      link_to((image_tag 'kawaii.png', width: 80),
+              contestant_vote_path(contestant_id: contestant.id),
+              method: :post,
+              params: { group_id: contestant.profile.group_id })
     else
-      return unless logged_in?
-      return if current_user.profile.nil?
-
-      remaining_vote = current_user.todays_remaining_vote_count(group_id)
-      "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，第#{group_id}グループの本日の投票回数は残り<span>#{remaining_vote}回</span>です！<br>他のグループにはもう投票しましたか？</div>".html_safe if logged_in?
+      image_tag 'kawaii.png', width: 80
     end
   end
 
+  def vote_count(contestant)
+    if @stage.present? && @stage == 1
+      contestant.profile.votes
+    elsif (@stage.present? && @stage == 2) || contestant.profile.is_in_2nd_stage
+      contestant.profile.second_stage_votes
+    else
+      contestant.profile.votes
+    end
+  end
+
+  def remaining_vote_count_text
+    return unless logged_in?
+    return if current_user.profile.nil?
+
+    remaining_vote = current_user.todays_remaining_vote_count
+    "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，本日の予選最終ラウンドの投票回数は残り<span>#{remaining_vote}回</span>です！".html_safe if logged_in?
+  end
+
   private
+
+  def show_vote_btn?(contestant)
+    !vote_end? && contestant.profile.send("is_in_#{Settings.current_stage.ordinalize}_stage")
+  rescue => e
+    Airbrake.notify(e)
+    false
+  end
 
   # リンク種別から表示するボタン画像のファイル名を取得する
   def btn_name(link_type)
