@@ -15,13 +15,14 @@
           <div id="more_vote_btn"><a href="/users/signup" target="_blank"><%= @contestant_profile.name %>さんをもっと応援する？</a></div>
         <% end %>
       </div>
-      <div class="right">
-        <div class="buttons">
-          <p class="button btn1"><a href="/contestants/group/1">予選第1グループへ</a></p>
-          <p class="button btn2"><a href="/contestants/group/2">予選第2グループへ</a></p>
-          <p class="button btn3"><a href="/contestants/group/3">予選第3グループへ</a></p>
-        </div>
+    <div class="right">
+      <div class="buttons">
+        <p class="button btn1"><a href="/contestants/second_stage">予選最終ラウンドへ</a></p>
+        <p class="button yet"><a href="/contestants/group/1"><span class="group">予選第1グループへ</span></a><br><span class="date">投票は終了しました</span></p>
+        <p class="button yet"><a href="/contestants/group/2"><span class="group">予選第2グループへ</span></a><br><span class="date">投票は終了しました</span></p>
+        <p class="button yet"><a href="/contestants/group/3"><span class="group">予選第3グループへ</span></a><br><span class="date">投票は終了しました</span></p>
       </div>
+    </div>
     </div><!-- /content  -->
 <div id="entry_btn" style="width:300px; margin-bottom:0; margin-top:10px; background-color:#62a7e7;"><%= link_to "トップページに戻る",'/'  %></div>
 

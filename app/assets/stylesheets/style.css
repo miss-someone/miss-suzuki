@@ -934,7 +934,7 @@ p a{
 #thankyou #content .yet span.date{
   color:#191919;
   display: block;
-  padding-top: 5px;
+  margin-top: -10px;
   font-size: 12px;
 }
 #thankyou #content .button a{
@@ -3032,7 +3032,7 @@ body {
 #thankyou #content .yet span.date{
   color:#191919;
   display: block;
-  padding-top: 5px;
+  margin-top: -10px;
   font-size: 12px;
 }
 #thankyou #content .button a{
