@@ -5,7 +5,7 @@ class Voter < User
 
   validate :check_duplicate_email_with_alias
   validate :check_using_plus_alias
-  validate :deny_temp_domain
+  validate :deny_specific_domain
   validates :agreement, acceptance: { message: 'への同意が必要です' }
 
   # Googleの+を用いたエイリアスを弾くため，+が含まれていないかチェック
@@ -15,8 +15,8 @@ class Voter < User
     errors.add(:email, "メールアドレスに「+」を含めることは出来ません")
   end
 
-  def deny_temp_domain
-    return unless email.present? && (email.include?('ahk.jp') || email.include?('15qm-dea-2.xyz'))
+  def deny_specific_domain
+    return unless email.present? && EmailDomain.denied?(email)
     errors.add(:email, 'は登録出来ません')
   end
 
