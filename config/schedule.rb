@@ -34,6 +34,8 @@ if Rails.env.production? && ENV['IS_ADMIN_WEB'] == 'true'
   # 5分ごとに新着応募者チェック
   every '*/5 6-23 * * *' do
     rake "contestant:check_new"
+  end
+  every '*/5 5 * * *' do
     rake "domain:check_new_domain"
   end
   every 1.day, at: '0:01am' do
