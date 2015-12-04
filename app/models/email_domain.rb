@@ -10,7 +10,7 @@ class EmailDomain < ActiveRecord::Base
     end
 
     def domains
-      all.map { |e| e.domain }
+      all.map(&:domain)
     end
   end
 end

@@ -12,7 +12,7 @@ namespace :domain do
 
   def new_domains
     sql = ActiveRecord::Base.send(
-      :sanitize_sql_array, 
+      :sanitize_sql_array,
       ["SELECT domain, count
         FROM (
           SELECT substring(email from '@(.+)$') as domain, count(email) as count
