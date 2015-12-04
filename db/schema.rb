@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151204024951) do
+ActiveRecord::Schema.define(version: 20151204043536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 20151204024951) do
     t.boolean  "is_notified",  default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "description"
   end
 
   add_index "email_domains", ["domain"], name: "index_email_domains_on_domain", unique: true, using: :btree
