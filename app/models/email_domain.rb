@@ -8,5 +8,9 @@ class EmailDomain < ActiveRecord::Base
       email_domain = email.sub(/.+@/, '')
       where(domain: email_domain, is_forbidden: true).exists?
     end
+
+    def domains
+      all.map { |e| e.domain }
+    end
   end
 end

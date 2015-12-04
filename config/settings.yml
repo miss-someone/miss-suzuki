@@ -25,6 +25,7 @@ vote:
     not_logined: 3
     logined: 10
 contestant_image_max: 12
+new_domain_notification_threshold: 10
 
 # CircleCIからwebhookでデプロイする際のデプロイキー
 deploy_info:
