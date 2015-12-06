@@ -4,6 +4,6 @@ class Mister::Contestant < Contestant
   default_scope lambda {
     includes(:contestant_profile)
       .where(user_type: Settings.user_type[:contestant],
-             contestant_profiles: { sex: 'male' } )
+             contestant_profiles: { sex: 'male' })
   }
 end

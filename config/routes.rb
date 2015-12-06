@@ -69,6 +69,13 @@ Rails.application.routes.draw do
     get "login" => "user_sessions#new", :as => "login"
     resources :user_sessions, only: :create
 
+    scope 'mister' do
+      scope 'contestants' do
+        get 'new' => 'mister/contestants#new'
+        post 'create' => 'mister/contestants#create'
+      end
+    end
+
     # Sidekiqのステータス管理用
     # 接続元は，ローカルホスト及びAdminサーバのみに制限
     require 'sidekiq/web'
