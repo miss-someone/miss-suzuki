@@ -16,7 +16,7 @@ class ContestantsController < ApplicationController
 
   def second_stage
     @contestant = Contestant.approved.nth_stage(2).includes(:interview_answers)
-                  .includes(:contestant_images).shuffle.group_by.with_index { |_e, i| i % 3 }.values
+                  .includes(:contestant_images).to_a.shuffle!.group_by.with_index { |_e, i| i % 3 }.values
   end
 
   def new
