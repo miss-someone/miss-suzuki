@@ -17,8 +17,8 @@ class ContestantsController < ApplicationController
   def second_stage
     # @contestant = Contestant.approved.nth_stage(2).includes(:interview_answers)
     #               .includes(:contestant_images).shuffle.group_by.with_index { |_e, i| i % 3 }.values
-    ids = Contestant.approved.nth_stage(2).pluck(:id).shuffle
-    @contestant = Contestant.includes(:interview_answers).includes(:contestant_images).find(ids)
+    ids = Contestant.approved.nth_stage(2).pluck(:id)
+    @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers).includes(:contestant_images).find(ids)
                   .shuffle.group_by.with_index { |_e, i| i % 3 }.values
   end
 
