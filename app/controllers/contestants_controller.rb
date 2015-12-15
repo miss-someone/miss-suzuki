@@ -19,7 +19,7 @@ class ContestantsController < ApplicationController
     #               .includes(:contestant_images).shuffle.group_by.with_index { |_e, i| i % 3 }.values
     ids = Contestant.approved.nth_stage(2).pluck(:id).shuffle
     @contestant = Contestant.includes(:interview_answers).includes(:contestant_images).find(ids)
-                    .shuffle.group_by.with_index { |_e, i| i % 3 }.values
+                  .shuffle.group_by.with_index { |_e, i| i % 3 }.values
   end
 
   def new
