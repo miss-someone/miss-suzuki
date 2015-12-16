@@ -70,6 +70,14 @@ Rails.application.routes.draw do
     resources :user_sessions, only: :create
 
     scope 'mister' do
+      get   'index'   => 'index'
+      get   'about'   => 'about'
+      get   'rules'   => 'rules'
+      get   'how_to_vote' => 'how_to_vote'
+      get   'flow_chart'  => 'flow_chart'
+      get   'next'        => 'next'
+      get   'entry'       => 'entry'
+
       scope 'contestants' do
         get 'new' => 'mister/contestants#new'
         post 'create' => 'mister/contestants#create'
