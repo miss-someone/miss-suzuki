@@ -1,0 +1,87 @@
+<div id="mister">
+  <div id="home">
+    <div id="mainimage">
+      <div class="slideshow">
+        <div><%= link_to(image_tag("mainimages/group_mainimage_home.jpg"), "/contestants/second_stage") %></div>
+        <div><%= image_tag "mainimages/mainimage_mr.jpg" %></div>
+        <div><%= link_to(image_tag("mainimages/mainimage_qtaro.jpg"), "/contents/erai_suzukisan_sp1") %></div>
+        <div><%= image_tag "mainimages/mainimage1.jpg" %></div>
+      </div>
+      <script>
+      $('.slideshow').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow:false,
+        prevArrow:false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+      });
+      </script>
+    </div>
+    <p id="entry_btn"><a href="contestants/second_stage">投票ページはこちら！</a></p>
+  <!--   <div class="top_vote_and_entry_btn">
+      <div class="left_vote_btn">
+        <a href="contestants/group/3">投票ページはこちら！</a>
+      </div> -->
+  <!--     <div class="right_entry_btn">
+        <a href="contestants/entry">エントリーはこちら！</a>
+      </div>
+    </div>
+   -->
+    <div id="to_top">
+      <a href="#home"><%= image_tag 'to_top_blue.png', :width=> '50px' %></a>
+    </div>
+
+<!--     <div id="home_icons">
+      <h2>予選最終ラウンド、開幕！</h2>
+    </div> -->
+
+  <!--  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
+    <div class="news">
+      <h2>NEWS</h2>
+      <% @news.each do |entry| %>
+        <h3><%= entry.date.strftime("%-m/%-d") %> <%= entry.content.html_safe%></h3>
+      <% end %>
+      <p class="detail"><a href="/news">もっと見る</a></p>
+    </div>
+    <div class="buttons">
+      <a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/official_tw.png', :width=>'200px' %></a>
+      <a href="https://www.facebook.com/MsSuzukiOfficial" target="_blank"><%= image_tag 'btn/official_fb.png', :width=>'200px' %></a>
+    </div>
+    <p class="copy"><%= image_tag 'catchcopy.png', :width=>'580px' %></p>
+    <p class="fullsize"><%= image_tag 'mister/mainimages/home1.jpg' %></p>
+    <div class="detail1"><p>MISTER-SUZUKIは史上初、「鈴木さん」限定のミスターコンテストです。<br>
+      年齢、職業は一切問いません。現在の名前が「鈴木」の方はどなたでもご参加いただけます。</p></div>
+
+    <p class="fullsize"><%= image_tag 'mister/mainimages/home2.jpg' %></p>
+    <div class="detail2">
+      <div class="section">
+        <h3>ENTRY</h3>
+        <div class="explain">
+          <p class="icon"><%= image_tag 'icon/icon_laptop.jpg', :width=>'100px' %></p>
+          <p class="text text1">エントリー期間は2016年1月31(日) 23:59までです。<br>
+          グループ予選の中から「かっこいい！」ポイントの上位2割の方が、ファイナルに進出します。<br>
+          投票回数は1日3回、<a href="https://miss-suzuki.com/users/signup">会員登録してログイン</a>をすると１日10回投票ができます。</p>
+        </div>
+      </div>
+      <div class="section">
+        <h3>FINAL</h3>
+        <div class="explain">
+          <p class="icon"><%= image_tag 'icon/icon_stage.png', :width=>'100px' %></p>
+          <p class="text text3">ファイナルの投票期間は2016年2月1日(月)から2月13日(日)23:59までの予定です。<br>この投票の優勝者がミスター鈴木となります。</p>
+        </div>
+      </div>
+    </div>
+  <!--   <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
+
+    <p class="fullsize"><%= image_tag 'mister/mainimages/home3.jpg' %></p>
+    <div class="detail3">
+      <p class="icon"><%= image_tag 'icon/icon_trophy.jpg', :width=>'100px' %></p>
+      <p class="text">ミスター鈴木に選ばれた鈴木さんには「MISS-SUZUKIファイナル」にご招待し「金の表札」、<br>
+      準グランプリの鈴木さんには「銀の表札」を贈呈いたします。<br>
+      ファイナリストに選ばれた皆様には、<br>
+      協賛企業様からのプレゼントの贈呈や、<br>
+      当団体が製作する映像コンテンツや各種メディアへの出演も依頼させていただきます。</p>
+    </div>
+  </div>
+</div>

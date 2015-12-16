@@ -69,6 +69,22 @@ Rails.application.routes.draw do
     get "login" => "user_sessions#new", :as => "login"
     resources :user_sessions, only: :create
 
+    scope 'mister' do
+      get   '/'       => 'mister/static_pages#index'
+      get   'index'   => 'mister/static_pages#index'
+      get   'about'   => 'mister/static_pages#about'
+      get   'rules'   => 'mister/static_pages#rules'
+      get   'how_to_vote' => 'mister/static_pages#how_to_vote'
+      get   'flow_chart'  => 'mister/static_pages#flow_chart'
+      get   'next'        => 'mister/static_pages#next'
+
+      scope 'contestants' do
+        get 'new' => 'mister/contestants#new'
+        post 'create' => 'mister/contestants#create'
+        get 'entry' => 'mister/contestants#entry'
+      end
+    end
+
     # Sidekiqのステータス管理用
     # 接続元は，ローカルホスト及びAdminサーバのみに制限
     require 'sidekiq/web'
