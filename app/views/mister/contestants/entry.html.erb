@@ -1,47 +1,45 @@
-<div id="entry">
-  <div id="mainimage">
-    <%= image_tag 'mainimages/entry_mainimage.jpg' %>
-  </div>
-
-<!--   <div class="to_entries"><p><a href='/entries'>美女はこちら！</a></p></div> -->
-    <div class="text text1">
-      <p>エントリーいただいた方はこちらのレイアウトで表示されます。</p>
+<div id="mister">
+  <div id="entry">
+    <div id="mainimage">
+      <%= image_tag 'mainimages/entry_mainimage.jpg' %>
     </div>
-<!-- CONTESTANT -->
-    <div class="contestant">
-      <div class="vote_system">
-        <a href="thankyou_sample"><%= image_tag 'kakkoii.png', :width => '80' %></a>
-        <p class="counter">513</p>
+
+  <!--   <div class="to_entries"><p><a href='/entries'>美女はこちら！</a></p></div> -->
+      <div class="text text1">
+        <p>エントリーいただいた方はこちらのレイアウトで表示されます。</p>
       </div>
-      <div class="mypage_btn">
-        <a href="mypage_sample"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+  <!-- CONTESTANT -->
+      <div class="contestant">
+        <div class="vote_system">
+          <a href="thankyou_sample"><%= image_tag 'kakkoii.png', :width => '80' %></a>
+          <p class="counter">777</p>
+        </div>
+<!--         <div class="mypage_btn">
+          <a href="mypage_sample"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+        </div> -->
+        <div class="picture">
+          <%= image_tag 'mister/suzuki_rei.jpg' %>
+        </div>
+        <div class="profile">
+          <p class="url"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/btn_tw.png', :width => '80' %></a></p>
+          <h3 class="furigana">すずきれい</h3>
+          <h2 class="name">鈴木例</h2>
+          <p class="age">年齢：22歳</p>
+          <p class="hometown">出身：北海道</p>
+          <p class="height">身長：179cm</p>
+          <p class="appeal">一言アピール！</p>
+          <textarea name="comment">日本一かっこいい鈴木さんになりたい！</textarea>
+        </div>
       </div>
-      <div class="picture">
-        <%= image_tag 'suzuki_reiko_example.jpg' %>
-      </div>
-      <div class="profile">
-        <p class="url"><a href="https://twitter.com/2015MissSuzuki" target="_blank"><%= image_tag 'btn/btn_tw.png', :width => '80' %></a></p>
-        <h3 class="furigana">すずきれいこ</h3>
-        <h2 class="name">鈴木例子</h2>
-        <p class="age">年齢：22歳</p>
-        <p class="hometown">出身：東京都</p>
-        <p class="height">身長：161cm</p>
-        <p class="appeal">一言アピール！</p>
-        <textarea name="comment">鈴木に生まれてきてよかった！</textarea>
-      </div>
+  <!-- /CONTESTANT -->
+
+    <div class="text text2">
+      <p>こちらの<a href="/mister/entrypolicy">エントリーポリシー</a>をご確認のうえエントリーをお願いします。</p>
     </div>
-<!-- /CONTESTANT -->
+    <div id="entry_btn" style="margin-bottom:20px;"><a href="/mister/contestants/new">エントリーする</a></div>
 
-<!--   <div class="text text2">
-    <p>こちらの<a href="/entrypolicy">エントリーポリシー</a>をご確認のうえエントリーをお願いします。</p>
+    <div id="banner_big" style="margin-top:10px;">
+      <%= ad_img %>
+    </div>
   </div>
-  <div id="entry_btn" style="margin-bottom:20px;"><a href="new">エントリーする</a></div>
- -->
-  <div id="banner_big" style="margin-top:10px;">
-    <%= ad_img %>
-  </div>
-
-
-
-
 </div>

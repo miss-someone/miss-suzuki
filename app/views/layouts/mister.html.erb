@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <head>
-  <title>MISS-SUZUKI | 鈴木さん限定のミスコン『ミス鈴木』</title>
+  <title>MISTER-SUZUKI | 鈴木さん限定のミスコン(男子編)『ミスター鈴木』</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= favicon_link_tag 'favicon.ico' %>
@@ -27,15 +27,14 @@
 <div id="mister">
   <div id="header">
     <div id="header_top">
-      <p id="logo"><a href="/"><%= image_tag 'mister/mister-suzuki_logo.jpg', :width =>'160' %></a></p>
+      <p id="logo"><a href="/mister"><%= image_tag 'mister/mister-suzuki.png', :width =>'160' %></a></p>
       <div id="nav">
         <ul id="menu">
-          <li class="tab"><a href="/">HOME<br><span>ホーム</span></a></li>
-          <li class="tab" ><a href="/rules">RULES<br><span>ルール</span></a></li>
-          <li class="tab" ><a href="/entry">ENTRY<br><span>エントリー</span></a></li>
-          <li class="tab"><a href="/about">ABOUT US<br><span>運営団体</span></a></li>
+          <li class="tab"><a href="/mister">HOME<br><span>ホーム</span></a></li>
+          <li class="tab" ><a href="/mister/rules">RULES<br><span>ルール</span></a></li>
+          <li class="tab" ><a href="/mister/contestants/entry">ENTRY<br><span>エントリー</span></a></li>
           <li class="tab"><a href="/contents">CONTENTS<br><span>鈴木さん特集！</span></a></li>
-          <li class="tab girls arrow_box"><a href="/contestants/second_stage">MISS-SUZUKI<br><span>美女はこちら！</span></a></li>
+          <li class="tab girls arrow_box"><a span style="color:#e04974" href="/contestants/second_stage">MISS-SUZUKI<br><span>美女はこちら！</span></a></li>
         </ul>
       </div>
       <div id="header_right">
@@ -48,15 +47,13 @@
 
     <div id="smartphone_menu">
       <dl id="acMenu">
-        <dt><%= image_tag 'humburger.png' %><span>MENU</span></dt>
+        <dt><%= image_tag 'humburger_blue.png' %><span>MENU</span></dt>
         <dd>
-          <li class="tab even"><a href="/contestants/second_stage">MISS-SUZUKI<span>美女はこちら！</span></a></li>
-          <li class="tab"><a href="/">HOME<span>ホーム</span></a></li>
-          <li class="tab even"><a href="/news">NEWS<span>ニュース</span></a></li>
-          <li class="tab" ><a href="/rules">RULES<span>ルール</span></a></li>
-          <li class="tab even"><a href="/contestants/entry">ENTRY<span>エントリー</span></a></li>
-          <li class="tab"><a href="/about">ABOUT<span>運営団体</span></a></li>
-          <li class="tab even"><a href="/contents">CONTENTS<span>鈴木さん特集！</span></a></li>
+          <li class="tab even"><a span style="color:#e04974" href="/contestants/second_stage">MISS-SUZUKI<span>美女はこちら！</span></a></li>
+          <li class="tab"><a href="/mister">HOME<span>ホーム</span></a></li>
+          <li class="tab" ><a href="/mister/rules">RULES<span>ルール</span></a></li>
+          <li class="tab" ><a href="/mister/contestants/entry">ENTRY<span>エントリー</span></a></li>
+          <li class="tab"><a href="/contents">CONTENTS<span>鈴木さん特集！</span></a></li>
         </dd>
       </dl>
     </div>
@@ -75,8 +72,8 @@
   <div class="footer_right">
     <ul id="footer_menu">
       <li><a target="_blank" href="http://pixel-aoyama.com">運営団体</a></li>
-      <li><a href="/terms">利用規約</a></li>
-      <li><a href="/entrypolicy">エントリーポリシー</a></li>
+      <li><a href="terms">利用規約</a></li>
+      <li><a href="entrypolicy">エントリーポリシー</a></li>
       <li><a href="/policy">プライバシーポリシー</a></li>
     </ul>
   </div>

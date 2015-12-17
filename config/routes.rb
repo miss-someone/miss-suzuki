@@ -78,6 +78,9 @@ Rails.application.routes.draw do
       get   'flow_chart'  => 'mister/static_pages#flow_chart'
       get   'next'        => 'mister/static_pages#next'
 
+      get   'terms'    => 'mister/static_pages#terms'
+      get   'entrypolicy'   => 'mister/static_pages#entrypolicy'
+
       scope 'contestants' do
         get 'new' => 'mister/contestants#new'
         post 'create' => 'mister/contestants#create'
