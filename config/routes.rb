@@ -77,7 +77,6 @@ Rails.application.routes.draw do
       get   'how_to_vote' => 'mister/static_pages#how_to_vote'
       get   'flow_chart'  => 'mister/static_pages#flow_chart'
       get   'next'        => 'mister/static_pages#next'
-
       get   'terms'    => 'mister/static_pages#terms'
       get   'entrypolicy'   => 'mister/static_pages#entrypolicy'
 
