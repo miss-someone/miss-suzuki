@@ -2,8 +2,7 @@
   <div id="home">
     <div id="mainimage">
       <div class="slideshow">
-        <div><%= link_to(image_tag("mainimages/group_mainimage_home.jpg"), "/contestants/second_stage") %></div>
-        <div><%= image_tag "mainimages/mainimage_mr.jpg" %></div>
+        <div><%= link_to(image_tag("mainimages/mainimage_mr.jpg"), "/mister/") %></div>
         <div><%= link_to(image_tag("mainimages/mainimage_qtaro.jpg"), "/contents/erai_suzukisan_sp1") %></div>
         <div><%= image_tag "mainimages/mainimage1.jpg" %></div>
       </div>
@@ -18,7 +17,7 @@
       });
       </script>
     </div>
-    <p id="entry_btn"><a href="contestants/second_stage">投票ページはこちら！</a></p>
+<!--     <p id="entry_btn"><a href="contestants/second_stage">投票ページはこちら！</a></p> -->
   <!--   <div class="top_vote_and_entry_btn">
       <div class="left_vote_btn">
         <a href="contestants/group/3">投票ページはこちら！</a>
@@ -28,6 +27,8 @@
       </div>
     </div>
    -->
+   <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p>
+
     <div id="to_top">
       <a href="#home"><%= image_tag 'to_top_blue.png', :width=> '50px' %></a>
     </div>
@@ -58,16 +59,17 @@
       <div class="section">
         <h3>ENTRY</h3>
         <div class="explain">
-          <p class="icon"><%= image_tag 'icon/icon_laptop.jpg', :width=>'100px' %></p>
+          <p class="icon"><%= image_tag 'mister/icon/laptop_blue.png', :width=>'100px' %></p>
           <p class="text text1">エントリー期間は2016年1月31(日) 23:59までです。<br>
-          グループ予選の中から「かっこいい！」ポイントの上位2割の方が、ファイナルに進出します。<br>
+          グループ予選の中から「かっこいい！」ポイントの上位2割の方が<br>
+          ファイナルに進出します。<br>
           投票回数は1日3回、<a href="https://miss-suzuki.com/users/signup">会員登録してログイン</a>をすると１日10回投票ができます。</p>
         </div>
       </div>
       <div class="section">
         <h3>FINAL</h3>
         <div class="explain">
-          <p class="icon"><%= image_tag 'icon/icon_stage.png', :width=>'100px' %></p>
+          <p class="icon"><%= image_tag 'mister/icon/stage_blue.png', :width=>'100px' %></p>
           <p class="text text3">ファイナルの投票期間は2016年2月1日(月)から2月13日(日)23:59までの予定です。<br>この投票の優勝者がミスター鈴木となります。</p>
         </div>
       </div>
@@ -76,8 +78,8 @@
 
     <p class="fullsize"><%= image_tag 'mister/mainimages/home3.jpg' %></p>
     <div class="detail3">
-      <p class="icon"><%= image_tag 'icon/icon_trophy.jpg', :width=>'100px' %></p>
-      <p class="text">ミスター鈴木に選ばれた鈴木さんには「MISS-SUZUKIファイナル」にご招待し「金の表札」、<br>
+      <p class="icon"><%= image_tag 'mister/icon/trophy_blue.png', :width=>'100px' %></p>
+      <p class="text">優勝した鈴木さんには「MISS-SUZUKIファイナル」にご招待し「金の表札」を、<br>
       準グランプリの鈴木さんには「銀の表札」を贈呈いたします。<br>
       ファイナリストに選ばれた皆様には、<br>
       協賛企業様からのプレゼントの贈呈や、<br>
