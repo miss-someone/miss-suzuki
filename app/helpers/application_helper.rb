@@ -56,6 +56,20 @@ module ApplicationHelper
         url:   "https://miss-suzuki.com/contents/erai_suzukisan_sp1",
         image: "https://miss-suzuki.com/assets/mainimages/mainimage_qtaro-b07aab0ecf0df82778ac8932db8cd7d5.jpg"
       }
+    elsif controller_name == "contents" && action_name == "interview2_1"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第２弾！スズキ株式会社社長 鈴木俊宏さん！【前編】",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/erai_suzukisan2_1",
+        image: "https://miss-suzuki.com/assets/mainimages/interview2_mainimage1-936e2b5a6b463fa91a354040df7052d9.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "interview2_2"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第２弾！スズキ株式会社社長 鈴木俊宏さん！【後編】",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/erai_suzukisan2_2",
+        image: "https://miss-suzuki.com/assets/mainimages/interview2_mainimage2-7601eea65cf33fc187bb72ca02537b56.jpg"
+      }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
         title: "MISS-SUZUKI | #{contestant_profile.name}さん",
