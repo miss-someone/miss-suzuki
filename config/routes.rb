@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get   'contents/erai_suzukisan_sp1' => 'contents#interview_sp1'
     get   'contents/erai_suzukisan2_1' => 'contents#interview2_1'
     get   'contents/erai_suzukisan2_2' => 'contents#interview2_2'
+    get   'contents/erai_suzukisan3' => 'contents#interview3'
     get   'news' => 'news#index'
 
     scope :contestant_image do
