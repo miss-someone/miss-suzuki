@@ -83,7 +83,7 @@ class Mister::ContestantsController < Mister::ApplicationController
   end
 
   def contestant_params
-    params.require(:mister_contestant).permit(:email, :password, :agreement,
+    params.require(:contestant).permit(:email, :password, :agreement,
                                               { contestant_tag_ids: [] },
                                               contestant_profile_attributes:
                                               [:name, :hurigana, :age, :come_from, :comment,
