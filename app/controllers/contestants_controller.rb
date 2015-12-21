@@ -1,6 +1,6 @@
 class ContestantsController < ApplicationController
-  skip_before_filter :require_login, only: [:entry, :thankyou_sample, :mypage_sample,
-                                            :index, :second_stage, :mypage, :thankyou, :new, :create]
+  skip_before_filter :require_login, only: [:entry, :thankyou_sample, :mypage_sample, :index,
+                                            :second_stage, :semifinal, :mypage, :thankyou, :new, :create]
 
   before_filter :require_contestant_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
   before_filter :restrict_contestant_login, only: [:entry, :new, :create]
@@ -15,10 +15,16 @@ class ContestantsController < ApplicationController
   end
 
   def second_stage
-    # @contestant = Contestant.approved.nth_stage(2).includes(:interview_answers)
-    #               .includes(:contestant_images).shuffle.group_by.with_index { |_e, i| i % 3 }.values
     ids = Contestant.approved.nth_stage(2).pluck(:id)
-    @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers).includes(:contestant_images).find(ids)
+    @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers)
+                  .includes(:contestant_images).find(ids)
+                  .shuffle.group_by.with_index { |_e, i| i % 3 }.values
+  end
+
+  def semifinal
+    ids = Contestant.approved.semifinal.pluck(:id)
+    @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers)
+                  .includes(:contestant_images).find(ids)
                   .shuffle.group_by.with_index { |_e, i| i % 3 }.values
   end
 
