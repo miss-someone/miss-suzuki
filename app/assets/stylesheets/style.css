@@ -1441,15 +1441,15 @@ p a{
   resize: none;
   margin-top: 10px;
 }
-.contestant .profile .anchor img{
+/*.contestant .profile .anchor img{
   position: absolute;
   right:10px;
   bottom:82px;
   width:25px;
-}
+}*/
 .contestant .profile .url img{
   position: absolute;
-  right:40px;
+  right:12px;
   bottom:80px;
   width: 120px;
 }
@@ -3530,7 +3530,7 @@ body {
 .contestant .vote_system{
   z-index: 3;
   position: absolute;
-  top:170px;
+  top:160px;
   left:210px;
 }
 .contestant .vote_system .counter{
@@ -3546,7 +3546,7 @@ body {
 }
 .contestant .mypage_btn{
   position: absolute;
-  top:250px;
+  top:240px;
   right:10px;
   z-index: 4;
 }
@@ -3595,15 +3595,15 @@ body {
   resize: none;
   margin-top: 10px;
 }
-.contestant .profile .anchor img{
+/*.contestant .profile .anchor img{
   position: absolute;
   right:10px;
   bottom:82px;
   width:25px;
-}
+}*/
 .contestant .profile .url img{
   position: absolute;
-  right:40px;
+  right:12px;
   bottom:80px;
   width: 120px;
 }
