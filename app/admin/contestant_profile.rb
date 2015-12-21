@@ -1,7 +1,7 @@
 ActiveAdmin.register ContestantProfile do
   actions :index, :show, :edit, :update
 
-  permit_params :name, :hurigana, :group_id, :profile_image, :age, :height,
+  permit_params :name, :hurigana, :group_id, :profile_image, :age, :height, :movie_url,
                 :come_from, :link_url, :link_type, :comment, :thanks_comment, :station,
                 :profile_image_crop_param_x, :profile_image_crop_param_y,
                 :profile_image_crop_param_height, :profile_image_crop_param_width,
@@ -55,6 +55,9 @@ ActiveAdmin.register ContestantProfile do
       row :link_type do
         Settings.link_type.to_h.key(contestant_profile.link_type)
       end
+      row :movie_url do
+        link_to contestant_profile.movie_url, contestant_profile.movie_url
+      end
       row 'タグ' do
         tags = ""
         contestant_profile.user.contestant_tags.each do |tag|
@@ -97,6 +100,7 @@ ActiveAdmin.register ContestantProfile do
       f.input :come_from
       f.input :link_url
       f.input :link_type, as: :select, collection: Settings.link_type
+      f.input :movie_url
       f.input :comment
       f.input :thanks_comment
       f.input :station
