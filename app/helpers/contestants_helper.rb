@@ -35,9 +35,9 @@ module ContestantsHelper
   def vote_count(contestant)
     if @stage.present? && @stage == 1
       contestant.profile.votes
-    elsif (@stage.present? && @stage == 2) || contestant.profile.is_in_2nd_stage
+    elsif (@stage.present? && @stage == 2) && contestant.profile.is_in_2nd_stage
       contestant.profile.second_stage_votes
-    elsif (@stage.present? && @stage == 3) || contestant.profile.is_in_semifinal
+    elsif (@stage.present? && @stage == 3) && contestant.profile.is_in_semifinal
       contestant.profile.semifinal_votes
     else
       contestant.profile.votes
