@@ -71,21 +71,19 @@ Rails.application.routes.draw do
     get "login" => "user_sessions#new", :as => "login"
     resources :user_sessions, only: :create
 
-    scope 'mister' do
-      get   '/'       => 'mister/static_pages#index'
-      get   'index'   => 'mister/static_pages#index'
-      get   'about'   => 'mister/static_pages#about'
-      get   'rules'   => 'mister/static_pages#rules'
-      get   'how_to_vote' => 'mister/static_pages#how_to_vote'
-      get   'flow_chart'  => 'mister/static_pages#flow_chart'
-      get   'next'        => 'mister/static_pages#next'
-      get   'terms'    => 'mister/static_pages#terms'
-      get   'entrypolicy'   => 'mister/static_pages#entrypolicy'
+    namespace 'mister' do
+      get   '/'       => 'static_pages#index'
+      get   'index'   => 'static_pages#index'
+      get   'about'   => 'static_pages#about'
+      get   'rules'   => 'static_pages#rules'
+      get   'how_to_vote' => 'static_pages#how_to_vote'
+      get   'flow_chart'  => 'static_pages#flow_chart'
+      get   'next'        => 'static_pages#next'
+      get   'terms'    => 'static_pages#terms'
+      get   'entrypolicy'   => 'static_pages#entrypolicy'
 
-      scope 'contestants' do
-        get 'new' => 'mister/contestants#new'
-        post 'create' => 'mister/contestants#create'
-        get 'entry' => 'mister/contestants#entry'
+      resource :contestants, only: [:new, :create] do
+        get 'entry'   => 'contestants#entry'
       end
     end
 
