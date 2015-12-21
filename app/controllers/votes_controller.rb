@@ -3,7 +3,7 @@ class VotesController < ApplicationController
 
   def create
     @contestant_profile = ContestantProfile.approved.current_open_group.contestant_id(vote_params[:contestant_id])
-    if vote_end? || !@contestant_profile.is_in_2nd_stage
+    if semifinal_vote_end? || !@contestant_profile.is_in_semifinal
       render 'vote_end'
     elsif logged_in?
       create_action_with_logged_in

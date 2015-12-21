@@ -37,6 +37,8 @@ module ContestantsHelper
       contestant.profile.votes
     elsif (@stage.present? && @stage == 2) || contestant.profile.is_in_2nd_stage
       contestant.profile.second_stage_votes
+    elsif (@stage.present? && @stage == 3) || contestant.profile.is_in_semifinal
+      contestant.profile.semifinal_votes
     else
       contestant.profile.votes
     end
@@ -53,10 +55,13 @@ module ContestantsHelper
   private
 
   def show_vote_btn?(contestant)
-    !vote_end? && contestant.profile.send("is_in_#{Settings.current_stage.ordinalize}_stage")
-  rescue => e
-    Airbrake.notify(e)
-    false
+    if contestant.profile.is_in_semifinal
+      !semifinal_vote_end?
+    elsif contestant.profile.is_in_2nd_stage
+      !qualify_vote_end?
+    else
+      !vote_end?
+    end
   end
 
   # リンク種別から表示するボタン画像のファイル名を取得する

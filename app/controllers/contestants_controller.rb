@@ -15,6 +15,7 @@ class ContestantsController < ApplicationController
   end
 
   def second_stage
+    @stage = 2
     ids = Contestant.approved.nth_stage(2).pluck(:id)
     @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers)
                   .includes(:contestant_images).find(ids)
@@ -22,6 +23,7 @@ class ContestantsController < ApplicationController
   end
 
   def semifinal
+    @stage = 3
     ids = Contestant.approved.semifinal.pluck(:id)
     @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers)
                   .includes(:contestant_images).find(ids)
