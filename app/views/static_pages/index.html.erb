@@ -1,8 +1,8 @@
 <div id="home">
   <div id="mainimage">
     <div class="slideshow">
+      <div><%= link_to(image_tag("mainimages/to_semifinal.jpg"), "/contestants/semifinal") %></div>
       <div><%= link_to(image_tag("mainimages/interview2_mainimage1.jpg"), "/contents/erai_suzukisan2_1") %></div>
-      <div><%= link_to(image_tag("mainimages/group_mainimage_home.jpg"), "/contestants/second_stage") %></div>
       <div><%= image_tag "mainimages/mainimage_mr.jpg" %></div>
       <div><%= link_to(image_tag("mainimages/mainimage_qtaro.jpg"), "/contents/erai_suzukisan_sp1") %></div>
       <div><%= image_tag "mainimages/mainimage1.jpg" %></div>
@@ -18,7 +18,7 @@
     });
     </script>
   </div>
-  <p id="entry_btn"><a href="contestants/second_stage">投票ページはこちら！</a></p>
+  <p id="entry_btn"><a href="contestants/semifinal">投票ページはこちら！</a></p>
 <!--   <div class="top_vote_and_entry_btn">
     <div class="left_vote_btn">
       <a href="contestants/group/3">投票ページはこちら！</a>
@@ -33,7 +33,7 @@
   </div>
 
   <div id="home_icons">
-    <h2>予選最終ラウンド、開幕！</h2>
+    <h2>セミファイナル、ついに開幕！</h2>
         <% @contestants.each do |contestant| %>
           <div class="contestant_icon">
             <%= link_to (image_tag contestant.profile.profile_image.thumb(125, 125), alt: contestant.profile.name), contestants_mypage_path(contestant.id) %>
@@ -83,7 +83,7 @@
       <h3>FINAL</h3>
       <div class="explain">
         <p class="icon"><%= image_tag 'icon/icon_stage.png', :width=>'100px' %></p>
-        <p class="text text3">決勝は2016年2月に開催予定です。<br>会場及び詳細な日程につきましては、後日サイト内で正式にアナウンスいたします。</p>
+        <p class="text text3">決勝は2016年2月10日(水)に開催予定です。<br>会場及び詳細につきましては、後日サイト内で正式にアナウンスいたします。</p>
       </div>
     </div>
   </div>
