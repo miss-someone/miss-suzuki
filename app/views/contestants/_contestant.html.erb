@@ -16,7 +16,7 @@
   <div class="picture">
     <% if contestant.profile.movie_url.present? %>
       <!-- youtube movie -->
-      <iframe max-width="600" src="<%= contestant.profile.movie_url %>" sandbox="allow-same-origin" frameborder="0" allowfullscreen></iframe>
+      <iframe max-width="600" src="<%= contestant.profile.movie_url %>" frameborder="0" allowfullscreen></iframe>
     <% else %>
       <%= image_tag contestant.profile.profile_image.thumb(300, 300) %>
     <% end %>
