@@ -664,7 +664,7 @@ p a{
   width:90%;
 }
 /*====================ENTRY==========================*/
-#entry .text{
+/*#entry .text{
   text-align: center;
   font-size: 10px;
   font-weight: bold;
@@ -714,6 +714,58 @@ p a{
   padding:10px;
   position: relative;
   z-index: 1;
+}動画審査の前のレイアウト*/
+#entry .text{
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+#entry .contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+}
+
+#entry .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:160px;
+  left:210px;
+}
+#entry .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+#entry .mypage_btn{
+  position: absolute;
+  top:235px;
+  right:10px;
+  z-index: 4;
+}
+#entry .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+#entry .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -25px
 }
 #entry .profile p{
   color:#666;
@@ -1267,7 +1319,7 @@ p a{
   text-decoration: none;
 }
 /*====================contestant==========================*/
-.contestant{
+/*.contestant{
   position: relative;
   width: 300px;
   margin:0 auto;
@@ -1313,6 +1365,54 @@ p a{
   padding:10px;
   position: relative;
   z-index: 1;
+}*/
+.contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+  margin-bottom: 30px;
+}
+
+.contestant .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:160px;
+  left:210px;
+}
+.contestant .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+.contestant .mypage_btn{
+  position: absolute;
+  top:235px;
+  right:10px;
+  z-index: 4;
+}
+.contestant .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+.contestant .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -25px;
 }
 .contestant .profile p{
   color:#666;
@@ -2738,7 +2838,7 @@ body {
   width:900px;
 }
 /*====================ENTRY==========================*/
-#entry .sample{
+/*#entry .sample{
   position: relative;
   width: 300px;
   margin:0 auto;
@@ -2783,6 +2883,53 @@ body {
   padding:10px;
   position: relative;
   z-index: 1;
+}*/
+#entry .sample{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+}
+
+#entry .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:170px;
+  left:210px;
+}
+#entry .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+#entry .mypage_btn{
+  position: absolute;
+  top:250px;
+  right:10px;
+  z-index: 4;
+}
+#entry .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+#entry .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -10px;
 }
 #entry .profile p{
   color:#666;
@@ -3326,7 +3473,7 @@ body {
   text-decoration: none;
 }
 /*====================contestant==========================*/
-.contestant{
+/*.contestant{
   position: relative;
   width: 300px;
   margin:0 auto;
@@ -3372,6 +3519,54 @@ body {
   padding:10px;
   position: relative;
   z-index: 1;
+}*/
+.contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+  margin-bottom: 30px;
+}
+
+.contestant .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:170px;
+  left:210px;
+}
+.contestant .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+.contestant .mypage_btn{
+  position: absolute;
+  top:250px;
+  right:10px;
+  z-index: 4;
+}
+.contestant .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+.contestant .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -25px;
 }
 .contestant .profile p{
   color:#666;
