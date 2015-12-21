@@ -1,10 +1,10 @@
-<% @stage = 2 %>
+<% @stage = 3 %>
 <div id="mainimage">
-  <%= image_tag "mainimages/group#{params[:id]}_mainimage.jpg" %>
+  <%= image_tag "mainimages/semifinal_mainimage.jpg" %>
 </div>
 
-<div class='voter_dialog'>
-  予選最終ラウンドの投票期間が終了しました。<br>たくさんのご投票ありがとうございました!
+<div>
+  <%= remaining_vote_count_text %>
 </div>
 
 <div class="content_top">

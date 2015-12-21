@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   # 管理画面ではDeviseの認証機能を用いるのでスキップ
   before_filter :require_login unless ENV['IS_ADMIN_WEB'] == 'true'
 
+  helper_method :qualify_vote_end?, :semifinal_vote_end?
+
   private
 
   # sorceryのメソッドをオーバライドしています
@@ -34,8 +36,12 @@ class ApplicationController < ActionController::Base
     fail ActionController::RoutingError, '404 Not Found'
   end
 
-  def vote_end?
+  def qualify_vote_end?
     Time.zone.now > Settings.contestant[:qualifying_vote_limit_day].to_date.in_time_zone.end_of_day
+  end
+
+  def semifinal_vote_end?
+    Time.zone.now > Settings.contestant[:semifinal_vote_limit_day].to_date.in_time_zone.end_of_day
   end
 
   private
