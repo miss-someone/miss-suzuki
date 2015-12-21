@@ -49,7 +49,7 @@ module ContestantsHelper
     return if current_user.profile.nil?
 
     remaining_vote = current_user.todays_remaining_vote_count
-    "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，本日の予選最終ラウンドの投票回数は残り<span>#{remaining_vote}回</span>です！".html_safe if logged_in?
+    "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，本日のセミファイナルの投票回数は残り<span>#{remaining_vote}回</span>です！".html_safe if logged_in?
   end
 
   private
