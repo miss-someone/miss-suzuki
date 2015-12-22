@@ -33,15 +33,19 @@ module ContestantsHelper
   end
 
   def vote_count(contestant)
-    if @stage.present? && @stage == 1
-      contestant.profile.votes
-    elsif (@stage.present? && @stage == 2) && contestant.profile.is_in_2nd_stage
+    if @stage.present? && @stage == 2
       contestant.profile.second_stage_votes
-    elsif (@stage.present? && @stage == 3) && contestant.profile.is_in_semifinal
+    elsif @stage.present? && @stage == 3
       contestant.profile.semifinal_votes
     else
       contestant.profile.votes
     end
+  end
+
+  def mypage_vote_count(contestant)
+    return contestant.profile.semifinal_votes if contestant.profile.is_in_semifinal
+    return contestant.profile.second_stage_votes if contestant.profile.is_in_2nd_stage
+    contestant.profile.votes
   end
 
   def remaining_vote_count_text
