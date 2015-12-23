@@ -82,6 +82,10 @@ Rails.application.routes.draw do
       get   'terms'    => 'static_pages#terms'
       get   'entrypolicy'   => 'static_pages#entrypolicy'
 
+      scope :contestants, as: :contestants do
+          get   'thankyou_sample'    => 'contestants#thankyou_sample'
+      end
+
       resource :contestants, only: [:new, :create] do
         get 'entry'   => 'contestants#entry'
       end

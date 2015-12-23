@@ -4954,7 +4954,7 @@ body {
 #thankyou {
   max-width:100%;
   clear: both;
-  border-top:5px solid #e04974;
+  border-top:3px solid #e04974;
 }
 #thankyou #content{
   overflow: hidden;
@@ -7065,7 +7065,7 @@ span#interview_question_number{
 #mister #thankyou {
   max-width:100%;
   clear: both;
-  border-top:5px solid #62a7e7;
+  border-top:3px solid #62a7e7;
 }
 #mister #thankyou #content{
   overflow: hidden;
