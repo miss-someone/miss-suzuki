@@ -2096,6 +2096,9 @@ span#interview_question_number{
 #acMenu dd .even{
   background-color: #f1f1f1;
 }
+#acMenu dd .mister a{
+  color: #62a7e7;
+}
 /*====================FOOTER==========================*/
 #footer{
   margin-top: 30px;
@@ -4052,10 +4055,11 @@ body {
   margin-top:0px;
 }
 #nav{
-  max-width:60%;
+  max-width:70%;
   overflow: hidden;
   margin-top: -15px;
   float:left;
+  margin-left: -30px;
 }
 #nav #humburger{
   display: none;
@@ -4088,6 +4092,12 @@ body {
 }
 #nav li.girls{
   display: table-cell;
+}
+#nav li.boys{
+  display: table-cell;
+}
+#nav .tab.boys{
+  max-width: 150px;
 }
 /*#nav li.arrow_box {
   position: relative;
@@ -4122,6 +4132,11 @@ body {
 #nav li.girls a{
   display: block;
   color: #e04974;
+}
+#nav li.boys a{
+  display: block;
+  color: #62a7e7;
+  width: 150px;
 }
 #header_right{
   float:right;
@@ -6176,6 +6191,13 @@ span#interview_question_number{
   margin-left: 20px;
   margin-top:20px;
 }
+#mister #nav .tab.boys{
+  max-width: 150px;
+  float: left;
+  display: block;
+  margin-left: 20px;
+  margin-top:20px;
+}
 #mister #nav .tab span{
   color:#666;
   font-size:11px;
@@ -7387,25 +7409,25 @@ span#interview_question_number{
   color:#62a7e7;
   text-decoration: none;
 }
-#help{
+#mister #help{
   width: 100%;
   clear: both;
   border-top: 3px solid #62a7e7;
 }
-#help h1{
+#mister #help h1{
   font-size: 18px;
   text-align: center;
   margin-top:50px;
 }
-#help h2{
+#mister #help h2{
   color: #62a7e7;
   margin-top: 40px;
 }
-#help #content h2.first{
+#mister #help #content h2.first{
   color: #62a7e7;
   margin-top:0;
 }
-#help #content{
+#mister #help #content{
   max-width:900px;
   margin:0 auto;
   background-color: #fff;
@@ -7416,14 +7438,14 @@ span#interview_question_number{
   font-size: 14px;
   margin-bottom: 50px;
 }
-#help .bold{
+#mister #help .bold{
   font-weight: bold;
 }
-#help a{
+#mister #help a{
   color:#62a7e7;
   text-decoration:underline;
 }
-#help .blue{
+#mister #help .blue{
   color:#62a7e7;
   text-decoration: none;
 }
@@ -7768,17 +7790,17 @@ span#interview_question_number{
   color:#62a7e7;
 }
 /*====================  ログインページ、その他認証ページ ==========================*/
-#login{
+#mister #login{
   clear: both;
   border-top: 3px solid #62a7e7;
   margin-bottom: -30px;
   height: 600px;
 }
-#login a{
+#mister #login a{
   color:#62a7e7;
   text-decoration: underline;
 }
-#login #login_form{
+#mister #login #login_form{
   width:400px;
   background:rgba(255,255,255,0.8);
   border-radius: 5px;
@@ -7786,29 +7808,29 @@ span#interview_question_number{
   margin-top: 100px;
   padding:0 50px 20px 50px;
 }
-#login #login_form h1{
+#mister #login #login_form h1{
   text-align: center;
   padding-top: 10px;
 }
-#login #login_form #flash_notice{
+#mister #login #login_form #flash_notice{
   text-align: center;
   color:#62a7e7;
   font-weight: bold;
   margin-bottom: 10px;
 }
-#login #login_form tr{
+#mister #login #login_form tr{
   font-size: 16px;
   font-weight: bold;
   color:#666;
 }
-#login #login_form tr input{
+#mister #login #login_form tr input{
   width: 400px;
   line-height: 2;
 }
-#login #login_form p{
+#mister #login #login_form p{
   text-align: center;
 }
-#login #login_form .submit_btn{
+#mister #login #login_form .submit_btn{
   width:200px;
   height:50px;
   background-color: #62a7e7;
@@ -7818,7 +7840,7 @@ span#interview_question_number{
   color:#fff;
   border:0px;
 }
-#login #login_form #flash_alert{
+#mister #login #login_form #flash_alert{
   color:#dd0000;
   text-align: center;
   font-weight: bold;
