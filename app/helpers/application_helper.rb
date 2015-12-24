@@ -70,7 +70,7 @@ module ApplicationHelper
         url:   "https://miss-suzuki.com/contents/erai_suzukisan2_2",
         image: "https://miss-suzuki.com/assets/mainimages/interview2_mainimage2-7601eea65cf33fc187bb72ca02537b56.jpg"
       }
-    elsif controller_name == "contents" && action_name == "interview2_2"
+    elsif controller_name == "contents" && action_name == "interview3"
       set_meta_tags og: {
         title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第３弾！三重県知事 鈴木英敬さん！",
         type:  "article",
