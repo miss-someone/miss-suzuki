@@ -2040,6 +2040,10 @@ span#interview_question_number{
   width:90%;
   margin-left: 20px;
 }
+#interview1 .cityinfo iframe{
+  width:90%;
+  margin-left: 20px;
+}
 #interview1 .cityinfo table{
   width:100%;
   padding:0 20px 20px 20px;
@@ -4223,6 +4227,11 @@ span#interview_question_number{
   margin-bottom: 10px;
 }
 #interview1 .cityinfo img{
+  width: 300px;
+  float: left;
+  margin-left: 20px;
+}
+#interview1 .cityinfo iframe{
   width: 300px;
   float: left;
   margin-left: 20px;
