@@ -79,11 +79,15 @@ Rails.application.routes.draw do
       get   'how_to_vote' => 'static_pages#how_to_vote'
       get   'flow_chart'  => 'static_pages#flow_chart'
       get   'next'        => 'static_pages#next'
-      get   'terms'    => 'static_pages#terms'
-      get   'entrypolicy'   => 'static_pages#entrypolicy'
+      get   'terms' => 'static_pages#terms'
+      get   'entrypolicy' => 'static_pages#entrypolicy'
+
+      scope :contestants, as: :contestants do
+        get 'thankyou_sample' => 'contestants#thankyou_sample'
+      end
 
       resource :contestants, only: [:new, :create] do
-        get 'entry'   => 'contestants#entry'
+        get 'entry' => 'contestants#entry'
       end
     end
 
