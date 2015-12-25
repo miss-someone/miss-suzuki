@@ -4230,6 +4230,7 @@ span#interview_question_number{
   width: 300px;
   float: left;
   margin-left: 20px;
+  padding-bottom: 10px;
 }
 #interview1 .cityinfo iframe{
   width: 300px;
