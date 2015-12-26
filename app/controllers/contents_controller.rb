@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  skip_before_filter :require_login, only: [:index, :history, :interview1, :interview1_2, :interview_sp1, :interview2_1, :interview2_2, :interview3]
+  skip_before_filter :require_login, only: [:index, :history, :interview1, :interview1_2, :interview_sp1, :interview2_1, :interview2_2, :interview3, :akaji]
   def history
   end
 
@@ -19,5 +19,8 @@ class ContentsController < ApplicationController
   end
 
   def interview3
+  end
+
+  def akaji
   end
 end

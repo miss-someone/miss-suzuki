@@ -1943,6 +1943,9 @@ span#interview_question_number{
 #interview1 .blue{
   color:#1b6ddc;
 }
+#interview1 .red{
+  color:red;
+}
 #interview1 .bigger{
   font-size: 18px;
 }
@@ -4125,6 +4128,9 @@ span#interview_question_number{
 }
 #interview1 .blue{
   color:#1b6ddc;
+}
+#interview1 .red{
+  color:red;
 }
 #interview1 .bigger{
   font-size: 18px;
