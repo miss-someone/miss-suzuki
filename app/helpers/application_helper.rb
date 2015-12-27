@@ -81,8 +81,8 @@ module ApplicationHelper
       set_meta_tags og: {
         title: "MISS-SUZUKI | 【緊急】MISS-SUZUKIが大赤字で困っているので、どれくらい赤字かを髪で表現してみた",
         type:  "article",
-        url:   "https://miss-suzuki.com/contents/akaji",
-        image: "https://miss-suzuki.com/assets/mainimages/interview3_mainimage-524df79b857aeb55f224e619ab3ed3f1.jpg"
+        url:   "https://miss-suzuki.com/contents/",
+        image: "https://miss-suzuki.com/assets/mainimages/mainimage_akaji-25d9a53b98bbd583bc881e0243c38843.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
