@@ -1,7 +1,11 @@
-# 出場者モデル
+# 出場者モデル(Miss)
 class Contestant < User
-  # デフォルトスコープの設定. Contestantのみに制限
-  default_scope -> { where(user_type: Settings.user_type[:contestant]) }
+  # デフォルトスコープの設定. 女性のContestantのみに制限
+  default_scope lambda {
+    includes(:contestant_profile)
+      .where(user_type: Settings.user_type[:contestant],
+             contestant_profiles: { sex: 'female' })
+  }
 
   scope :random, ->(n) { where(id: pluck(:id).shuffle[0..n - 1]) }
   scope :approved, lambda {

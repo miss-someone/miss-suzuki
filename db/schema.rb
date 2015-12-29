@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20151221005922) do
     t.boolean  "is_in_semifinal",                 default: false,    null: false
     t.integer  "semifinal_votes",                 default: 0
     t.string   "movie_url"
+
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", using: :btree

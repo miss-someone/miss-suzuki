@@ -1,0 +1,31 @@
+<div id='contestant-<%= contestant.id %>' class="contestant">
+  <div class="vote_system">
+    <%= vote_btn(contestant) %>
+    <p class="counter">
+    <%= vote_count(contestant) %>
+    </p>
+  </div>
+
+<% cache contestant.profile do %>
+  <% if mypage_present?(contestant) %>
+    <div class="mypage_btn">
+      <a href="/contestants/<%= contestant.profile.user_id %>/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+    </div>
+  <% end %>
+
+  <div class="picture">
+    <%= image_tag contestant.profile.profile_image.thumb(300, 300) %>
+  </div>
+  <div class="profile">
+    <p class="url"><%= link_btn(contestant.profile) %></p>
+    <h3 class="furigana"><%= contestant.profile.hurigana %></h3>
+    <h2 class="name"><%= contestant.profile.name %></h2>
+    <p class="age">年齢：<%= contestant.profile.age %></p>
+    <p class="hometown">出身：<%= contestant.profile.come_from %></p>
+    <p class="height">身長：<%= contestant.profile.height %></p>
+    <p class="appeal">一言アピール！</p>
+    <p class="anchor"><a style="float:right;" href="<%= contestant_anchor_url(contestant) %>"><%= image_tag 'icon/chain.png' %></a></p>
+    <textarea readonly name="comment"><%= contestant.profile.comment %></textarea>
+  </div>
+<% end %>
+</div>

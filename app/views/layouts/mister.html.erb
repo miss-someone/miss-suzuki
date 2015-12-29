@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<head>
+  <title>MISTER-SUZUKI | 鈴木さん限定のミスコン(男子編)『ミスター鈴木』</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= csrf_meta_tags %>
+  <meta name="keywords" content="ミスコン,鈴木さん,Miss-Suzuki,青山学院大学,佐藤さん,ミス鈴木">
+  <meta name="description" content="史上初!「鈴木さん」限定のミスコン MISS-SUZUKI！優勝者には「金の表札」とバイクをプレゼント！日本一かわいい鈴木さん、「ミス鈴木」に輝くのは一体だれだ！？" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+  <%= analytics_init if Rails.env.production? %>
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <%= display_meta_tags(fb_meta_tags(controller_name, action_name, @contestant_profile)) %>
+
+<script>
+    $(function(){
+        $("#acMenu dt").on("click", function() {
+            $(this).next().slideToggle();
+        });
+    });
+</script>
+</head>
+<body>
+<div id="mister">
+  <div id="header">
+    <div id="header_top">
+      <p id="logo"><a href="/mister"><%= image_tag 'mister/mister-suzuki.png', :width =>'160' %></a></p>
+      <div id="nav">
+        <ul id="menu">
+          <li class="tab"><a href="/mister">HOME<br><span>ホーム</span></a></li>
+          <li class="tab" ><a href="/mister/rules">RULES<br><span>ルール</span></a></li>
+          <%= raw show_entry  %>
+          <!-- <li class="tab" ><a href="/mister/contestants/entry">ENTRY<br><span>エントリー</span></a></li> -->
+          <li class="tab"><a href="/contents">CONTENTS<br><span>鈴木さん特集！</span></a></li>
+          <li class="tab girls arrow_box"><a span style="color:#e04974" href="/contestants/semifinal">MISS-SUZUKI<br><span>美女はこちら！</span></a></li>
+          <li class="tab boys arrow_box"><a span style="color:#62a7e7" href="/mister/contestants/entry">MISTER-SUZUKI<br><span>イケメンはこちら！</span></a></li>
+        </ul>
+      </div>
+      <div id="header_right">
+        <ul>
+          <!-- ログイン状態に応じて、ログイン/ログアウトリンクを表示しています -->
+          <%= raw switch_header_contents %>
+        </ul>
+      </div>
+    </div>
+
+    <div id="smartphone_menu">
+      <dl id="acMenu">
+        <dt><%= image_tag 'humburger_blue.png' %><span>MENU</span></dt>
+        <dd>
+          <li class="tab even"><a span style="color:#e04974" href="/contestants/semifinal">MISS-SUZUKI<span>美女はこちら！</span></a></li>
+          <li class="tab"><a href="/mister">HOME<span>ホーム</span></a></li>
+          <li class="tab even" ><a href="/mister/rules">RULES<span>ルール</span></a></li>
+          <li class="tab" ><a href="/mister/contestants/entry">ENTRY<span>エントリー</span></a></li>
+          <li class="tab even"><a href="/contents">CONTENTS<span>鈴木さん特集！</span></a></li>
+        </dd>
+      </dl>
+    </div>
+
+  </div>
+</div>
+
+
+<%= yield %>
+
+<footer>
+<div id="footer">
+  <div class="footer_left">
+    <p>Copyright &copy;2015-2016 Miss.Someone All Rights Reserved.</p>
+  </div>
+  <div class="footer_right">
+    <ul id="footer_menu">
+      <li><a target="_blank" href="http://pixel-aoyama.com">運営団体</a></li>
+      <li><%= link_to '利用規約', mister_terms_path %></li>
+      <li><%= link_to 'エントリーポリシー', mister_entrypolicy_path %></li>
+      <li><%= link_to 'プライバシーポリシー', policy_path %></li>
+    </ul>
+  </div>
+</div>
+</footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

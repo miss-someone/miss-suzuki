@@ -1,0 +1,37 @@
+<% @stage = 1 %>
+<div id="mainimage">
+  <%= image_tag "mainimages/group#{params[:id]}_mainimage.jpg" %>
+</div>
+
+<div class="group_btn_wrap">
+  <% link_group_ids(url_for(params[:id]).to_i).each do |i| %>
+    <div class='<%= i.ordinalize %>_group_btn group_link_btn group_btn'>
+    <%= link_to"予選第#{i}グループへ", contestants_path(i) %>
+    </div>
+  <% end %>
+</div>
+
+<div class='voter_dialog'>
+  予選の投票期間が終了しました。<br>たくさんのご投票ありがとうございました!
+</div>
+
+<div class="content_top">
+  <% if flash[:alert] %>
+    <p><%= flash[:alert] %></p>
+  <% end %>
+  <div class="content_middle">
+    <% 3.times do |i| %>
+      <div class="column column<%= i %>">
+        <% @contestant[i - 1].each.with_index do |contestant, i| %>
+          <%= render :partial => 'contestant', locals: {contestant: contestant} %>
+          <% if i % 3 == 2 %>
+            <div class="vote_page_ads">
+              <%= adsense('contestants_index_ads') %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <p id="to_top"><a href=<% '/' %>><%= image_tag 'to_top.png', :width=> '50px'   %></a></p>
+  </div>
+</div>
