@@ -712,6 +712,58 @@ p a{
   padding:10px;
   position: relative;
   z-index: 1;
+}/*動画審査の前のレイアウト*/
+#entry .text{
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+#entry .contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+}
+
+#entry .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:160px;
+  left:210px;
+}
+#entry .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+#entry .mypage_btn{
+  position: absolute;
+  top:235px;
+  right:10px;
+  z-index: 4;
+}
+#entry .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+#entry .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -25px
 }
 #mister #entry .profile p{
   color:#666;
@@ -1310,6 +1362,54 @@ p a{
   padding:10px;
   position: relative;
   z-index: 1;
+}*/
+.contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+  margin-bottom: 30px;
+}
+
+.contestant .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:160px;
+  left:210px;
+}
+.contestant .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+.contestant .mypage_btn{
+  position: absolute;
+  top:235px;
+  right:10px;
+  z-index: 4;
+}
+.contestant .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+.contestant .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -25px;
 }
 #mister .contestant .profile p{
   color:#666;
@@ -1345,8 +1445,10 @@ p a{
   width:25px;
 }
 #mister .contestant .profile .url img{
+}
+.contestant .profile .url img{
   position: absolute;
-  right:40px;
+  right:12px;
   bottom:80px;
   width: 120px;
 }
@@ -1840,6 +1942,9 @@ span#interview_question_number{
 #interview1 .blue{
   color:#1b6ddc;
 }
+#interview1 .red{
+  color:red;
+}
 #interview1 .bigger{
   font-size: 18px;
 }
@@ -1934,6 +2039,10 @@ span#interview_question_number{
   margin-bottom: 10px;
 }
 #interview1 .cityinfo img{
+  width:90%;
+  margin-left: 20px;
+}
+#interview1 .cityinfo iframe{
   width:90%;
   margin-left: 20px;
 }
@@ -6862,8 +6971,7 @@ span#interview_question_number{
   width:900px;
 }
 /*====================ENTRY==========================*/
-#mister #entry .sample{
-  position: relative;
+#mister #entry .sample{ position: relative;
   width: 300px;
   margin:0 auto;
 }
@@ -6907,6 +7015,53 @@ span#interview_question_number{
   padding:10px;
   position: relative;
   z-index: 1;
+}*/
+#entry .sample{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+}
+
+#entry .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:170px;
+  left:210px;
+}
+#entry .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+#entry .mypage_btn{
+  position: absolute;
+  top:250px;
+  right:10px;
+  z-index: 4;
+}
+#entry .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+#entry .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -10px;
 }
 #mister #entry .profile p{
   color:#666;
@@ -7496,6 +7651,54 @@ span#interview_question_number{
   padding:10px;
   position: relative;
   z-index: 1;
+}*/
+.contestant{
+  position: relative;
+  width: 300px;
+  margin:0 auto;
+  margin-bottom: 30px;
+}
+
+.contestant .vote_system{
+  z-index: 3;
+  position: absolute;
+  top:160px;
+  left:210px;
+}
+.contestant .vote_system .counter{
+  background-color: #fff;
+  width: 50px;
+  height:30px;
+  font-size: 12px;
+  text-align: center;
+  color:#62a7e7;
+  line-height: 2.5;
+  font-weight: bold;
+  margin-top: -5px;
+}
+.contestant .mypage_btn{
+  position: absolute;
+  top:240px;
+  right:10px;
+  z-index: 4;
+}
+.contestant .picture img{
+  width: 300px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+}
+.contestant .profile{
+  width: 278px;
+  border-left:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+  border-right:1px solid #d7d7d7;
+  border-radius: 5px;
+  padding:10px;
+  position: relative;
+  z-index: 1;
+  margin-top: -25px;
 }
 #mister .contestant .profile p{
   color:#666;
@@ -7532,7 +7735,7 @@ span#interview_question_number{
 }
 #mister .contestant .profile .url img{
   position: absolute;
-  right:40px;
+  right:12px;
   bottom:80px;
   width: 120px;
 }
@@ -8051,6 +8254,9 @@ span#interview_question_number{
 #interview1 .blue{
   color:#1b6ddc;
 }
+#interview1 .red{
+  color:red;
+}
 #interview1 .bigger{
   font-size: 18px;
 }
@@ -8152,6 +8358,12 @@ span#interview_question_number{
   margin-bottom: 10px;
 }
 #interview1 .cityinfo img{
+  width: 300px;
+  float: left;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+#interview1 .cityinfo iframe{
   width: 300px;
   float: left;
   margin-left: 20px;

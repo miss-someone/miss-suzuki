@@ -18,6 +18,7 @@ class Contestant < User
     return includes(:contestant_profile).where(contestant_profiles: { is_in_2nd_stage: true }) if n == 2
     none
   }
+  scope :semifinal, -> { includes(:contestant_profile).where(contestant_profiles: { is_in_semifinal: true }) }
   scope :current_open_group, lambda {
     includes(:contestant_profile)
       .where(contestant_profiles: { group_id: 1..Settings.current_open_group_id })

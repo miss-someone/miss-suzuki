@@ -33,13 +33,19 @@ module ContestantsHelper
   end
 
   def vote_count(contestant)
-    if @stage.present? && @stage == 1
-      contestant.profile.votes
-    elsif (@stage.present? && @stage == 2) || contestant.profile.is_in_2nd_stage
+    if @stage.present? && @stage == 2
       contestant.profile.second_stage_votes
+    elsif @stage.present? && @stage == 3
+      contestant.profile.semifinal_votes
     else
       contestant.profile.votes
     end
+  end
+
+  def mypage_vote_count(contestant)
+    return contestant.profile.semifinal_votes if contestant.profile.is_in_semifinal
+    return contestant.profile.second_stage_votes if contestant.profile.is_in_2nd_stage
+    contestant.profile.votes
   end
 
   def remaining_vote_count_text
@@ -47,16 +53,19 @@ module ContestantsHelper
     return if current_user.profile.nil?
 
     remaining_vote = current_user.todays_remaining_vote_count
-    "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，本日の予選最終ラウンドの投票回数は残り<span>#{remaining_vote}回</span>です！".html_safe if logged_in?
+    "<div class='voter_dialog'><span>#{current_user.profile.name}</span>さん，本日のセミファイナルの投票回数は残り<span>#{remaining_vote}回</span>です！".html_safe if logged_in?
   end
 
   private
 
   def show_vote_btn?(contestant)
-    !vote_end? && contestant.profile.send("is_in_#{Settings.current_stage.ordinalize}_stage")
-  rescue => e
-    Airbrake.notify(e)
-    false
+    if contestant.profile.is_in_semifinal
+      !semifinal_vote_end?
+    elsif contestant.profile.is_in_2nd_stage
+      !qualify_vote_end?
+    else
+      !vote_end?
+    end
   end
 
   # リンク種別から表示するボタン画像のファイル名を取得する

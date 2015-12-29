@@ -52,6 +52,8 @@ class ContestantProfile < ActiveRecord::Base
       increment!(:votes, 1)
     when 2 then
       increment!(:second_stage_votes, 1)
+    when 3 then
+      increment!(:semifinal_votes, 1)
     end
   end
 
