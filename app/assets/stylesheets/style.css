@@ -2073,6 +2073,10 @@ span#interview_question_number{
   padding-bottom: 10px;
   padding-left: 10px;
 }
+
+#interview1 .board span{
+  color: red;
+}
 #interview1 .city_link{
 }
 #interview1 .share{
@@ -4059,6 +4063,12 @@ span#interview_question_number{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+}
+#interview1 .board{
+  max-width:90%;
+  padding:10px;
+  border:1px solid #d7d7d7;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
 #interview1 .city_link{
 }
@@ -6181,6 +6191,15 @@ span#interview_question_number{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+}
+#interview1 .board{
+  max-width:560px;
+  padding:20px;
+  border:1px solid #d7d7d7;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+}
+#interview1 .board span{
+  color: red;
 }
 #interview1 .city_link{
 }
@@ -8397,6 +8416,15 @@ span#interview_question_number{
   padding-left: 10px;
 }
 #interview1 .city_link{
+}
+#interview1 .board{
+  max-width:560px;
+  padding:20px;
+  border:1px solid #d7d7d7;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+}
+#interview1 .board span{
+  color: red;
 }
 #interview1 .share{
   margin-top: 10px;
