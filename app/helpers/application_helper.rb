@@ -89,7 +89,7 @@ module ApplicationHelper
         title: "MISS-SUZUKI | パワースポット多すぎ！？鈴木さんのふるさと藤白神社でお参り！",
         type:  "article",
         url:   "https://miss-suzuki.com/contents/fujishiro",
-        image: "https://miss-suzuki.com/assets/mainimages/"
+        image: "https://miss-suzuki.com/assets/fujishiro/mainimage_shrine-0b1037db6b6f409633531fb1c3838b0d.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
