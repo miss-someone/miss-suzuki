@@ -33,12 +33,35 @@
   </div>
 
   <div id="home_icons">
-    <h2>セミファイナル、いよいよ開幕！</h2>
-        <% @contestants.each do |contestant| %>
+    <h2>ファイナリスト、いよいよ決定！</h2>
+<!--         <% @contestants.each do |contestant| %>
           <div class="contestant_icon">
             <%= link_to (image_tag contestant.profile.profile_image.thumb(125, 125), alt: contestant.profile.name), contestants_mypage_path(contestant.id) %>
           </div>
-        <% end %>
+        <% end %> -->
+    <div id='contestant-<%= contestant.id %>' class="contestant">
+      <% if mypage_present?(contestant) %>
+        <div class="mypage_btn">
+          <a href="/contestants/<%= contestant.profile.user_id %>/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+        </div>
+      <% end %>
+
+      <div class="picture">
+        <%= image_tag contestant.profile.profile_image.thumb(300, 300) %>
+      </div>
+      <div class="profile">
+        <p class="url"><%= link_btn(contestant.profile) %></p>
+        <h3 class="furigana"><%= contestant.profile.hurigana %></h3>
+        <h2 class="name"><%= contestant.profile.name %></h2>
+        <p class="age">年齢：<%= contestant.profile.age %></p>
+        <p class="hometown">出身：<%= contestant.profile.come_from %></p>
+        <p class="height">身長：<%= contestant.profile.height %></p>
+        <p class="appeal">一言アピール！</p>
+
+        <textarea readonly name="comment"><%= contestant.profile.comment %></textarea>
+      </div>
+    </div>
+
   </div>
 
 <!--  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
