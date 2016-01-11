@@ -33,14 +33,158 @@
   </div>
 
   <div id="home_icons">
-    <h2>セミファイナル、いよいよ開幕！</h2>
-        <% @contestants.each do |contestant| %>
+    <h2>ファイナリスト、いよいよ決定！</h2>
+<!--         <% @contestants.each do |contestant| %>
           <div class="contestant_icon">
             <%= link_to (image_tag contestant.profile.profile_image.thumb(125, 125), alt: contestant.profile.name), contestants_mypage_path(contestant.id) %>
           </div>
-        <% end %>
+        <% end %> -->
   </div>
+  <!--- 一人分 -->
+  <div id="finalist_announcement">
+    <div class="contestant contestant1">
+     <h2 class="entry_no">エントリーNo.1</h2>
+      <div class="mypage_btn">
+        <a href="https://miss-suzuki.com/contestants/390/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+      </div>
 
+      <div class="picture">
+        <%= image_tag 'finalist/asako_suzuki.jpg' %>
+      </div>
+      <div class="profile">
+        <p class="url">#</p>
+        <h3 class="furigana">すずきあさこ</h3>
+        <h2 class="name">鈴木朝子</h2>
+        <p class="age">年齢：ないしょ</p>
+        <p class="hometown">出身：静岡県</p>
+        <p class="height">身長：153cm</p>
+        <p class="appeal">一言アピール！</p>
+        <textarea readonly name="comment">ももいろクローバーZのファンです！鈴木さんの頂点目指して頑張ります！！！！！</textarea>
+      </div>
+    </div>
+    <!--- 一人分 ここまで -->
+
+  <!--- 一人分 -->
+
+    <div class="contestant contestant2">
+     <h2 class="entry_no">エントリーNo.2</h2>
+      <div class="mypage_btn">
+        <a href="https://miss-suzuki.com/contestants/841/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+      </div>
+
+      <div class="picture">
+        <%= image_tag 'finalist/anna_suzuki.jpg' %>
+      </div>
+      <div class="profile">
+        <p class="url">#</p>
+        <h3 class="furigana">すずきあんな</h3>
+        <h2 class="name">鈴木杏奈</h2>
+        <p class="age">年齢：21歳</p>
+        <p class="hometown">出身：東京都</p>
+        <p class="height">身長：158cm</p>
+        <p class="appeal">一言アピール！</p>
+        <textarea readonly name="comment">鈴木さんの聖地、静岡からの参戦です！ 鈴木がたくさんいると常に名前で呼ばれるので、逆に鈴木さんって言われるとドキっとしちゃいます♡</textarea>
+      </div>
+    </div>
+    <!--- 一人分 ここまで -->
+  <!--- 一人分 -->
+
+    <div class="contestant contestant3">
+     <h2 class="entry_no">エントリーNo.3</h2>
+      <div class="mypage_btn">
+        <a href="https://miss-suzuki.com/contestants/55/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+      </div>
+
+      <div class="picture">
+        <%= image_tag 'finalist/sayaka_suzuki.jpg' %>
+      </div>
+      <div class="profile">
+        <p class="url">#</p>
+        <h3 class="furigana">すずきさやか</h3>
+        <h2 class="name">鈴木佐也果</h2>
+        <p class="age">年齢：21歳</p>
+        <p class="hometown">出身：静岡県</p>
+        <p class="height">身長：158cm</p>
+        <p class="appeal">一言アピール！</p>
+        <textarea readonly name="comment">全国の鈴木さんと仲良くなりたいです！！</textarea>
+      </div>
+    </div>
+    <!--- 一人分 ここまで -->
+  <!--- 一人分 -->
+
+    <div class="contestant contestant1">
+     <h2 class="entry_no">エントリーNo.4</h2>
+      <div class="mypage_btn">
+        <a href="https://miss-suzuki.com/contestants/7/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+      </div>
+
+      <div class="picture">
+        <%= image_tag 'finalist/marie_suzuki.jpg' %>
+      </div>
+      <div class="profile">
+        <p class="url">#</p>
+        <h3 class="furigana">すずきまりえ</h3>
+        <h2 class="name">鈴木まりえ</h2>
+        <p class="age">年齢：36歳</p>
+        <p class="hometown">出身：神奈川県</p>
+        <p class="height">身長：158cm</p>
+        <p class="appeal">一言アピール！</p>
+
+        <textarea readonly name="comment">日本一のナウいぶりっ子目指して！
+大人の事情ってだいたい子供みたいな理由でしょ？なはなはっ♪</textarea>
+      </div>
+    </div>
+    <!--- 一人分 ここまで -->
+
+  <!--- 一人分 -->
+
+    <div class="contestant contestant2">
+     <h2 class="entry_no">エントリーNo.5</h2>
+      <div class="mypage_btn">
+        <a href="https://miss-suzuki.com/contestants/44/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+      </div>
+
+      <div class="picture">
+        <%= image_tag 'finalist/yumika_suzuki.jpg' %>
+      </div>
+      <div class="profile">
+        <p class="url">#</p>
+        <h3 class="furigana">すずきゆみか</h3>
+        <h2 class="name">鈴木優美香</h2>
+        <p class="age">年齢：22歳</p>
+        <p class="hometown">出身：大阪府</p>
+        <p class="height">身長：164cm</p>
+        <p class="appeal">一言アピール！</p>
+
+        <textarea readonly name="comment">SUZUKIのレッツGに乗る日を夢見て 今日も鈴木は教習所に通っています。そんな鈴木優美香をミス鈴木にして下さい！</textarea>
+      </div>
+    </div>
+    <!--- 一人分 ここまで -->
+  <!--- 一人分 -->
+
+    <div class="contestant contestant3">
+     <h2 class="entry_no">エントリーNo.6</h2>
+      <div class="mypage_btn">
+        <a href="https://miss-suzuki.com/contestants/5/mypage"><%= image_tag 'btn/btn_mypage.png', :width => '80' %></a>
+      </div>
+
+      <div class="picture">
+        <%= image_tag 'finalist/rikako_suzuki.jpg' %>
+      </div>
+      <div class="profile">
+        <p class="url">#</p>
+        <h3 class="furigana">すずきりかこ</h3>
+        <h2 class="name">鈴木理香子</h2>
+        <p class="age">年齢：31歳</p>
+        <p class="hometown">出身：愛知県、青森県</p>
+        <p class="height">身長：158cm</p>
+        <p class="appeal">一言アピール！</p>
+        <textarea readonly name="comment">すーさんこと、鈴木です！底が抜けた、明るさが魅力です！
+元・砲丸投げ選手です！特技はエア食レポです！好物はラーメンです！</textarea>
+      </div>
+    </div>
+    <!--- 一人分 ここまで -->
+</div>
 <!--  <p id="entry_btn"><a href="contestants/entry">エントリーはこちら！</a></p> -->
   <div class="news">
     <h2>NEWS</h2>
