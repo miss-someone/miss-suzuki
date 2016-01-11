@@ -2367,6 +2367,13 @@ span#interview_question_number{
   font-weight: bold;
   font-size: 12px;
 }
+#home #finalist_announcement h2{
+  color: #e04974;
+  margin-bottom: 0;
+}
+#home #finalist_announcement .contestant{
+  width:300px;
+}
 #home .satosan{
   width:100%;
   margin:0 auto;
@@ -4407,6 +4414,23 @@ body {
 #home #home_icons .contestant_icon a:hover img{
   border:2px solid #e04974;
   width:121px;
+}
+#home #finalist_announcement{
+  width:1000px;
+  overflow: hidden;
+  margin:0 auto;
+}
+#home #finalist_announcement h2{
+  color: #e04974;
+  margin-bottom: 0;
+}
+#home #finalist_announcement .contestant1, #home #finalist_announcement .contestant2{
+  float:left;
+  margin-right:30px;
+}
+#home #finalist_announcement .contestant3{
+  margin-right: 0;
+  float:left;
 }
 #home #prerelease{
   width:1000px;
