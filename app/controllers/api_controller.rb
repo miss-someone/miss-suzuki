@@ -21,7 +21,44 @@ class ApiController < ApplicationController
     head 200
   end
 
+  def reborn
+    return head 403 if params[:id].nil?
+    target = params[:id].to_i
+    return head 403 unless target.between?(1,2)
+    return head 403 unless verify_reborn_token(target)
+
+    stdout, stderr, status_code = do_reborn(target)    
+
+    render json: gen_reborn_response(target, stdout, stderr, status_code)
+  end
+
   private
+
+  def do_reborn(target)
+    require 'open3'
+    reborn_cmd = "/home/webmaster/bin/restart_unicorn#{target}.sh"
+    result = Open3.capture3(reborn_cmd)
+    [result[0], result[1], (result[2].success? ? 0 : 1)]
+  end
+
+  def verify_reborn_token(token)
+    ["vYLH4tDtgnlSRlQyXEsHKOW1", "SUeKoZXBkX1Y3HZKf4lhiukR"].include?(token)
+  end
+
+  def gen_reborn_response(target, stdout, stderr, status_code)
+    attachments = { fields: [] }
+    result = { title: "Deploy Result" }
+    attachments[:fields].push(result)
+    attachments[:fallback] = "[Unicorn#{target}]ヒヒーン"
+    attachments[:pretext] = "[Unicorn#{target}]ヒヒーン"
+    attachments[:color] = "#41AA58"
+    result[:value] = "Result"
+    normal_log = { title: "Std Log", value: log_tail(stdout, 30) }
+    err_log = { title: "Error log", value: log_tail(stderr, 30) }
+    attachments[:fields].push(normal_log)
+    attachments[:fields].push(err_log)
+    { attachments: [attachments] }
+  end
 
   # デプロイ要求の正当性検証
   def deploy_request_is_valid?(params)

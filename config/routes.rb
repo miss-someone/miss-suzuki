@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     # For AutoDeployment
     post 'api/deploy' => 'api#deploy'
+    post 'api/reborn/:id' => 'api#reborn'
   else
     # 外部向け用
     root 'static_pages#index'
