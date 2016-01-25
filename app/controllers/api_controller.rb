@@ -25,7 +25,7 @@ class ApiController < ApplicationController
     return head 403 if params[:id].nil?
     target = params[:id].to_i
     return head 403 unless target.between?(1,2)
-    return head 403 unless verify_reborn_token(target)
+    return head 403 unless verify_reborn_token(params[:token])
 
     stdout, stderr, status_code = do_reborn(target)    
 
