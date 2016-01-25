@@ -53,8 +53,8 @@ class ApiController < ApplicationController
     attachments[:pretext] = "[Unicorn#{target}]ヒヒーン"
     attachments[:color] = "#41AA58"
     result[:value] = "Result"
-    normal_log = { title: "Std Log", value: log_tail(stdout, 30) }
-    err_log = { title: "Error log", value: log_tail(stderr, 30) }
+    normal_log = { title: "Std Log", value: stdout }
+    err_log = { title: "Error log", value: stderr }
     attachments[:fields].push(normal_log)
     attachments[:fields].push(err_log)
     { attachments: [attachments] }
