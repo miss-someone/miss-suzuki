@@ -49,8 +49,8 @@ class ApiController < ApplicationController
     attachments = { fields: [] }
     result = { title: "Deploy Result" }
     attachments[:fields].push(result)
-    attachments[:fallback] = "[Unicorn#{target}]ヒヒーン"
-    attachments[:pretext] = "[Unicorn#{target}]ヒヒーン"
+    attachments[:fallback] = "[Unicorn#{target}]ヒヒーン!"
+    attachments[:pretext] = "[Unicorn#{target}]ヒヒーン!"
     attachments[:color] = "#41AA58"
     result[:value] = "Result"
     normal_log = { title: "Std Log", value: stdout }
