@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
   # CircleCIから直接叩くので，CSRF対策無効
-  protect_from_forgery except: :deploy
+  protect_from_forgery except: [:deploy, :reborn]
 
   # CircleCIからのwebhookを受け取ってデプロイを行うアクション
   def deploy
