@@ -24,10 +24,10 @@ class ApiController < ApplicationController
   def reborn
     return head 403 if params[:id].nil?
     target = params[:id].to_i
-    return head 403 unless target.between?(1,2)
+    return head 403 unless target.between?(1, 2)
     return head 403 unless verify_reborn_token(params[:token])
 
-    stdout, stderr, status_code = do_reborn(target)    
+    stdout, stderr, status_code = do_reborn(target)
 
     render json: gen_reborn_response(target, stdout, stderr, status_code)
   end
@@ -42,10 +42,10 @@ class ApiController < ApplicationController
   end
 
   def verify_reborn_token(token)
-    ["vYLH4tDtgnlSRlQyXEsHKOW1", "SUeKoZXBkX1Y3HZKf4lhiukR"].include?(token)
+    %w(vYLH4tDtgnlSRlQyXEsHKOW1 SUeKoZXBkX1Y3HZKf4lhiukR).include?(token)
   end
 
-  def gen_reborn_response(target, stdout, stderr, status_code)
+  def gen_reborn_response(target, stdout, stderr, _status_code)
     attachments = { fields: [] }
     result = { title: "Deploy Result" }
     attachments[:fields].push(result)
