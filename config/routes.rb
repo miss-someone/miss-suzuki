@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     # For AutoDeployment
     post 'api/deploy' => 'api#deploy'
+    post 'api/reborn/:id' => 'api#reborn'
   else
     # 外部向け用
     root 'static_pages#index'
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
     get   'contents/erai_suzukisan2_2' => 'contents#interview2_2'
     get   'contents/erai_suzukisan3' => 'contents#interview3'
     get   'contents/akaji' => 'contents#akaji'
+    get   'contents/fujishiro' => 'contents#fujishiro'
     get   'news' => 'news#index'
 
     scope :contestant_image do
