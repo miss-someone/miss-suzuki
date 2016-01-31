@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     # 外部向け用
     root 'static_pages#index'
 
+    get   'final'   => 'static_pages#final'
     get   'about'   => 'static_pages#about'
     get   'rules'   => 'static_pages#rules'
     get   'how_to_vote' => 'static_pages#how_to_vote'
