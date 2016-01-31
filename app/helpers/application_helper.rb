@@ -91,6 +91,13 @@ module ApplicationHelper
         url:   "https://miss-suzuki.com/contents/fujishiro",
         image: "https://miss-suzuki.com/assets/fujishiro/mainimage_shrine-0b1037db6b6f409633531fb1c3838b0d.jpg"
       }
+    elsif controller_name == "contents" && action_name == "interview4"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第４弾！関東鈴木会！",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/interview4",
+        image: "https://miss-suzuki.com/assets/"
+      }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
         title: "MISS-SUZUKI | #{contestant_profile.name}さん",
