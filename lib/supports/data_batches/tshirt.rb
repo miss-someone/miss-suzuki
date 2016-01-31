@@ -21,7 +21,7 @@ class Supports::DataBatches::Tshirt
       end
     end
 
-    print 'セミファイナル出場者の更新に成功しました'
+    print 'Tシャツ審査出場者の更新に成功しました'
   rescue => e
     print e.message
   end
