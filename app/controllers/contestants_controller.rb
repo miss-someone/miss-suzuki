@@ -1,6 +1,6 @@
 class ContestantsController < ApplicationController
   skip_before_filter :require_login, only: [:entry, :thankyou_sample, :mypage_sample, :index,
-                                            :second_stage, :semifinal, :tshirt,:mypage, :thankyou,
+                                            :second_stage, :semifinal, :tshirt, :mypage, :thankyou,
                                             :new, :create]
 
   before_filter :require_contestant_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
