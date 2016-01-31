@@ -1,6 +1,7 @@
 class ContestantsController < ApplicationController
   skip_before_filter :require_login, only: [:entry, :thankyou_sample, :mypage_sample, :index,
-                                            :second_stage, :semifinal, :mypage, :thankyou, :new, :create]
+                                            :second_stage, :semifinal, :tshirt,:mypage, :thankyou,
+                                            :new, :create]
 
   before_filter :require_contestant_login, only: [:new_interview_answer, :create_interview_answer, :my_own_page]
   before_filter :restrict_contestant_login, only: [:entry, :new, :create]
@@ -22,6 +23,13 @@ class ContestantsController < ApplicationController
   end
 
   def semifinal
+    ids = Contestant.approved.semifinal.pluck(:id)
+    @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers)
+                  .includes(:contestant_images).find(ids)
+                  .shuffle.group_by.with_index { |_e, i| i % 3 }.values
+  end
+
+  def tshirt
     ids = Contestant.approved.semifinal.pluck(:id)
     @contestant = Contestant.includes(:contestant_profile).includes(:interview_answers)
                   .includes(:contestant_images).find(ids)
