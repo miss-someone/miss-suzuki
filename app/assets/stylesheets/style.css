@@ -2374,6 +2374,18 @@ span#interview_question_number{
 #home #finalist_announcement .contestant{
   width:300px;
 }
+#home #final_info{
+  width:95%;
+}
+#home #final_info h2{
+  font-size: 14px;
+  color: #e04974;
+  border-bottom: 3px solid #e04974;
+}
+#home #final_info img{
+  width:100%;
+  margin:0 auto;
+}
 #home .satosan{
   width:100%;
   margin:0 auto;
@@ -4085,6 +4097,67 @@ span#interview_question_number{
 #interview1 .fb_iframe_widget{
   top:-6px;
 }
+/*====================  FINAL ==========================*/
+#final #content{
+  width:95%;
+  margin:0 auto;
+}
+#final #content h2{
+  color:#e04974;
+}
+#final #content h2 span{
+  border-bottom: 3px solid #e04974;
+}
+
+#final #content .table{
+ width:100%;
+ padding:5px;
+ border-radius: 5px;
+ border:1px solid #d7d7d7;
+}
+#final #content .table{
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: -15px;
+}
+#final #content td.map *{
+  width: 100%;
+}
+#final #content span.red{
+  color:red;
+}
+#final #content span.pink{
+  color:#e04974;
+}
+#final #content span.bigger{
+  font-size: 20px;
+}
+#final #content span.bold{
+  font-weight: bold;
+}
+#final #content a{
+  color:#62a7e7;
+}
+#final #content img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+}
+#final #content .guest_box .each_guest img{
+  width:100%;
+}
+
+#final #content .guest_box .each_guest{
+  font-weight: bold;
+}
+#final #content .program_box{
+  overflow: hidden;
+}
+#final #content .program_box .each_program {
+  margin-bottom: 50px;
+}
+#final #content .program_box .each_program img{
+  width:100%;
+}
+
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
@@ -4415,6 +4488,22 @@ body {
   border:2px solid #e04974;
   width:121px;
 }
+#home #final_info{
+  width:1000px;
+  margin:0 auto;
+  text-align: center
+}
+#home #final_info h2{
+  font-size: 20px;
+  color: #e04974;
+  border-bottom: 3px solid #e04974;
+  text-align: left;
+}
+#home #final_info img{
+  width:600px;
+  margin:0 auto;
+}
+
 #home #finalist_announcement{
   width:1000px;
   overflow: hidden;
@@ -6232,6 +6321,71 @@ span#interview_question_number{
 }
 #interview1 .fb_iframe_widget{
   top:-6px;
+}
+/*====================  FINAL ==========================*/
+#final #content{
+  width:1000px;
+  margin:0 auto;
+}
+#final #content h2{
+  color:#e04974;
+}
+#final #content h2 span{
+  border-bottom:2px solid #e04974;
+}
+#final #content .table{
+ width:700px;
+ padding:20px;
+ border-radius: 5px;
+ border:1px solid #d7d7d7;
+}
+#final #content .table{
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: -15px;
+}
+#final #content span.red{
+  color:red;
+}
+#final #content span.pink{
+  color:#e04974;
+}
+#final #content span.bigger{
+  font-size: 30px;
+}
+#final #content span.bold{
+  font-weight: bold;
+}
+#final #content a{
+  color:#62a7e7;
+}
+#final #content .guest_box{
+  overflow: hidden;
+}
+#final #content img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+}
+#final #content .guest_box .each_guest{
+  width:400px;
+  float:left;
+}
+#final #content .guest_box .each_guest img{
+  width:300px;
+}
+
+#final #content .guest_box .each_guest{
+  font-weight: bold;
+}
+#final #content .program_box{
+  overflow: hidden;
+}
+#final #content .program_box .each_program{
+  width:400px;
+  margin-right: 50px;
+  float:left;
+}
+#final #content .program_box .each_program img{
+  width:400px;
 }
 /*====================  VALIDATION ==========================*/
 .error{
@@ -8456,6 +8610,7 @@ span#interview_question_number{
 #interview1 .fb_iframe_widget{
   top:-6px;
 }
+
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;

@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  skip_before_filter :require_login, only: [:index, :about, :rules, :how_to_vote, :flow_chart,
+  skip_before_filter :require_login, only: [:index, :final , :about, :rules, :how_to_vote, :flow_chart,
                                             :next, :history, :entrypolicy, :terms, :policy, :help]
   # トップページ
   def index
