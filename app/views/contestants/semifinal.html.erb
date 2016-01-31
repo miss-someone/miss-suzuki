@@ -3,27 +3,402 @@
   <%= image_tag "mainimages/semifinal_mainimage.jpg" %>
 </div>
 
-<div>
-  <%= remaining_vote_count_text %>
+<div id="semifinal_message">
+<p>セミファイナルの投票は終了しました。<br>たくさんの応援ありがとうございました！</p>
 </div>
 
 <div class="content_top">
-  <% if flash[:alert] %>
-    <p><%= flash[:alert] %></p>
-  <% end %>
   <div class="content_middle">
-    <% 3.times do |i| %>
-      <div class="column column<%= i %>">
-        <% @contestant[i - 1].each.with_index do |contestant, i| %>
-          <%= render :partial => 'contestant', locals: {contestant: contestant} %>
-          <% if i % 3 == 2 %>
+    <div class="column column0">
+        <div id='contestant-250' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    10069
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/250/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/aOuR0Q86gcM" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="https://twitter.com/tsuku08"><img src="/assets/btn/btn_tw-d16166044ea29d4c881f2dc8ba3c9d61.png" alt="Btn tw" /></a></p>
+    <h3 class="furigana">すずきつくし</h3>
+    <h2 class="name">鈴木築詩</h2>
+    <p class="age">年齢：20歳</p>
+    <p class="hometown">出身：神奈川県</p>
+    <p class="height">身長：163cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">鈴木って普通っぽいしよく見かける苗字だけど私、結構気にいってます♡すぐ覚えてもらえるし(*^^*)</textarea>
+  </div>
+</div>
+
+          <div id='contestant-28' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    9599
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/28/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/OFZ1v86sJ6M" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="https://twitter.com/suzuki_yuuri"><img src="/assets/btn/btn_tw-d16166044ea29d4c881f2dc8ba3c9d61.png" alt="Btn tw" /></a></p>
+    <h3 class="furigana">すずきゆうり</h3>
+    <h2 class="name">鈴木優梨</h2>
+    <p class="age">年齢：27歳</p>
+    <p class="hometown">出身：岡山県</p>
+    <p class="height">身長：156cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">全国の鈴木さんとhappyなことがしたい！わくわく⸜( ¨̮  )⸝♡*</textarea>
+  </div>
+</div>
+
+          <div id='contestant-7' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    16212
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/7/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/Pvrj1mzkKKQ" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="http://mariex.stablo.jp/"><img src="/assets/btn/btn_site-d98887eb27c9126c08a68ce42fea84d0.png" alt="Btn site" /></a></p>
+    <h3 class="furigana">すずきまりえ</h3>
+    <h2 class="name">鈴木まりえ</h2>
+    <p class="age">年齢：36歳</p>
+    <p class="hometown">出身：神奈川県</p>
+    <p class="height">身長：158cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">日本一のナウいぶりっ子目指して！
+大人の事情ってだいたい子供みたいな理由でしょ？なはなはっ♪</textarea>
+  </div>
+</div>
+
             <div class="vote_page_ads">
-              <%= adsense('contestants_index_ads') %>
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- contestants_index_ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3153635342972018"
+     data-ad-slot="4162570482"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
             </div>
-          <% end %>
-        <% end %>
+          <div id='contestant-5' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    11792
+    </p>
+  </div>
+
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/Na0F4GZVpQk" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="http://ameblo.jp/rikako-suzuki/"><img src="/assets/btn/btn_blog-b90833c7dd644f1171f96aea8a5d27d0.png" alt="Btn blog" /></a></p>
+    <h3 class="furigana">すずきりかこ</h3>
+    <h2 class="name">鈴木理香子</h2>
+    <p class="age">年齢：31歳</p>
+    <p class="hometown">出身：愛知県、青森県</p>
+    <p class="height">身長：158cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">すーさんこと、鈴木です！底が抜けた、明るさが魅力です！
+元・砲丸投げ選手です！特技はエア食レポです！好物はラーメンです！</textarea>
+  </div>
+</div>
+
       </div>
-    <% end %>
+      <div class="column column1">
+          <div id='contestant-532' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    4988
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/532/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/XpWNTcAPjPw" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="https://twitter.com/suzukimoepi"><img src="/assets/btn/btn_tw-d16166044ea29d4c881f2dc8ba3c9d61.png" alt="Btn tw" /></a></p>
+    <h3 class="furigana">すずきもえこ</h3>
+    <h2 class="name">鈴木萌子</h2>
+    <p class="age">年齢：21歳</p>
+    <p class="hometown">出身：神奈川県</p>
+    <p class="height">身長：160cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">金髪の鈴木です！マイページには黒髪の写真もあります(^^)鈴木の頂点に立ちたいです！</textarea>
+  </div>
+</div>
+
+          <div id='contestant-55' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    12979
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/55/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/ah-EYhBzGB4" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="https://twitter.com/milk00033?p=i"><img src="/assets/btn/btn_tw-d16166044ea29d4c881f2dc8ba3c9d61.png" alt="Btn tw" /></a></p>
+    <h3 class="furigana">すずきさやか</h3>
+    <h2 class="name">鈴木佐也果</h2>
+    <p class="age">年齢：21歳</p>
+    <p class="hometown">出身：静岡県</p>
+    <p class="height">身長：158cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">全国の鈴木さんと仲良くなりたいです！！</textarea>
+  </div>
+</div>
+
+          <div id='contestant-160' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    3427
+    </p>
+  </div>
+
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/h9zkaFUiZO0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="https://twitter.com/suzuki72rin"><img src="/assets/btn/btn_tw-d16166044ea29d4c881f2dc8ba3c9d61.png" alt="Btn tw" /></a></p>
+    <h3 class="furigana">すずきなつみ</h3>
+    <h2 class="name">鈴木なつみ</h2>
+    <p class="age">年齢：21歳</p>
+    <p class="hometown">出身：茨城県</p>
+    <p class="height">身長：161cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">アイドルですが、ニックネームはスズキ！！ライブ中のコールもスズキ！誰よりもスズキに誇りを持ってます（＾ω＾）</textarea>
+  </div>
+</div>
+
+            <div class="vote_page_ads">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- contestants_index_ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3153635342972018"
+     data-ad-slot="4162570482"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+          <div id='contestant-539' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    4830
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/539/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/07cBN687F2w" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="https://twitter.com/lilys0807"><img src="/assets/btn/btn_tw-d16166044ea29d4c881f2dc8ba3c9d61.png" alt="Btn tw" /></a></p>
+    <h3 class="furigana">すずきりり</h3>
+    <h2 class="name">鈴木理梨</h2>
+    <p class="age">年齢：ないしょ</p>
+    <p class="hometown">出身：神奈川県</p>
+    <p class="height">身長：160cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">お酒大好き泥酔系アイドル。
+鎌倉出身、中高フェリス、大学慶応と(履歴書上だけはっ！！)お嬢なリリーです。
+どこでもセクシー担当のエロテロリスト。
+パンクロックに生きています。</textarea>
+  </div>
+</div>
+
+      </div>
+      <div class="column column2">
+          <div id='contestant-499' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    3683
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/499/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/ODDl350pDjc" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="http://blog.pinkbabies.net/"><img src="/assets/btn/btn_site-d98887eb27c9126c08a68ce42fea84d0.png" alt="Btn site" /></a></p>
+    <h3 class="furigana">すずきさら</h3>
+    <h2 class="name">鈴木咲良</h2>
+    <p class="age">年齢：14歳</p>
+    <p class="hometown">出身：東京都</p>
+    <p class="height">身長：156cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">ショートヘアーがトレードマーク!?下町生まれの下町育ち江戸っ子ガールの中学生です♡♡</textarea>
+  </div>
+</div>
+
+          <div id='contestant-44' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    12347
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/44/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/G23hQntPcV4" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"><a width="80" target="_blank" href="https://twitter.com/misstba_no04"><img src="/assets/btn/btn_tw-d16166044ea29d4c881f2dc8ba3c9d61.png" alt="Btn tw" /></a></p>
+    <h3 class="furigana">すずきゆみか</h3>
+    <h2 class="name">鈴木優美香</h2>
+    <p class="age">年齢：22歳</p>
+    <p class="hometown">出身：大阪府</p>
+    <p class="height">身長：164cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">SUZUKIのレッツGに乗る日を夢見て 今日も鈴木は教習所に通っています。そんな鈴木優美香をミス鈴木にして下さい！</textarea>
+  </div>
+</div>
+
+          <div id='contestant-841' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    13972
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/841/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/zEPHBdnwRF0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"></p>
+    <h3 class="furigana">すずきあんな</h3>
+    <h2 class="name">鈴木杏奈</h2>
+    <p class="age">年齢：ないしょ</p>
+    <p class="hometown">出身：静岡県</p>
+    <p class="height">身長：153㎝</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">鈴木さんの聖地、静岡からの参戦です！
+鈴木がたくさんいると常に名前で呼ばれるので、逆に鈴木さんって言われるとドキっとしちゃいます♡</textarea>
+  </div>
+</div>
+
+            <div class="vote_page_ads">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- contestants_index_ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3153635342972018"
+     data-ad-slot="4162570482"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+            </div>
+          <div id='contestant-390' class="semifinal_contestant">
+  <div class="semifinal_vote_system">
+    <img width="80" src="/assets/kawaii-205f725d836d49d15b732bf6854df675.png" alt="Kawaii" />
+    <p class="counter">
+    10186
+    </p>
+  </div>
+
+    <div class="mypage_btn">
+      <a href="/contestants/390/mypage"><img width="80" src="/assets/btn/btn_mypage-22e6211b77ee5f928e0055ec584cb804.png" alt="Btn mypage" /></a>
+    </div>
+
+  <div class="picture">
+      <!-- youtube movie -->
+      <iframe max-width="600" src="https://www.youtube.com/embed/RMxlxiIJ6EE" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="profile">
+    <p class="url"></p>
+    <h3 class="furigana">すずきあさこ</h3>
+    <h2 class="name">鈴木朝子</h2>
+    <p class="age">年齢：21歳</p>
+    <p class="hometown">出身：東京都</p>
+    <p class="height">身長：158cm</p>
+    <p class="appeal">一言アピール！</p>
+
+    <textarea readonly name="comment">ももいろクローバーZのファンです！
+鈴木さんの頂点目指して頑張ります！！！！！</textarea>
+  </div>
+</div>
+
     <p id="to_top"><a href=<% '/' %>><%= image_tag 'to_top.png', :width=> '50px'   %></a></p>
   </div>
 </div>
