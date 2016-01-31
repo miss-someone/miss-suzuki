@@ -26,7 +26,7 @@ module ApplicationHelper
 
   def show_entry
     return if current_user && current_user.user_type == Settings.user_type.contestant
-    '<li class="tab"><a href="/mister/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
+    '<li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
   end
 
   def vote_end?
