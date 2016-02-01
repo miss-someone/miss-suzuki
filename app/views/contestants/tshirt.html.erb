@@ -1,18 +1,10 @@
-<% @stage = 1 %>
+<% @stage = 3 %>
 <div id="mainimage">
-  <%= image_tag "mainimages/group#{params[:id]}_mainimage.jpg" %>
+  <%= image_tag "mainimages/tshirts_mainimage.jpg" %>
 </div>
 
-<div class="group_btn_wrap">
-  <% link_group_ids(url_for(params[:id]).to_i).each do |i| %>
-    <div class='<%= i.ordinalize %>_group_btn group_link_btn group_btn'>
-    <%= link_to"予選第#{i}グループへ", contestants_path(i) %>
-    </div>
-  <% end %>
-</div>
-
-<div class='voter_dialog'>
-  予選の投票期間が終了しました。<br>たくさんのご投票ありがとうございました!
+<div>
+  <%= remaining_vote_count_text %>
 </div>
 
 <div class="content_top">

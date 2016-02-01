@@ -2291,11 +2291,8 @@ body {
 #nav li.girls{
   display: table-cell;
 }
-#nav li.boys{
+#nav li.girls{
   display: table-cell;
-}
-#nav .tab.boys{
-  max-width: 150px;
 }
 /*#nav li.arrow_box {
   position: relative;
@@ -4509,6 +4506,5 @@ span#interview_question_number{
   width:100%;
 }
 }
-
 
 
