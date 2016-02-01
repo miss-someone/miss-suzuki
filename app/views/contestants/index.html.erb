@@ -24,7 +24,7 @@
       <div class="column column<%= i %>">
         <% @contestant[i - 1].each.with_index do |contestant, i| %>
           <%= render :partial => 'contestant', locals: {contestant: contestant} %>
-          <% if i % 3 == 2 %>
+          <% if i % 3 == 1 %>
             <div class="vote_page_ads">
               <%= adsense('contestants_index_ads') %>
             </div>
