@@ -96,7 +96,7 @@ module ApplicationHelper
         title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第４弾！関東鈴木会！",
         type:  "article",
         url:   "https://miss-suzuki.com/contents/interview4",
-        image: "https://miss-suzuki.com/assets/"
+        image: "https://miss-suzuki.com/assets/mainimages/interview4_mainimage-70df1dcbff4f0e1d6dfd121eab728ee5.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
