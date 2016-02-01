@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     # 外部向け用
     root 'static_pages#index'
 
+    get   'final'   => 'static_pages#final'
     get   'about'   => 'static_pages#about'
     get   'rules'   => 'static_pages#rules'
     get   'how_to_vote' => 'static_pages#how_to_vote'
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
     get   'contents/erai_suzukisan3' => 'contents#interview3'
     get   'contents/akaji' => 'contents#akaji'
     get   'contents/fujishiro' => 'contents#fujishiro'
+    get   'contents/erai_suzukisan4' => 'contents#interview4'
     get   'news' => 'news#index'
 
     scope :contestant_image do

@@ -26,7 +26,7 @@ module ApplicationHelper
 
   def show_entry
     return if current_user && current_user.user_type == Settings.user_type.contestant
-    '<li class="tab"><a href="/mister/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
+    '<li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
   end
 
   def vote_end?
@@ -90,6 +90,13 @@ module ApplicationHelper
         type:  "article",
         url:   "https://miss-suzuki.com/contents/fujishiro",
         image: "https://miss-suzuki.com/assets/fujishiro/mainimage_shrine-0b1037db6b6f409633531fb1c3838b0d.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "interview4"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第４弾！関東鈴木会！",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/interview4",
+        image: "https://miss-suzuki.com/assets/mainimages/interview4_mainimage-70df1dcbff4f0e1d6dfd121eab728ee5.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
