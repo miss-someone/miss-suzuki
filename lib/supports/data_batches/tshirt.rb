@@ -16,8 +16,9 @@ class Supports::DataBatches::Tshirt
       targets = ContestantProfile.find(tshirt_ids)
       targets.each { |c| c.update_attribute(:semifinal_votes, 0) }
 
-      ContestantProfile.all.each { |c| c.update_attribute(:is_in_semifinal, false) }
-      targets.each { |c| c.update_attribute(:is_in_semifinal, true) }
+      ContestantProfile.where('id not in (?)', targets).each do |c|
+        c.update_attribute(:is_in_semifinal, false)
+      end
 
       ContestantProfile.find(tshirt_ids).each do |c|
         fail "アップデートされていません．エラーによりトランザクションを中断します" unless c.semifinal_votes == 0
