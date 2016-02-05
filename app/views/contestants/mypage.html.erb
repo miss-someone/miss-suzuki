@@ -2,12 +2,12 @@
   <div id="content">
       <div class="mypage_contestant">
         <div class="picture">
-          <div class="vote_system">
+<!--           <div class="vote_system">
             <%= vote_btn(@contestant_profile.user) %>
             <p class="counter">
               <%= mypage_vote_count(@contestant_profile.user) %>
             </p>
-          </div>
+          </div> -->
           <ul class="bxslider">
             <li><%= image_tag @contestant_profile.profile_image.thumb %></li>
           <% @contestant_images.each do |contestant_image| %>
