@@ -2147,6 +2147,15 @@ span#interview_question_number{
 #final #content .guest_box .each_guest{
   font-weight: bold;
 }
+#final #content .info_box img{
+  width:100%;
+}
+#final #content .info_box .details{
+  width:100%;
+  padding:5px;
+  border:1px solid #d7d7d7;
+}
+
 #final #content .program_box{
   overflow: hidden;
 }
@@ -4465,6 +4474,37 @@ span#interview_question_number{
 
 #final #content .guest_box .each_guest{
   font-weight: bold;
+}
+
+#final #content .info_box{
+  font-weight: bold;
+  overflow: hidden;
+}
+#final #content .info_box .left_side{
+  float: left;
+}
+#final #content .info_box .left_side img{
+  width:300px;
+  margin-top:-20px;
+}
+
+#final #content .info_box .right_side{
+  float: left;
+  width:500px;
+  margin-left: 30px;
+}
+#final #content .info_box .right_side .details{
+  padding:10px;
+  font-size: 14px;
+  border:1px solid #d7d7d7;
+  border-radius: 5px;
+}
+#final #content .info_box .right_side h3{
+  color:#62a7e7;
+  margin:0;
+}
+#final #content .info_box .right_side span.big{
+  font-size: 18px;
 }
 #final #content .program_box{
   overflow: hidden;
