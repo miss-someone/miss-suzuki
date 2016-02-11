@@ -1,11 +1,11 @@
 <div id='contestant-<%= contestant.id %>' class="contestant">
-  <div class="vote_system">
+<!--   <div class="vote_system">
     <%= vote_btn(contestant) %>
     <p class="counter">
     <%= vote_count(contestant) %>
     </p>
   </div>
-
+ -->
 <% cache contestant.profile do %>
   <% if mypage_present?(contestant) %>
     <div class="mypage_btn">
