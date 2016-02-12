@@ -2508,7 +2508,36 @@ body {
   width:600px;
   margin:0 auto;
 }
-
+#home #themesong{
+  width:700px;
+  overflow: hidden;
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  padding:10px;
+  margin:0 auto;
+}
+#home #themesong .rightside .suez img{
+  box-shadow:none;
+  width:50px;
+}
+#home #themesong h3{
+  color:#e04974;
+}
+#home #themesong .leftside img{
+  width:200px;
+}
+#home #themesong .leftside{
+  float: left;
+  margin-right:30px;
+}
+#home #themesong .rightside{
+  float:left;
+  width:400px;
+}
+#home #themesong .rightside .suez img{
+  box-shadow:none;
+  width:50px;
+}
 #home #finalist_announcement{
   width:1000px;
   overflow: hidden;
@@ -4464,6 +4493,7 @@ span#interview_question_number{
 #final #content img{
   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
+
 #final #content .guest_box .each_guest{
   width:400px;
   float:left;
@@ -4517,6 +4547,32 @@ span#interview_question_number{
 #final #content .program_box .each_program img{
   width:400px;
 }
+#themesong{
+  width:700px;
+  overflow: hidden;
+  border-radius: 5px;
+  border:1px solid #d7d7d7;
+  padding:10px;
+}
+#final #themesong .rightside .suez img{
+  box-shadow:none;
+  width:50px;
+}
+#themesong h3{
+  color:#e04974;
+}
+#themesong .leftside img{
+  width:200px;
+}
+#themesong .leftside{
+  float: left;
+  margin-right:30px;
+}
+#themesong .rightside{
+  float:left;
+  width:400px;
+}
+
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
