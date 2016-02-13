@@ -2179,6 +2179,13 @@ span#interview_question_number{
   width:100%;
 }
 
+#final iframe{
+  max-width:100%;
+}
+#final #themesong .suez img{
+  width:50px;
+  box-shadow: 0 0 0 0;
+}
 /*====================  VALIDATION ==========================*/
 .error{
   font-size: 12px;
