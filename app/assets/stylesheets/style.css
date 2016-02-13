@@ -292,6 +292,19 @@ p a{
   width:100%;
   margin:0 auto;
 }
+#home #final_info iframe{
+  max-width:100%;
+}
+#home #themesong .leftside img{
+  display: none;
+}
+#home #themesong .suez img{
+  width:50px;
+}
+#home #themesong{
+  max-width:100%;
+  margin:0 auto;
+}
 #home .satosan{
   width:100%;
   margin:0 auto;
