@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     get   'contents/fujishiro' => 'contents#fujishiro'
     get   'contents/erai_suzukisan4' => 'contents#interview4'
     get   'news' => 'news#index'
+    get   'idols' => 'idols#index'
+    get   'idols/info' => 'idols#info'
+    get   'idols/entry' => 'idols#entry'
 
     scope :contestant_image do
       get 'new' => 'contestant_image#new'
