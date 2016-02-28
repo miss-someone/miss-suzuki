@@ -5,24 +5,47 @@
   <div id="content">
     <div class="menu">
       <ul>
-        <li><a href="index#content">概要</a></li>
-        <li><a href="info2#content">応募要項</a></li>
+        <li><a href="idols#content">概要</a></li>
+        <li><a href="idols/info#content">応募要項</a></li>
         <li>申し込み</li>
       </ul>
     </div>
   </div>
 
-  <form class="formrun" action="https://form.run/api/v1/r/V16GmQ0HRU23cnEBfw1q" method="post">
-    <input type="email" name="メールアドレス" placeholder="suzuki@example.com">
-    <input type="text" name="お名前" placeholder="鈴木例子">
-    <textarea name="お問い合わせ" placeholder="お問い合わせ"></textarea>
-    <button type="submit">送信</button>
-</form>
+<%= form_for @idol, :url => idol_confirm_path do |f| %>
+
+    <h1>説明会お申し込み</h1>
+
+  <% if @idol.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <strong>入力内容にエラーがあります</strong>
+      <ul>
+        <% @idol.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table">
+    <tr>
+      <th>名前<span class="text-danger">（必須）</span></th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス<span class="text-danger">（必須）</span></th>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <th>お問い合わせ内容</th>
+      <td><%= f.text_area :message %></td>
+    </tr>
+  </table>
+  <%= f.submit '確認', class: 'btn btn-primary' %>
+<% end %>
 
 
 
-   <p id="entry_btn"><a href="idol_entry">お申し込み</a></p>
-  </div>
   <div id="banner_big" style="margin-top:10px;">
     <%= ad_img %>
   </div>

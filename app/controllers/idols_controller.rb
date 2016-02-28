@@ -1,18 +1,18 @@
 class IdolsController < ApplicationController
-  skip_before_filter :require_login, only: [:index, :info, :entry, :thankyou]
+  skip_before_filter :require_login, only: [:index, :info, :entry, :confirm, :thankyou]
   def index
   end
 
   def entry
     # 入力画面を表示
-    render :action => 'index'
+    render :action => 'entry'
     @idol = Idol.new
   end
 
   def confirm
     # 入力値のチェック
-    @inquiry = Idol.new(params[:inquiry])
-    if @inquiry.valid?
+    @idol = Idol.new(params[:idol])
+    if @idol.valid?
       # OK。確認画面を表示
       render :action => 'confirm'
     else
@@ -25,7 +25,7 @@ class IdolsController < ApplicationController
 
   def thankyou
     # メール送信
-    @inquiry = Idol.new(params[:inquiry])
+    @idol = Idol.new(params[:idol])
     IdolMailer.received_email(@idol).deliver
 
     # 完了画面を表示

@@ -66,6 +66,8 @@ gem 'meta-tags'
 gem 'rack-mini-profiler', require: false
 # error tracking
 gem 'airbrake'
+gem 'actionpack'
+gem 'actionmailer'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

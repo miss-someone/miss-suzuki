@@ -478,6 +478,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
+  actionpack
   active_hash
   activeadmin!
   airbrake

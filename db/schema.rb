@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221005922) do
+ActiveRecord::Schema.define(version: 20160228133447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,7 +111,6 @@ ActiveRecord::Schema.define(version: 20151221005922) do
     t.boolean  "is_in_semifinal",                 default: false,    null: false
     t.integer  "semifinal_votes",                 default: 0
     t.string   "movie_url"
-
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", using: :btree
@@ -142,6 +141,11 @@ ActiveRecord::Schema.define(version: 20151221005922) do
   end
 
   add_index "email_domains", ["domain"], name: "index_email_domains_on_domain", unique: true, using: :btree
+
+  create_table "idols", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "interview_answers", force: :cascade do |t|
     t.integer  "interview_topic_id", null: false
