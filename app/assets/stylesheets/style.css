@@ -1991,6 +1991,9 @@ span#interview_question_number{
 #interview1 .big_image img{
   width:100%;
 }
+#interview1 .big_image iframe{
+  width:100%;
+}
 
 #interview1 .half_image img{
   width:100%;
@@ -2108,6 +2111,9 @@ span#interview_question_number{
 }
 #interview1 .fb_iframe_widget{
   top:-6px;
+}
+#interview1 #report img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
 /*====================  FINAL ==========================*/
 #final #content{
@@ -4469,6 +4475,9 @@ span#interview_question_number{
 }
 #interview1 .fb_iframe_widget{
   top:-6px;
+}
+#interview1 #report img{
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
 }
 /*====================  FINAL ==========================*/
 #final #content{
