@@ -14,7 +14,7 @@
 
   <h1>お問い合わせ</h1>
 
-<%= form_for @idol, :url => idol_thanks_path do |f| %>
+<%= form_for @idol, url: {:action => 'thankyou'} do |f| %>
   <table class="table">
     <tr>
       <th>名前</th>
@@ -46,4 +46,3 @@
     <%= ad_img %>
   </div>
 </div>
-

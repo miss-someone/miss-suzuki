@@ -5,8 +5,8 @@ class IdolsController < ApplicationController
 
   def entry
     # 入力画面を表示
-    # render :action => 'entry'
     @idol = Idol.new
+    # render :action => 'entry'
   end
 
   def confirm
@@ -17,7 +17,7 @@ class IdolsController < ApplicationController
       render :action => 'confirm'
     else
       # NG。入力画面を再表示
-      render :action => 'index'
+      render :action => 'entry'
     end
   end
 
@@ -26,9 +26,9 @@ class IdolsController < ApplicationController
   def thankyou
     # メール送信
     @idol = Idol.new(params[:idol])
-    IdolMailer.received_email(@idol).deliver
+    IdolMailer.idol_confirm_email(@idol).deliver
 
     # 完了画面を表示
-    render :action => 'thanks'
+    render :action => 'thankyou'
   end
 end
