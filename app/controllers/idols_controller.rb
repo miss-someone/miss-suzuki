@@ -5,7 +5,7 @@ class IdolsController < ApplicationController
 
   def entry
     # 入力画面を表示
-    render :action => 'entry'
+    # render :action => 'entry'
     @idol = Idol.new
   end
 
