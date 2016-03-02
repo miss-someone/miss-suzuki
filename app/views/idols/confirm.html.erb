@@ -15,29 +15,25 @@
   <h1>お問い合わせ</h1>
 
 <%= form_for @idol, url: {:action => 'thankyou'} do |f| %>
+
+  <div class="form1">
   <table class="table">
-    <tr>
-      <th>名前</th>
-      <td>
-        <%= f.hidden_field :name %>
-        <%= @idol.name %>
-      </td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td>
-        <%= f.hidden_field :email %>
-        <%= @idol.email %>
-      </td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td>
-        <%= f.hidden_field :message %>
-        <%= simple_format(@idol.message) %>
-      </td>
-    </tr>
+    <tr><td>お名前</td></tr>
+    <tr><td><%= f.hidden_field :name %><%= @idol.name %></td></tr>
+    <tr><td>年齢</td></tr>
+    <tr><td><%= f.hidden_field :age %><%= @idol.age %></td></tr>
+    <tr><td>(学生の場合は)学校名と学年</td></tr>
+    <tr><td><%= f.hidden_field :school %><%= @idol.school %></td></tr>
+    <tr><td>身長</td></tr>
+    <tr><td><%= f.hidden_field :height %><%= @idol.height %></td></tr>
+    <tr><td>出身地</td></tr>
+    <tr><td><%= f.hidden_field :hometown %><%= @idol.hometown %></td></tr>
+    <tr><td>ご自宅の最寄駅</td></tr>
+    <tr><td><%= f.hidden_field :station %><%= @idol.station %></td></tr>
+    <tr><td>メールアドレス</td></tr>
+    <tr><td><%= f.hidden_field :email %><%= @idol.email %></td></tr>
   </table>
+  </div>
   <%= f.submit '送信', :class => 'btn btn-primary' %>
 <% end %>
 

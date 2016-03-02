@@ -5,8 +5,8 @@
   <div id="content">
     <div class="menu">
       <ul>
-        <li><a href="idols#content">概要</a></li>
-        <li><a href="idols/info#content">応募要項</a></li>
+        <li><a href="/idols#content">概要</a></li>
+        <li><a href="/idols/info#content">応募要項</a></li>
         <li>申し込み</li>
       </ul>
     </div>
@@ -27,20 +27,31 @@
     </div>
   <% end %>
 
+  <div class="form1">
   <table class="table">
-    <tr>
-      <th>名前<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :name %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス<span class="text-danger">（必須）</span></th>
-      <td><%= f.text_field :email %></td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td><%= f.text_area :message %></td>
+    <tr><td>お名前</td></tr>
+    <tr><td><%= f.text_field :name, class: "half" %></td></tr>
+    <tr><td>年齢</td></tr>
+    <tr><td><%= f.text_field :age, class: "half" %></td></tr>
+    <tr><td>(学生の場合は)学校名と学年</td></tr>
+    <tr><td><%= f.text_field :school, class: "half" %></td></tr>
+    <tr><td>身長</td></tr>
+    <tr><td><%= f.text_field :height, class: "half" %></td></tr>
+    <tr><td>出身地</td></tr>
+    <tr><td><%= f.text_field :hometown, class: "half" %></td></tr>
+    <tr><td>ご自宅の最寄駅</td></tr>
+    <tr><td><%= f.text_field :station, class: "half" %></td></tr>
+    <tr><td>メールアドレス</td></tr>
+    <tr><td><%= f.text_field :email, class: "full" %></td></tr>
+    <tr><td>現在、芸能プロダクションに所属していますか？</td></tr>
+    <tr class="box">
+      <td>
+        <%= f.radio_button :production, true %>はい
+        <%= f.radio_button :production, false %>いいえ
+      </td>
     </tr>
   </table>
+  </div>
   <%= f.submit '確認', class: 'btn btn-primary' %>
 <% end %>
 
