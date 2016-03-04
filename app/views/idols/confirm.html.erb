@@ -12,30 +12,60 @@
     </div>
   </div>
 
-  <h1>お問い合わせ</h1>
+  <h1>送信内容確認</h1>
+  <%= form_for @idol, url: {:action => 'create'} do |f| %>
+    <table class="table">
+      <tr>
+        <th>名前<span class="text-danger">（必須）</span></th>
+        <td><%= @idol.name %><%= f.hidden_field :name %></td>
 
-<%= form_for @idol, url: {:action => 'thankyou'} do |f| %>
+      </tr>
+      <tr>
+        <th>メールアドレス<span class="text-danger">（必須）</span></th>
+        <td><%= @idol.email %><%= f.hidden_field :email %></td>
+      </tr>
+      <tr>
+        <th>年齢</th>
+        <td><%= @idol.age %><%= f.hidden_field :age %></td>
+      </tr>
+      <tr>
+        <th>学校名と学年（該当しない場合は空欄で構いません）</th>
+        <% if @idol.school.present? %>
+          <td><%= @idol.school %><%= f.hidden_field :school %></td>
+        <% else %>
+          <td>未記入<%= f.hidden_field :school %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <th>身長</th>
+        <td><%= @idol.height %><%= f.hidden_field :height %></td>
+      </tr>
+      <tr>
+        <th>出身地</th>
+        <td><%= @idol.hometown %><%= f.hidden_field :hometown %></td>
+      </tr>
+      <tr>
+        <th>ご自宅の最寄り駅（交通費を支払う場合に使用します）</th>
+        <td><%= @idol.station %><%= f.hidden_field :station %></td>
+      </tr>
+      <tr>
+        <th>芸能プロダクションに所属していますか？</th>
+        <% if @idol.production = true %>
+          <td><%= f.hidden_field :production%>はい</td>
+        <% else %>
+          <td><%= f.hidden_field :production%>いいえ</td>
+        <% end %>
+      </tr>
 
-  <div class="form1">
-  <table class="table">
-    <tr><td>お名前</td></tr>
-    <tr><td><%= f.hidden_field :name %><%= @idol.name %></td></tr>
-    <tr><td>年齢</td></tr>
-    <tr><td><%= f.hidden_field :age %><%= @idol.age %></td></tr>
-    <tr><td>(学生の場合は)学校名と学年</td></tr>
-    <tr><td><%= f.hidden_field :school %><%= @idol.school %></td></tr>
-    <tr><td>身長</td></tr>
-    <tr><td><%= f.hidden_field :height %><%= @idol.height %></td></tr>
-    <tr><td>出身地</td></tr>
-    <tr><td><%= f.hidden_field :hometown %><%= @idol.hometown %></td></tr>
-    <tr><td>ご自宅の最寄駅</td></tr>
-    <tr><td><%= f.hidden_field :station %><%= @idol.station %></td></tr>
-    <tr><td>メールアドレス</td></tr>
-    <tr><td><%= f.hidden_field :email %><%= @idol.email %></td></tr>
-  </table>
-  </div>
-  <%= f.submit '送信', :class => 'btn btn-primary' %>
-<% end %>
+      <tr>
+        <th>説明会に参加できる日程を教えてください。（複数選択可）</th>
+        <th>すべて該当しない場合は「その他」をご選択ください。別途ご連絡致します。</th>
+          <td><%= @idol.date %></td>
+        <td><%= f.hidden_field :date %></td>
+      </tr>
+    </table>
+    <%= f.submit '送信', :class => 'btn btn-primary' %>
+  <% end %>
 
 
   <div id="banner_big" style="margin-top:10px;">

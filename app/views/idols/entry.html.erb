@@ -5,15 +5,14 @@
   <div id="content">
     <div class="menu">
       <ul>
-        <li><a href="/idols#content">概要</a></li>
-        <li><a href="/idols/info#content">応募要項</a></li>
+        <li><a href="idols#content">概要</a></li>
+        <li><a href="idols/info#content">応募要項</a></li>
         <li>申し込み</li>
       </ul>
     </div>
   </div>
 
 <%= form_for @idol, url: {:action => 'confirm'} do |f| %>
-
   <h1>説明会お申し込み</h1>
 
   <% if @idol.errors.any? %>
@@ -26,38 +25,58 @@
       </ul>
     </div>
   <% end %>
-
   <div class="form1">
-  <table class="table">
-    <tr><td>お名前</td></tr>
-    <tr><td><%= f.text_field :name, class: "half" %></td></tr>
-    <tr><td>年齢</td></tr>
-    <tr><td><%= f.text_field :age, class: "half" %></td></tr>
-    <tr><td>(学生の場合は)学校名と学年</td></tr>
-    <tr><td><%= f.text_field :school, class: "half" %></td></tr>
-    <tr><td>身長</td></tr>
-    <tr><td><%= f.text_field :height, class: "half" %></td></tr>
-    <tr><td>出身地</td></tr>
-    <tr><td><%= f.text_field :hometown, class: "half" %></td></tr>
-    <tr><td>ご自宅の最寄駅</td></tr>
-    <tr><td><%= f.text_field :station, class: "half" %></td></tr>
-    <tr><td>メールアドレス</td></tr>
-    <tr><td><%= f.text_field :email, class: "full" %></td></tr>
-    <tr><td>現在、芸能プロダクションに所属していますか？</td></tr>
-    <tr class="box">
-      <td>
-        <%= f.radio_button :production, true %>はい
-        <%= f.radio_button :production, false %>いいえ
-      </td>
-    </tr>
-  </table>
+    <table class="table">
+      <tr>
+        <th>名前<span class="text-danger">（必須）</span></th>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス<span class="text-danger">（必須）</span></th>
+        <td><%= f.email_field :email, class: "half" %></td>
+      </tr>
+      <tr>
+        <th>年齢</th>
+        <td><%= f.number_field :age %></td>
+      </tr>
+      <tr>
+        <th>学校名と学年（該当しない場合は空欄で構いません）</th>
+        <td><%= f.text_field :school %></td>
+      </tr>
+      <tr>
+        <th>身長</th>
+        <td><%= f.number_field :height %></td>
+      </tr>
+      <tr>
+        <th>出身地</th>
+        <td><%= f.text_field :hometown %></td>
+      </tr>
+      <tr>
+        <th>ご自宅の最寄り駅（交通費を支払う場合に使用します）</th>
+        <td><%= f.text_field :station %></td>
+      </tr>
+      <tr>
+        <th>芸能プロダクションに所属していますか？</th>
+        <td><%= f.radio_button :production, true %>はい</td>
+        <td><%= f.radio_button :production, false, checked: true %>いいえ</td>
+      </tr>
+      <tr>
+        <th>説明会に参加できる日程を教えてください。（複数選択可）</th>
+        <th>すべて該当しない場合は「その他」をご選択ください。別途ご連絡致します。</th>
+        <td><%= f.check_box :date, {multiple: true}, "3/8(火)18:00-19:00", false %> 3/8(火)18:00-19:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "3/8(火)19:00-20:00", false %> 3/8(火)19:00-20:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "3/11(金)18:00-19:00", false %> 3/11(金)18:00-19:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "3/11(金)19:00-20:00", false %> 3/11(金)19:00-20:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "3/15(火)18:00-19:00", false %> 3/15(火)18:00-19:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "3/15(火)19:00-20:00", false %> 3/15(火)19:00-20:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "3/18(金)18:00-19:00", false %> 3/18(金)18:00-19:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "3/18(金)19:00-20:00", false %> 3/18(金)19:00-20:00</td>
+        <td><%= f.check_box :date, {multiple: true}, "その他", false %> その他</td>
+      </tr>
+    </table>
   </div>
   <%= f.submit '確認', class: 'btn btn-primary' %>
 <% end %>
-
-
-
-  <div id="banner_big" style="margin-top:10px;">
-    <%= ad_img %>
-  </div>
+<div id="banner_big" style="margin-top:10px;">
+  <%= ad_img %>
 </div>

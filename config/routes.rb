@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     get   'idols/info' => 'idols#info'
     get   'idols/entry' => 'idols#entry'
     post  'idols/confirm' => 'idols#confirm'
+    post  'idols/create' => 'idols#create'
     post  'idols/thankyou' => 'idols#thankyou'
 
     scope :contestant_image do

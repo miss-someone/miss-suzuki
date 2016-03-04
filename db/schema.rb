@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228133447) do
+ActiveRecord::Schema.define(version: 20160302160348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,8 +143,17 @@ ActiveRecord::Schema.define(version: 20160228133447) do
   add_index "email_domains", ["domain"], name: "index_email_domains_on_domain", unique: true, using: :btree
 
   create_table "idols", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "name",       default: "",    null: false
+    t.string   "email",      default: ""
+    t.string   "age",        default: "",    null: false
+    t.string   "school"
+    t.string   "height",     default: "",    null: false
+    t.string   "hometown",   default: "",    null: false
+    t.string   "station",    default: "",    null: false
+    t.boolean  "production", default: false, null: false
+    t.string   "date",       default: "",    null: false
   end
 
   create_table "interview_answers", force: :cascade do |t|
@@ -171,6 +180,11 @@ ActiveRecord::Schema.define(version: 20160228133447) do
     t.text     "content",                      null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "static_pages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_profiles", force: :cascade do |t|
