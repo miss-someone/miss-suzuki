@@ -12,49 +12,52 @@
     </div>
   </div>
 
-<%= form_for @idol, url: {:action => 'confirm'} do |f| %>
+<div id ="create">
+<div id="entry_form">
+  <%= form_for @idol, url: {:action => 'confirm'} do |f| %>
 
-  <h1>説明会お申し込み</h1>
+    <h1>説明会お申し込み</h1>
 
-  <% if @idol.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <strong>入力内容にエラーがあります</strong>
-      <ul>
-        <% @idol.errors.each do |attr, msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+    <% if @idol.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <strong>入力内容にエラーがあります</strong>
+        <ul>
+          <% @idol.errors.each do |attr, msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form1">
+    <table class="table">
+      <tr><td>お名前</td></tr>
+      <tr><td><%= f.text_field :name, class: "half" %></td></tr>
+      <tr><td>年齢</td></tr>
+      <tr><td><%= f.text_field :age, class: "half" %></td></tr>
+      <tr><td>(学生の場合は)学校名と学年</td></tr>
+      <tr><td><%= f.text_field :school, class: "half" %></td></tr>
+      <tr><td>身長</td></tr>
+      <tr><td><%= f.text_field :height, class: "half" %></td></tr>
+      <tr><td>出身地</td></tr>
+      <tr><td><%= f.text_field :hometown, class: "half" %></td></tr>
+      <tr><td>ご自宅の最寄駅</td></tr>
+      <tr><td><%= f.text_field :station, class: "half" %></td></tr>
+      <tr><td>メールアドレス</td></tr>
+      <tr><td><%= f.text_field :email, class: "full" %></td></tr>
+      <tr><td>現在、芸能プロダクションに所属していますか？</td></tr>
+      <tr class="box">
+        <td>
+          <%= f.radio_button :production, true %>はい
+          <%= f.radio_button :production, false %>いいえ
+        </td>
+      </tr>
+    </table>
     </div>
+    <p><%= f.submit '確認', class: "submit_btn" %></p>
   <% end %>
-
-  <div class="form1">
-  <table class="table">
-    <tr><td>お名前</td></tr>
-    <tr><td><%= f.text_field :name, class: "half" %></td></tr>
-    <tr><td>年齢</td></tr>
-    <tr><td><%= f.text_field :age, class: "half" %></td></tr>
-    <tr><td>(学生の場合は)学校名と学年</td></tr>
-    <tr><td><%= f.text_field :school, class: "half" %></td></tr>
-    <tr><td>身長</td></tr>
-    <tr><td><%= f.text_field :height, class: "half" %></td></tr>
-    <tr><td>出身地</td></tr>
-    <tr><td><%= f.text_field :hometown, class: "half" %></td></tr>
-    <tr><td>ご自宅の最寄駅</td></tr>
-    <tr><td><%= f.text_field :station, class: "half" %></td></tr>
-    <tr><td>メールアドレス</td></tr>
-    <tr><td><%= f.text_field :email, class: "full" %></td></tr>
-    <tr><td>現在、芸能プロダクションに所属していますか？</td></tr>
-    <tr class="box">
-      <td>
-        <%= f.radio_button :production, true %>はい
-        <%= f.radio_button :production, false %>いいえ
-      </td>
-    </tr>
-  </table>
-  </div>
-  <%= f.submit '確認', class: 'btn btn-primary' %>
-<% end %>
-
+</div>
+</div>
 
 
   <div id="banner_big" style="margin-top:10px;">
