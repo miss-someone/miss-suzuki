@@ -32,8 +32,41 @@
     <tr><td><%= f.hidden_field :station %><%= @idol.station %></td></tr>
     <tr><td>メールアドレス</td></tr>
     <tr><td><%= f.hidden_field :email %><%= @idol.email %></td></tr>
+    <tr><td>説明会参加日程</td></tr>
+    <%= f.hidden_field :date %>
+    <% binding.pry %>
+    <% @idol.date.each do |date| %>
+      <% if date == "1" %>
+        <tr><td>3/8(火)18:00-19:00</td></tr>
+      <% end %>
+      <% if date == "2" %>
+        <tr><td>3/8(火)19:00-20:00</td></tr>
+      <% end %>
+      <% if date == "3" %>
+        <tr><td>3/11(金)18:00-19:00</td></tr>
+      <% end %>
+      <% if date == "4" %>
+        <tr><td>3/11(金)19:00-20:00</td></tr>
+      <% end %>
+      <% if date == "5" %>
+        <tr><td>3/15(火)18:00-19:00</td></tr>
+      <% end %>
+      <% if date == "6" %>
+        <tr><td>3/15(火)19:00-20:00</td></tr>
+      <% end %>
+      <% if date == "7" %>
+        <tr><td>3/18(金)18:00-19:00</td></tr>
+      <% end %>
+      <% if date == "8" %>
+        <tr><td>3/18(金)19:00-20:00</td></tr>
+      <% end %>
+      <% if date == "0" %>
+        <tr><td>その他</td></tr>
+      <% end %>
+    <% end %>
   </table>
   </div>
+  <%= f.hidden_field :production %>
   <%= f.submit '送信', :class => 'btn btn-primary' %>
 <% end %>
 
