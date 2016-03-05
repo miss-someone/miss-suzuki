@@ -5,13 +5,14 @@ sex:
   male: 1
   female: 2
   unknown: 3
-current_stage: 2
+current_stage: 3
 current_group_id: 3 # 応募した人のデフォルトで割り振られるグループID
 current_open_group_id: 3 # 現在公開中のグループID最大値
 contestant:
   preopen_count: 3 # プレオープンで公開する参加者の数
   default_blur: 500
   qualifying_vote_limit_day: '2015-12-18'
+  semifinal_vote_limit_day: '2016-02-10'
 link_type:
   facebook: 1
   twitter: 2

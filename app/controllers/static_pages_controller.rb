@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  skip_before_filter :require_login, only: [:index, :about, :rules, :how_to_vote, :flow_chart,
+  skip_before_filter :require_login, only: [:index, :final , :about, :rules, :how_to_vote, :flow_chart,
                                             :next, :history, :entrypolicy, :terms, :policy, :help]
   # トップページ
   def index
@@ -9,9 +9,7 @@ class StaticPagesController < ApplicationController
     # トップページの表示は遅くしたくないので，キャッシュを行う
     # 更新は30分毎
     @contestants = Rails.cache.fetch('toppage_contestants', expires_in: 5.seconds) do
-      contestants = Contestant.toppage_contestants.sample(18)
-      ActiveRecord::Associations::Preloader.new.preload(contestants, :contestant_profile)
-      contestants
+      Contestant.approved.semifinal
     end
   end
 

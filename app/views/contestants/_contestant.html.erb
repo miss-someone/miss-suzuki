@@ -1,11 +1,11 @@
 <div id='contestant-<%= contestant.id %>' class="contestant">
-  <div class="vote_system">
+<!--   <div class="vote_system">
     <%= vote_btn(contestant) %>
     <p class="counter">
     <%= vote_count(contestant) %>
     </p>
   </div>
-
+ -->
 <% cache contestant.profile do %>
   <% if mypage_present?(contestant) %>
     <div class="mypage_btn">
@@ -14,7 +14,12 @@
   <% end %>
 
   <div class="picture">
-    <%= image_tag contestant.profile.profile_image.thumb(300, 300) %>
+    <% if contestant.profile.movie_url.present? %>
+      <!-- youtube movie -->
+      <iframe max-width="600" src="<%= contestant.profile.movie_url %>" frameborder="0" allowfullscreen></iframe>
+    <% else %>
+      <%= image_tag contestant.profile.profile_image.thumb(300, 300) %>
+    <% end %>
   </div>
   <div class="profile">
     <p class="url"><%= link_btn(contestant.profile) %></p>
@@ -24,7 +29,7 @@
     <p class="hometown">出身：<%= contestant.profile.come_from %></p>
     <p class="height">身長：<%= contestant.profile.height %></p>
     <p class="appeal">一言アピール！</p>
-    <p class="anchor"><a style="float:right;" href="<%= contestant_anchor_url(contestant) %>"><%= image_tag 'icon/chain.png' %></a></p>
+
     <textarea readonly name="comment"><%= contestant.profile.comment %></textarea>
   </div>
 <% end %>

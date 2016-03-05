@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206121647) do
+ActiveRecord::Schema.define(version: 20151221005922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,10 @@ ActiveRecord::Schema.define(version: 20151206121647) do
     t.boolean  "is_in_2nd_stage",                 default: false
     t.integer  "second_stage_votes",              default: 0
     t.string   "sex",                             default: "female", null: false
+    t.boolean  "is_in_semifinal",                 default: false,    null: false
+    t.integer  "semifinal_votes",                 default: 0
+    t.string   "movie_url"
+
   end
 
   add_index "contestant_profiles", ["user_id"], name: "index_contestant_profiles_on_user_id", using: :btree

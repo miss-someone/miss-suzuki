@@ -7,10 +7,12 @@ Rails.application.routes.draw do
 
     # For AutoDeployment
     post 'api/deploy' => 'api#deploy'
+    post 'api/reborn/:id' => 'api#reborn'
   else
     # 外部向け用
     root 'static_pages#index'
 
+    get   'final'   => 'static_pages#final'
     get   'about'   => 'static_pages#about'
     get   'rules'   => 'static_pages#rules'
     get   'how_to_vote' => 'static_pages#how_to_vote'
@@ -28,6 +30,11 @@ Rails.application.routes.draw do
     get   'contents/erai_suzukisan_sp1' => 'contents#interview_sp1'
     get   'contents/erai_suzukisan2_1' => 'contents#interview2_1'
     get   'contents/erai_suzukisan2_2' => 'contents#interview2_2'
+    get   'contents/erai_suzukisan3' => 'contents#interview3'
+    get   'contents/akaji' => 'contents#akaji'
+    get   'contents/fujishiro' => 'contents#fujishiro'
+    get   'contents/erai_suzukisan4' => 'contents#interview4'
+    get   'contents/report' => 'contents/report'
     get   'news' => 'news#index'
 
     scope :contestant_image do
@@ -46,6 +53,9 @@ Rails.application.routes.draw do
       post  'create_interview_answer' => 'contestants#create_interview_answer'
       get   'group/:id' => 'contestants#index'
       get   'second_stage' => 'contestants#second_stage'
+      get   'semifinal' => 'contestants#semifinal'
+      get   'suzukike' => 'contestants#suzukike'
+      get   'tshirt' => 'contestants#tshirt'
       get   '/:id/mypage' => 'contestants#mypage', as: :mypage
       get   'my_own_page' => 'contestants#my_own_page'
       get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou

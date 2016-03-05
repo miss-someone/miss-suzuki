@@ -26,7 +26,7 @@ module ApplicationHelper
 
   def show_entry
     return if current_user && current_user.user_type == Settings.user_type.contestant
-    '<li class="tab"><a href="/mister/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
+    '<li class="tab"><a href="/contestants/entry">ENTRY<br><span>エントリー</span></a></li>'
   end
 
   def vote_end?
@@ -69,6 +69,34 @@ module ApplicationHelper
         type:  "article",
         url:   "https://miss-suzuki.com/contents/erai_suzukisan2_2",
         image: "https://miss-suzuki.com/assets/mainimages/interview2_mainimage2-7601eea65cf33fc187bb72ca02537b56.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "akaji"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | 【緊急】MISS-SUZUKIが大赤字で困っているので、どれくらい赤字かを髪で表現してみた",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/akaji",
+        image: "https://miss-suzuki.com/assets/mainimages/mainimage_akaji-25d9a53b98bbd583bc881e0243c38843.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "interview3"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第３弾！三重県知事 鈴木英敬さん！",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/erai_suzukisan3",
+        image: "https://miss-suzuki.com/assets/mainimages/interview3_mainimage-524df79b857aeb55f224e619ab3ed3f1.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "fujishiro"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | パワースポット多すぎ！？鈴木さんのふるさと藤白神社でお参り！",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/fujishiro",
+        image: "https://miss-suzuki.com/assets/fujishiro/mainimage_shrine-0b1037db6b6f409633531fb1c3838b0d.jpg"
+      }
+    elsif controller_name == "contents" && action_name == "interview4"
+      set_meta_tags og: {
+        title: "MISS-SUZUKI | えらい鈴木さんにインタビュー 第４弾！関東鈴木会！",
+        type:  "article",
+        url:   "https://miss-suzuki.com/contents/interview4",
+        image: "https://miss-suzuki.com/assets/mainimages/interview4_mainimage-70df1dcbff4f0e1d6dfd121eab728ee5.jpg"
       }
     elsif controller_name == "contestants" && contestant_profile.present?
       set_meta_tags og: {
