@@ -45,9 +45,18 @@ class IdolsController < ApplicationController
 
   def create
     # メール送信
-    @idol = Idol.new(idol_params)
-    @idol.save!
-    IdolMailer.idol_confirm_email(@idol).deliver
+    idol = Idol.new
+    idol.name = params[:idol][:name]
+    idol.age = params[:idol][:age]
+    idol.school = params[:idol][:school]
+    idol.height = params[:idol][:height]
+    idol.hometown = params[:idol][:hometown]
+    idol.station = params[:idol][:station]
+    idol.email = params[:idol][:email]
+    idol.production = params[:idol][:production]
+    idol.date = params[:idol][:date]
+    idol.save
+    IdolMailer.idol_confirm_email(idol).deliver
 
     # 完了画面を表示
     render :action => 'thankyou'
