@@ -1,13 +1,13 @@
 class IdolsController < ApplicationController
   skip_before_filter :require_login, only: [:index, :info, :entry, :confirm, :create, :thankyou]
-  protect_from_forgery :only => ["confirm"]
+  # この一文ないとActionController::InvalidAuthenticityTokenのエラー出ちゃう
+  skip_before_filter :verify_authenticity_token, only: [:confirm, :create]
   def index
   end
 
   def entry
     # 入力画面を表示
     @idol = Idol.new
-    # render :action => 'entry'
   end
 
   def confirm
@@ -39,7 +39,7 @@ class IdolsController < ApplicationController
       }
       @idol = Idol.new(idol)
       # NG。入力画面を再表示
-      render :action => 'entry' if @idol.invalid?
+      render action: 'entry' if @idol.invalid?
     end
   end
 
@@ -57,16 +57,10 @@ class IdolsController < ApplicationController
     idol.date = params[:idol][:date]
     idol.save
     IdolMailer.idol_confirm_email(idol).deliver
-
     # 完了画面を表示
-    render :action => 'thankyou'
+    render action: 'thankyou'
   end
 
   def thankyou
   end
-
-  private
-    def idol_params
-      params.require(:idol).permit(:name, :email, :age, :school, :height, :hometown, :station, :production, :date)
-    end
 end

@@ -12,14 +12,14 @@
     </div>
   </div>
 
-<%= form_for @idol, url: {:action => 'confirm'} do |f| %>
+<%= form_for @idol, url: { action: :confirm } do |f| %>
   <h1>説明会お申し込み</h1>
 
   <% if @idol.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <strong>入力内容にエラーがあります</strong>
       <ul>
-        <% @idol.errors.each do |attr, msg| %>
+        <% @idol.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
