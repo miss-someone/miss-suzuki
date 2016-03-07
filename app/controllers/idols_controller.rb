@@ -1,5 +1,6 @@
 class IdolsController < ApplicationController
-  skip_before_filter :require_login, only: [:index, :info, :entry, :confirm, :create, :thankyou]
+  skip_before_filter :require_login,
+  only: [:index, :info, :entry, :confirm, :create, :thankyou]
   # この一文ないとActionController::InvalidAuthenticityTokenのエラー出ちゃう
   skip_before_filter :verify_authenticity_token, only: [:confirm, :create]
   def index
