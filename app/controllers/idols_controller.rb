@@ -55,6 +55,7 @@ class IdolsController < ApplicationController
     idol.date = params[:idol][:date]
     idol.save
     IdolMailer.idol_confirm_email(idol).deliver
+    IdolMailer.idol_confirm_admin_email(idol).deliver
     # 完了画面を表示
     render action: 'thankyou'
   end
