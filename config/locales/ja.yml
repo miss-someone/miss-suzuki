@@ -40,6 +40,14 @@ ja:
         job_id: 職業
       contestant_image:
         profile_image: プロフィール画像
+      idol:
+        name: 名前
+        email: メールアドレス
+        age: 年齢
+        height: 身長
+        hometown: 出身地
+        station: 最寄駅
+        date: 説明会に参加できる日程
 
   date:
     abbr_day_names:
@@ -234,4 +242,3 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
-
