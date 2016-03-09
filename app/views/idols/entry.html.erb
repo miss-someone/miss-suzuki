@@ -1,0 +1,70 @@
+<div id="rules">
+<div id ="create">
+  <div id="mainimage">
+    <%= image_tag 'mainimages/mainimage_idolgroup.jpg' %>
+  </div>
+  <div id="content">
+    <div class="menu">
+      <ul>
+        <li><a href="idols#content">概要</a></li>
+        <li><a href="idols/info#content">応募要項</a></li>
+        <li>申し込み</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id ="entry_form">
+  <%= form_for @idol, url: { action: :confirm } do |f| %>
+    <h1>説明会お申し込み</h1>
+
+    <% if @idol.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <strong>入力内容にエラーがあります</strong>
+        <ul>
+          <% @idol.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form1">
+      <table class="table">
+        <tr><td>名前<span class="text-danger">（必須）</span></td></tr>
+        <tr><td><%= f.text_field :name, class: "half"  %></td></tr>
+        <tr><td>メールアドレス<span class="text-danger">（必須）</span></td></tr>
+        <tr><td><%= f.email_field :email, class: "half" %></td></tr>
+        <tr><td>年齢</td></tr>
+        <tr><td><%= f.number_field :age, class: "half" %></td></tr>
+        <tr><td>学校名と学年（該当しない場合は空欄で構いません）</td></tr>
+        <tr><td><%= f.text_field :school %></td></tr>
+        <tr><td>身長</td></tr>
+        <tr><td><%= f.number_field :height %></td></tr>
+        <tr><td>出身地</td></tr>
+        <tr><td><%= f.text_field :hometown %></td></tr>
+        <tr><td>ご自宅の最寄り駅（交通費を支払う場合に使用します）</td></tr>
+        <tr><td><%= f.text_field :station %></td></tr>
+        <tr><td>芸能プロダクションに所属していますか？</td></tr>
+        <tr><td><%= f.radio_button :production, true %>はい</td></tr>
+        <tr><td><%= f.radio_button :production, false, checked: true %>いいえ</td></tr>
+        <tr><td>説明会に参加できる日程を教えてください。（複数選択可）</td></tr>
+        <tr><td>すべて該当しない場合は「その他」をご選択ください。別途ご連絡致します。</td></tr>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/8(火)18:00-19:00", false %> 3/8(火)18:00-19:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/8(火)19:00-20:00", false %> 3/8(火)19:00-20:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/11(金)18:00-19:00", false %> 3/11(金)18:00-19:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/11(金)19:00-20:00", false %> 3/11(金)19:00-20:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/15(火)18:00-19:00", false %> 3/15(火)18:00-19:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/15(火)19:00-20:00", false %> 3/15(火)19:00-20:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/18(金)18:00-19:00", false %> 3/18(金)18:00-19:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "3/18(金)19:00-20:00", false %> 3/18(金)19:00-20:00<br>
+        <tr><td><%= f.check_box :date, {multiple: true}, "その他", false %> その他</td></tr>
+              </table>
+    </div>
+    <p><%= f.submit '確認', class: 'submit_btn' %></p>
+  <% end %>
+  </div>
+</div>
+  <div id="banner_big" style="margin-top:10px;">
+    <%= ad_img %>
+  </div>
+</div>

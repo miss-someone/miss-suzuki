@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   skip_before_filter :require_login, only: [:index, :final , :about, :rules, :how_to_vote, :flow_chart,
-                                            :next, :history, :entrypolicy, :terms, :policy, :help]
+                                            :next, :history, :entrypolicy, :terms, :policy, :help,
+                                            :idol_info1, :idol_info2, :idol_entry]
   # トップページ
   def index
     @news = News.where("is_important = 'true'").order("date DESC").limit(5)

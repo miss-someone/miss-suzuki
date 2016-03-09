@@ -36,6 +36,12 @@ Rails.application.routes.draw do
     get   'contents/erai_suzukisan4' => 'contents#interview4'
     get   'contents/report' => 'contents/report'
     get   'news' => 'news#index'
+    get   'idols' => 'idols#index'
+    get   'idols/info' => 'idols#info'
+    get   'idols/entry' => 'idols#entry'
+    post  'idols/confirm' => 'idols#confirm'
+    post  'idols/create' => 'idols#create'
+    post  'idols/thankyou' => 'idols#thankyou'
 
     scope :contestant_image do
       get 'new' => 'contestant_image#new'
