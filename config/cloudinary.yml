@@ -1,25 +1,25 @@
 ---
 development:
   cloud_name: ms-someone-dev
-  api_key: '296661433353382'
-  api_secret: dzhLxCbKKUFA7f5u_au-A4ybHLE
+  api_key: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_KEY_DEV'] %>
+  api_secret: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_SECRET_DEV'] %>
   enhance_image_tag: true
   static_image_support: false
 production:
   cloud_name: miss-someone
-  api_key: '579619788246129'
-  api_secret: e2yhSFxKHcExkOrLcI5ccO_M2Iw
+  api_key: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_KEY_PROD'] %>
+  api_secret: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_SECRET_PROD'] %>
   enhance_image_tag: true
   static_image_support: true
 staging:
   cloud_name: miss-someone
-  api_key: '579619788246129'
-  api_secret: e2yhSFxKHcExkOrLcI5ccO_M2Iw
+  api_key: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_KEY_PROD'] %>
+  api_secret: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_SECRET_PROD'] %>
   enhance_image_tag: true
   static_image_support: true
 test:
   cloud_name: ms-someone-dev
-  api_key: '296661433353382'
-  api_secret: dzhLxCbKKUFA7f5u_au-A4ybHLE
+  api_key: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_KEY_DEV'] %>
+  api_secret: <%= ENV['MISS_SUZUKI_CLOUDINARY_API_SECRET_DEV'] %>
   enhance_image_tag: true
   static_image_support: false
