@@ -64,7 +64,7 @@ namespace :deploy do
     # アセットのコピーをとりあえず，無理やり
     if fetch(:stage) == 'production'
       sh "scp -rC public/assets 192.168.1.11:#{fetch(:assets_to)}"
-      sh "scp -rC public/assets 192.168.1.12:#{fetch(:assets_to)}"
+      #sh "scp -rC public/assets 192.168.1.12:#{fetch(:assets_to)}"
       # スケール用
       # sh "scp -rC public/assets 192.168.1.13:#{fetch(:assets_to)}"
     elsif fetch(:stage) == 'staging'
