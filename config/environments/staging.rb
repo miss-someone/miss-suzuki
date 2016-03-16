@@ -77,7 +77,7 @@ Rails.application.configure do
     port: 587,
     domain: 'gmail.com',
     user_name: 'noreply.ms.someone2015@gmail.com',
-    password: 'nogatahope',
+    password: ENV['MISS_SUZUKI_NOREPLY_GMAIL_PASSWD'],
     authentication: :plain,
     enable_starttls_auto: true
   }
