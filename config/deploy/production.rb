@@ -8,7 +8,7 @@ set :branch, 'master'
 set :rails_env, "production"
 set :stage, 'production'
 
-role :app, %w(webmaster@192.168.1.21 webmaster@192.168.1.22)
+role :app, %w(webmaster@192.168.1.21) # webmaster@192.168.1.22)
 role :db, %w(webmaster@192.168.1.21)
 role :contestant, %w(webmaster@192.168.1.21)
 
