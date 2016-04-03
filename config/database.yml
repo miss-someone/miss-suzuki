@@ -88,8 +88,8 @@ staging:
 
 production:
   <<: *default
-  database: miss-suzuki
-  username: miss-suzuki
+  database: <%= ENV['MISS_SUZUKI_DB_NAME'] %>
+  username: <%= ENV['MISS_SUZUKI_DB_USER_NAME'] %>
   password: <%= ENV['MISS_SUZUKI_DB_PASS'] %>
-  host: 192.168.1.30
+  host: <%= ENV['MISS_SUZUKI_DB_HOST'] %>
   pool: 20
