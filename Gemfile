@@ -67,6 +67,8 @@ gem 'rack-mini-profiler', require: false
 # error tracking
 gem 'airbrake'
 
+gem 'rails_12factor'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
