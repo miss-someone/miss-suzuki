@@ -6,8 +6,5 @@
   "engine": {
     "node": "0.12.x",
     "npm": "3.8.x"
-  },
-  "scripts": {
-    "postinstall":"./node_modules/.bin/bower install"
   }
 }
