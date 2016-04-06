@@ -21,6 +21,9 @@ class AdsUploader < CarrierWave::Uploader::Base
   # 画像リクエスト先サーバのホスト名を返す
   def img_server_host_name
     # Production時のみ，プロキシを介すようにする
-    Rails.env.production? ? 'miss-suzuki.com' : 'res.cloudinary.com'
+    # Rails.env.production? ? 'miss-suzuki.com' : 'res.cloudinary.com'
+    # Herokuに移すので，Cloudinaryへアクセスするようにした 
+    'res.cloudinary.com'
+
   end
 end
