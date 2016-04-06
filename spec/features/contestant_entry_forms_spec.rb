@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "ContestantEntryForms", type: :feature do
+# 会期が終わって色々塞ぐのでテスト止める
+=begin
+
   describe "Contestant entry paage" do
     subject { page }
     before { visit new_contestant_path }
@@ -44,4 +47,5 @@ RSpec.feature "ContestantEntryForms", type: :feature do
       end
     end
   end
+=end
 end

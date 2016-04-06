@@ -17,10 +17,15 @@ RSpec.describe ContestantsController, type: :controller do
     it { expect(response.status).to eq 200 }
   end
 
+# 会期が終わって色々塞ぐのでテスト止める
+=begin
+
   describe '#new' do
     subject(:response) { get :new }
     it { expect(response.status).to eq 200 }
   end
+
+=end
 
   describe '#mypage' do
     subject(:response) { get :mypage, id: contestant.id }
