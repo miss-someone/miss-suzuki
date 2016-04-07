@@ -67,25 +67,25 @@ Rails.application.routes.draw do
       get   '/:id/thankyou' => 'contestants#thankyou', as: :thankyou
     end
 
-    resources :contestants, only: [:new, :create] do
-      resource :vote, only: [:create]
-    end
+    # resources :contestants, only: [:new, :create] do
+    #   resource :vote, only: [:create]
+    # end
 
-    resource :user, only: [:create] do
-      resource :user_profile, except: [:destroy], path: 'profile', as: :profile
-      get   'password_edit' => 'password_edits#edit'
-      post  'password_update' => 'password_edits#update'
-    end
+    # resource :user, only: [:create] do
+    #   resource :user_profile, except: [:destroy], path: 'profile', as: :profile
+    #   get   'password_edit' => 'password_edits#edit'
+    #   post  'password_update' => 'password_edits#update'
+    # end
     scope :users do
       get   'signup' => 'users#new'
       get   '/:id/activate' => 'users#activate', as: :activation
       get   'registration_completed' => 'users#registration_completed'
     end
-    resources :password_resets, only: [:new, :create, :edit, :update]
-
+    # resources :password_resets, only: [:new, :create, :edit, :update]
+    #
     get "logout" => "user_sessions#destroy", :as => "logout"
     get "login" => "user_sessions#new", :as => "login"
-    resources :user_sessions, only: :create
+    # resources :user_sessions, only: :create
 
     namespace 'mister' do
       get   '/'       => 'static_pages#index'

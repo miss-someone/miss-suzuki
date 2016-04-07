@@ -1,19 +1,7 @@
 <div id ="login" style="background-image:url(<%= asset_path "form_background.jpg" %>); background-size:cover;" />
   <div id="login_form">
     <h1>ログイン</h1>
-    <%= render 'layouts/flash', collections: flash %>
-    <%= form_tag user_sessions_path do %>
-      <div class="form1">
-        <table class="table">
-          <tr><td><%= label_tag "メールアドレス" %></td></tr>
-          <tr><td><%= text_field_tag :email, params[:email] %></td></tr>
-          <tr><td><%= label_tag "パスワード"  %></td></tr>
-          <tr><td><%= password_field_tag :password %></td></tr>
-        </table>
-      </div>
-      <p><%= check_box_tag :remember_me, 1, params[:remember_me] %><%= label_tag "次回から自動でログインする" %></p>
-      <p><%= submit_tag "ログイン", class: "submit_btn" %></p>
-    <% end %>
-    <p><%= link_to 'パスワードをお忘れですか？', new_password_reset_path %>
+
+    <p> ミス鈴木は2016年2月をもって終了致しました．<br />たくさんのご利用ありがとうございました </p>
   </div>
 </div>
