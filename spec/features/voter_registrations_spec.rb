@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "VoterRegistrations", type: :feature do
+# 会期が終わって色々塞ぐのでテスト止める
+=begin
   subject { page }
   before { visit signup_path }
   let(:submit) { '登録' }
@@ -75,4 +77,5 @@ RSpec.feature "VoterRegistrations", type: :feature do
       end
     end
   end
+=end
 end

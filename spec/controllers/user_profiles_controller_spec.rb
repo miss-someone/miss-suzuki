@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe UserProfilesController, type: :controller do
+# 会期が終わって色々塞ぐのでテスト止める
+=begin
+
   before do
     login_user(voter)
   end
@@ -51,4 +54,5 @@ RSpec.describe UserProfilesController, type: :controller do
         .from(voter.profile.nickname).to(post_data[:nickname])
     end
   end
+=end
 end
