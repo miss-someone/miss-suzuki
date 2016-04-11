@@ -8,7 +8,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   # セッションの保存をdalliに
-  config.cache_store = :dalli_store, '192.168.1.30:11211', { namespace: MissSuzuki, expires_in: 1.day, compress: true }
+  config.cache_store = :dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(','), { username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"], namespace: MissSuzuki, expires_in: 1.day, compress: true }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -35,7 +35,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
