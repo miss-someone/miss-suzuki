@@ -30,6 +30,9 @@ class ContentsController < ApplicationController
   def interview4
   end
 
+  def interview5
+  end
+
   def report
   end
 end
