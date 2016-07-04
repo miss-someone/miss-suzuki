@@ -91,6 +91,8 @@ Rails.application.routes.draw do
     get "login" => "user_sessions#new", :as => "login"
     # resources :user_sessions, only: :create
 
+=begin
+終わったので塞ぎます．
     namespace 'mister' do
       get   '/'       => 'static_pages#index'
       get   'index'   => 'static_pages#index'
@@ -110,6 +112,7 @@ Rails.application.routes.draw do
         get 'entry' => 'contestants#entry'
       end
     end
+=end
 
     # Sidekiqのステータス管理用
     # 接続元は，ローカルホスト及びAdminサーバのみに制限
